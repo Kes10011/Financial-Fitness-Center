@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School of Financial Fitness | Master Your Financial Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-cyan: #00f0ff;
+            --accent-magenta: #ff00e5;
+            --accent-green: #00ff9d;
+            --gradient-1: linear-gradient(135deg, #00f0ff 0%, #7b2fff 100%);
+            --glow-cyan: 0 0 40px rgba(0, 240, 255, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo, .section-title, .hero h1, .cta-box h2 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-cyan);
+            top: -100px;
+            right: -100px;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--accent-magenta);
+            bottom: -50px;
+            left: -50px;
+            animation: float 25s ease-in-out infinite reverse;
+        }
+
+        .orb-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--accent-green);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(0, 240, 255, 0.7), 0 0 60px rgba(123, 47, 255, 0.4); }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .logo-icon {
+            width: 96px;
+            height: 96px;
+            background: var(--gradient-1);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--glow-cyan);
+            position: relative;
+            overflow: hidden;
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        .logo-icon svg {
+            width: 64px;
+            height: 64px;
+        }
+
+        .logo .accent {
+            color: #00f0ff;
+            text-shadow: 0 0 18px rgba(0, 240, 255, 0.45);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            padding: 10px 24px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glow-cyan);
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 80px;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent-cyan);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-size: clamp(52px, 9vw, 110px);
+            font-weight: 700;
+            line-height: 1.02;
+            letter-spacing: -4px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .btn-primary {
+            padding: 16px 32px;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 12px;
+            color: #000;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--glow-cyan);
+        }
+
+        .btn-secondary {
+            padding: 16px 32px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px;
+            margin-top: 80px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        section {
+            position: relative;
+            padding: 120px 40px;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(123, 47, 255, 0.1);
+            border: 1px solid rgba(123, 47, 255, 0.2);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #b794f6;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 700;
+            letter-spacing: -2.5px;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 240, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .course-thumb {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thumb-crypto {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        }
+
+        .thumb-trading {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        .thumb-finance {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        }
+
+        .thumb-stocks {
+            background: linear-gradient(135deg, #141e30, #243b55);
+        }
+
+        .thumb-defi {
+            background: linear-gradient(135deg, #200122, #6f0000);
+        }
+
+        .course-thumb-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .thumb-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .thumb-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .course-thumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 240, 255, 0.03) 2px, rgba(0, 240, 255, 0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 240, 255, 0.03) 2px, rgba(0, 240, 255, 0.03) 4px);
+            z-index: 1;
+        }
+
+        .course-thumb::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(0, 240, 255, 0.1) 60deg, transparent 120deg);
+            animation: thumbRotate 10s linear infinite;
+            z-index: 0;
+        }
+
+        @keyframes thumbRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .course-content {
+            padding: 32px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-bottom: 16px;
+            width: fit-content;
+        }
+
+        .course-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .course-card > p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .course-students {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .course-students .avatar-stack {
+            display: flex;
+        }
+
+        .course-students .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid var(--bg-primary);
+            margin-left: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .course-students .avatar:first-child {
+            margin-left: 0;
+        }
+
+        .avatar-1 { background: #00f0ff; }
+        .avatar-2 { background: #ff00e5; }
+        .avatar-3 { background: #7b2fff; }
+        .avatar-4 { background: #00ff9d; }
+
+        .course-students .count {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .modules {
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        .modules-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .modules-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-cyan);
+            border-radius: 2px;
+            box-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        .module-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .module-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: all 0.3s;
+        }
+
+        .module-list li:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(0, 240, 255, 0.1);
+        }
+
+        .module-list li::before {
+            content: '▹';
+            color: var(--accent-cyan);
+            font-size: 12px;
+        }
+
+        .course-footer {
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 240, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-thumb {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blog-thumb-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .blog-thumb-icon {
+            font-size: 40px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .blog-thumb-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .blog-thumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 240, 255, 0.03) 2px, rgba(0, 240, 255, 0.03) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 240, 255, 0.03) 2px, rgba(0, 240, 255, 0.03) 4px);
+            z-index: 1;
+        }
+
+        .blog-thumb::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(0, 240, 255, 0.08) 60deg, transparent 120deg);
+            animation: thumbRotate 12s linear infinite;
+            z-index: 0;
+        }
+
+        .blog-thumb-market {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        }
+
+        .blog-thumb-crypto {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        }
+
+        .blog-thumb-economy {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        }
+
+        .blog-content {
+            padding: 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .blog-date {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-cyan);
+        }
+
+        .blog-read {
+            color: var(--accent-magenta);
+        }
+
+        .blog-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .blog-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-cyan);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s;
+        }
+
+        .blog-link:hover {
+            gap: 12px;
+        }
+
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: rgba(0, 240, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .contact-details h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-details p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 160px 40px;
+        }
+
+        .cta-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(255, 0, 229, 0.05));
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 240, 255, 0.1), transparent, rgba(255, 0, 229, 0.1), transparent);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-box h2 {
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 700;
+            letter-spacing: -2.5px;
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        footer {
+            position: relative;
+            padding: 80px 40px 40px;
+            border-top: 1px solid var(--border);
+            z-index: 1;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 16px;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: var(--text-secondary);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-float a:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-float svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .stats-bar {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .cta-box {
+                padding: 60px 24px;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="b1" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#00f0ff" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#00f0ff" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b2" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#ff00e5" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#ff00e5" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b3" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#ffe600" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#ffe600" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b4" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#7b2fff" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#7b2fff" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b5" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#ff6b35" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#ff6b35" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <filter id="barShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+                        </filter>
+                    </defs>
+                    <g filter="url(#barShadow)">
+                        <rect x="12" y="56" width="13" height="22" rx="3" fill="url(#b1)"/>
+                        <rect x="29" y="38" width="13" height="40" rx="3" fill="url(#b2)"/>
+                        <rect x="46" y="46" width="13" height="32" rx="3" fill="url(#b3)"/>
+                        <rect x="63" y="26" width="13" height="52" rx="3" fill="url(#b4)"/>
+                        <rect x="80" y="34" width="13" height="44" rx="3" fill="url(#b5)"/>
+                    </g>
+                    <path d="M10 82H90" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+            </div>
+                <span>School of <span class="accent">Financial Fitness</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="https://wa.me/18687995473" class="nav-cta" target="_blank" rel="noopener">Get Started</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Next Generation Financial Education
+            </div>
+            <h1>School of<br><span class="gradient-text">Financial Fitness</span></h1>
+            <p>Transform your financial future with cutting-edge courses in cryptocurrency, trading, and wealth building. Learn from experts, master the markets.</p>
+            <div class="hero-buttons">
+                <a href="#courses" class="btn-primary">
+                    Explore Courses
+                    <span>→</span>
+                </a>
+                <a href="https://wa.me/18687995473" class="btn-secondary" target="_blank" rel="noopener">
+                    <span>💬</span>
+                    Contact Us
+                </a>
+            </div>
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Expert Courses</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Total Modules</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Students Trained</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Access</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses">
+        <div class="section-header reveal">
+            <div class="section-tag">Our Curriculum</div>
+            <h2 class="section-title">Master <span class="gradient-text">Financial Markets</span></h2>
+            <p class="section-subtitle">Comprehensive courses designed to take you from beginner to advanced trader and investor.</p>
+        </div>
+        <div class="courses-grid">
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-crypto">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon">₿</span>
+                        <span class="thumb-label">Blockchain Ready</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Beginner</span>
+                    <h3>Cryptocurrency Fundamentals</h3>
+                    <p>Master the basics of cryptocurrency, blockchain technology, and digital assets. Learn how to safely buy, store, and trade crypto.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">J</span>
+                            <span class="avatar avatar-2">M</span>
+                            <span class="avatar avatar-3">A</span>
+                            <span class="avatar avatar-4">K</span>
+                        </div>
+                        <span><span class="count">1,847</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Introduction to Blockchain Technology</li>
+                            <li>How Cryptocurrencies Work</li>
+                            <li>Setting Up Your First Wallet</li>
+                            <li>Buying & Selling Crypto Safely</li>
+                            <li>Understanding Market Trends</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Cryptocurrency%20Fundamentals%20course" class="whatsapp-btn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            Inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-trading">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon">📈</span>
+                        <span class="thumb-label">Live Trading</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Intermediate</span>
+                    <h3>Day Trading Mastery</h3>
+                    <p>Learn proven day trading strategies, technical analysis, and risk management from a professional trader.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">R</span>
+                            <span class="avatar avatar-2">S</span>
+                            <span class="avatar avatar-3">T</span>
+                            <span class="avatar avatar-4">L</span>
+                        </div>
+                        <span><span class="count">2,153</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Day Trading Fundamentals</li>
+                            <li>Technical Analysis Deep Dive</li>
+                            <li>Reading Candlestick Patterns</li>
+                            <li>Risk Management Strategies</li>
+                            <li>Building a Trading Plan</li>
+                            <li>Psychology of Trading</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Day%20Trading%20Mastery%20course" class="whatsapp-btn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            Inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-finance">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon">📊</span>
+                        <span class="thumb-label">Financial Literacy</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Beginner</span>
+                    <h3>Complete Financial Literacy</h3>
+                    <p>Build a solid foundation in personal finance, budgeting, investing, and wealth building strategies.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">P</span>
+                            <span class="avatar avatar-2">N</span>
+                            <span class="avatar avatar-3">C</span>
+                            <span class="avatar avatar-4">D</span>
+                        </div>
+                        <span><span class="count">1,562</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Understanding Personal Finance</li>
+                            <li>Budgeting & Cash Flow Management</li>
+                            <li>Debt Management Strategies</li>
+                            <li>Introduction to Investing</li>
+                            <li>Building Wealth Over Time</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Complete%20Financial%20Literacy%20course" class="whatsapp-btn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            Inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-stocks">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon">📉</span>
+                        <span class="thumb-label">Stock Analysis</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Intermediate</span>
+                    <h3>Stock Market Investing 101</h3>
+                    <p>Learn how to analyze, select, and invest in stocks for long-term wealth creation.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">B</span>
+                            <span class="avatar avatar-2">E</span>
+                            <span class="avatar avatar-3">F</span>
+                            <span class="avatar avatar-4">G</span>
+                        </div>
+                        <span><span class="count">1,934</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Stock Market Basics</li>
+                            <li>Fundamental Analysis</li>
+                            <li>Technical Analysis Essentials</li>
+                            <li>Portfolio Diversification</li>
+                            <li>Long-Term Investment Strategies</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Stock%20Market%20Investing%20101%20course" class="whatsapp-btn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            Inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-defi">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon">🔗</span>
+                        <span class="thumb-label">DeFi Protocol</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Advanced</span>
+                    <h3>DeFi & Advanced Crypto</h3>
+                    <p>Deep dive into decentralized finance, smart contracts, and advanced cryptocurrency concepts.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">H</span>
+                            <span class="avatar avatar-2">I</span>
+                            <span class="avatar avatar-3">J</span>
+                            <span class="avatar avatar-4">K</span>
+                        </div>
+                        <span><span class="count">987</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>DeFi Ecosystem Overview</li>
+                            <li>Smart Contracts & dApps</li>
+                            <li>Yield Farming & Staking</li>
+                            <li>Advanced Trading Strategies</li>
+                            <li>Risk Management in DeFi</li>
+                            <li>Future of Decentralized Finance</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20DeFi%20&%20Advanced%20Crypto%20course" class="whatsapp-btn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                            Inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="section-header reveal">
+            <div class="section-tag">Finance Weekly</div>
+            <h2 class="section-title">Latest <span class="gradient-text">Finance News</span></h2>
+            <p class="section-subtitle">Stay ahead with our weekly roundup of market insights, crypto updates, and economic trends.</p>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card reveal">
+                <div class="blog-thumb blog-thumb-market">
+                    <div class="blog-thumb-inner">
+                        <span class="blog-thumb-icon">📊</span>
+                        <span class="blog-thumb-label">Market Watch</span>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">July 14, 2026</span>
+                        <span class="blog-read">5 min read</span>
+                    </div>
+                    <h3>Global Markets Rally as Fed Signals Rate Stability</h3>
+                    <p>Stock markets across major indices posted gains this week after the Federal Reserve indicated interest rates will remain steady through Q3, boosting investor confidence.</p>
+                    <a href="blog/article1.html" class="blog-link">Read Article <span>→</span></a>
+                </div>
+            </article>
+
+            <article class="blog-card reveal">
+                <div class="blog-thumb blog-thumb-crypto">
+                    <div class="blog-thumb-inner">
+                        <span class="blog-thumb-icon">₿</span>
+                        <span class="blog-thumb-label">Crypto Pulse</span>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">July 12, 2026</span>
+                        <span class="blog-read">4 min read</span>
+                    </div>
+                    <h3>Bitcoin Breaks Key Resistance Level Amid Institutional Inflow</h3>
+                    <p>Bitcoin surged past a critical resistance threshold as institutional adoption accelerates. Analysts weigh in on what this means for the next leg of the bull market.</p>
+                    <a href="blog/article2.html" class="blog-link">Read Article <span>→</span></a>
+                </div>
+            </article>
+
+            <article class="blog-card reveal">
+                <div class="blog-thumb blog-thumb-economy">
+                    <div class="blog-thumb-inner">
+                        <span class="blog-thumb-icon">💹</span>
+                        <span class="blog-thumb-label">Economy</span>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span class="blog-date">July 10, 2026</span>
+                        <span class="blog-read">6 min read</span>
+                    </div>
+                    <h3>Emerging Market Bonds Offer Attractive Yields for 2026</h3>
+                    <p>With developed market yields compressing, emerging market fixed income is gaining attention. Here’s what you need to know before allocating capital.</p>
+                    <a href="blog/article3.html" class="blog-link">Read Article <span>→</span></a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header reveal">
+            <div class="section-tag">About Us</div>
+            <h2 class="section-title">Who We <span class="gradient-text">Are</span></h2>
+        </div>
+        <div class="about-section reveal">
+            <p>School of Financial Fitness is dedicated to empowering individuals with the knowledge and skills needed to navigate the complex world of finance. From cryptocurrency to traditional investing, our courses are designed to provide practical, actionable education that transforms lives.</p>
+            <p>Our mission is to make financial literacy accessible to everyone, regardless of their background or experience level. We believe that everyone deserves the opportunity to build wealth and achieve financial freedom.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header reveal">
+            <div class="section-tag">Get In Touch</div>
+            <h2 class="section-title">Contact <span class="gradient-text">Us</span></h2>
+            <p class="section-subtitle">Have questions? Reach out to us directly.</p>
+        </div>
+        <div class="contact-info reveal">
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div class="contact-details">
+                    <h4>Address</h4>
+                    <p>m1 Railway Rd, Cunupia</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div class="contact-details">
+                    <h4>Phone</h4>
+                    <p>(868) 799-5473</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">💬</div>
+                <div class="contact-details">
+                    <h4>WhatsApp</h4>
+                    <p>18687995473</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" class="cta-section">
+        <div class="cta-box reveal">
+            <div class="cta-content">
+                <h2>Ready to Transform Your<br><span class="gradient-text">Financial Future?</span></h2>
+                <p>Join thousands of students who are already building wealth with School of Financial Fitness. Start your journey today.</p>
+                <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I%20am%20ready%20to%20start%20learning!" class="btn-primary" target="_blank" rel="noopener">
+                    Start Learning Now
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+            <div class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="b1" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#00f0ff" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#00f0ff" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b2" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#ff00e5" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#ff00e5" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b3" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#ffe600" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#ffe600" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b4" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#7b2fff" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#7b2fff" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <linearGradient id="b5" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                            <stop stop-color="#ff6b35" stop-opacity="0.95"/>
+                            <stop offset="1" stop-color="#ff6b35" stop-opacity="0.4"/>
+                        </linearGradient>
+                        <filter id="barShadow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
+                        </filter>
+                    </defs>
+                    <g filter="url(#barShadow)">
+                        <rect x="12" y="56" width="13" height="22" rx="3" fill="url(#b1)"/>
+                        <rect x="29" y="38" width="13" height="40" rx="3" fill="url(#b2)"/>
+                        <rect x="46" y="46" width="13" height="32" rx="3" fill="url(#b3)"/>
+                        <rect x="63" y="26" width="13" height="52" rx="3" fill="url(#b4)"/>
+                        <rect x="80" y="34" width="13" height="44" rx="3" fill="url(#b5)"/>
+                    </g>
+                    <path d="M10 82H90" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+            </div>
+            <span>School of <span class="accent">Financial Fitness</span></span>
+            </div>
+                <p>Empowering individuals to take control of their financial future through education, community, and technology.</p>
+            </div>
+            <span>School of <span class="accent">Financial Fitness</span></span>
+            </div>
+                <p>Empowering individuals to take control of their financial future through education, community, and technology.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Courses</h4>
+                <ul>
+                    <li><a href="#courses">Cryptocurrency Fundamentals</a></li>
+                    <li><a href="#courses">Day Trading Mastery</a></li>
+                    <li><a href="#courses">Complete Financial Literacy</a></li>
+                    <li><a href="#courses">Stock Market Investing 101</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 School of Financial Fitness. All rights reserved.</span>
+            <span>Built with 💪 for financial freedom</span>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I%20have%20a%20question" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            Chat on WhatsApp
+        </a>
+    </div>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 30;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 30;
+        });
+
+        function animateOrbs() {
+            currentX += (mouseX - currentX) * 0.05;
+            currentY += (mouseY - currentY) * 0.05;
+
+            const orb1 = document.querySelector('.orb-1');
+            const orb2 = document.querySelector('.orb-2');
+            const orb3 = document.querySelector('.orb-3');
+
+            if (orb1) orb1.style.transform = `translate(${currentX}px, ${currentY}px)`;
+            if (orb2) orb2.style.transform = `translate(${-currentX}px, ${-currentY}px)`;
+            if (orb3) orb3.style.transform = `translate(calc(-50% + ${currentX * 0.5}px), calc(-50% + ${currentY * 0.5}px))`;
+
+            requestAnimationFrame(animateOrbs);
+        }
+
+        animateOrbs();
+    </script>
+</body>
+</html>
