@@ -25,6 +25,9 @@
             --accent-cyan: #00f0ff;
             --accent-magenta: #ff00e5;
             --accent-green: #00ff9d;
+            --accent-red: #ff3b3b;
+            --accent-yellow: #ffd700;
+            --accent-orange: #ff6b35;
             --gradient-1: linear-gradient(135deg, #00f0ff 0%, #7b2fff 100%);
             --glow-cyan: 0 0 40px rgba(0, 240, 255, 0.3);
         }
@@ -35,6 +38,9 @@
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1, h2, h3, .logo, .section-title, .hero h1, .cta-box h2 {
@@ -67,40 +73,62 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: var(--accent-cyan);
+            background-color: var(--accent-cyan);
             top: -100px;
             right: -100px;
-            animation: float 20s ease-in-out infinite;
+            box-shadow: 0 0 90px rgba(0, 240, 255, 0.45), 0 0 180px rgba(0, 240, 255, 0.2);
+            animation: orbPulse1 18s ease-in-out infinite;
         }
 
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: var(--accent-magenta);
+            background-color: var(--accent-magenta);
             bottom: -50px;
             left: -50px;
-            animation: float 25s ease-in-out infinite reverse;
+            box-shadow: 0 0 75px rgba(255, 0, 229, 0.45), 0 0 150px rgba(255, 0, 229, 0.2);
+            animation: orbPulse2 18s ease-in-out infinite;
         }
 
         .orb-3 {
             width: 250px;
             height: 250px;
-            background: var(--accent-green);
+            background-color: var(--accent-green);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            animation: pulse 15s ease-in-out infinite;
+            box-shadow: 0 0 60px rgba(0, 255, 157, 0.45), 0 0 120px rgba(0, 255, 157, 0.2);
+            animation: orbPulse3 18s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.05); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
+        @keyframes orbPulse1 {
+            0% { opacity: 0.4; transform: scale(1); background-color: #00f0ff; box-shadow: 0 0 90px rgba(0, 240, 255, 0.45), 0 0 180px rgba(0, 240, 255, 0.2); }
+            16% { opacity: 0.55; transform: scale(1.08); background-color: #ff00e5; box-shadow: 0 0 90px rgba(255, 0, 229, 0.45), 0 0 180px rgba(255, 0, 229, 0.2); }
+            33% { opacity: 0.5; transform: scale(1.12); background-color: #00ff9d; box-shadow: 0 0 90px rgba(0, 255, 157, 0.45), 0 0 180px rgba(0, 255, 157, 0.2); }
+            50% { opacity: 0.55; transform: scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 90px rgba(255, 59, 59, 0.45), 0 0 180px rgba(255, 59, 59, 0.2); }
+            66% { opacity: 0.5; transform: scale(1.12); background-color: #ffd700; box-shadow: 0 0 90px rgba(255, 215, 0, 0.45), 0 0 180px rgba(255, 215, 0, 0.2); }
+            83% { opacity: 0.55; transform: scale(1.08); background-color: #ff6b35; box-shadow: 0 0 90px rgba(255, 107, 53, 0.45), 0 0 180px rgba(255, 107, 53, 0.2); }
+            100% { opacity: 0.4; transform: scale(1); background-color: #00f0ff; box-shadow: 0 0 90px rgba(0, 240, 255, 0.45), 0 0 180px rgba(0, 240, 255, 0.2); }
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-            50% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.1); }
+        @keyframes orbPulse2 {
+            0% { opacity: 0.4; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 75px rgba(255, 0, 229, 0.45), 0 0 150px rgba(255, 0, 229, 0.2); }
+            16% { opacity: 0.55; transform: scale(1.08); background-color: #00ff9d; box-shadow: 0 0 75px rgba(0, 255, 157, 0.45), 0 0 150px rgba(0, 255, 157, 0.2); }
+            33% { opacity: 0.5; transform: scale(1.12); background-color: #ff3b3b; box-shadow: 0 0 75px rgba(255, 59, 59, 0.45), 0 0 150px rgba(255, 59, 59, 0.2); }
+            50% { opacity: 0.55; transform: scale(1.08); background-color: #ffd700; box-shadow: 0 0 75px rgba(255, 215, 0, 0.45), 0 0 150px rgba(255, 215, 0, 0.2); }
+            66% { opacity: 0.5; transform: scale(1.12); background-color: #ff6b35; box-shadow: 0 0 75px rgba(255, 107, 53, 0.45), 0 0 150px rgba(255, 107, 53, 0.2); }
+            83% { opacity: 0.55; transform: scale(1.08); background-color: #00f0ff; box-shadow: 0 0 75px rgba(0, 240, 255, 0.45), 0 0 150px rgba(0, 240, 255, 0.2); }
+            100% { opacity: 0.4; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 75px rgba(255, 0, 229, 0.45), 0 0 150px rgba(255, 0, 229, 0.2); }
+        }
+
+        @keyframes orbPulse3 {
+            0% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); background-color: #00ff9d; box-shadow: 0 0 60px rgba(0, 255, 157, 0.45), 0 0 120px rgba(0, 255, 157, 0.2); }
+            16% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 60px rgba(255, 59, 59, 0.45), 0 0 120px rgba(255, 59, 59, 0.2); }
+            33% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.12); background-color: #ffd700; box-shadow: 0 0 60px rgba(255, 215, 0, 0.45), 0 0 120px rgba(255, 215, 0, 0.2); }
+            50% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff6b35; box-shadow: 0 0 60px rgba(255, 107, 53, 0.45), 0 0 120px rgba(255, 107, 53, 0.2); }
+            66% { opacity: 0.5; transform: translate(-50%, -50%) scale(1.12); background-color: #00f0ff; box-shadow: 0 0 60px rgba(0, 240, 255, 0.45), 0 0 120px rgba(0, 240, 255, 0.2); }
+            83% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff00e5; box-shadow: 0 0 60px rgba(255, 0, 229, 0.45), 0 0 120px rgba(255, 0, 229, 0.2); }
+            100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); background-color: #00ff9d; box-shadow: 0 0 60px rgba(0, 255, 157, 0.45), 0 0 120px rgba(0, 255, 157, 0.2); }
         }
 
         @keyframes logoPulse {
@@ -146,9 +174,12 @@
             animation: logoPulse 3s ease-in-out infinite;
         }
 
-        .logo-icon svg {
+        .logo-icon img {
             width: 54px;
             height: 54px;
+            mix-blend-mode: luminosity;
+            object-fit: contain;
+            filter: drop-shadow(0 0 1px rgba(0,0,0,0.6));
         }
 
         .logo .accent {
@@ -487,8 +518,8 @@
             right: 0;
             bottom: 0;
             background:
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 240, 255, 0.03) 2px, rgba(0, 240, 255, 0.03) 4px),
-                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 240, 255, 0.03) 2px, rgba(0, 240, 255, 0.03) 4px);
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(123, 47, 255, 0.08) 2px, rgba(123, 47, 255, 0.08) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(123, 47, 255, 0.08) 2px, rgba(123, 47, 255, 0.08) 4px);
             z-index: 1;
         }
 
@@ -499,7 +530,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent 0deg, rgba(0, 240, 255, 0.1) 60deg, transparent 120deg);
+            background: conic-gradient(from 0deg, transparent 0deg, rgba(123, 47, 255, 0.35) 60deg, transparent 120deg);
             animation: thumbRotate 10s linear infinite;
             z-index: 0;
         }
@@ -936,6 +967,7 @@
             padding: 80px 40px 40px;
             border-top: 1px solid var(--border);
             z-index: 1;
+            margin-top: auto;
         }
 
         .footer-content {
@@ -1109,41 +1141,7 @@
     <nav>
         <div class="logo">
             <div class="logo-icon">
-                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="b1" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                            <stop stop-color="#00f0ff" stop-opacity="0.95"/>
-                            <stop offset="1" stop-color="#00f0ff" stop-opacity="0.4"/>
-                        </linearGradient>
-                        <linearGradient id="b2" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                            <stop stop-color="#ff00e5" stop-opacity="0.95"/>
-                            <stop offset="1" stop-color="#ff00e5" stop-opacity="0.4"/>
-                        </linearGradient>
-                        <linearGradient id="b3" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                            <stop stop-color="#ffe600" stop-opacity="0.95"/>
-                            <stop offset="1" stop-color="#ffe600" stop-opacity="0.4"/>
-                        </linearGradient>
-                        <linearGradient id="b4" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                            <stop stop-color="#7b2fff" stop-opacity="0.95"/>
-                            <stop offset="1" stop-color="#7b2fff" stop-opacity="0.4"/>
-                        </linearGradient>
-                        <linearGradient id="b5" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                            <stop stop-color="#ff6b35" stop-opacity="0.95"/>
-                            <stop offset="1" stop-color="#ff6b35" stop-opacity="0.4"/>
-                        </linearGradient>
-                        <filter id="barShadow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
-                        </filter>
-                    </defs>
-                    <g filter="url(#barShadow)">
-                        <rect x="10" y="46" width="11" height="18" rx="3" fill="url(#b1)"/>
-                        <rect x="24" y="31" width="11" height="33" rx="3" fill="url(#b2)"/>
-                        <rect x="38" y="38" width="11" height="26" rx="3" fill="url(#b3)"/>
-                        <rect x="52" y="21" width="11" height="43" rx="3" fill="url(#b4)"/>
-                        <rect x="66" y="28" width="11" height="36" rx="3" fill="url(#b5)"/>
-                    </g>
-                    <path d="M8 68H75" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                </svg>
+                <img src="FINFIT LOGO.png" alt="School of Financial Fitness Logo">
             </div>
                 <span>School of <span class="accent">Financial Fitness</span></span>
                 <span style="display:inline-flex;align-items:center;gap:6px;margin-left:10px;">
@@ -1534,41 +1532,7 @@
             <div class="footer-brand">
                 <div class="logo">
                     <div class="logo-icon">
-                        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="b1" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                                    <stop stop-color="#00f0ff" stop-opacity="0.95"/>
-                                    <stop offset="1" stop-color="#00f0ff" stop-opacity="0.4"/>
-                                </linearGradient>
-                                <linearGradient id="b2" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                                    <stop stop-color="#ff00e5" stop-opacity="0.95"/>
-                                    <stop offset="1" stop-color="#ff00e5" stop-opacity="0.4"/>
-                                </linearGradient>
-                                <linearGradient id="b3" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                                    <stop stop-color="#ffe600" stop-opacity="0.95"/>
-                                    <stop offset="1" stop-color="#ffe600" stop-opacity="0.4"/>
-                                </linearGradient>
-                                <linearGradient id="b4" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                                    <stop stop-color="#7b2fff" stop-opacity="0.95"/>
-                                    <stop offset="1" stop-color="#7b2fff" stop-opacity="0.4"/>
-                                </linearGradient>
-                                <linearGradient id="b5" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-                                    <stop stop-color="#ff6b35" stop-opacity="0.95"/>
-                                    <stop offset="1" stop-color="#ff6b35" stop-opacity="0.4"/>
-                                </linearGradient>
-                                <filter id="barShadow" x="-20%" y="-20%" width="140%" height="140%">
-                                    <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.5"/>
-                                </filter>
-                            </defs>
-                            <g filter="url(#barShadow)">
-                                <rect x="10" y="46" width="11" height="18" rx="3" fill="url(#b1)"/>
-                                <rect x="24" y="31" width="11" height="33" rx="3" fill="url(#b2)"/>
-                                <rect x="38" y="38" width="11" height="26" rx="3" fill="url(#b3)"/>
-                                <rect x="52" y="21" width="11" height="43" rx="3" fill="url(#b4)"/>
-                                <rect x="66" y="28" width="11" height="36" rx="3" fill="url(#b5)"/>
-                            </g>
-                            <path d="M8 68H75" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-                        </svg>
+                        <img src="FINFIT LOGO.png" alt="School of Financial Fitness Logo">
                     </div>
                 <span>School of <span class="accent">Financial Fitness</span></span>
                 <span style="display:inline-flex;align-items:center;gap:6px;margin-left:10px;">
