@@ -234,6 +234,10 @@
             text-decoration: none;
         }
 
+        .nav-cta-mobile {
+            display: none;
+        }
+
         .nav-cta:hover {
             transform: translateY(-2px);
             box-shadow: var(--glow-cyan);
@@ -1074,8 +1078,78 @@
                 padding: 16px 20px;
             }
 
+            .nav-toggle {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 5px;
+                z-index: 1001;
+            }
+
+            .nav-toggle span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: #fff;
+                transition: all 0.3s;
+            }
+
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 15, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 16px 0;
+                font-size: 16px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-cta-mobile {
+                display: block !important;
+                margin: 20px 20px 30px;
+                text-align: center;
             }
 
             .hero {
@@ -1153,6 +1227,11 @@
                     <span style="font-size:13px;font-weight:700;color:#fff;letter-spacing:1px;">TT</span>
                 </span>
         </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <ul class="nav-links">
             <li><a href="#courses">Courses</a></li>
             <li><a href="#blog">Blog</a></li>
@@ -1160,6 +1239,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <a href="https://wa.me/18687995473" class="nav-cta" target="_blank" rel="noopener">Get Started</a>
+        <a href="https://wa.me/18687995473" class="nav-cta nav-cta-mobile" target="_blank" rel="noopener">Get Started</a>
     </nav>
 
     <section class="hero">
@@ -1641,6 +1721,23 @@
         }
 
         animateOrbs();
+
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
     </script>
 </body>
 </html>
