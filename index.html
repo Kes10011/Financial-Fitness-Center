@@ -186,6 +186,10 @@
             text-shadow: 0 0 18px rgba(0, 255, 157, 0.45);
         }
 
+        .nav-toggle {
+            display: none;
+        }
+
         .nav-links {
             display: flex;
             gap: 32px;
@@ -213,11 +217,13 @@
             width: 0;
             height: 2px;
             background: #000;
-            transition: width 0.3s;
+            transition: width 0.3s, opacity 0.3s;
+            opacity: 0;
         }
 
         .nav-links a:hover::after {
             width: 100%;
+            opacity: 1;
         }
 
         .nav-cta {
@@ -1089,7 +1095,7 @@
                 display: block;
                 width: 24px;
                 height: 2px;
-                background: #fff;
+                background: var(--text-secondary);
                 transition: all 0.3s;
             }
 
