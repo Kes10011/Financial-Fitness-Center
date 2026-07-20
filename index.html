@@ -77,7 +77,7 @@
             background-color: var(--accent-cyan);
             top: -100px;
             right: -100px;
-            box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), 0 0 60px rgba(0, 240, 255, 0.06);
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.35), 0 0 120px rgba(0, 240, 255, 0.15);
             animation: orbPulse1 18s ease-in-out infinite;
         }
 
@@ -87,7 +87,7 @@
             background-color: var(--accent-magenta);
             bottom: -50px;
             left: -50px;
-            box-shadow: 0 0 25px rgba(255, 0, 229, 0.15), 0 0 50px rgba(255, 0, 229, 0.06);
+            box-shadow: 0 0 50px rgba(255, 0, 229, 0.35), 0 0 100px rgba(255, 0, 229, 0.15);
             animation: orbPulse2 18s ease-in-out infinite;
         }
 
@@ -98,38 +98,38 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.15), 0 0 40px rgba(0, 255, 157, 0.06);
+            box-shadow: 0 0 40px rgba(0, 255, 157, 0.35), 0 0 80px rgba(0, 255, 157, 0.15);
             animation: orbPulse3 18s ease-in-out infinite;
         }
 
         @keyframes orbPulse1 {
-            0% { opacity: 0.18; transform: scale(1); background-color: #00ff9d; box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), 0 0 60px rgba(0, 240, 255, 0.06); }
-            16% { opacity: 0.24; transform: scale(1.08); background-color: #ff00e5; box-shadow: 0 0 30px rgba(255, 0, 229, 0.15), 0 0 60px rgba(255, 0, 229, 0.06); }
-            33% { opacity: 0.2; transform: scale(1.12); background-color: #00ff9d; box-shadow: 0 0 30px rgba(0, 255, 157, 0.15), 0 0 60px rgba(0, 255, 157, 0.06); }
-            50% { opacity: 0.24; transform: scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 30px rgba(255, 59, 59, 0.15), 0 0 60px rgba(255, 59, 59, 0.06); }
-            66% { opacity: 0.2; transform: scale(1.12); background-color: #ffd700; box-shadow: 0 0 30px rgba(255, 215, 0, 0.15), 0 0 60px rgba(255, 215, 0, 0.06); }
-            83% { opacity: 0.24; transform: scale(1.08); background-color: #ff6b35; box-shadow: 0 0 30px rgba(255, 107, 53, 0.15), 0 0 60px rgba(255, 107, 53, 0.06); }
-            100% { opacity: 0.18; transform: scale(1); background-color: #00ff9d; box-shadow: 0 0 30px rgba(0, 240, 255, 0.15), 0 0 60px rgba(0, 240, 255, 0.06); }
+            0% { opacity: 0.4; transform: scale(1); background-color: #00ff9d; box-shadow: 0 0 30px rgba(0, 240, 255, 0.35), 0 0 60px rgba(0, 240, 255, 0.15); }
+            16% { opacity: 0.55; transform: scale(1.08); background-color: #ff00e5; box-shadow: 0 0 30px rgba(255, 0, 229, 0.35), 0 0 60px rgba(255, 0, 229, 0.15); }
+            33% { opacity: 0.45; transform: scale(1.12); background-color: #00ff9d; box-shadow: 0 0 30px rgba(0, 255, 157, 0.35), 0 0 60px rgba(0, 255, 157, 0.15); }
+            50% { opacity: 0.55; transform: scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 30px rgba(255, 59, 59, 0.35), 0 0 60px rgba(255, 59, 59, 0.15); }
+            66% { opacity: 0.45; transform: scale(1.12); background-color: #ffd700; box-shadow: 0 0 30px rgba(255, 215, 0, 0.35), 0 0 60px rgba(255, 215, 0, 0.15); }
+            83% { opacity: 0.55; transform: scale(1.08); background-color: #ff6b35; box-shadow: 0 0 30px rgba(255, 107, 53, 0.35), 0 0 60px rgba(255, 107, 53, 0.15); }
+            100% { opacity: 0.4; transform: scale(1); background-color: #00ff9d; box-shadow: 0 0 30px rgba(0, 240, 255, 0.35), 0 0 60px rgba(0, 240, 255, 0.15); }
         }
 
         @keyframes orbPulse2 {
-            0% { opacity: 0.18; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 25px rgba(255, 0, 229, 0.15), 0 0 50px rgba(255, 0, 229, 0.06); }
-            16% { opacity: 0.24; transform: scale(1.08); background-color: #00ff9d; box-shadow: 0 0 25px rgba(0, 255, 157, 0.15), 0 0 50px rgba(0, 255, 157, 0.06); }
-            33% { opacity: 0.2; transform: scale(1.12); background-color: #ff3b3b; box-shadow: 0 0 25px rgba(255, 59, 59, 0.15), 0 0 50px rgba(255, 59, 59, 0.06); }
-            50% { opacity: 0.24; transform: scale(1.08); background-color: #ffd700; box-shadow: 0 0 25px rgba(255, 215, 0, 0.15), 0 0 50px rgba(255, 215, 0, 0.06); }
-            66% { opacity: 0.2; transform: scale(1.12); background-color: #ff6b35; box-shadow: 0 0 25px rgba(255, 107, 53, 0.15), 0 0 50px rgba(255, 107, 53, 0.06); }
-            83% { opacity: 0.24; transform: scale(1.08); background-color: #00ff9d; box-shadow: 0 0 25px rgba(0, 240, 255, 0.15), 0 0 50px rgba(0, 240, 255, 0.06); }
-            100% { opacity: 0.18; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 25px rgba(255, 0, 229, 0.15), 0 0 50px rgba(255, 0, 229, 0.06); }
+            0% { opacity: 0.4; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 25px rgba(255, 0, 229, 0.35), 0 0 50px rgba(255, 0, 229, 0.15); }
+            16% { opacity: 0.55; transform: scale(1.08); background-color: #00ff9d; box-shadow: 0 0 25px rgba(0, 255, 157, 0.35), 0 0 50px rgba(0, 255, 157, 0.15); }
+            33% { opacity: 0.45; transform: scale(1.12); background-color: #ff3b3b; box-shadow: 0 0 25px rgba(255, 59, 59, 0.35), 0 0 50px rgba(255, 59, 59, 0.15); }
+            50% { opacity: 0.55; transform: scale(1.08); background-color: #ffd700; box-shadow: 0 0 25px rgba(255, 215, 0, 0.35), 0 0 50px rgba(255, 215, 0, 0.15); }
+            66% { opacity: 0.45; transform: scale(1.12); background-color: #ff6b35; box-shadow: 0 0 25px rgba(255, 107, 53, 0.35), 0 0 50px rgba(255, 107, 53, 0.15); }
+            83% { opacity: 0.55; transform: scale(1.08); background-color: #00ff9d; box-shadow: 0 0 25px rgba(0, 240, 255, 0.35), 0 0 50px rgba(0, 240, 255, 0.15); }
+            100% { opacity: 0.4; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 25px rgba(255, 0, 229, 0.35), 0 0 50px rgba(255, 0, 229, 0.15); }
         }
 
         @keyframes orbPulse3 {
-            0% { opacity: 0.18; transform: translate(-50%, -50%) scale(1); background-color: #00ff9d; box-shadow: 0 0 20px rgba(0, 255, 157, 0.15), 0 0 40px rgba(0, 255, 157, 0.06); }
-            16% { opacity: 0.24; transform: translate(-50%, -50%) scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 20px rgba(255, 59, 59, 0.15), 0 0 40px rgba(255, 59, 59, 0.06); }
-            33% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.12); background-color: #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.15), 0 0 40px rgba(255, 215, 0, 0.06); }
-            50% { opacity: 0.24; transform: translate(-50%, -50%) scale(1.08); background-color: #ff6b35; box-shadow: 0 0 20px rgba(255, 107, 53, 0.15), 0 0 40px rgba(255, 107, 53, 0.06); }
-            66% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.12); background-color: #00ff9d; box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), 0 0 40px rgba(0, 240, 255, 0.06); }
-            83% { opacity: 0.24; transform: translate(-50%, -50%) scale(1.08); background-color: #ff00e5; box-shadow: 0 0 20px rgba(255, 0, 229, 0.15), 0 0 40px rgba(255, 0, 229, 0.06); }
-            100% { opacity: 0.18; transform: translate(-50%, -50%) scale(1); background-color: #00ff9d; box-shadow: 0 0 20px rgba(0, 255, 157, 0.15), 0 0 40px rgba(0, 255, 157, 0.06); }
+            0% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); background-color: #00ff9d; box-shadow: 0 0 20px rgba(0, 255, 157, 0.35), 0 0 40px rgba(0, 255, 157, 0.15); }
+            16% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 20px rgba(255, 59, 59, 0.35), 0 0 40px rgba(255, 59, 59, 0.15); }
+            33% { opacity: 0.45; transform: translate(-50%, -50%) scale(1.12); background-color: #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.35), 0 0 40px rgba(255, 215, 0, 0.15); }
+            50% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff6b35; box-shadow: 0 0 20px rgba(255, 107, 53, 0.35), 0 0 40px rgba(255, 107, 53, 0.15); }
+            66% { opacity: 0.45; transform: translate(-50%, -50%) scale(1.12); background-color: #00ff9d; box-shadow: 0 0 20px rgba(0, 240, 255, 0.35), 0 0 40px rgba(0, 240, 255, 0.15); }
+            83% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff00e5; box-shadow: 0 0 20px rgba(255, 0, 229, 0.35), 0 0 40px rgba(255, 0, 229, 0.15); }
+            100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); background-color: #00ff9d; box-shadow: 0 0 20px rgba(0, 255, 157, 0.35), 0 0 40px rgba(0, 255, 157, 0.15); }
         }
 
         @keyframes logoPulse {
