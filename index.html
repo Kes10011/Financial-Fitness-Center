@@ -323,14 +323,35 @@
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .hero-success-img {
+        .hero-slideshow {
+            position: relative;
             display: block;
             margin: 0 auto 40px;
             max-width: 100%;
             height: auto;
+        }
+
+        .hero-slide {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
             border-radius: 20px;
-            animation: fadeInUp 0.8s ease-out 0.5s both, glowShift 6s linear infinite;
             box-shadow: 0 0 30px var(--accent-green);
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 1s ease-in-out;
+            animation: glowShift 6s linear infinite;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+            position: relative;
+            left: 0;
+            transform: none;
         }
 
         .hero-buttons {
@@ -1304,7 +1325,11 @@
             </div>
             <h1>School of<br><span style="color: #D4AF37;">Financial Fitness</span></h1>
             <p>Transform your financial future with cutting-edge courses in cryptocurrency, trading, and wealth building. Learn from experts, master the markets.</p>
-            <img src="Success.jpg" alt="Success" class="hero-success-img">
+            <div class="hero-slideshow">
+                <img src="Success.jpg" alt="Success" class="hero-slide active">
+                <img src="WhatsApp Image 2026-09-11 at 9.58.26 PM.jpeg" alt="Success" class="hero-slide">
+                <img src="WhatsApp Image 2026-09-11 at 10.04.32 PM.jpeg" alt="Success" class="hero-slide">
+            </div>
             <div class="hero-buttons">
                 <a href="#courses" class="btn-primary">
                     Explore Courses
@@ -1793,6 +1818,19 @@
                 });
             });
         }
+    // Hero slideshow auto-rotate
+    (function() {
+        const slides = document.querySelectorAll('.hero-slide');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 4000);
+    })();
     </script>
 </body>
 </html>
