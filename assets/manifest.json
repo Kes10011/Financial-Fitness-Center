@@ -1,0 +1,352 @@
+[
+  {
+    "name": "piggy-bank",
+    "file": "icons/piggy-bank.svg",
+    "tags": [
+      "savings",
+      "piggy bank",
+      "save money",
+      "budgeting"
+    ],
+    "description": "Piggy bank \u2014 savings & budgeting"
+  },
+  {
+    "name": "dumbbell-coin",
+    "file": "icons/dumbbell-coin.svg",
+    "tags": [
+      "financial fitness",
+      "dumbbell",
+      "coin",
+      "strength",
+      "money muscle",
+      "gamified"
+    ],
+    "description": "Dumbbell + coin \u2014 the \"financial fitness\" signature mark"
+  },
+  {
+    "name": "growth-chart",
+    "file": "icons/growth-chart.svg",
+    "tags": [
+      "growth",
+      "chart",
+      "investing",
+      "trend",
+      "progress"
+    ],
+    "description": "Upward trend line \u2014 growth & investing"
+  },
+  {
+    "name": "coin-stack",
+    "file": "icons/coin-stack.svg",
+    "tags": [
+      "money",
+      "coins",
+      "currency",
+      "wealth",
+      "savings"
+    ],
+    "description": "Stack of coins \u2014 money & wealth"
+  },
+  {
+    "name": "wallet",
+    "file": "icons/wallet.svg",
+    "tags": [
+      "wallet",
+      "spending",
+      "cash",
+      "budget"
+    ],
+    "description": "Wallet \u2014 spending & cash flow"
+  },
+  {
+    "name": "credit-card",
+    "file": "icons/credit-card.svg",
+    "tags": [
+      "credit card",
+      "banking",
+      "payments",
+      "debt"
+    ],
+    "description": "Credit card \u2014 payments & banking"
+  },
+  {
+    "name": "target-goal",
+    "file": "icons/target-goal.svg",
+    "tags": [
+      "goal",
+      "target",
+      "objective",
+      "milestone"
+    ],
+    "description": "Bullseye \u2014 financial goals"
+  },
+  {
+    "name": "trophy",
+    "file": "icons/trophy.svg",
+    "tags": [
+      "trophy",
+      "achievement",
+      "winner",
+      "reward",
+      "leaderboard"
+    ],
+    "description": "Trophy \u2014 achievements & wins"
+  },
+  {
+    "name": "badge-star",
+    "file": "icons/badge-star.svg",
+    "tags": [
+      "badge",
+      "star",
+      "achievement",
+      "milestone",
+      "gamification"
+    ],
+    "description": "Star badge \u2014 earned achievement"
+  },
+  {
+    "name": "flame-streak",
+    "file": "icons/flame-streak.svg",
+    "tags": [
+      "streak",
+      "flame",
+      "fire",
+      "daily streak",
+      "momentum",
+      "gamification"
+    ],
+    "description": "Flame \u2014 daily streak & momentum"
+  },
+  {
+    "name": "level-up-chevrons",
+    "file": "icons/level-up-chevrons.svg",
+    "tags": [
+      "level up",
+      "progress",
+      "gamification",
+      "rank up"
+    ],
+    "description": "Double chevron \u2014 level up"
+  },
+  {
+    "name": "xp-bolt",
+    "file": "icons/xp-bolt.svg",
+    "tags": [
+      "xp",
+      "energy",
+      "bolt",
+      "power",
+      "gamification"
+    ],
+    "description": "Lightning bolt \u2014 XP & momentum"
+  },
+  {
+    "name": "quiz-bubble",
+    "file": "icons/quiz-bubble.svg",
+    "tags": [
+      "quiz",
+      "question",
+      "learning",
+      "lesson",
+      "assessment"
+    ],
+    "description": "Question bubble \u2014 quizzes & lessons"
+  },
+  {
+    "name": "calculator",
+    "file": "icons/calculator.svg",
+    "tags": [
+      "calculator",
+      "math",
+      "budgeting tool",
+      "numbers"
+    ],
+    "description": "Calculator \u2014 budgeting math"
+  },
+  {
+    "name": "budget-calendar",
+    "file": "icons/budget-calendar.svg",
+    "tags": [
+      "calendar",
+      "budget planning",
+      "schedule",
+      "due date"
+    ],
+    "description": "Calendar with coin \u2014 budget planning"
+  },
+  {
+    "name": "compass-direction",
+    "file": "icons/compass-direction.svg",
+    "tags": [
+      "compass",
+      "direction",
+      "financial plan",
+      "strategy"
+    ],
+    "description": "Compass \u2014 financial direction & strategy"
+  },
+  {
+    "name": "shield-lock",
+    "file": "icons/shield-lock.svg",
+    "tags": [
+      "security",
+      "protection",
+      "insurance",
+      "safety",
+      "lock"
+    ],
+    "description": "Shield with lock \u2014 protection & security"
+  },
+  {
+    "name": "rocket-launch",
+    "file": "icons/rocket-launch.svg",
+    "tags": [
+      "rocket",
+      "growth",
+      "launch",
+      "boost",
+      "ambition"
+    ],
+    "description": "Rocket \u2014 growth & momentum"
+  },
+  {
+    "name": "roadmap-flag",
+    "file": "icons/roadmap-flag.svg",
+    "tags": [
+      "roadmap",
+      "plan",
+      "journey",
+      "path",
+      "milestones"
+    ],
+    "description": "Winding path with flag \u2014 financial roadmap"
+  },
+  {
+    "name": "checklist-task",
+    "file": "icons/checklist-task.svg",
+    "tags": [
+      "checklist",
+      "task",
+      "to-do",
+      "steps",
+      "curriculum"
+    ],
+    "description": "Checklist \u2014 tasks & curriculum steps"
+  },
+  {
+    "name": "gift-reward",
+    "file": "icons/gift-reward.svg",
+    "tags": [
+      "gift",
+      "reward",
+      "prize",
+      "bonus",
+      "unlock"
+    ],
+    "description": "Gift box \u2014 rewards & unlocks"
+  },
+  {
+    "name": "pie-chart",
+    "file": "icons/pie-chart.svg",
+    "tags": [
+      "pie chart",
+      "allocation",
+      "portfolio",
+      "budget split"
+    ],
+    "description": "Pie chart \u2014 portfolio allocation"
+  },
+  {
+    "name": "receipt-invoice",
+    "file": "icons/receipt-invoice.svg",
+    "tags": [
+      "receipt",
+      "invoice",
+      "expenses",
+      "tracking"
+    ],
+    "description": "Receipt \u2014 expense tracking"
+  },
+  {
+    "name": "book-education",
+    "file": "icons/book-education.svg",
+    "tags": [
+      "book",
+      "education",
+      "curriculum",
+      "course",
+      "learning"
+    ],
+    "description": "Open book \u2014 courses & curriculum"
+  },
+  {
+    "name": "lightbulb-idea",
+    "file": "icons/lightbulb-idea.svg",
+    "tags": [
+      "idea",
+      "tip",
+      "insight",
+      "lightbulb",
+      "smart money"
+    ],
+    "description": "Lightbulb \u2014 money tips & insights"
+  },
+  {
+    "name": "plant-growth",
+    "file": "icons/plant-growth.svg",
+    "tags": [
+      "growth",
+      "compound interest",
+      "plant",
+      "invest early",
+      "seedling"
+    ],
+    "description": "Sprouting plant \u2014 compound growth"
+  },
+  {
+    "name": "scale-balance",
+    "file": "icons/scale-balance.svg",
+    "tags": [
+      "balance",
+      "budget",
+      "equilibrium",
+      "trade-offs"
+    ],
+    "description": "Balance scale \u2014 budgeting trade-offs"
+  },
+  {
+    "name": "gauge-score",
+    "file": "icons/gauge-score.svg",
+    "tags": [
+      "credit score",
+      "gauge",
+      "meter",
+      "rating",
+      "score"
+    ],
+    "description": "Gauge \u2014 credit score & ratings"
+  },
+  {
+    "name": "leaderboard-podium",
+    "file": "icons/leaderboard-podium.svg",
+    "tags": [
+      "leaderboard",
+      "podium",
+      "ranking",
+      "competition",
+      "gamification"
+    ],
+    "description": "Podium \u2014 leaderboard & ranking"
+  },
+  {
+    "name": "heartbeat-pulse",
+    "file": "icons/heartbeat-pulse.svg",
+    "tags": [
+      "financial health",
+      "pulse",
+      "wellbeing",
+      "vitals"
+    ],
+    "description": "Heartbeat in a heart \u2014 financial health"
+  }
+]

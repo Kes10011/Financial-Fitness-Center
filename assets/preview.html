@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>School of Financial Fitness — Icon Pack</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0e11;
+    --panel:#12161b;
+    --line:#232a31;
+    --text:#eef2f4;
+    --muted:#8b98a3;
+    --lime:#c3ff3d;
+    --gold:#f2b84b;
+    --mono:'JetBrains Mono', monospace;
+    --sans:'Space Grotesk', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1000px 500px at 85% -10%, rgba(195,255,61,.08), transparent 60%),
+      radial-gradient(800px 400px at 0% 0%, rgba(242,184,75,.06), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+  }
+  header{
+    padding:64px 40px 40px;
+    max-width:1180px;
+    margin:0 auto;
+    border-bottom:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    color:var(--lime);
+    font-size:13px;
+    letter-spacing:.02em;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;border-radius:2px;
+    background:var(--lime);
+    box-shadow:0 0 12px var(--lime);
+    display:inline-block;
+  }
+  h1{
+    font-size:44px;
+    line-height:1.1;
+    margin:18px 0 12px;
+    font-weight:700;
+    max-width:760px;
+  }
+  h1 span{color:var(--gold);}
+  header p{
+    color:var(--muted);
+    font-size:16px;
+    max-width:640px;
+    line-height:1.6;
+  }
+  .stats{
+    display:flex;
+    gap:36px;
+    margin-top:28px;
+    font-family:var(--mono);
+  }
+  .stats div b{
+    display:block;
+    font-size:22px;
+    color:var(--text);
+    font-family:var(--sans);
+  }
+  .stats div span{
+    font-size:12px;
+    color:var(--muted);
+  }
+  main{max-width:1180px;margin:0 auto;padding:40px;}
+  .toolbar{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+  }
+  #search{
+    flex:1;
+    min-width:220px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--text);
+    padding:12px 14px;
+    border-radius:8px;
+    font-family:var(--mono);
+    font-size:13px;
+    outline:none;
+  }
+  #search:focus{border-color:var(--lime);}
+  .size-toggle{
+    display:flex;
+    gap:6px;
+    font-family:var(--mono);
+    font-size:12px;
+  }
+  .size-toggle button{
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--muted);
+    padding:10px 14px;
+    border-radius:8px;
+    cursor:pointer;
+  }
+  .size-toggle button.active{
+    color:var(--bg);
+    background:var(--lime);
+    border-color:var(--lime);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+    gap:12px;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 14px 16px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    transition:border-color .15s ease, transform .15s ease;
+    position:relative;
+  }
+  .card:hover{
+    border-color:var(--lime);
+    transform:translateY(-2px);
+  }
+  .card svg{
+    width:32px;height:32px;
+    color:var(--text);
+    stroke-width:1.75;
+  }
+  .card:hover svg{color:var(--lime);}
+  .card .name{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    text-align:center;
+    word-break:break-word;
+  }
+  .card .copied{
+    position:absolute;
+    top:8px; right:8px;
+    font-family:var(--mono);
+    font-size:10px;
+    color:var(--bg);
+    background:var(--lime);
+    padding:3px 6px;
+    border-radius:5px;
+    opacity:0;
+    transition:opacity .15s ease;
+  }
+  .card.flash .copied{opacity:1;}
+  footer{
+    max-width:1180px;
+    margin:0 auto;
+    padding:20px 40px 60px;
+    color:var(--muted);
+    font-family:var(--mono);
+    font-size:12px;
+    border-top:1px solid var(--line);
+  }
+  code{
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:2px 6px;
+    border-radius:4px;
+    color:var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">ICON PACK / v1.0</div>
+  <h1>School of Financial <span>Fitness</span> — icon set</h1>
+  <p>30 line icons for headings, badges, lessons, and gamified progress states. One stroke width, one grid, drops into any weight class of the site — headers, cards, nav, achievement badges.</p>
+  <div class="stats">
+    <div><b>30</b><span>ICONS</span></div>
+    <div><b>24×24</b><span>GRID</span></div>
+    <div><b>1.75px</b><span>STROKE</span></div>
+    <div><b>SVG</b><span>FORMAT</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="toolbar">
+    <input id="search" type="text" placeholder="Search icons — try 'streak' or 'goal'...">
+    <div class="size-toggle">
+      <button data-size="24" class="active">24px</button>
+      <button data-size="32">32px</button>
+      <button data-size="48">48px</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  Click any icon to copy its <code>&lt;svg&gt;</code> markup. Full usage notes in <code>README.md</code>. Machine-readable index in <code>manifest.json</code>.
+</footer>
+
+<script>
+const manifest = [{"name": "piggy-bank", "inner": "<path d=\"M4 12.2c0-3.6 3.1-6.2 7.2-6.2 1.1 0 2.1.2 3 .6.6-.5 1.4-.8 2.2-.9.3 0 .5.3.4.6-.2.5-.4.9-.7 1.3A6 6 0 0 1 18 12.5c0 3.9-3.2 7-7.1 7s-6.9-3-6.9-7.3z\"/> <line x1=\"8.2\" y1=\"19.3\" x2=\"8.2\" y2=\"21\"/> <line x1=\"13.8\" y1=\"19.3\" x2=\"13.8\" y2=\"21\"/> <line x1=\"9.6\" y1=\"9.4\" x2=\"12.6\" y2=\"9.4\"/> <path d=\"M6.3 7.6 7.4 5.4l1.3 1.7\"/> <circle cx=\"8.6\" cy=\"11\" r=\".6\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["savings", "piggy bank", "save money", "budgeting"], "description": "Piggy bank \u2014 savings & budgeting"}, {"name": "dumbbell-coin", "inner": "<circle cx=\"12\" cy=\"5.4\" r=\"3.3\"/> <path d=\"M12 3.1v4.6\" stroke-width=\"1.1\"/> <path d=\"M13.3 4c-.3-.35-.85-.55-1.4-.55-.85 0-1.55.45-1.55 1.05 0 .65.7.95 1.55 1.1.85.15 1.55.45 1.55 1.1 0 .6-.7 1.05-1.55 1.05-.55 0-1.05-.2-1.4-.5\" stroke-width=\"1.1\"/> <rect x=\"2.3\" y=\"11.4\" width=\"2.6\" height=\"4.4\" rx=\".7\"/> <rect x=\"19.1\" y=\"11.4\" width=\"2.6\" height=\"4.4\" rx=\".7\"/> <rect x=\"4.9\" y=\"10.3\" width=\"2.1\" height=\"6.6\" rx=\".6\"/> <rect x=\"17\" y=\"10.3\" width=\"2.1\" height=\"6.6\" rx=\".6\"/> <line x1=\"7\" y1=\"13.6\" x2=\"17\" y2=\"13.6\"/>", "tags": ["financial fitness", "dumbbell", "coin", "strength", "money muscle", "gamified"], "description": "Dumbbell + coin \u2014 the \"financial fitness\" signature mark"}, {"name": "growth-chart", "inner": "<path d=\"M3 20.5h18\"/> <path d=\"M3 20.5V4\"/> <polyline points=\"5,16 9.5,11.5 13,13.5 20,6\"/> <polyline points=\"16,6 20,6 20,10\"/>", "tags": ["growth", "chart", "investing", "trend", "progress"], "description": "Upward trend line \u2014 growth & investing"}, {"name": "coin-stack", "inner": "<ellipse cx=\"12\" cy=\"7.2\" rx=\"7\" ry=\"2.4\"/> <path d=\"M5 7.2v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4\"/> <path d=\"M5 11.2v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4\"/>", "tags": ["money", "coins", "currency", "wealth", "savings"], "description": "Stack of coins \u2014 money & wealth"}, {"name": "wallet", "inner": "<rect x=\"2.6\" y=\"7\" width=\"18.8\" height=\"12.4\" rx=\"2\"/> <path d=\"M2.6 11h18.8\"/> <circle cx=\"17\" cy=\"15\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["wallet", "spending", "cash", "budget"], "description": "Wallet \u2014 spending & cash flow"}, {"name": "credit-card", "inner": "<rect x=\"2.5\" y=\"5.5\" width=\"19\" height=\"13\" rx=\"2.2\"/> <line x1=\"2.5\" y1=\"10\" x2=\"21.5\" y2=\"10\"/> <line x1=\"6\" y1=\"14.6\" x2=\"10.5\" y2=\"14.6\"/>", "tags": ["credit card", "banking", "payments", "debt"], "description": "Credit card \u2014 payments & banking"}, {"name": "target-goal", "inner": "<circle cx=\"12\" cy=\"12\" r=\"8.2\"/> <circle cx=\"12\" cy=\"12\" r=\"5\"/> <circle cx=\"12\" cy=\"12\" r=\"1.7\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["goal", "target", "objective", "milestone"], "description": "Bullseye \u2014 financial goals"}, {"name": "trophy", "inner": "<path d=\"M7 4h10v4.2a5 5 0 0 1-10 0z\"/> <path d=\"M7 5H4.3a1 1 0 0 0-1 1.1l.2 1.6A4 4 0 0 0 7.3 11\"/> <path d=\"M17 5h2.7a1 1 0 0 1 1 1.1l-.2 1.6A4 4 0 0 1 16.7 11\"/> <line x1=\"12\" y1=\"13\" x2=\"12\" y2=\"16.5\"/> <path d=\"M8.3 20.5h7.4\"/> <path d=\"M9.2 16.5h5.6l1 4H8.2z\"/>", "tags": ["trophy", "achievement", "winner", "reward", "leaderboard"], "description": "Trophy \u2014 achievements & wins"}, {"name": "badge-star", "inner": "<path d=\"M8.2 14.6 6.4 20l5.6-2.8 5.6 2.8-1.8-5.4\"/> <circle cx=\"12\" cy=\"9\" r=\"6\"/> <path d=\"M12 5.8 13 8l2.4.35-1.7 1.65.4 2.35L12 11.2l-2.1 1.15.4-2.35-1.7-1.65L11 8z\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["badge", "star", "achievement", "milestone", "gamification"], "description": "Star badge \u2014 earned achievement"}, {"name": "flame-streak", "inner": "<path d=\"M12 2.2c2.6 3.1 5.1 6.2 5.1 10.2a5.1 5.1 0 0 1-10.2 0c0-1.9.8-3.1 1.6-4.2.2 1 .9 1.6 1.6 1.6-.4-2 .4-4.1 1.8-5.6-.3 1.2 0 2.3.9 3 .2-1.7-.3-3.4-.8-5z\"/>", "tags": ["streak", "flame", "fire", "daily streak", "momentum", "gamification"], "description": "Flame \u2014 daily streak & momentum"}, {"name": "level-up-chevrons", "inner": "<path d=\"M6 15.2 12 9.2l6 6\"/> <path d=\"M6 20.2 12 14.2l6 6\"/>", "tags": ["level up", "progress", "gamification", "rank up"], "description": "Double chevron \u2014 level up"}, {"name": "xp-bolt", "inner": "<path d=\"M13 2.2 4.4 13.6h5.7l-1 8.2 8.5-11.4h-5.6z\"/>", "tags": ["xp", "energy", "bolt", "power", "gamification"], "description": "Lightning bolt \u2014 XP & momentum"}, {"name": "quiz-bubble", "inner": "<path d=\"M4 5.2h16a1 1 0 0 1 1 1v9.6a1 1 0 0 1-1 1H9.4L5 20.6v-3.8H4a1 1 0 0 1-1-1V6.2a1 1 0 0 1 1-1z\"/> <path d=\"M10.7 9.6a1.4 1.4 0 1 1 2.1 1.2c-.6.4-.9.7-.9 1.3\" stroke-width=\"1.5\"/> <circle cx=\"12\" cy=\"14\" r=\".2\" fill=\"currentColor\" stroke=\"none\" stroke-width=\"1.4\"/>", "tags": ["quiz", "question", "learning", "lesson", "assessment"], "description": "Question bubble \u2014 quizzes & lessons"}, {"name": "calculator", "inner": "<rect x=\"5.3\" y=\"2.6\" width=\"13.4\" height=\"18.8\" rx=\"2\"/> <rect x=\"7.4\" y=\"5\" width=\"9.2\" height=\"4\" rx=\".6\"/> <circle cx=\"8.6\" cy=\"13\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"12\" cy=\"13\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"15.4\" cy=\"13\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"8.6\" cy=\"16.2\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"12\" cy=\"16.2\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"15.4\" cy=\"16.2\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"8.6\" cy=\"19.4\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"12\" cy=\"19.4\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"15.4\" cy=\"19.4\" r=\".7\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["calculator", "math", "budgeting tool", "numbers"], "description": "Calculator \u2014 budgeting math"}, {"name": "budget-calendar", "inner": "<rect x=\"3\" y=\"4.6\" width=\"18\" height=\"16\" rx=\"2\"/> <line x1=\"3\" y1=\"9.2\" x2=\"21\" y2=\"9.2\"/> <line x1=\"7.2\" y1=\"2.6\" x2=\"7.2\" y2=\"6.6\"/> <line x1=\"16.8\" y1=\"2.6\" x2=\"16.8\" y2=\"6.6\"/> <circle cx=\"12\" cy=\"14.6\" r=\"2.1\"/> <path d=\"M12 13.4v2.4M12.7 13.8c-.2-.2-.5-.3-.8-.3-.5 0-.8.3-.8.5 0 .3.3.4.8.5.5.1.8.3.8.5 0 .3-.3.5-.8.5-.3 0-.6-.1-.8-.3\" stroke-width=\"1\"/>", "tags": ["calendar", "budget planning", "schedule", "due date"], "description": "Calendar with coin \u2014 budget planning"}, {"name": "compass-direction", "inner": "<circle cx=\"12\" cy=\"12\" r=\"9\"/> <path d=\"M15.6 8.4 13.4 13.4 8.4 15.6 10.6 10.6z\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["compass", "direction", "financial plan", "strategy"], "description": "Compass \u2014 financial direction & strategy"}, {"name": "shield-lock", "inner": "<path d=\"M12 2.6 19 5.5v6c0 5-3.5 8.2-7 9.2-3.5-1-7-4.2-7-9.2v-6z\"/> <rect x=\"9.4\" y=\"11.6\" width=\"5.2\" height=\"4.2\" rx=\"1\"/> <path d=\"M10.4 11.6v-1.5a1.6 1.6 0 0 1 3.2 0v1.5\"/>", "tags": ["security", "protection", "insurance", "safety", "lock"], "description": "Shield with lock \u2014 protection & security"}, {"name": "rocket-launch", "inner": "<path d=\"M12 2.3c2.4 2 3.8 4.9 3.8 8.6 0 1.9-.9 3.8-.9 3.8H9.1s-.9-1.9-.9-3.8c0-3.7 1.4-6.6 3.8-8.6z\"/> <circle cx=\"12\" cy=\"9.4\" r=\"1.4\" fill=\"currentColor\" stroke=\"none\"/> <path d=\"M8.2 14.7 5.4 19.4l3.8-1.4\"/> <path d=\"M15.8 14.7l2.8 4.7-3.8-1.4\"/> <path d=\"M10 18.5l.7 2.6h2.6l.7-2.6\"/>", "tags": ["rocket", "growth", "launch", "boost", "ambition"], "description": "Rocket \u2014 growth & momentum"}, {"name": "roadmap-flag", "inner": "<polyline points=\"3,19.5 8.2,13.5 13,16.3 18,7.5\" stroke-width=\"1.6\"/> <circle cx=\"3\" cy=\"19.5\" r=\"1.2\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"8.2\" cy=\"13.5\" r=\"1.2\" fill=\"currentColor\" stroke=\"none\"/> <circle cx=\"13\" cy=\"16.3\" r=\"1.2\" fill=\"currentColor\" stroke=\"none\"/> <path d=\"M18 7.5V2.3\" stroke-width=\"1.6\"/> <path d=\"M18 2.3h3.6l-1.8 2.2 1.8 2.2H18z\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["roadmap", "plan", "journey", "path", "milestones"], "description": "Winding path with flag \u2014 financial roadmap"}, {"name": "checklist-task", "inner": "<rect x=\"4\" y=\"4.4\" width=\"4\" height=\"4\" rx=\".6\"/> <path d=\"M5 6.4 5.9 7.3 7.4 5.6\"/> <line x1=\"10.2\" y1=\"6.4\" x2=\"20\" y2=\"6.4\"/> <rect x=\"4\" y=\"10.2\" width=\"4\" height=\"4\" rx=\".6\"/> <path d=\"M5 12.2 5.9 13.1 7.4 11.4\"/> <line x1=\"10.2\" y1=\"12.2\" x2=\"20\" y2=\"12.2\"/> <rect x=\"4\" y=\"16\" width=\"4\" height=\"4\" rx=\".6\"/> <line x1=\"10.2\" y1=\"18\" x2=\"17\" y2=\"18\"/>", "tags": ["checklist", "task", "to-do", "steps", "curriculum"], "description": "Checklist \u2014 tasks & curriculum steps"}, {"name": "gift-reward", "inner": "<rect x=\"3\" y=\"10.4\" width=\"18\" height=\"10\" rx=\"1\"/> <rect x=\"3\" y=\"7.2\" width=\"18\" height=\"3.2\" rx=\"1\"/> <line x1=\"3.5\" y1=\"14.6\" x2=\"20.5\" y2=\"14.6\"/> <line x1=\"12\" y1=\"7.2\" x2=\"12\" y2=\"20.4\"/> <path d=\"M12 7.2c-1.8-4-6-3.8-6-1.2S9.8 7.2 12 7.2z\"/> <path d=\"M12 7.2c1.8-4 6-3.8 6-1.2S14.2 7.2 12 7.2z\"/>", "tags": ["gift", "reward", "prize", "bonus", "unlock"], "description": "Gift box \u2014 rewards & unlocks"}, {"name": "pie-chart", "inner": "<circle cx=\"12\" cy=\"12\" r=\"9\"/> <path d=\"M12 12V3\"/> <path d=\"M12 12 19.8 16.5\"/>", "tags": ["pie chart", "allocation", "portfolio", "budget split"], "description": "Pie chart \u2014 portfolio allocation"}, {"name": "receipt-invoice", "inner": "<path d=\"M6 3h12v18l-2-1.4-1.5 1.4-1.5-1.4-1.5 1.4L10 19.6 8.5 21 6 19.6z\"/> <line x1=\"9\" y1=\"7.4\" x2=\"15\" y2=\"7.4\"/> <line x1=\"9\" y1=\"10.8\" x2=\"15\" y2=\"10.8\"/> <line x1=\"9\" y1=\"14.2\" x2=\"13\" y2=\"14.2\"/>", "tags": ["receipt", "invoice", "expenses", "tracking"], "description": "Receipt \u2014 expense tracking"}, {"name": "book-education", "inner": "<path d=\"M4 5.7A2.5 2.5 0 0 1 6.5 3.2H12v16H6.5A2.5 2.5 0 0 0 4 21.7z\"/> <path d=\"M20 5.7a2.5 2.5 0 0 0-2.5-2.5H12v16h5.5a2.5 2.5 0 0 1 2.5 2.5z\"/>", "tags": ["book", "education", "curriculum", "course", "learning"], "description": "Open book \u2014 courses & curriculum"}, {"name": "lightbulb-idea", "inner": "<path d=\"M9.2 18.2h5.6\"/> <path d=\"M10.2 21h3.6\"/> <path d=\"M12 3.2a6 6 0 0 0-3.5 10.9c.6.5 1 1.1 1 1.8v.3h5v-.3c0-.7.4-1.3 1-1.8A6 6 0 0 0 12 3.2z\"/>", "tags": ["idea", "tip", "insight", "lightbulb", "smart money"], "description": "Lightbulb \u2014 money tips & insights"}, {"name": "plant-growth", "inner": "<path d=\"M7.2 21h9.6l-1-6H8.2z\"/> <path d=\"M12 15V9\"/> <path d=\"M12 9.4c0-2.1-2.1-3.2-4.2-3.2 0 2.1 2.1 4.2 4.2 3.2z\"/> <path d=\"M12 11.4c0-2.1 2.1-3.2 4.2-3.2 0 2.1-2.1 4.2-4.2 3.2z\"/>", "tags": ["growth", "compound interest", "plant", "invest early", "seedling"], "description": "Sprouting plant \u2014 compound growth"}, {"name": "scale-balance", "inner": "<line x1=\"12\" y1=\"3.2\" x2=\"12\" y2=\"21\"/> <line x1=\"7.2\" y1=\"21\" x2=\"16.8\" y2=\"21\"/> <line x1=\"4\" y1=\"7\" x2=\"20\" y2=\"7\"/> <path d=\"M4 7 1.6 12a2.4 2.4 0 0 0 4.8 0z\"/> <path d=\"M20 7 17.6 12a2.4 2.4 0 0 0 4.8 0z\"/> <circle cx=\"12\" cy=\"5.2\" r=\"1.3\" stroke-width=\"1.3\"/>", "tags": ["balance", "budget", "equilibrium", "trade-offs"], "description": "Balance scale \u2014 budgeting trade-offs"}, {"name": "gauge-score", "inner": "<path d=\"M4 16.4A8 8 0 0 1 20 16.4\"/> <line x1=\"4\" y1=\"16.4\" x2=\"5.4\" y2=\"16.4\"/> <line x1=\"18.6\" y1=\"16.4\" x2=\"20\" y2=\"16.4\"/> <line x1=\"12\" y1=\"8.4\" x2=\"12\" y2=\"9.8\"/> <path d=\"M12 16.4 15.2 11.6\"/> <circle cx=\"12\" cy=\"16.4\" r=\"1.1\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["credit score", "gauge", "meter", "rating", "score"], "description": "Gauge \u2014 credit score & ratings"}, {"name": "leaderboard-podium", "inner": "<path d=\"M3 21v-7.6h5V21z\"/> <path d=\"M9.5 21V7.6h5V21z\"/> <path d=\"M16 21v-5.6h5V21z\"/> <path d=\"M12 2.4 13 4.6l2.4.35-1.7 1.65.4 2.4L12 7.8l-2.1 1.2.4-2.4-1.7-1.65L11 4.6z\" fill=\"currentColor\" stroke=\"none\"/>", "tags": ["leaderboard", "podium", "ranking", "competition", "gamification"], "description": "Podium \u2014 leaderboard & ranking"}, {"name": "heartbeat-pulse", "inner": "<path d=\"M12 19.4c-4-2.5-8-5.7-8-9.4A4.4 4.4 0 0 1 12 6a4.4 4.4 0 0 1 8 4c0 3.7-4 6.9-8 9.4z\"/> <path d=\"M6 11h2.6l1.4-2.8 2 5.6 1.4-2.8H18\"/>", "tags": ["financial health", "pulse", "wellbeing", "vitals"], "description": "Heartbeat in a heart \u2014 financial health"}];
+
+const grid = document.getElementById('grid');
+let currentSize = 32;
+
+function render(list){
+  grid.innerHTML = '';
+  list.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const svgMarkup = `<svg style="width:${currentSize}px;height:${currentSize}px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${item.inner}</svg>`;
+    card.innerHTML = `
+      ${svgMarkup}
+      <div class="name">${item.name}</div>
+      <div class="copied">copied ✓</div>
+    `;
+    card.title = item.description;
+    card.addEventListener('click', async () => {
+      const fullSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">${item.inner}</svg>`;
+      try {
+        await navigator.clipboard.writeText(fullSvg);
+      } catch(e) { /* clipboard may be unavailable in some contexts */ }
+      card.classList.add('flash');
+      setTimeout(() => card.classList.remove('flash'), 900);
+    });
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById('search').addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  const filtered = manifest.filter(i =>
+    i.name.includes(q) ||
+    i.tags.some(t => t.toLowerCase().includes(q)) ||
+    i.description.toLowerCase().includes(q)
+  );
+  render(filtered);
+});
+
+document.querySelectorAll('.size-toggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.size-toggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentSize = parseInt(btn.dataset.size, 10);
+    render(manifest.filter(i => {
+      const q = document.getElementById('search').value.toLowerCase().trim();
+      return i.name.includes(q) || i.tags.some(t => t.toLowerCase().includes(q)) || i.description.toLowerCase().includes(q);
+    }));
+  });
+});
+
+render(manifest);
+</script>
+
+<!-- sprite is loaded inline below so <use href="sprite.svg#..."> resolves locally when opened from disk -->
+</body>
+</html>

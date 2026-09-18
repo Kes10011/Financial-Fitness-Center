@@ -1,0 +1,73 @@
+chart_up:
+thumb-icon">ðŸ“ˆ</span>
+                        <span class="thumb-label">Live Trading</span>
+                    </div>
+                </div>
+       
+---
+bar_chart1:
+thumb-icon">ðŸ“Š</span>
+                        <span class="thumb-label">Financial Literacy</span>
+                    </div>
+                </div>
+ 
+---
+chart_down:
+humb-icon">ðŸ“‰</span>
+                        <span class="thumb-label">Stock Analysis</span>
+                    </div>
+                </div>
+     
+---
+link:
+humb-icon">ðŸ”—</span>
+                        <span class="thumb-label">DeFi Protocol</span>
+                    </div>
+                </div>
+      
+---
+bar_chart2:
+-icon">ðŸ“Š</span>
+                        <span class="blog-thumb-label">Market Watch</span>
+                    </div>
+                </div>
+       
+---
+btc2:
+1 0 7H6"/></svg></span>
+                        <span class="blog-thumb-label">Crypto Pulse</span>
+                    </div>
+                </div>
+       
+---
+chart_trend:
+-icon">ðŸ’¹</span>
+                        <span class="blog-thumb-label">Economy</span>
+                    </div>
+                </div>
+            
+---
+location:
+nk" rel="noopener" style="color: var(--text-secondary); text-decoration: none;">m1 Railway Rd, Cunupia</a>
+                </div>
+            </div>
+        
+---
+phone:
+�</div>
+                <div class="contact-details">
+                    <h4>Phone</h4>
+                    <p>(868) 799-5473</p>
+                </div>
+ 
+---
+message:
+uccess.jpg" alt="Success" class="hero-slide active">
+                <img src="WhatsApp Image 2026-09-11 at 9.58.26 PM.jpeg" alt="Success" class="hero-slide">
+---
+heart:
+026 School of Financial Fitness. All rights reserved.</span>
+            <span>Built with ðŸ’ª for financial freedom</span>
+        </div>
+    </footer>
+---

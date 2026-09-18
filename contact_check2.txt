@@ -1,0 +1,49 @@
+Found at 29266:
+flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--bg-card);
+            border: 1px 
+---
+Found at 29579:
+ition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            border-color: rgba(0, 240, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 4
+---
+Found at 78432:
+-info reveal">
+            <div class="contact-item">
+                <div class="contact-icon">ðŸ“</div>
+                <div class="contact-details">
+                    <h4>Address</h4>
+                    <a href="https://map
+---
+Found at 78860:
+        </div>
+            <div class="contact-item">
+                <div class="contact-icon">ðŸ“ž</div>
+                <div class="contact-details">
+                    <h4>Phone</h4>
+                    <p>(868) 799-5473</p>
+---
+Found at 79129:
+        </div>
+            <div class="contact-item">
+                <div class="contact-icon">ðŸ’¬</div>
+                <div class="contact-details">
+                    <h4>WhatsApp</h4>
+                    <p>18687995473</p>
+---
