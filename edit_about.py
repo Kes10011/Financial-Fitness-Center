@@ -92,7 +92,7 @@ new_about = """    <section id="about" class="about-digital">
                     </div>
                     <div class="eco-node" data-index="1">
                         <div class="eco-dot"></div>
-                        <span>Children\\'s Financial Literacy</span>
+                        <span>Children's Financial Literacy</span>
                     </div>
                     <div class="eco-node" data-index="2">
                         <div class="eco-dot"></div>

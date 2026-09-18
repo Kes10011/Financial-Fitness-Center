@@ -2307,6 +2307,115 @@
 }
 /* Director Node Styles - Clean Set */
     .director-node { position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; cursor: pointer; transition: all 0.4s; opacity: 0.8; transform: scale(0.9); animation: float 6s ease-in-out infinite !important; } .director-node[data-director="ivan"] { position: absolute; left: 15%; top: 50%; transform: translateX(-50%) translateY(-50%); animation-delay: 0s !important; } .director-node[data-director="michelle"] { position: absolute; right: 15%; top: 50%; transform: translateX(50%) translateY(-50%); animation-delay: 2s !important; } .director-node:hover { opacity: 1; transform: scale(1.1); } .director-photo::after { content: ''; position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; border-radius: 50%; box-shadow: 0 0 30px rgba(212, 175, 55, 0.4); opacity: 0.2 !important; transition: opacity 0.4s; animation: glowPulse 3s ease-in-out infinite !important; } .director-node:hover .director-photo::after { opacity: 0.6 !important; animation-play-state: paused !important; }
+
+/* Ecosystem Node Info Box */
+.eco-info-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: scale(0.9);
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 28px;
+    max-width: 420px;
+    width: 90%;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.15), 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.eco-info-box.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+.eco-info-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #a1a1aa;
+    font-size: 24px;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.eco-info-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.eco-info-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #D4AF37;
+    margin-bottom: 12px;
+    padding-right: 30px;
+}
+
+.eco-info-desc {
+    font-size: 14px;
+    color: #a1a1aa;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .eco-info-box {
+        max-width: 90%;
+        padding: 20px;
+    }
+    .eco-info-title {
+        font-size: 18px;
+    }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50%;
+    color: #D4AF37;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+    backdrop-filter: blur(20px);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: rgba(212, 175, 55, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
 </style>
 </head>
 <body>
@@ -2354,11 +2463,9 @@
             </div>
             <div class="hero-buttons">
                 <a href="#courses" class="btn-primary">
-                    <span>?</span>
                     Explore Courses
                 </a>
                 <a href="https://wa.me/18687995473" class="btn-secondary" target="_blank" rel="noopener">
-                    <span>??</span>
                     Contact Us
                 </a>
             </div>
@@ -2377,8 +2484,7 @@
                 <div class="stat">
                     <div class="stat-number">24/7</div>
                     <div class="stat-label">Support Access</div>
-                </div>
-            </div>
+                </div></div>
         </div>
     </section>
 
@@ -2611,7 +2717,7 @@
                     </div>
                     <h3>Global Markets Rally as Fed Signals Rate Stability</h3>
                     <p>Stock markets across major indices posted gains this week after the Federal Reserve indicated interest rates will remain steady through Q3, boosting investor confidence.</p>
-                    <a href="blog/article1.html" class="blog-link">Read Article <span>?</span></a>
+                    <a href="blog/article1.html" class="blog-link">Read Article</a>
                 </div>
             </article>
 
@@ -2629,7 +2735,7 @@
                     </div>
                     <h3>Bitcoin Breaks Key Resistance Level Amid Institutional Inflow</h3>
                     <p>Bitcoin surged past a critical resistance threshold as institutional adoption accelerates. Analysts weigh in on what this means for the next leg of the bull market.</p>
-                    <a href="blog/article2.html" class="blog-link">Read Article <span>?</span></a>
+                    <a href="blog/article2.html" class="blog-link">Read Article</a>
                 </div>
             </article>
 
@@ -2647,7 +2753,7 @@
                     </div>
                     <h3>Emerging Market Bonds Offer Attractive Yields for 2026</h3>
                     <p>With developed market yields compressing, emerging market fixed income is gaining attention. Hereâ€™s what you need to know before allocating capital.</p>
-                    <a href="blog/article3.html" class="blog-link">Read Article <span>?</span></a>
+                    <a href="blog/article3.html" class="blog-link">Read Article</a>
                 </div>
             </article>
         </div>
@@ -2694,8 +2800,7 @@
                     <span class="mission-num">03</span>
                     <h4>DIGITAL WEALTH</h4>
                     <p>"To adequately explore all opportunities to expand and secure stakeholders wealth Digitally."</p>
-                </div>
-            </div>
+                </div></div>
         </div>
 
         <!-- VISION -->
@@ -2729,7 +2834,7 @@
                     </div>
                     <div class="eco-node" data-index="1">
                         <div class="eco-dot"></div>
-                        <span>Children\'s Financial Literacy</span>
+                        <span>Children's Financial Literacy</span>
                     </div>
                     <div class="eco-node" data-index="2">
                         <div class="eco-dot"></div>
@@ -2743,9 +2848,14 @@
                         <div class="eco-dot"></div>
                         <span>Web 3 Integration</span>
                     </div>
+                </div></div>
+        
+                <div id="eco-info-box" class="eco-info-box">
+                    <button class="eco-info-close" aria-label="Close">&times;</button>
+                    <h4 class="eco-info-title"></h4>
+                    <p class="eco-info-desc"></p>
                 </div>
-            </div>
-        </div>
+
 
         <!-- COMPANY DIRECTORS -->
         <div class="about-directors reveal">
@@ -2783,8 +2893,7 @@
                             <p>DIRECTOR</p>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div></div>
         </div>
         
         <!-- Director Popups -->
@@ -2879,59 +2988,59 @@
                         <h3>CAREER HIGHLIGHTS</h3>
                         <div class="director-achievements">
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">National LUATT Sales Award — 3 years</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">LUATT Industry Mega Producer Award — 3 years</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">LUATT Industry Emerald Award</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">LUATT Industry Activity Award</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Million Dollar Round Table — 7 years</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Court of the Table — 1 year</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Centurion Award — 5 years</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Knight of the Inner Circle — 5 years</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Clico Leaders Club — 8 years</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Increased sales by an average of 25% for 9 consecutive years</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">CSME Consultation Representative</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Featured on television and Newsday for Financial Seminars</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">?????</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Youth Entrepreneur Mentorship Program</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">?????</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">National Nurses Week</div>
                             </div>
                         </div>
@@ -2953,8 +3062,7 @@
                             <span class="director-skill">Cost-effective and productive problem solving</span>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div></div>
         </div>
         
         <div id="michelle-popup" class="director-popup">
@@ -3008,39 +3116,39 @@
                         <h3>ACHIEVEMENTS</h3>
                         <div class="director-achievements">
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Head Prefect</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">PTA Outstanding Student Award</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Banking Sales Award in Forex</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Agent of the Month — 2 times among over 600 agents</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">TTAIFA Ruby Production</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">????</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Diamond Production</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??????</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Platinum Production</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Representation of the Bank at Central Bank</div>
                             </div>
                             <div class="director-achievement">
-                                <div class="director-achievement-icon">??</div>
+                                <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
                                 <div class="director-achievement-text">Small Business Programs</div>
                             </div>
                         </div>
@@ -3059,8 +3167,7 @@
                             <li class="director-education-item"><span>Goal Attainment Strategies</span></li>
                         </ul>
                     </div>
-                </div>
-            </div>
+                </div></div>
         </div>
     </section>
 
@@ -3090,8 +3197,7 @@
                 <div class="contact-details">
                     <h4>WhatsApp</h4>
                     <p>18687995473</p>
-                </div>
-            </div>
+                </div></div>
         </div>
     </section>
 
@@ -3102,7 +3208,6 @@
                 <p>Join thousands of students who are already building wealth with Test. Start your journey today.</p>
                 <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I%20am%20ready%20to%20start%20learning!" class="btn-primary" target="_blank" rel="noopener">
                     Start Learning Now
-                    <span>?</span>
                 </a>
             </div>
         </div>
@@ -3307,8 +3412,95 @@
     });
 })();
     </script>
+
+<script>
+// Ecosystem node info box
+(function() {
+    var ecoNodes = document.querySelectorAll('.eco-node');
+    var infoBox = document.getElementById('eco-info-box');
+    var infoTitle = infoBox ? infoBox.querySelector('.eco-info-title') : null;
+    var infoDesc = infoBox ? infoBox.querySelector('.eco-info-desc') : null;
+    var closeBtn = infoBox ? infoBox.querySelector('.eco-info-close') : null;
+
+    var descriptions = {
+        '0': 'One-on-one guidance to help you build a personalized financial plan tailored to your unique goals and circumstances.',
+        '1': 'Educational programs designed to teach young people the fundamentals of money management and financial responsibility.',
+        '2': 'Comprehensive support for businesses moving into the digital economy, including strategy, tools, and implementation.',
+        '3': 'Advanced tools and strategies for managing and growing your digital assets and investment portfolios.',
+        '4': 'Explore the future of the internet with decentralized technologies, blockchain, and next-generation digital platforms.'
+    };
+
+    ecoNodes.forEach(function(node) {
+        node.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var index = this.getAttribute('data-index');
+            var title = this.querySelector('span').textContent;
+
+            if (infoTitle) infoTitle.textContent = title;
+            if (infoDesc) infoDesc.textContent = descriptions[index] || '';
+
+            if (infoBox) {
+                var rect = this.getBoundingClientRect();
+                var boxWidth = 420;
+                var gap = 20;
+
+                var left = rect.right + gap;
+                if (left + boxWidth > window.innerWidth) {
+                    left = rect.left - boxWidth - gap;
+                }
+                if (left < 10) left = 10;
+
+                var top = rect.top + (rect.height / 2) - 150;
+                if (top < 10) top = 10;
+                if (top + 320 > window.innerHeight) {
+                    top = window.innerHeight - 330;
+                }
+
+                infoBox.style.left = left + 'px';
+                infoBox.style.top = top + 'px';
+
+                infoBox.classList.add('active');
+            }
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            if (infoBox) infoBox.classList.remove('active');
+        });
+    }
+
+    document.addEventListener('click', function(e) {
+        if (infoBox && !infoBox.contains(e.target) && !e.target.closest('.eco-node')) {
+            infoBox.classList.remove('active');
+        }
+    });
+})();
+    // Scroll to top button
+    var scrollBtn = document.getElementById('scrollToTop');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        });
+
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+    </script>
+
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
 </body>
 </html>
+
 
 
 

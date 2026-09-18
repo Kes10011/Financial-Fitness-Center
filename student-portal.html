@@ -1195,6 +1195,104 @@
             transform: translateY(-2px);
         }
 
+        /* ========== ADMIN ========== */
+        .admin-grid-header {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .admin-select {
+            padding: 10px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 14px;
+            outline: none;
+            min-width: 220px;
+        }
+
+        .admin-select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .admin-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--bg-card);
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        .admin-table th {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+        }
+
+        .admin-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .admin-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .admin-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(255, 0, 229, 0.1);
+            color: var(--accent-magenta);
+            border: 1px solid rgba(255, 0, 229, 0.2);
+        }
+
+        .admin-btn-sm {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-secondary);
+            transition: all 0.3s;
+        }
+
+        .admin-btn-sm:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+            color: var(--text-primary);
+        }
+
+        .admin-btn-danger {
+            border-color: rgba(255, 59, 59, 0.3);
+            color: var(--accent-red);
+        }
+
+        .admin-btn-danger:hover {
+            background: rgba(255, 59, 59, 0.1);
+            border-color: rgba(255, 59, 59, 0.5);
+        }
+
         /* ========== LOGOUT MODAL ========== */
         .modal-overlay {
             position: fixed;
@@ -1562,6 +1660,7 @@
             <button class="nav-item" onclick="showModule('messages')" data-module="messages">MESSAGES</button>
             <button class="nav-item" onclick="showModule('profile')" data-module="profile">PROFILE</button>
             <button class="nav-item" onclick="showModule('documents')" data-module="documents">DOCUMENTS</button>
+            <button class="nav-item" id="adminNavBtn" onclick="showModule('admin')" data-module="admin" style="display:none;color:#ff00e5;">ADMIN</button>
         </nav>
 
         <div class="dashboard-content">
@@ -1756,6 +1855,34 @@
                         <p>Your documents will appear here once they are uploaded by your instructors.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Admin Module -->
+            <div class="module-view" id="module-admin">
+                <button class="back-btn" onclick="showModule('hub')">← Back to Hub</button>
+                <div class="module-header">
+                    <h2>ADMIN COMMAND CENTRE</h2>
+                    <p>Oversee all students and academic data</p>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:32px;">
+                    <div class="card" style="cursor:pointer;" onclick="adminLoadModule('students')">
+                        <div class="card-title">👥 STUDENTS</div>
+                        <div class="card-text">Manage student accounts</div>
+                    </div>
+                    <div class="card" style="cursor:pointer;" onclick="adminLoadModule('admin-courses')">
+                        <div class="card-title">📚 COURSES</div>
+                        <div class="card-text">Manage all courses</div>
+                    </div>
+                    <div class="card" style="cursor:pointer;" onclick="adminLoadModule('admin-assignments')">
+                        <div class="card-title">📝 ASSIGNMENTS</div>
+                        <div class="card-text">Manage assignments</div>
+                    </div>
+                    <div class="card" style="cursor:pointer;" onclick="adminLoadModule('admin-grades')">
+                        <div class="card-title">📊 GRADES</div>
+                        <div class="card-text">Manage grades</div>
+                    </div>
+                </div>
+                <div id="adminContent"></div>
             </div>
         </div>
     </div>
@@ -2128,9 +2255,21 @@
 
             // Store session
             sessionStorage.setItem('studentPortalUser', JSON.stringify(user));
+
+            // Show/hide admin nav
+            const isAdmin = await ensureAdmin();
+            document.getElementById('adminNavBtn').style.display = isAdmin ? 'inline-flex' : 'none';
+
+            // Preload hub data
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                loadModuleData('hub');
+            }
         }
 
         // ========== MODULE NAVIGATION ==========
+        const moduleDataCache = {};
+
         function showModule(moduleName) {
             // Hide all modules
             document.querySelectorAll('.module-view').forEach(module => {
@@ -2151,8 +2290,720 @@
                 }
             });
 
+            // Load data if not cached
+            if (!moduleDataCache[moduleName]) {
+                loadModuleData(moduleName);
+            }
+
             // Scroll to top
             document.querySelector('.dashboard-content').scrollTop = 0;
+        }
+
+        async function loadModuleData(moduleName) {
+            try {
+                const { data: { session } } = await supabase.auth.getSession();
+                if (!session) return;
+
+                switch (moduleName) {
+                    case 'courses':
+                        await loadCourses(session.user.id);
+                        break;
+                    case 'assignments':
+                        await loadAssignments(session.user.id);
+                        break;
+                    case 'grades':
+                        await loadGrades(session.user.id);
+                        break;
+                    case 'attendance':
+                        await loadAttendance(session.user.id);
+                        break;
+                    case 'announcements':
+                        await loadAnnouncements(session.user.id);
+                        break;
+                    case 'messages':
+                        await loadMessages(session.user.id);
+                        break;
+                    case 'documents':
+                        await loadDocuments(session.user.id);
+                        break;
+                    case 'hub':
+                        await loadHub(session.user.id);
+                        break;
+                }
+            } catch (error) {
+                console.error('Error loading module data:', error);
+            }
+        }
+
+        async function loadCourses(userId) {
+            const { data } = await supabase
+                .from('courses')
+                .select('*')
+                .eq('user_id', userId)
+                .order('created_at', { ascending: false });
+
+            moduleDataCache.courses = data || [];
+            renderCourses(moduleDataCache.courses);
+        }
+
+        function renderCourses(courses) {
+            const container = document.getElementById('coursesContent');
+            if (!courses.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📚</div>
+                        <h3>NO COURSES ASSIGNED</h3>
+                        <p>You are not currently enrolled in any courses. Contact your instructor to get started.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = '<div class="courses-grid">' + courses.map(course => `
+                <div class="card">
+                    <div class="card-title">${escapeHtml(course.name)}</div>
+                    <div class="card-text">
+                        ${course.instructor ? `<div style="margin-bottom:8px;"><strong>Instructor:</strong> ${escapeHtml(course.instructor)}</div>` : ''}
+                        <div style="margin-bottom:8px;"><strong>Progress:</strong> ${course.progress || 0}%</div>
+                        ${course.upcoming_assignment ? `<div style="margin-bottom:8px;"><strong>Upcoming:</strong> ${escapeHtml(course.upcoming_assignment)}</div>` : ''}
+                        ${course.latest_announcement ? `<div><strong>Latest:</strong> ${escapeHtml(course.latest_announcement)}</div>` : ''}
+                    </div>
+                </div>
+            `).join('') + '</div>';
+        }
+
+        async function loadAssignments(userId) {
+            const { data } = await supabase
+                .from('assignments')
+                .select('*')
+                .eq('user_id', userId)
+                .order('due_date', { ascending: true });
+
+            moduleDataCache.assignments = data || [];
+            renderAssignments(moduleDataCache.assignments);
+        }
+
+        function renderAssignments(assignments) {
+            const container = document.getElementById('assignmentsContent');
+            if (!assignments.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📝</div>
+                        <h3>NO ASSIGNMENTS</h3>
+                        <p>You don't have any assignments at this time.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = '<div class="timeline">' + assignments.map(assignment => {
+                const statusClass = assignment.status === 'overdue' ? 'overdue' : assignment.status === 'completed' ? 'completed' : '';
+                const statusLabel = assignment.status ? assignment.status.toUpperCase() : 'UPCOMING';
+                return `
+                    <div class="timeline-item ${statusClass}">
+                        <div class="timeline-title">${escapeHtml(assignment.title)}</div>
+                        <div class="timeline-meta">Due: ${assignment.due_date || 'TBD'}</div>
+                        <div class="timeline-status status-${assignment.status || 'upcoming'}">${statusLabel}</div>
+                    </div>
+                `;
+            }).join('') + '</div>';
+        }
+
+        async function loadGrades(userId) {
+            const { data } = await supabase
+                .from('grades')
+                .select('*')
+                .eq('user_id', userId)
+                .order('created_at', { ascending: false });
+
+            moduleDataCache.grades = data || [];
+            renderGrades(moduleDataCache.grades);
+        }
+
+        function renderGrades(grades) {
+            const container = document.getElementById('gradesContent');
+            if (!grades.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📊</div>
+                        <h3>NO GRADE DATA AVAILABLE</h3>
+                        <p>Your grades will appear here once they are published by your instructors.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = '<div class="courses-grid">' + grades.map(grade => `
+                <div class="card">
+                    <div class="card-title">${escapeHtml(grade.subject)}</div>
+                    <div class="card-text">
+                        <div style="font-size:24px;font-weight:700;color:#D4AF37;font-family:'JetBrains Mono',monospace;">${escapeHtml(grade.grade || '--')}</div>
+                    </div>
+                </div>
+            `).join('') + '</div>';
+        }
+
+        async function loadAttendance(userId) {
+            const { data } = await supabase
+                .from('attendance')
+                .select('*')
+                .eq('user_id', userId)
+                .order('updated_at', { ascending: false })
+                .limit(1);
+
+            moduleDataCache.attendance = data || [];
+            renderAttendance(moduleDataCache.attendance);
+        }
+
+        function renderAttendance(attendance) {
+            const container = document.getElementById('attendanceContent');
+            if (!attendance.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">✓</div>
+                        <h3>ATTENDANCE DATA NOT AVAILABLE</h3>
+                        <p>Your attendance record will appear here once synced with the system.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const record = attendance[0];
+            container.innerHTML = `
+                <div class="card" style="max-width:500px;text-align:center;padding:40px;">
+                    <div style="font-size:64px;font-weight:800;color:#D4AF37;font-family:'JetBrains Mono',monospace;">${record.percentage || 0}%</div>
+                    <div class="card-text" style="margin-top:8px;">Attendance Rate</div>
+                    <div class="card-text">Last updated: ${new Date(record.updated_at).toLocaleDateString()}</div>
+                </div>
+            `;
+        }
+
+        async function loadAnnouncements(userId) {
+            const { data } = await supabase
+                .from('announcements')
+                .select('*')
+                .eq('user_id', userId)
+                .order('created_at', { ascending: false });
+
+            moduleDataCache.announcements = data || [];
+            renderAnnouncements(moduleDataCache.announcements);
+
+            // Mark as read
+            if (data && data.length) {
+                const unreadIds = data.filter(a => !a.read).map(a => a.id);
+                if (unreadIds.length) {
+                    await supabase.from('announcements').update({ read: true }).in('id', unreadIds);
+                }
+            }
+        }
+
+        function renderAnnouncements(announcements) {
+            const container = document.getElementById('announcementsContent');
+            if (!announcements.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📢</div>
+                        <h3>NO ANNOUNCEMENTS</h3>
+                        <p>You're all caught up! New announcements will appear here.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = announcements.map(announcement => `
+                <div class="announcement ${announcement.read ? '' : 'unread'}">
+                    ${!announcement.read ? '<div class="announcement-indicator"></div>' : ''}
+                    <div class="announcement-content">
+                        <h4>${escapeHtml(announcement.title)}</h4>
+                        <p>${escapeHtml(announcement.message || '')}</p>
+                        <div class="announcement-date">${new Date(announcement.created_at).toLocaleDateString()}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function loadMessages(userId) {
+            const { data } = await supabase
+                .from('messages')
+                .select('*')
+                .eq('user_id', userId)
+                .order('created_at', { ascending: false });
+
+            moduleDataCache.messages = data || [];
+            renderMessages(moduleDataCache.messages);
+        }
+
+        function renderMessages(messages) {
+            const container = document.getElementById('messagesContent');
+            if (!messages.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">💬</div>
+                        <h3>NO MESSAGES</h3>
+                        <p>Your message history will appear here. Messaging functionality will be available soon.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = messages.map(message => `
+                <div class="message">
+                    <div class="message-avatar">${escapeHtml(message.sender ? message.sender[0] : '?')}</div>
+                    <div class="message-content">
+                        <div class="message-header">
+                            <div class="message-sender">${escapeHtml(message.sender || 'Unknown')}</div>
+                            <div class="message-time">${escapeHtml(message.time || new Date(message.created_at).toLocaleString())}</div>
+                        </div>
+                        <div class="message-text">${escapeHtml(message.content || '')}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        async function loadDocuments(userId) {
+            const { data } = await supabase
+                .from('documents')
+                .select('*')
+                .eq('user_id', userId)
+                .order('created_at', { ascending: false });
+
+            moduleDataCache.documents = data || [];
+            renderDocuments(moduleDataCache.documents);
+        }
+
+        function renderDocuments(documents) {
+            const container = document.getElementById('documentsContent');
+            if (!documents.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📁</div>
+                        <h3>NO DOCUMENTS</h3>
+                        <p>Your documents will appear here once they are uploaded by your instructors.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = documents.map(doc => `
+                <div class="doc-card">
+                    <div class="doc-icon">📄</div>
+                    <div class="doc-info">
+                        <div class="doc-title">${escapeHtml(doc.title)}</div>
+                        <div class="doc-meta">${escapeHtml(doc.category || 'Document')} • ${new Date(doc.created_at).toLocaleDateString()}</div>
+                    </div>
+                    ${doc.url ? `<a href="${escapeHtml(doc.url)}" target="_blank" rel="noopener" class="doc-action">VIEW</a>` : ''}
+                </div>
+            `).join('');
+        }
+
+        async function loadHub(userId) {
+            const [coursesRes, assignmentsRes, announcementsRes] = await Promise.all([
+                supabase.from('courses').select('count').eq('user_id', userId),
+                supabase.from('assignments').select('count').eq('user_id', userId),
+                supabase.from('announcements').select('count').eq('user_id', userId)
+            ]);
+
+            // Could extend hub with quick stats later
+            moduleDataCache.hub = {
+                courses: coursesRes.count || 0,
+                assignments: assignmentsRes.count || 0,
+                announcements: announcementsRes.count || 0
+            };
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // ========== ADMIN ==========
+        let currentAdminModule = null;
+        let adminSelectedStudentId = null;
+
+        async function ensureAdmin() {
+            const { data: { session } } = await supabase.auth.getSession();
+            if (!session) return false;
+
+            const { data: profile } = await supabase
+                .from('profiles')
+                .select('is_admin')
+                .eq('id', session.user.id)
+                .single();
+
+            return profile?.is_admin === true;
+        }
+
+        async function adminLoadModule(moduleName) {
+            currentAdminModule = moduleName;
+            const container = document.getElementById('adminContent');
+            container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">⏳</div><h3>LOADING...</h3></div>';
+
+            try {
+                switch (moduleName) {
+                    case 'students':
+                        await adminRenderStudents();
+                        break;
+                    case 'admin-courses':
+                        await adminRenderCourses();
+                        break;
+                    case 'admin-assignments':
+                        await adminRenderAssignments();
+                        break;
+                    case 'admin-grades':
+                        await adminRenderGrades();
+                        break;
+                    case 'admin-announcements':
+                        await adminRenderAnnouncements();
+                        break;
+                    case 'admin-messages':
+                        await adminRenderMessages();
+                        break;
+                    case 'admin-documents':
+                        await adminRenderDocuments();
+                        break;
+                    case 'admin-attendance':
+                        await adminRenderAttendance();
+                        break;
+                }
+            } catch (error) {
+                console.error('Admin load error:', error);
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">⚠️</div><h3>ERROR LOADING DATA</h3></div>';
+            }
+        }
+
+        async function adminRenderStudents() {
+            const container = document.getElementById('adminContent');
+            const { data: profiles } = await supabase.from('profiles').select('*').order('created_at', { ascending: false });
+
+            if (!profiles || !profiles.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">👥</div><h3>NO STUDENTS</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Student ID</th>
+                                <th>Admin</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${profiles.map(p => `
+                                <tr>
+                                    <td>${escapeHtml(p.full_name || '--')}</td>
+                                    <td>${escapeHtml(p.username || '--')}</td>
+                                    <td>${escapeHtml(p.email || '--')}</td>
+                                    <td>${escapeHtml(p.student_id || '--')}</td>
+                                    <td>${p.is_admin ? '<span class="admin-badge">ADMIN</span>' : 'Student'}</td>
+                                    <td>
+                                        <button class="admin-btn-sm" onclick="adminToggleAdmin('${p.id}', ${p.is_admin})">${p.is_admin ? 'Remove Admin' : 'Make Admin'}</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminToggleAdmin(userId, currentStatus) {
+            const { error } = await supabase.from('profiles').update({ is_admin: !currentStatus }).eq('id', userId);
+            if (error) {
+                alert('Failed to update admin status');
+                return;
+            }
+            adminRenderStudents();
+        }
+
+        async function adminRenderCourses() {
+            const container = document.getElementById('adminContent');
+            const { data } = await supabase.from('courses').select('*, profiles(full_name, email)').order('created_at', { ascending: false });
+
+            if (!data || !data.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📚</div><h3>NO COURSES</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Student</th>
+                                <th>Instructor</th>
+                                <th>Progress</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(c => `
+                                <tr>
+                                    <td>${escapeHtml(c.name)}</td>
+                                    <td>${escapeHtml(c.profiles?.full_name || c.user_id)}</td>
+                                    <td>${escapeHtml(c.instructor || '--')}</td>
+                                    <td>${c.progress || 0}%</td>
+                                    <td>
+                                        <button class="admin-btn-sm admin-btn-danger" onclick="adminDelete('courses', '${c.id}')">Delete</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminRenderAssignments() {
+            const container = document.getElementById('adminContent');
+            const { data } = await supabase.from('assignments').select('*, profiles(full_name)').order('due_date', { ascending: true });
+
+            if (!data || !data.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><h3>NO ASSIGNMENTS</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Student</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(a => `
+                                <tr>
+                                    <td>${escapeHtml(a.title)}</td>
+                                    <td>${escapeHtml(a.profiles?.full_name || a.user_id)}</td>
+                                    <td>${a.due_date || 'TBD'}</td>
+                                    <td>${a.status || 'upcoming'}</td>
+                                    <td>
+                                        <button class="admin-btn-sm admin-btn-danger" onclick="adminDelete('assignments', '${a.id}')">Delete</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminRenderGrades() {
+            const container = document.getElementById('adminContent');
+            const { data } = await supabase.from('grades').select('*, profiles(full_name)').order('created_at', { ascending: false });
+
+            if (!data || !data.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📊</div><h3>NO GRADES</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Student</th>
+                                <th>Grade</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(g => `
+                                <tr>
+                                    <td>${escapeHtml(g.subject)}</td>
+                                    <td>${escapeHtml(g.profiles?.full_name || g.user_id)}</td>
+                                    <td>${escapeHtml(g.grade || '--')}</td>
+                                    <td>
+                                        <button class="admin-btn-sm admin-btn-danger" onclick="adminDelete('grades', '${g.id}')">Delete</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminRenderAnnouncements() {
+            const container = document.getElementById('adminContent');
+            const { data } = await supabase.from('announcements').select('*, profiles(full_name)').order('created_at', { ascending: false });
+
+            if (!data || !data.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📢</div><h3>NO ANNOUNCEMENTS</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Student</th>
+                                <th>Message</th>
+                                <th>Read</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(a => `
+                                <tr>
+                                    <td>${escapeHtml(a.title)}</td>
+                                    <td>${escapeHtml(a.profiles?.full_name || a.user_id)}</td>
+                                    <td>${escapeHtml((a.message || '').substr(0, 80))}</td>
+                                    <td>${a.read ? 'Yes' : 'No'}</td>
+                                    <td>
+                                        <button class="admin-btn-sm admin-btn-danger" onclick="adminDelete('announcements', '${a.id}')">Delete</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminRenderMessages() {
+            const container = document.getElementById('adminContent');
+            const { data } = await supabase.from('messages').select('*, profiles(full_name)').order('created_at', { ascending: false });
+
+            if (!data || !data.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">💬</div><h3>NO MESSAGES</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Sender</th>
+                                <th>Student</th>
+                                <th>Content</th>
+                                <th>Time</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(m => `
+                                <tr>
+                                    <td>${escapeHtml(m.sender || '--')}</td>
+                                    <td>${escapeHtml(m.profiles?.full_name || m.user_id)}</td>
+                                    <td>${escapeHtml((m.content || '').substr(0, 80))}</td>
+                                    <td>${escapeHtml(m.time || '--')}</td>
+                                    <td>
+                                        <button class="admin-btn-sm admin-btn-danger" onclick="adminDelete('messages', '${m.id}')">Delete</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminRenderDocuments() {
+            const container = document.getElementById('adminContent');
+            const { data } = await supabase.from('documents').select('*, profiles(full_name)').order('created_at', { ascending: false });
+
+            if (!data || !data.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📁</div><h3>NO DOCUMENTS</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Student</th>
+                                <th>Category</th>
+                                <th>URL</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(d => `
+                                <tr>
+                                    <td>${escapeHtml(d.title)}</td>
+                                    <td>${escapeHtml(d.profiles?.full_name || d.user_id)}</td>
+                                    <td>${escapeHtml(d.category || '--')}</td>
+                                    <td>${d.url ? '<a href="' + escapeHtml(d.url) + '" target="_blank" rel="noopener">Link</a>' : '--'}</td>
+                                    <td>
+                                        <button class="admin-btn-sm admin-btn-danger" onclick="adminDelete('documents', '${d.id}')">Delete</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminRenderAttendance() {
+            const container = document.getElementById('adminContent');
+            const { data } = await supabase.from('attendance').select('*, profiles(full_name)').order('updated_at', { ascending: false });
+
+            if (!data || !data.length) {
+                container.innerHTML = '<div class="empty-state"><div class="empty-state-icon">✓</div><h3>NO ATTENDANCE RECORDS</h3></div>';
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Percentage</th>
+                                <th>Updated</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.map(a => `
+                                <tr>
+                                    <td>${escapeHtml(a.profiles?.full_name || a.user_id)}</td>
+                                    <td>${a.percentage || 0}%</td>
+                                    <td>${new Date(a.updated_at).toLocaleDateString()}</td>
+                                    <td>
+                                        <button class="admin-btn-sm admin-btn-danger" onclick="adminDelete('attendance', '${a.id}')">Delete</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function adminDelete(table, id) {
+            if (!confirm('Delete this record? This action cannot be undone.')) return;
+
+            const { error } = await supabase.from(table).delete().eq('id', id);
+            if (error) {
+                alert('Failed to delete: ' + error.message);
+                return;
+            }
+
+            // Refresh current admin view
+            if (currentAdminModule) {
+                adminLoadModule(currentAdminModule);
+            }
         }
 
         // ========== LOGOUT ==========
