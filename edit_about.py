@@ -80,7 +80,7 @@ new_about = """    <section id="about" class="about-digital">
             <div class="ecosystem-wrap">
                 <div class="eco-center">
                     <div class="eco-pulse" aria-hidden="true"></div>
-                    <span>Financial Fitness Centre</span>
+                    <span>School of Financial Fitness</span>
                 </div>
                 <div class="eco-orbit" aria-hidden="true">
                     <div class="eco-ring"></div>
