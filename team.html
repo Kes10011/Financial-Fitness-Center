@@ -1401,7 +1401,22 @@
                 }
             }
             
-            function playPianoKey() {
+            // Musical notes in Hz - C major pentatonic scale across octaves
+            const notes = {
+                'C4': 261.63,
+                'D4': 293.66,
+                'E4': 329.63,
+                'G4': 392.00,
+                'A4': 440.00,
+                'C5': 523.25,
+                'D5': 587.33,
+                'E5': 659.25,
+                'G5': 783.99,
+                'A5': 880.00,
+                'C6': 1046.50
+            };
+            
+            function playNote(frequency) {
                 if (!audioContext) {
                     init();
                 }
@@ -1409,11 +1424,11 @@
                 if (audioContext) {
                     const now = audioContext.currentTime;
                     
-                    // Main piano tone - sine wave for pure tone
+                    // Main piano tone - sine wave
                     const oscillator1 = audioContext.createOscillator();
                     const gainNode1 = audioContext.createGain();
                     oscillator1.type = 'sine';
-                    oscillator1.frequency.setValueAtTime(880, now); // A5 note
+                    oscillator1.frequency.setValueAtTime(frequency, now);
                     oscillator1.connect(gainNode1);
                     gainNode1.connect(audioContext.destination);
                     gainNode1.gain.setValueAtTime(0.15, now);
@@ -1421,11 +1436,11 @@
                     oscillator1.start(now);
                     oscillator1.stop(now + 0.4);
                     
-                    // Harmonic overtone for piano-like richness
+                    // Harmonic overtone
                     const oscillator2 = audioContext.createOscillator();
                     const gainNode2 = audioContext.createGain();
                     oscillator2.type = 'sine';
-                    oscillator2.frequency.setValueAtTime(1760, now); // A6 - octave higher
+                    oscillator2.frequency.setValueAtTime(frequency * 2, now);
                     oscillator2.connect(gainNode2);
                     gainNode2.connect(audioContext.destination);
                     gainNode2.gain.setValueAtTime(0.05, now);
@@ -1433,11 +1448,11 @@
                     oscillator2.start(now);
                     oscillator2.stop(now + 0.2);
                     
-                    // Quick attack, medium decay - piano-like envelope
+                    // Body layer
                     const oscillator3 = audioContext.createOscillator();
                     const gainNode3 = audioContext.createGain();
                     oscillator3.type = 'triangle';
-                    oscillator3.frequency.setValueAtTime(440, now); // A4
+                    oscillator3.frequency.setValueAtTime(frequency * 0.5, now);
                     oscillator3.connect(gainNode3);
                     gainNode3.connect(audioContext.destination);
                     gainNode3.gain.setValueAtTime(0.08, now);
@@ -1447,7 +1462,26 @@
                 }
             }
             
-            return { play: playPianoKey };
+            function getNoteForElement(el) {
+                const tag = el.tagName.toLowerCase();
+                const className = el.className || '';
+                
+                // Different notes for different element types
+                if (className.includes('team-node')) return notes['C5'];
+                if (className.includes('team-popup-close')) return notes['D5'];
+                if (tag === 'a') return notes['E4'];
+                if (tag === 'button') return notes['D4'];
+                
+                // Default note
+                return notes['A4'];
+            }
+            
+            function playForElement(el) {
+                const note = getNoteForElement(el);
+                playNote(note);
+            }
+            
+            return { play: playForElement };
         })();
         
         // Add hover sound to all clickable elements
@@ -1456,7 +1490,7 @@
             
             clickables.forEach(function(el) {
                 el.addEventListener('mouseenter', function() {
-                    hoverSound.play();
+                    hoverSound.play(this);
                 });
             });
         });
