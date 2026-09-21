@@ -870,7 +870,97 @@
             }
         }
 
-</style>
+        /* Lower third light trails */
+        .light-trail-lower {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .light-trail-lower:nth-child(1) { top: 65%; left: 15%; animation: lowerPath1 7s linear infinite, trailColor 6s linear infinite; animation-delay: 0s, 0s; }
+        .light-trail-lower:nth-child(2) { top: 70%; left: 35%; animation: lowerPath2 8s linear infinite, trailColor 6s linear infinite; animation-delay: 1s, 1.5s; }
+        .light-trail-lower:nth-child(3) { top: 75%; left: 55%; animation: lowerPath3 6s linear infinite, trailColor 6s linear infinite; animation-delay: 2s, 3s; }
+        .light-trail-lower:nth-child(4) { top: 68%; left: 75%; animation: lowerPath4 9s linear infinite, trailColor 6s linear infinite; animation-delay: 0.5s, 0.5s; }
+        .light-trail-lower:nth-child(5) { top: 80%; left: 25%; animation: lowerPath5 7.5s linear infinite, trailColor 6s linear infinite; animation-delay: 1.5s, 2.2s; }
+        .light-trail-lower:nth-child(6) { top: 85%; left: 65%; animation: lowerPath6 8.5s linear infinite, trailColor 6s linear infinite; animation-delay: 2.5s, 3.8s; }
+        .light-trail-lower:nth-child(7) { top: 72%; left: 45%; animation: lowerPath7 6.5s linear infinite, trailColor 6s linear infinite; animation-delay: 3s, 1.2s; }
+        .light-trail-lower:nth-child(8) { top: 88%; left: 85%; animation: lowerPath8 7.8s linear infinite, trailColor 6s linear infinite; animation-delay: 1.8s, 4s; }
+
+        @keyframes lowerPath1 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(80px, 20px); }
+            50% { transform: translate(120px, -20px); }
+            70% { transform: translate(40px, -40px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes lowerPath2 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(-60px, 30px); }
+            50% { transform: translate(-100px, -20px); }
+            75% { transform: translate(-40px, -30px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes lowerPath3 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(50px, 10px); }
+            40% { transform: translate(90px, -30px); }
+            60% { transform: translate(20px, -50px); }
+            80% { transform: translate(-30px, -20px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes lowerPath4 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(-70px, 40px); }
+            50% { transform: translate(-110px, 10px); }
+            70% { transform: translate(-50px, -30px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes lowerPath5 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(60px, 20px); }
+            50% { transform: translate(100px, -40px); }
+            75% { transform: translate(30px, -60px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes lowerPath6 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(-50px, 30px); }
+            45% { transform: translate(-80px, -10px); }
+            70% { transform: translate(-20px, -50px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes lowerPath7 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(70px, 10px); }
+            55% { transform: translate(110px, -30px); }
+            75% { transform: translate(50px, -50px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes lowerPath8 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            35% { transform: translate(-40px, 50px); }
+            60% { transform: translate(-90px, 20px); }
+            80% { transform: translate(-30px, -40px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }</style>
 </head>
 <body>    <div class="circuit-bg" aria-hidden="true">
         <!-- SVG Circuit Paths -->
@@ -1311,30 +1401,53 @@
                 }
             }
             
-            function playPling() {
+            function playPianoKey() {
                 if (!audioContext) {
                     init();
                 }
                 
                 if (audioContext) {
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
+                    const now = audioContext.currentTime;
                     
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
+                    // Main piano tone - sine wave for pure tone
+                    const oscillator1 = audioContext.createOscillator();
+                    const gainNode1 = audioContext.createGain();
+                    oscillator1.type = 'sine';
+                    oscillator1.frequency.setValueAtTime(880, now); // A5 note
+                    oscillator1.connect(gainNode1);
+                    gainNode1.connect(audioContext.destination);
+                    gainNode1.gain.setValueAtTime(0.15, now);
+                    gainNode1.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+                    oscillator1.start(now);
+                    oscillator1.stop(now + 0.4);
                     
-                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-                    oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1);
+                    // Harmonic overtone for piano-like richness
+                    const oscillator2 = audioContext.createOscillator();
+                    const gainNode2 = audioContext.createGain();
+                    oscillator2.type = 'sine';
+                    oscillator2.frequency.setValueAtTime(1760, now); // A6 - octave higher
+                    oscillator2.connect(gainNode2);
+                    gainNode2.connect(audioContext.destination);
+                    gainNode2.gain.setValueAtTime(0.05, now);
+                    gainNode2.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+                    oscillator2.start(now);
+                    oscillator2.stop(now + 0.2);
                     
-                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
-                    
-                    oscillator.start(audioContext.currentTime);
-                    oscillator.stop(audioContext.currentTime + 0.15);
+                    // Quick attack, medium decay - piano-like envelope
+                    const oscillator3 = audioContext.createOscillator();
+                    const gainNode3 = audioContext.createGain();
+                    oscillator3.type = 'triangle';
+                    oscillator3.frequency.setValueAtTime(440, now); // A4
+                    oscillator3.connect(gainNode3);
+                    gainNode3.connect(audioContext.destination);
+                    gainNode3.gain.setValueAtTime(0.08, now);
+                    gainNode3.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+                    oscillator3.start(now);
+                    oscillator3.stop(now + 0.3);
                 }
             }
             
-            return { play: playPling };
+            return { play: playPianoKey };
         })();
         
         // Add hover sound to all clickable elements
