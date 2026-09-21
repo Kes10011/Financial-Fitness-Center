@@ -2444,9 +2444,246 @@
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
 }
 
+        /* Circuit board background with multicolored light streaks */
+        .circuit-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .circuit-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('circuit.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            animation: circuitBgColor 8s ease-in-out infinite;
+        }
+
+        .circuit-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 10, 15, 0.5);
+            pointer-events: none;
+        }
+
+        @keyframes circuitBgColor {
+            0%, 100% { filter: hue-rotate(0deg) brightness(0.9); }
+            25% { filter: hue-rotate(90deg) brightness(1); }
+            50% { filter: hue-rotate(180deg) brightness(0.95); }
+            75% { filter: hue-rotate(270deg) brightness(1); }
+        }
+
+        /* Light trail particles */
+        .light-trail {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .light-trail:nth-child(1) { top: 18%; left: 12%; animation: circuitPath1 5s linear infinite, trailColor 6s linear infinite; animation-delay: 0s, 0s; }
+        .light-trail:nth-child(2) { top: 35%; left: 28%; animation: circuitPath2 7s linear infinite, trailColor 6s linear infinite; animation-delay: 1.5s, 1.5s; }
+        .light-trail:nth-child(3) { top: 55%; left: 55%; animation: circuitPath3 6s linear infinite, trailColor 6s linear infinite; animation-delay: 3s, 3s; }
+        .light-trail:nth-child(4) { top: 28%; left: 72%; animation: circuitPath4 8s linear infinite, trailColor 6s linear infinite; animation-delay: 0.8s, 0.8s; }
+        .light-trail:nth-child(5) { top: 68%; left: 18%; animation: circuitPath5 5.5s linear infinite, trailColor 6s linear infinite; animation-delay: 2.2s, 2.2s; }
+        .light-trail:nth-child(6) { top: 48%; left: 85%; animation: circuitPath6 7.5s linear infinite, trailColor 6s linear infinite; animation-delay: 3.8s, 3.8s; }
+        .light-trail:nth-child(7) { top: 78%; left: 42%; animation: circuitPath7 6.5s linear infinite, trailColor 6s linear infinite; animation-delay: 1.2s, 1.2s; }
+        .light-trail:nth-child(8) { top: 14%; left: 62%; animation: circuitPath8 5.8s linear infinite, trailColor 6s linear infinite; animation-delay: 4s, 4s; }
+        .light-trail:nth-child(9) { top: 42%; left: 38%; animation: circuitPath9 6.2s linear infinite, trailColor 6s linear infinite; animation-delay: 0.5s, 0.5s; }
+        .light-trail:nth-child(10) { top: 62%; left: 68%; animation: circuitPath10 7.2s linear infinite, trailColor 6s linear infinite; animation-delay: 2.7s, 2.7s; }
+        .light-trail:nth-child(11) { top: 22%; left: 48%; animation: circuitPath11 5.9s linear infinite, trailColor 6s linear infinite; animation-delay: 1.9s, 1.9s; }
+        .light-trail:nth-child(12) { top: 72%; left: 58%; animation: circuitPath12 8.1s linear infinite, trailColor 6s linear infinite; animation-delay: 3.4s, 3.4s; }
+        .light-trail:nth-child(13) { top: 32%; left: 82%; animation: circuitPath13 6.8s linear infinite, trailColor 6s linear infinite; animation-delay: 0.3s, 0.3s; }
+        .light-trail:nth-child(14) { top: 58%; left: 22%; animation: circuitPath14 7.8s linear infinite, trailColor 6s linear infinite; animation-delay: 4.2s, 4.2s; }
+        .light-trail:nth-child(15) { top: 82%; left: 75%; animation: circuitPath15 5.6s linear infinite, trailColor 6s linear infinite; animation-delay: 1.1s, 1.1s; }
+        .light-trail:nth-child(16) { top: 38%; left: 45%; animation: circuitPath16 6.4s linear infinite, trailColor 6s linear infinite; animation-delay: 2.5s, 2.5s; }
+
+        @keyframes trailColor {
+            0% { background: #00f0ff; box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37; }
+            25% { background: #D4AF37; box-shadow: 0 0 10px #D4AF37, 0 0 20px #D4AF37, 0 0 30px #ff00e5; }
+            50% { background: #ff00e5; box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5, 0 0 30px #00f0ff; }
+            75% { background: #00ff88; box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #D4AF37; }
+            100% { background: #00f0ff; box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37; }
+        }
+
+        @keyframes circuitPath1 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(120px, 0); }
+            50% { transform: translate(120px, 100px); }
+            70% { transform: translate(0, 100px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath2 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(-100px, 0); }
+            50% { transform: translate(-100px, -80px); }
+            75% { transform: translate(0, -80px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath3 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(80px, 0); }
+            40% { transform: translate(80px, -50px); }
+            60% { transform: translate(-30px, -50px); }
+            80% { transform: translate(-30px, 50px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath4 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(-120px, 0); }
+            50% { transform: translate(-120px, 60px); }
+            70% { transform: translate(0, 60px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath5 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(100px, 0); }
+            50% { transform: translate(100px, 70px); }
+            75% { transform: translate(0, 70px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath6 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(-70px, 0); }
+            40% { transform: translate(-70px, 50px); }
+            60% { transform: translate(30px, 50px); }
+            80% { transform: translate(30px, -40px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath7 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(0, -90px); }
+            50% { transform: translate(90px, -90px); }
+            70% { transform: translate(90px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath8 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(0, 60px); }
+            50% { transform: translate(-60px, 60px); }
+            75% { transform: translate(-60px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath9 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            35% { transform: translate(140px, 0); }
+            55% { transform: translate(140px, 40px); }
+            75% { transform: translate(60px, 40px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath10 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(-90px, 0); }
+            45% { transform: translate(-90px, -70px); }
+            70% { transform: translate(-30px, -70px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath11 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(50px, -50px); }
+            60% { transform: translate(-50px, -50px); }
+            80% { transform: translate(-50px, 50px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath12 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            40% { transform: translate(-80px, 0); }
+            60% { transform: translate(-80px, 90px); }
+            80% { transform: translate(20px, 90px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath13 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(70px, 0); }
+            50% { transform: translate(70px, 80px); }
+            75% { transform: translate(0, 80px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath14 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(0, 60px); }
+            55% { transform: translate(-70px, 60px); }
+            75% { transform: translate(-70px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath15 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(110px, 0); }
+            45% { transform: translate(110px, -60px); }
+            70% { transform: translate(40px, -60px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath16 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            35% { transform: translate(-60px, 0); }
+            60% { transform: translate(-60px, 70px); }
+            85% { transform: translate(10px, 70px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
 </style>
 </head>
-<body>
+<body>    <div class="circuit-bg" aria-hidden="true">
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+    </div>
+
     <div class="bg-grid"></div>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
