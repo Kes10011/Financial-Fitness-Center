@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team | School of Financial Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-gold: #D4AF37;
+            --accent-cyan: #00f0ff;
+            --accent-magenta: #ff00e5;
+            --glow-gold: 0 0 30px rgba(212, 175, 55, 0.4);
+            --glow-cyan: 0 0 30px rgba(0, 240, 255, 0.4);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .orb-1 {
+            width: 500px; height: 500px;
+            background: rgba(212, 175, 55, 0.15);
+            top: -200px; right: -200px;
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+        .orb-2 {
+            width: 400px; height: 400px;
+            background: rgba(0, 240, 255, 0.1);
+            bottom: -150px; left: -150px;
+            animation: orbFloat 25s ease-in-out infinite reverse;
+        }
+        .orb-3 {
+            width: 300px; height: 300px;
+            background: rgba(255, 0, 229, 0.08);
+            top: 50%; left: 50%;
+            animation: orbFloat 30s ease-in-out infinite;
+        }
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(50px, -50px); }
+            50% { transform: translate(-30px, 30px); }
+            75% { transform: translate(-50px, -30px); }
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+        main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 0;
+        }
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 80px;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+        .logo-icon { width: 40px; height: 40px; }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .logo-text span { color: var(--accent-gold); }
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--accent-gold); }
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 30px;
+            color: var(--accent-gold);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* Jarvis-style Org Chart */
+        .org-chart {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            padding: 40px 20px;
+            min-height: 600px;
+            width: 100%;
+        }
+        .org-chart::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: orgPulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes orgPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+        }
+        .org-stem {
+            position: relative;
+            width: 4px; height: 120px;
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-cyan));
+            box-shadow: var(--glow-gold), var(--glow-cyan);
+            animation: stemGlow 3s ease-in-out infinite;
+        }
+        @keyframes stemGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(0, 240, 255, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 60px rgba(0, 240, 255, 0.4); }
+        }
+        .org-branch {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-top: 0;
+        }
+        .org-branch::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+            box-shadow: var(--glow-cyan);
+        }
+        .org-branch-line {
+            position: absolute;
+            top: 0;
+            width: 2px; height: 60px;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-gold));
+            box-shadow: var(--glow-cyan);
+        }
+        .org-branch-line.left {
+            left: 25%;
+            transform: rotate(25deg);
+            transform-origin: top center;
+        }
+        .org-branch-line.right {
+            right: 25%;
+            transform: rotate(-25deg);
+            transform-origin: top center;
+        }
+        .org-row {
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+        .org-row.top { margin-bottom: 0; }
+        .org-row.bottom { margin-top: 0; }
+        .team-node {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        .team-node:hover { transform: translateY(-10px); }
+        .node-image-wrapper {
+            position: relative;
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            box-shadow: var(--glow-gold), var(--glow-cyan);
+            transition: all 0.4s;
+        }
+        .team-node:hover .node-image-wrapper {
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.6), 0 0 80px rgba(0, 240, 255, 0.4);
+            transform: scale(1.05);
+        }
+        .node-image-inner {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+        .node-image-inner img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+        .team-node:hover .node-image-inner img { transform: scale(1.1); }
+        .node-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            animation: holographicSpin 8s linear infinite;
+            pointer-events: none;
+        }
+        .node-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            animation: holographicSpin 12s linear infinite reverse;
+            pointer-events: none;
+        }
+        @keyframes holographicSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .node-info { text-align: center; position: relative; }
+        .node-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .node-role {
+            color: var(--accent-cyan);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        .node-status {
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            margin-top: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(0, 255, 136, 0.8); }
+            50% { opacity: 0.5; box-shadow: 0 0 20px rgba(0, 255, 136, 1); }
+        }
+        .team-node-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+        .team-node-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .team-popup {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.2), 0 0 100px rgba(0, 240, 255, 0.1);
+        }
+        .team-node-overlay.active .team-popup {
+            transform: scale(1) translateY(0);
+        }
+        .team-popup-close {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 32px;
+            cursor: pointer;
+            width: 40px; height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .team-popup-close:hover {
+            color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: var(--glow-gold);
+        }
+        .team-popup-header {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        .team-popup-image {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent-gold);
+            flex-shrink: 0;
+            box-shadow: var(--glow-gold);
+        }
+        .team-popup-image img { width: 100%; height: 100%; object-fit: cover; }
+        .team-popup-title { flex: 1; }
+        .team-popup-title h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .team-popup-title p {
+            color: var(--accent-cyan);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+        }
+        .team-popup-section { margin-bottom: 24px; }
+        .team-popup-section h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .team-popup-section p,
+        .team-popup-section li {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 14px;
+        }
+        .team-popup-section ul { list-style: none; padding-left: 0; }
+        .team-popup-section li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding-left: 0;
+        }
+        .team-popup-section li .li-icon {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            color: #D4AF37;
+            filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.6));
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .skill-tag {
+            padding: 8px 14px;
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 8px;
+            color: var(--accent-cyan);
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s;
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+        }
+        .skill-tag:hover {
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 80px;
+        }
+        footer span { color: var(--accent-gold); }
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(0, 0, 0, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            .org-row { gap: 60px; }
+            .node-image-wrapper { width: 100px; height: 100px; }
+            .node-name { font-size: 14px; }
+            .node-role { font-size: 11px; }
+            .team-popup-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .skills-grid { grid-template-columns: 1fr; }
+            nav a { margin-left: 15px; font-size: 12px; }
+        }
+            
+        }
+        /* Circuit board background with glowing trails */
+        .circuit-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        /* Background image layer with color animation */
+        .circuit-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('circuit.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            animation: circuitBgColor 8s ease-in-out infinite;
+        }
+
+        /* Dark overlay to ensure text readability */
+        .circuit-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 10, 15, 0.5);
+            pointer-events: none;
+        }
+
+        @keyframes circuitBgColor {
+            0%, 100% { 
+                filter: hue-rotate(0deg) brightness(0.9);
+            }
+            25% { 
+                filter: hue-rotate(90deg) brightness(1);
+            }
+            50% { 
+                filter: hue-rotate(180deg) brightness(0.95);
+            }
+            75% { 
+                filter: hue-rotate(270deg) brightness(1);
+            }
+        }
+
+        .circuit-svg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+
+        .circuit-path {
+            fill: none;
+            stroke: rgba(212, 175, 55, 0.15);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .circuit-path-glow {
+            fill: none;
+            stroke: rgba(212, 175, 55, 0.4);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: blur(2px);
+        }
+
+        .circuit-node {
+            fill: var(--accent-gold);
+            filter: url(#glow);
+        }
+
+        .circuit-node-cyan {
+            fill: var(--accent-cyan);
+            filter: url(#glow-cyan);
+        }
+
+        /* Animated light trail particles - circuit style with color changing */
+        .light-trail {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Each trail has its own start position, path, timing, and color cycle */
+        .light-trail:nth-child(1)  { top: 18%; left: 12%; animation: circuitPath1 5s linear infinite, trailColor 6s linear infinite; animation-delay: 0s, 0s; }
+        .light-trail:nth-child(2)  { top: 35%; left: 28%; animation: circuitPath2 7s linear infinite, trailColor 6s linear infinite; animation-delay: 1.5s, 1.5s; }
+        .light-trail:nth-child(3)  { top: 55%; left: 55%; animation: circuitPath3 6s linear infinite, trailColor 6s linear infinite; animation-delay: 3s, 3s; }
+        .light-trail:nth-child(4)  { top: 28%; left: 72%; animation: circuitPath4 8s linear infinite, trailColor 6s linear infinite; animation-delay: 0.8s, 0.8s; }
+        .light-trail:nth-child(5)  { top: 68%; left: 18%; animation: circuitPath5 5.5s linear infinite, trailColor 6s linear infinite; animation-delay: 2.2s, 2.2s; }
+        .light-trail:nth-child(6)  { top: 48%; left: 85%; animation: circuitPath6 7.5s linear infinite, trailColor 6s linear infinite; animation-delay: 3.8s, 3.8s; }
+        .light-trail:nth-child(7)  { top: 78%; left: 42%; animation: circuitPath7 6.5s linear infinite, trailColor 6s linear infinite; animation-delay: 1.2s, 1.2s; }
+        .light-trail:nth-child(8)  { top: 14%; left: 62%; animation: circuitPath8 5.8s linear infinite, trailColor 6s linear infinite; animation-delay: 4s, 4s; }
+        .light-trail:nth-child(9)  { top: 42%; left: 38%; animation: circuitPath9 6.2s linear infinite, trailColor 6s linear infinite; animation-delay: 0.5s, 0.5s; }
+        .light-trail:nth-child(10) { top: 62%; left: 68%; animation: circuitPath10 7.2s linear infinite, trailColor 6s linear infinite; animation-delay: 2.7s, 2.7s; }
+        .light-trail:nth-child(11) { top: 22%; left: 48%; animation: circuitPath11 5.9s linear infinite, trailColor 6s linear infinite; animation-delay: 1.9s, 1.9s; }
+        .light-trail:nth-child(12) { top: 72%; left: 58%; animation: circuitPath12 8.1s linear infinite, trailColor 6s linear infinite; animation-delay: 3.4s, 3.4s; }
+        .light-trail:nth-child(13) { top: 32%; left: 82%; animation: circuitPath13 6.8s linear infinite, trailColor 6s linear infinite; animation-delay: 0.3s, 0.3s; }
+        .light-trail:nth-child(14) { top: 58%; left: 22%; animation: circuitPath14 7.8s linear infinite, trailColor 6s linear infinite; animation-delay: 4.2s, 4.2s; }
+        .light-trail:nth-child(15) { top: 82%; left: 75%; animation: circuitPath15 5.6s linear infinite, trailColor 6s linear infinite; animation-delay: 1.1s, 1.1s; }
+        .light-trail:nth-child(16) { top: 38%; left: 45%; animation: circuitPath16 6.4s linear infinite, trailColor 6s linear infinite; animation-delay: 2.5s, 2.5s; }
+
+        @keyframes trailColor {
+            0%   { background: #00f0ff; box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37; }
+            25%  { background: #D4AF37; box-shadow: 0 0 10px #D4AF37, 0 0 20px #D4AF37, 0 0 30px #ff00e5; }
+            50%  { background: #ff00e5; box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5, 0 0 30px #00f0ff; }
+            75%  { background: #00ff88; box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #D4AF37; }
+            100% { background: #00f0ff; box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37; }
+        }
+
+        @keyframes circuitPath1 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(120px, 0); }
+            50% { transform: translate(120px, 100px); }
+            70% { transform: translate(0, 100px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath2 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(-100px, 0); }
+            50% { transform: translate(-100px, -80px); }
+            75% { transform: translate(0, -80px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath3 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(80px, 0); }
+            40% { transform: translate(80px, -50px); }
+            60% { transform: translate(-30px, -50px); }
+            80% { transform: translate(-30px, 50px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath4 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(-120px, 0); }
+            50% { transform: translate(-120px, 60px); }
+            70% { transform: translate(0, 60px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath5 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(100px, 0); }
+            50% { transform: translate(100px, 70px); }
+            75% { transform: translate(0, 70px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath6 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(-70px, 0); }
+            40% { transform: translate(-70px, 50px); }
+            60% { transform: translate(30px, 50px); }
+            80% { transform: translate(30px, -40px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath7 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(0, -90px); }
+            50% { transform: translate(90px, -90px); }
+            70% { transform: translate(90px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath8 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(0, 60px); }
+            50% { transform: translate(-60px, 60px); }
+            75% { transform: translate(-60px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath9 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            35% { transform: translate(140px, 0); }
+            55% { transform: translate(140px, 40px); }
+            75% { transform: translate(60px, 40px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath10 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(-90px, 0); }
+            45% { transform: translate(-90px, -70px); }
+            70% { transform: translate(-30px, -70px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath11 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(50px, -50px); }
+            60% { transform: translate(-50px, -50px); }
+            80% { transform: translate(-50px, 50px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath12 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            40% { transform: translate(-80px, 0); }
+            60% { transform: translate(-80px, 90px); }
+            80% { transform: translate(20px, 90px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath13 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(70px, 0); }
+            50% { transform: translate(70px, 80px); }
+            75% { transform: translate(0, 80px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath14 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(0, 60px); }
+            55% { transform: translate(-70px, 60px); }
+            75% { transform: translate(-70px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath15 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(110px, 0); }
+            45% { transform: translate(110px, -60px); }
+            70% { transform: translate(40px, -60px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        @keyframes circuitPath16 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            35% { transform: translate(-60px, 0); }
+            60% { transform: translate(-60px, 70px); }
+            85% { transform: translate(10px, 70px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+        /* Circuit grid lines */
+        .circuit-grid {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        /* Circuit junction nodes */
+        .circuit-junction {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent-gold), 0 0 30px var(--accent-cyan);
+            animation: junctionPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes junctionPulse {
+            0%, 100% { 
+                opacity: 0.6;
+                transform: scale(1);
+                box-shadow: 0 0 15px #D4AF37, 0 0 30px #00f0ff;
+            }
+            25% {
+                box-shadow: 0 0 20px #ff00e5, 0 0 40px #D4AF37, 0 0 60px #00f0ff;
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.3);
+                box-shadow: 0 0 25px #00f0ff, 0 0 50px #00ff88, 0 0 75px #ff00e5;
+            }
+            75% {
+                box-shadow: 0 0 20px #D4AF37, 0 0 40px #ff00e5, 0 0 60px #00f0ff;
+            }
+        }
+
+        /* Flowing data streams with color changing */
+        .data-stream {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-gold), transparent);
+            box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-gold);
+            animation: dataFlow 3s linear infinite, streamColor 4s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .data-stream:nth-child(9) {
+            top: 25%;
+            width: 150px;
+            animation-delay: 0s, 0s;
+        }
+
+        .data-stream:nth-child(10) {
+            top: 50%;
+            width: 200px;
+            animation-delay: 1s, 1.5s;
+        }
+
+        .data-stream:nth-child(11) {
+            top: 75%;
+            width: 180px;
+            animation-delay: 2s, 3s;
+        }
+
+        @keyframes dataFlow {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100vw);
+                opacity: 0;
+            }
+        }
+
+        @keyframes streamColor {
+            0%, 100% { 
+                box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37;
+            }
+            33% { 
+                box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5, 0 0 30px #00f0ff;
+            }
+            66% { 
+                box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #D4AF37;
+            }
+        }
+
+</style>
+</head>
+<body>    <div class="circuit-bg" aria-hidden="true">
+        <!-- SVG Circuit Paths -->
+        <svg class="circuit-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+                <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- Circuit lines -->
+            <path class="circuit-path-glow" d="M 0 200 L 400 200 L 400 400 L 800 400"/>
+            <path class="circuit-path" d="M 0 200 L 400 200 L 400 400 L 800 400"/>
+            
+            <path class="circuit-path-glow" d="M 1920 300 L 1400 300 L 1400 500 L 900 500"/>
+            <path class="circuit-path" d="M 1920 300 L 1400 300 L 1400 500 L 900 500"/>
+            
+            <path class="circuit-path-glow" d="M 100 800 L 500 800 L 500 600 L 1000 600"/>
+            <path class="circuit-path" d="M 100 800 L 500 800 L 500 600 L 1000 600"/>
+            
+            <path class="circuit-path-glow" d="M 1820 700 L 1300 700 L 1300 500 L 800 500"/>
+            <path class="circuit-path" d="M 1820 700 L 1300 700 L 1300 500 L 800 500"/>
+            
+            <!-- Junction nodes -->
+            <circle class="circuit-node" cx="400" cy="200" r="5"/>
+            <circle class="circuit-node-cyan" cx="400" cy="400" r="5"/>
+            <circle class="circuit-node" cx="1400" cy="300" r="5"/>
+            <circle class="circuit-node-cyan" cx="1400" cy="500" r="5"/>
+            <circle class="circuit-node" cx="500" cy="800" r="5"/>
+            <circle class="circuit-node-cyan" cx="500" cy="600" r="5"/>
+            <circle class="circuit-node" cx="1300" cy="700" r="5"/>
+            <circle class="circuit-node-cyan" cx="1300" cy="500" r="5"/>
+        </svg>
+
+        <!-- Circuit grid -->
+        <div class="circuit-grid"></div>
+
+        <!-- Junction nodes -->
+        <div class="circuit-junction" style="top: 18%; left: 20%;"></div>
+        <div class="circuit-junction" style="top: 37%; left: 20%; animation-delay: 0.5s;"></div>
+        <div class="circuit-junction" style="top: 28%; left: 73%;"></div>
+        <div class="circuit-junction" style="top: 46%; left: 73%; animation-delay: 1s;"></div>
+        <div class="circuit-junction" style="top: 74%; left: 26%;"></div>
+        <div class="circuit-junction" style="top: 56%; left: 26%; animation-delay: 1.5s;"></div>
+        <div class="circuit-junction" style="top: 65%; left: 68%;"></div>
+        <div class="circuit-junction" style="top: 46%; left: 68%; animation-delay: 2s;"></div>
+
+        <!-- Flowing data streams -->
+        <div class="data-stream"></div>
+        <div class="data-stream"></div>
+        <div class="data-stream"></div>
+
+                <!-- Glowing trail particles -->
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+    
+
+    <div class="bg-grid"></div>
+    <div class="scanlines"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <img src="LOGO_SOFIT-removebg-preview.png" alt="School of Financial Fitness Logo">
+                    </div>
+                    <div class="logo-text">School of <span>Financial Fitness</span></div>
+                </a>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#courses">Courses</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header reveal">
+            <div class="section-tag">Our People</div>
+            <h1 class="section-title">Meet The <span style="color: var(--accent-gold);">Team</span></h1>
+            <p class="section-subtitle">The experts behind School of Financial Fitness. Click any member to view their full profile and skills.</p>
+        </div>
+
+        <div class="org-chart">
+            <!-- Directors Row (Top) -->
+            <div class="org-row top">
+                <div class="team-node" data-member="ivan">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="IVAN.png" alt="Ivan Mark Luther Mark">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">IVAN MARK LUTHER MARK</div>
+                        <div class="node-role">Finance Coach / Director</div>
+                        <div class="node-status"></div>
+                    </div>
+                </div>
+
+                <div class="team-node" data-member="michelle">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="MICHELLE.png" alt="Michelle Lezama-Mark">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">MICHELLE LEZAMA-MARK</div>
+                        <div class="node-role">Director</div>
+                        <div class="node-status"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Central Stem -->
+            <div class="org-stem"></div>
+
+            <!-- Branch Lines -->
+            <div class="org-branch">
+                <div class="org-branch-line left"></div>
+                <div class="org-branch-line right"></div>
+            </div>
+
+            <!-- Bottom Row (Wayne and Kester) -->
+            <div class="org-row bottom">
+                <div class="team-node" data-member="wayne">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="WAYNE.png" alt="Wayne Pierre">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">WAYNE PIERRE</div>
+                        <div class="node-role">Business Analyst</div>
+                        <div class="node-status"></div>
+                    </div>
+                </div>
+
+                <div class="team-node" data-member="kester">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="KESTER.png" alt="Kester Charles">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">KESTER CHARLES</div>
+                        <div class="node-role">Marketing Officer</div>
+                        <div class="node-status"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Team Member Popups -->
+    <div id="team-popup-ivan" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="IVAN.png" alt="Ivan Mark Luther Mark">
+                </div>
+                <div class="team-popup-title">
+                    <h2>IVAN MARK LUTHER MARK, MFA</h2>
+                    <p>Finance Coach / Director</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Profile</h3>
+                <p>Ivan Mark delivers over twenty-five (25) years of experience within the Financial Service Industry and contributes knowledge and expertise in strategic financial management, business development, strategic planning, corporate governance, corporate finance, investment management, corporate restructuring, and private financial advisory services.</p>
+                <p><strong>Motto:</strong> "Continued Value Is Demanded"</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Financial Advisory</div>
+                    <div class="skill-tag">Strategic Planning</div>
+                    <div class="skill-tag">Corporate Governance</div>
+                    <div class="skill-tag">Investment Management</div>
+                    <div class="skill-tag">Business Development</div>
+                    <div class="skill-tag">Corporate Finance</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-popup-michelle" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="MICHELLE.png" alt="Michelle Lezama-Mark">
+                </div>
+                <div class="team-popup-title">
+                    <h2>MICHELLE LEZAMA-MARK</h2>
+                    <p>Director</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Profile</h3>
+                <p>Michelle has over 25 years of experience in Banking and Insurance, including Sales, Marketing and Management. Her profile describes her as having enthusiasm, dedication, creativity and problem-solving abilities, combined with practical experience.</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Experience</h3>
+                <ul>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Republic Bank Limited - Customer Service Representative / Clerk</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Mega Insurance Company - Insurance Agent</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>First Citizens Bank Limited - Multiple roles including Recoveries/Reconciliation Clerk, Loans Interviewing Officer</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Marketing work with G & G Holdings, Associated Brands, and Nabisco Royal Inc.</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Achievements</h3>
+                <ul>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Head Prefect</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>PTA Outstanding Student Award</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Banking Sales Award in Forex</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Agent of the Month — 2 times among over 600 agents</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>TTAIFA Ruby, Diamond, and Platinum Production awards</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Representation of the Bank at Central Bank</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Small Business Programs</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Banking</div>
+                    <div class="skill-tag">Insurance</div>
+                    <div class="skill-tag">Sales</div>
+                    <div class="skill-tag">Marketing</div>
+                    <div class="skill-tag">Management</div>
+                    <div class="skill-tag">Customer Service</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="team-popup-wayne" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="WAYNE.png" alt="Wayne Pierre">
+                </div>
+                <div class="team-popup-title">
+                    <h2>WAYNE PIERRE</h2>
+                    <p>Business Analyst</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Capabilities Summary</h3>
+                <p>I am trained and knowledgeable in strategic financial management, strategic planning, sales and marketing, project management, and organizational development.</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Qualifications</h3>
+                <ul>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Certified Management Accountant (CMA)</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Chartered Professional Accountant (CPA)</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Masters Certificate in Project Management — Project Management Institute, U.S.A.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Executive Masters Business Administration — UWI; International Finance/Joint Venture Management</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Associate Chartered Institute of Bankers</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Chartered Institute of Bankers — London</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Experience</h3>
+                <ul>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Over thirty-five years managerial experience in Accounting and Strategic Financial Management</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Currently offers strategic financial management services to small organizations</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Seven years as Chief Executive of the Tobago Hospitality and Tourism Institute</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Marketing and Sales in Insurance, financial services, and industrial chemicals</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Thirteen years at Managerial level in the banking industry</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Other Certifications & Activities</h3>
+                <ul>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Qualified Hospitality Assured Business Advisor — Institute of Hospitality (UK) and Caribbean Tourism Organization (CTO)</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Management of Service Quality — Caribbean Tourism Organization</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Business Process Re-engineering — Ministry of Public Administration</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Customer Service — The Ritz Carlton Leadership Center</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Strategic Finance</div>
+                    <div class="skill-tag">Project Management</div>
+                    <div class="skill-tag">Accounting</div>
+                    <div class="skill-tag">Business Analysis</div>
+                    <div class="skill-tag">Marketing Strategy</div>
+                    <div class="skill-tag">Organizational Development</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="team-popup-kester" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="KESTER.png" alt="Kester Charles">
+                </div>
+                <div class="team-popup-title">
+                    <h2>KESTER CHARLES</h2>
+                    <p>Marketing Officer</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Profile</h3>
+                <p>Digital marketing and content professional with over 18 years across IT management, e-commerce, sales and social media. Now independent — building <strong>AI-driven content and automation solutions</strong> for small and medium businesses, backed by experience in team leadership and training.</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Experience</h3>
+                <ul>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Freelance Content Creator & AI Solutions Specialist</strong> — Produce digital content for client brands across social and web platforms. Build AI-driven content, chatbot and automation workflows for clients. Advise businesses on adopting AI tools for marketing and customer service.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Freelance Marketer & Social Media Content Creator</strong> — Planned and ran social media marketing campaigns. Created written, graphic and video content for client pages and ads.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>E-commerce & Digital Marketing Specialist / Lecturer</strong> — Trinity College & The Financial Fitness Center. Courses: Digital Marketing, The Art of Persuasion, Customer Service & Conflict Resolution.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Keynote Speaker</strong> — "I AM DIGITAL" Seminar: Social Media Marketing, E-commerce Tactics, Sales & Persuasion.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>IT Manager</strong> — CMR Ltd & C-Drive Solutions</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Sales Supervisor</strong> — Ron's Automotive</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Digital Marketing</div>
+                    <div class="skill-tag">AI Tools & Automation</div>
+                    <div class="skill-tag">Content Creation</div>
+                    <div class="skill-tag">Social Media Management</div>
+                    <div class="skill-tag">E-commerce Strategy</div>
+                    <div class="skill-tag">Sales & Closing</div>
+                    <div class="skill-tag">The Art of Persuasion</div>
+                    <div class="skill-tag">Customer Service</div>
+                    <div class="skill-tag">Conflict Resolution</div>
+                    <div class="skill-tag">Staff Training</div>
+                    <div class="skill-tag">Team Leadership</div>
+                    <div class="skill-tag">Lecturing & Public Speaking</div>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Education & Qualifications</h3>
+                <ul>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>A+ Computer Technician Programme — BorderCom International</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Business Management — San Fernando Technical Institute</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Computer Maintenance and Repairs — AddTech</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Computer Literacy — National Energy Skills Centre</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>C.X.C Ordinary Levels — Gasparillo Composite</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>— 2026 <span>School of Financial Fitness</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Team node popups
+        const teamNodes = document.querySelectorAll('.team-node');
+        const teamPopups = document.querySelectorAll('.team-node-overlay');
+
+        teamNodes.forEach(node => {
+            node.addEventListener('click', function() {
+                const member = this.getAttribute('data-member');
+                const popup = document.getElementById('team-popup-' + member);
+                if (popup) {
+                    popup.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        document.querySelectorAll('.team-popup-close').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.team-node-overlay').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        teamPopups.forEach(popup => {
+            popup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                teamPopups.forEach(popup => popup.classList.remove('active'));
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+
+    <script>
+        // Parallax scroll effect: static circuit background, content moves with scroll
+        const circuitBg = document.querySelector('.circuit-bg');
+        const mainContent = document.querySelector('main');
+        const orgChart = document.querySelector('.org-chart');
+        
+        let ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const scrolled = window.pageYOffset;
+                    
+                    // Keep circuit background absolutely static
+                    if (circuitBg) {
+                        circuitBg.style.transform = 'translate3d(0, 0px, 0)';
+                    }
+                    
+                    // Subtle parallax on main content - moves slightly faster than scroll
+                    // This creates the effect of content moving down over the static background
+                    if (mainContent) {
+                        const contentOffset = scrolled * 0.15;
+                        mainContent.style.transform = 'translate3d(0, ' + contentOffset + 'px, 0)';
+                        mainContent.style.willChange = 'transform';
+                    }
+                    
+                    // Subtle parallax on org chart nodes
+                    if (orgChart) {
+                        const nodeOffset = scrolled * 0.08;
+                        orgChart.style.transform = 'translate3d(0, ' + nodeOffset + 'px, 0)';
+                        orgChart.style.willChange = 'transform';
+                    }
+                    
+                    ticking = false;
+                });
+                
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
+
