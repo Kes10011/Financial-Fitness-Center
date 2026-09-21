@@ -436,16 +436,13 @@
             gap: 10px;
             padding-left: 0;
         }
-        .team-popup-section li::before {
-            content: '';
+        .team-popup-section li .li-icon {
             flex-shrink: 0;
-            width: 14px;
-            height: 14px;
-            margin-top: 3px;
-            background: transparent;
-            border: 2px solid #D4AF37;
-            border-radius: 50%;
-            box-shadow: 0 0 6px rgba(212, 175, 55, 0.6);
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+            color: #D4AF37;
+            filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.6));
         }
         .skills-grid {
             display: grid;
@@ -517,6 +514,7 @@
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
+            will-change: transform;
         }
 
         /* Background image layer with color animation */
@@ -869,6 +867,14 @@
                 box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #D4AF37;
             }
         }
+
+        /* Smooth parallax transition */
+        .circuit-bg,
+        .light-trail,
+        .data-stream,
+        .circuit-junction {
+            transition: transform 0.1s ease-out;
+        }
 </style>
 </head>
 <body>    <div class="circuit-bg" aria-hidden="true">
@@ -1104,22 +1110,22 @@
             <div class="team-popup-section">
                 <h3>Professional Experience</h3>
                 <ul>
-                    <li>Republic Bank Limited - Customer Service Representative / Clerk</li>
-                    <li>Mega Insurance Company - Insurance Agent</li>
-                    <li>First Citizens Bank Limited - Multiple roles including Recoveries/Reconciliation Clerk, Loans Interviewing Officer</li>
-                    <li>Marketing work with G & G Holdings, Associated Brands, and Nabisco Royal Inc.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Republic Bank Limited - Customer Service Representative / Clerk</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Mega Insurance Company - Insurance Agent</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>First Citizens Bank Limited - Multiple roles including Recoveries/Reconciliation Clerk, Loans Interviewing Officer</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Marketing work with G & G Holdings, Associated Brands, and Nabisco Royal Inc.</li>
                 </ul>
             </div>
             <div class="team-popup-section">
                 <h3>Achievements</h3>
                 <ul>
-                    <li>Head Prefect</li>
-                    <li>PTA Outstanding Student Award</li>
-                    <li>Banking Sales Award in Forex</li>
-                    <li>Agent of the Month � 2 times among over 600 agents</li>
-                    <li>TTAIFA Ruby, Diamond, and Platinum Production awards</li>
-                    <li>Representation of the Bank at Central Bank</li>
-                    <li>Small Business Programs</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Head Prefect</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>PTA Outstanding Student Award</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Banking Sales Award in Forex</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Agent of the Month — 2 times among over 600 agents</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>TTAIFA Ruby, Diamond, and Platinum Production awards</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Representation of the Bank at Central Bank</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Small Business Programs</li>
                 </ul>
             </div>
             <div class="team-popup-section">
@@ -1154,31 +1160,31 @@
             <div class="team-popup-section">
                 <h3>Qualifications</h3>
                 <ul>
-                    <li>Certified Management Accountant (CMA)</li>
-                    <li>Chartered Professional Accountant (CPA)</li>
-                    <li>Masters Certificate in Project Management � Project Management Institute, U.S.A.</li>
-                    <li>Executive Masters Business Administration � UWI; International Finance/Joint Venture Management</li>
-                    <li>Associate Chartered Institute of Bankers</li>
-                    <li>Chartered Institute of Bankers � London</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Certified Management Accountant (CMA)</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Chartered Professional Accountant (CPA)</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Masters Certificate in Project Management — Project Management Institute, U.S.A.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Executive Masters Business Administration — UWI; International Finance/Joint Venture Management</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Associate Chartered Institute of Bankers</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Chartered Institute of Bankers — London</li>
                 </ul>
             </div>
             <div class="team-popup-section">
                 <h3>Professional Experience</h3>
                 <ul>
-                    <li>Over thirty-five years managerial experience in Accounting and Strategic Financial Management</li>
-                    <li>Currently offers strategic financial management services to small organizations</li>
-                    <li>Seven years as Chief Executive of the Tobago Hospitality and Tourism Institute</li>
-                    <li>Marketing and Sales in Insurance, financial services, and industrial chemicals</li>
-                    <li>Thirteen years at Managerial level in the banking industry</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Over thirty-five years managerial experience in Accounting and Strategic Financial Management</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Currently offers strategic financial management services to small organizations</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Seven years as Chief Executive of the Tobago Hospitality and Tourism Institute</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Marketing and Sales in Insurance, financial services, and industrial chemicals</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Thirteen years at Managerial level in the banking industry</li>
                 </ul>
             </div>
             <div class="team-popup-section">
                 <h3>Other Certifications & Activities</h3>
                 <ul>
-                    <li>Qualified Hospitality Assured Business Advisor � Institute of Hospitality (UK) and Caribbean Tourism Organization (CTO)</li>
-                    <li>Management of Service Quality � Caribbean Tourism Organization</li>
-                    <li>Business Process Re-engineering � Ministry of Public Administration</li>
-                    <li>Customer Service � The Ritz Carlton Leadership Center</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Qualified Hospitality Assured Business Advisor — Institute of Hospitality (UK) and Caribbean Tourism Organization (CTO)</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Management of Service Quality — Caribbean Tourism Organization</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Business Process Re-engineering — Ministry of Public Administration</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Customer Service — The Ritz Carlton Leadership Center</li>
                 </ul>
             </div>
             <div class="team-popup-section">
@@ -1208,17 +1214,17 @@
             </div>
             <div class="team-popup-section">
                 <h3>Profile</h3>
-                <p>Digital marketing and content professional with over 18 years across IT management, e-commerce, sales and social media. Now independent � building <strong>AI-driven content and automation solutions</strong> for small and medium businesses, backed by experience in team leadership and training.</p>
+                <p>Digital marketing and content professional with over 18 years across IT management, e-commerce, sales and social media. Now independent — building <strong>AI-driven content and automation solutions</strong> for small and medium businesses, backed by experience in team leadership and training.</p>
             </div>
             <div class="team-popup-section">
                 <h3>Experience</h3>
                 <ul>
-                    <li><strong>Freelance Content Creator & AI Solutions Specialist</strong> � Produce digital content for client brands across social and web platforms. Build AI-driven content, chatbot and automation workflows for clients. Advise businesses on adopting AI tools for marketing and customer service.</li>
-                    <li><strong>Freelance Marketer & Social Media Content Creator</strong> � Planned and ran social media marketing campaigns. Created written, graphic and video content for client pages and ads.</li>
-                    <li><strong>E-commerce & Digital Marketing Specialist / Lecturer</strong> � Trinity College & The Financial Fitness Center. Courses: Digital Marketing, The Art of Persuasion, Customer Service & Conflict Resolution.</li>
-                    <li><strong>Keynote Speaker</strong> � "I AM DIGITAL" Seminar: Social Media Marketing, E-commerce Tactics, Sales & Persuasion.</li>
-                    <li><strong>IT Manager</strong> � CMR Ltd & C-Drive Solutions</li>
-                    <li><strong>Sales Supervisor</strong> � Ron's Automotive</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Freelance Content Creator & AI Solutions Specialist</strong> — Produce digital content for client brands across social and web platforms. Build AI-driven content, chatbot and automation workflows for clients. Advise businesses on adopting AI tools for marketing and customer service.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Freelance Marketer & Social Media Content Creator</strong> — Planned and ran social media marketing campaigns. Created written, graphic and video content for client pages and ads.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>E-commerce & Digital Marketing Specialist / Lecturer</strong> — Trinity College & The Financial Fitness Center. Courses: Digital Marketing, The Art of Persuasion, Customer Service & Conflict Resolution.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Keynote Speaker</strong> — "I AM DIGITAL" Seminar: Social Media Marketing, E-commerce Tactics, Sales & Persuasion.</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>IT Manager</strong> — CMR Ltd & C-Drive Solutions</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span><strong>Sales Supervisor</strong> — Ron's Automotive</li>
                 </ul>
             </div>
             <div class="team-popup-section">
@@ -1241,11 +1247,11 @@
             <div class="team-popup-section">
                 <h3>Education & Qualifications</h3>
                 <ul>
-                    <li>A+ Computer Technician Programme � BorderCom International</li>
-                    <li>Business Management � San Fernando Technical Institute</li>
-                    <li>Computer Maintenance and Repairs � AddTech</li>
-                    <li>Computer Literacy � National Energy Skills Centre</li>
-                    <li>C.X.C Ordinary Levels � Gasparillo Composite</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>A+ Computer Technician Programme — BorderCom International</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Business Management — San Fernando Technical Institute</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Computer Maintenance and Repairs — AddTech</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>Computer Literacy — National Energy Skills Centre</li>
+                    <li><span class="li-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></span>C.X.C Ordinary Levels — Gasparillo Composite</li>
                 </ul>
             </div>
         </div>
@@ -1253,7 +1259,7 @@
 
     <footer>
         <div class="container">
-            <p>� 2026 <span>School of Financial Fitness</span>. All rights reserved.</p>
+            <p>— 2026 <span>School of Financial Fitness</span>. All rights reserved.</p>
         </div>
     </footer>
 
@@ -1294,6 +1300,53 @@
             if (e.key === 'Escape') {
                 teamPopups.forEach(popup => popup.classList.remove('active'));
                 document.body.style.overflow = '';
+            }
+        });
+    </script>
+
+    <script>
+        // Parallax scroll effect for circuit background
+        const circuitBg = document.querySelector('.circuit-bg');
+        const lightTrails = document.querySelectorAll('.light-trail');
+        const dataStreams = document.querySelectorAll('.data-stream');
+        const circuitJunctions = document.querySelectorAll('.circuit-junction');
+        
+        let ticking = false;
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.3; // Parallax rate - background moves slower
+                    
+                    if (circuitBg) {
+                        circuitBg.style.transform = 'translate3d(0, ' + rate + 'px, 0)';
+                    }
+                    
+                    // Parallax effect on light trails - move at different rates
+                    lightTrails.forEach(function(trail, index) {
+                        const trailRate = rate * (0.5 + (index * 0.1));
+                        const currentTransform = trail.style.transform || '';
+                        // Keep the animation transform but add parallax offset
+                        trail.style.marginTop = trailRate + 'px';
+                    });
+                    
+                    // Parallax on data streams
+                    dataStreams.forEach(function(stream, index) {
+                        const streamRate = rate * (0.3 + (index * 0.15));
+                        stream.style.transform = 'translateX(' + (streamRate * 0.5) + 'px)';
+                    });
+                    
+                    // Parallax on circuit junctions
+                    circuitJunctions.forEach(function(junction, index) {
+                        const junctionRate = rate * (0.2 + (index * 0.08));
+                        junction.style.transform = 'translateY(' + junctionRate + 'px)';
+                    });
+                    
+                    ticking = false;
+                });
+                
+                ticking = true;
             }
         });
     </script>
