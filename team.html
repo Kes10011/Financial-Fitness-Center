@@ -494,9 +494,209 @@
             .skills-grid { grid-template-columns: 1fr; }
             nav a { margin-left: 15px; font-size: 12px; }
         }
-    </style>
+            /* Circuit board background */
+        .circuit-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .circuit-line {
+            position: absolute;
+            background: rgba(212, 175, 55, 0.15);
+            border-radius: 2px;
+        }
+
+        .circuit-line.horizontal {
+            height: 1px;
+            width: 100%;
+            top: 20%;
+            left: 0;
+        }
+
+        .circuit-line.horizontal:nth-child(2) {
+            top: 40%;
+            width: 80%;
+            left: 10%;
+        }
+
+        .circuit-line.horizontal:nth-child(3) {
+            top: 60%;
+            width: 90%;
+            left: 5%;
+        }
+
+        .circuit-line.horizontal:nth-child(4) {
+            top: 80%;
+            width: 70%;
+            left: 15%;
+        }
+
+        .circuit-line.vertical {
+            width: 1px;
+            height: 100%;
+            left: 25%;
+            top: 0;
+        }
+
+        .circuit-line.vertical:nth-child(6) {
+            left: 50%;
+        }
+
+        .circuit-line.vertical:nth-child(7) {
+            left: 75%;
+        }
+
+        /* Circuit nodes */
+        .circuit-node {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-gold), 0 0 20px var(--accent-gold);
+            animation: circuitPulse 2s ease-in-out infinite;
+        }
+
+        .circuit-node:nth-child(9) { top: 20%; left: 25%; animation-delay: 0s; }
+        .circuit-node:nth-child(10) { top: 40%; left: 50%; animation-delay: 0.5s; }
+        .circuit-node:nth-child(11) { top: 60%; left: 75%; animation-delay: 1s; }
+        .circuit-node:nth-child(12) { top: 80%; left: 25%; animation-delay: 1.5s; }
+        .circuit-node:nth-child(13) { top: 30%; left: 75%; animation-delay: 0.3s; }
+        .circuit-node:nth-child(14) { top: 70%; left: 50%; animation-delay: 0.8s; }
+
+        @keyframes circuitPulse {
+            0%, 100% { 
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.5);
+                box-shadow: 0 0 20px var(--accent-gold), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-gold);
+            }
+        }
+
+        /* Animated light trails */
+        .light-trail {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-cyan), 0 0 30px var(--accent-gold);
+            animation: trailMove 8s linear infinite;
+        }
+
+        .light-trail:nth-child(15) {
+            animation-delay: 0s;
+            animation-duration: 6s;
+        }
+
+        .light-trail:nth-child(16) {
+            animation-delay: 2s;
+            animation-duration: 7s;
+        }
+
+        .light-trail:nth-child(17) {
+            animation-delay: 4s;
+            animation-duration: 8s;
+        }
+
+        .light-trail:nth-child(18) {
+            animation-delay: 1s;
+            animation-duration: 5s;
+        }
+
+        .light-trail:nth-child(19) {
+            animation-delay: 3s;
+            animation-duration: 9s;
+        }
+
+        @keyframes trailMove {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100vw, 100vh);
+                opacity: 0;
+            }
+        }
+
+        /* Diagonal circuit paths */
+        .circuit-diagonal {
+            position: absolute;
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: diagonalPulse 4s ease-in-out infinite;
+        }
+
+        .circuit-diagonal:nth-child(20) {
+            top: 30%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circuit-diagonal:nth-child(21) {
+            top: 60%;
+            right: 10%;
+            left: auto;
+            animation-delay: 2s;
+            transform: rotate(-45deg);
+        }
+
+        @keyframes diagonalPulse {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.8; box-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
+        }
+</style>
 </head>
-<body>
+<body>    <div class="circuit-bg" aria-hidden="true">
+        <!-- Horizontal circuit lines -->
+        <div class="circuit-line horizontal"></div>
+        <div class="circuit-line horizontal"></div>
+        <div class="circuit-line horizontal"></div>
+        <div class="circuit-line horizontal"></div>
+        
+        <!-- Vertical circuit lines -->
+        <div class="circuit-line vertical"></div>
+        <div class="circuit-line vertical"></div>
+        <div class="circuit-line vertical"></div>
+        
+        <!-- Circuit nodes -->
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        <div class="circuit-node"></div>
+        
+        <!-- Animated light trails -->
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        
+        <!-- Diagonal circuit paths -->
+        <div class="circuit-diagonal"></div>
+        <div class="circuit-diagonal"></div>
+    </div>
+
     <div class="bg-grid"></div>
     <div class="scanlines"></div>
     <div class="orb orb-1"></div>
@@ -844,3 +1044,4 @@
     </script>
 </body>
 </html>
+
