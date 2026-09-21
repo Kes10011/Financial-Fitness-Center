@@ -494,133 +494,169 @@
             .skills-grid { grid-template-columns: 1fr; }
             nav a { margin-left: 15px; font-size: 12px; }
         }
-            /* Circuit board background */
+            
+        }
+        /* Circuit board background with glowing trails */
         .circuit-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
-        .circuit-line {
+        .circuit-svg {
             position: absolute;
-            background: rgba(212, 175, 55, 0.15);
-            border-radius: 2px;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
         }
 
-        .circuit-line.horizontal {
-            height: 1px;
-            width: 100%;
-            top: 20%;
-            left: 0;
+        .circuit-path {
+            fill: none;
+            stroke: rgba(212, 175, 55, 0.15);
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
-        .circuit-line.horizontal:nth-child(2) {
-            top: 40%;
-            width: 80%;
-            left: 10%;
+        .circuit-path-glow {
+            fill: none;
+            stroke: rgba(212, 175, 55, 0.4);
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: blur(2px);
         }
 
-        .circuit-line.horizontal:nth-child(3) {
-            top: 60%;
-            width: 90%;
-            left: 5%;
-        }
-
-        .circuit-line.horizontal:nth-child(4) {
-            top: 80%;
-            width: 70%;
-            left: 15%;
-        }
-
-        .circuit-line.vertical {
-            width: 1px;
-            height: 100%;
-            left: 25%;
-            top: 0;
-        }
-
-        .circuit-line.vertical:nth-child(6) {
-            left: 50%;
-        }
-
-        .circuit-line.vertical:nth-child(7) {
-            left: 75%;
-        }
-
-        /* Circuit nodes */
         .circuit-node {
+            fill: var(--accent-gold);
+            filter: url(#glow);
+        }
+
+        .circuit-node-cyan {
+            fill: var(--accent-cyan);
+            filter: url(#glow-cyan);
+        }
+
+        /* Animated light trail particles */
+        .light-trail {
             position: absolute;
             width: 6px;
             height: 6px;
-            background: var(--accent-gold);
+            background: var(--accent-cyan);
             border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-gold), 0 0 20px var(--accent-gold);
-            animation: circuitPulse 2s ease-in-out infinite;
+            box-shadow: 
+                0 0 10px var(--accent-cyan),
+                0 0 20px var(--accent-cyan),
+                0 0 30px var(--accent-gold),
+                0 0 40px var(--accent-cyan);
+            animation: circuitFlow 4s linear infinite;
+            pointer-events: none;
         }
 
-        .circuit-node:nth-child(9) { top: 20%; left: 25%; animation-delay: 0s; }
-        .circuit-node:nth-child(10) { top: 40%; left: 50%; animation-delay: 0.5s; }
-        .circuit-node:nth-child(11) { top: 60%; left: 75%; animation-delay: 1s; }
-        .circuit-node:nth-child(12) { top: 80%; left: 25%; animation-delay: 1.5s; }
-        .circuit-node:nth-child(13) { top: 30%; left: 75%; animation-delay: 0.3s; }
-        .circuit-node:nth-child(14) { top: 70%; left: 50%; animation-delay: 0.8s; }
+        .light-trail:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; animation-duration: 3s; }
+        .light-trail:nth-child(2) { top: 40%; left: 30%; animation-delay: 1s; animation-duration: 4s; }
+        .light-trail:nth-child(3) { top: 60%; left: 50%; animation-delay: 2s; animation-duration: 3.5s; }
+        .light-trail:nth-child(4) { top: 30%; left: 70%; animation-delay: 0.5s; animation-duration: 4.5s; }
+        .light-trail:nth-child(5) { top: 70%; left: 20%; animation-delay: 1.5s; animation-duration: 3.2s; }
+        .light-trail:nth-child(6) { top: 50%; left: 80%; animation-delay: 2.5s; animation-duration: 3.8s; }
+        .light-trail:nth-child(7) { top: 80%; left: 40%; animation-delay: 0.8s; animation-duration: 4.2s; }
+        .light-trail:nth-child(8) { top: 15%; left: 60%; animation-delay: 1.8s; animation-duration: 3.6s; }
 
-        @keyframes circuitPulse {
+        @keyframes circuitFlow {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0;
+            }
+            5% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1.2);
+            }
+            25% {
+                transform: translate(50px, 30px) scale(1.5);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translate(100px, 60px) scale(1.8);
+                opacity: 1;
+            }
+            75% {
+                transform: translate(150px, 90px) scale(1.5);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translate(200px, 120px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Circuit grid lines */
+        .circuit-grid {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+
+        /* Circuit junction nodes */
+        .circuit-junction {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent-gold), 0 0 30px var(--accent-cyan);
+            animation: junctionPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes junctionPulse {
             0%, 100% { 
-                opacity: 0.3;
+                opacity: 0.6;
                 transform: scale(1);
+                box-shadow: 0 0 15px var(--accent-gold), 0 0 30px var(--accent-cyan);
             }
             50% { 
                 opacity: 1;
-                transform: scale(1.5);
-                box-shadow: 0 0 20px var(--accent-gold), 0 0 40px var(--accent-cyan), 0 0 60px var(--accent-gold);
+                transform: scale(1.3);
+                box-shadow: 0 0 25px var(--accent-gold), 0 0 50px var(--accent-cyan), 0 0 75px var(--accent-gold);
             }
         }
 
-        /* Animated light trails */
-        .light-trail {
+        /* Flowing data streams */
+        .data-stream {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--accent-cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-cyan), 0 0 30px var(--accent-gold);
-            animation: trailMove 8s linear infinite;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-gold), transparent);
+            box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-gold);
+            animation: dataFlow 3s linear infinite;
+            opacity: 0.8;
         }
 
-        .light-trail:nth-child(15) {
+        .data-stream:nth-child(9) {
+            top: 25%;
+            width: 150px;
             animation-delay: 0s;
-            animation-duration: 6s;
         }
 
-        .light-trail:nth-child(16) {
-            animation-delay: 2s;
-            animation-duration: 7s;
-        }
-
-        .light-trail:nth-child(17) {
-            animation-delay: 4s;
-            animation-duration: 8s;
-        }
-
-        .light-trail:nth-child(18) {
+        .data-stream:nth-child(10) {
+            top: 50%;
+            width: 200px;
             animation-delay: 1s;
-            animation-duration: 5s;
         }
 
-        .light-trail:nth-child(19) {
-            animation-delay: 3s;
-            animation-duration: 9s;
+        .data-stream:nth-child(11) {
+            top: 75%;
+            width: 180px;
+            animation-delay: 2s;
         }
 
-        @keyframes trailMove {
+        @keyframes dataFlow {
             0% {
-                transform: translate(0, 0);
+                transform: translateX(-100%);
                 opacity: 0;
             }
             10% {
@@ -630,72 +666,85 @@
                 opacity: 1;
             }
             100% {
-                transform: translate(100vw, 100vh);
+                transform: translateX(100vw);
                 opacity: 0;
             }
-        }
-
-        /* Diagonal circuit paths */
-        .circuit-diagonal {
-            position: absolute;
-            width: 200px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
-            transform: rotate(45deg);
-            animation: diagonalPulse 4s ease-in-out infinite;
-        }
-
-        .circuit-diagonal:nth-child(20) {
-            top: 30%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .circuit-diagonal:nth-child(21) {
-            top: 60%;
-            right: 10%;
-            left: auto;
-            animation-delay: 2s;
-            transform: rotate(-45deg);
-        }
-
-        @keyframes diagonalPulse {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 0.8; box-shadow: 0 0 10px rgba(0, 240, 255, 0.5); }
         }
 </style>
 </head>
 <body>    <div class="circuit-bg" aria-hidden="true">
-        <!-- Horizontal circuit lines -->
-        <div class="circuit-line horizontal"></div>
-        <div class="circuit-line horizontal"></div>
-        <div class="circuit-line horizontal"></div>
-        <div class="circuit-line horizontal"></div>
-        
-        <!-- Vertical circuit lines -->
-        <div class="circuit-line vertical"></div>
-        <div class="circuit-line vertical"></div>
-        <div class="circuit-line vertical"></div>
-        
-        <!-- Circuit nodes -->
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        <div class="circuit-node"></div>
-        
-        <!-- Animated light trails -->
+        <!-- SVG Circuit Paths -->
+        <svg class="circuit-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+                <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            
+            <!-- Circuit lines -->
+            <path class="circuit-path-glow" d="M 0 200 L 400 200 L 400 400 L 800 400"/>
+            <path class="circuit-path" d="M 0 200 L 400 200 L 400 400 L 800 400"/>
+            
+            <path class="circuit-path-glow" d="M 1920 300 L 1400 300 L 1400 500 L 900 500"/>
+            <path class="circuit-path" d="M 1920 300 L 1400 300 L 1400 500 L 900 500"/>
+            
+            <path class="circuit-path-glow" d="M 100 800 L 500 800 L 500 600 L 1000 600"/>
+            <path class="circuit-path" d="M 100 800 L 500 800 L 500 600 L 1000 600"/>
+            
+            <path class="circuit-path-glow" d="M 1820 700 L 1300 700 L 1300 500 L 800 500"/>
+            <path class="circuit-path" d="M 1820 700 L 1300 700 L 1300 500 L 800 500"/>
+            
+            <!-- Junction nodes -->
+            <circle class="circuit-node" cx="400" cy="200" r="5"/>
+            <circle class="circuit-node-cyan" cx="400" cy="400" r="5"/>
+            <circle class="circuit-node" cx="1400" cy="300" r="5"/>
+            <circle class="circuit-node-cyan" cx="1400" cy="500" r="5"/>
+            <circle class="circuit-node" cx="500" cy="800" r="5"/>
+            <circle class="circuit-node-cyan" cx="500" cy="600" r="5"/>
+            <circle class="circuit-node" cx="1300" cy="700" r="5"/>
+            <circle class="circuit-node-cyan" cx="1300" cy="500" r="5"/>
+        </svg>
+
+        <!-- Circuit grid -->
+        <div class="circuit-grid"></div>
+
+        <!-- Junction nodes -->
+        <div class="circuit-junction" style="top: 18%; left: 20%;"></div>
+        <div class="circuit-junction" style="top: 37%; left: 20%; animation-delay: 0.5s;"></div>
+        <div class="circuit-junction" style="top: 28%; left: 73%;"></div>
+        <div class="circuit-junction" style="top: 46%; left: 73%; animation-delay: 1s;"></div>
+        <div class="circuit-junction" style="top: 74%; left: 26%;"></div>
+        <div class="circuit-junction" style="top: 56%; left: 26%; animation-delay: 1.5s;"></div>
+        <div class="circuit-junction" style="top: 65%; left: 68%;"></div>
+        <div class="circuit-junction" style="top: 46%; left: 68%; animation-delay: 2s;"></div>
+
+        <!-- Flowing data streams -->
+        <div class="data-stream"></div>
+        <div class="data-stream"></div>
+        <div class="data-stream"></div>
+
+        <!-- Glowing trail particles -->
         <div class="light-trail"></div>
         <div class="light-trail"></div>
         <div class="light-trail"></div>
         <div class="light-trail"></div>
         <div class="light-trail"></div>
-        
-        <!-- Diagonal circuit paths -->
-        <div class="circuit-diagonal"></div>
-        <div class="circuit-diagonal"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
+        <div class="light-trail"></div>
     </div>
+    
 
     <div class="bg-grid"></div>
     <div class="scanlines"></div>
