@@ -868,13 +868,6 @@
             }
         }
 
-        /* Smooth parallax transition */
-        .circuit-bg,
-        .light-trail,
-        .data-stream,
-        .circuit-junction {
-            transition: transform 0.1s ease-out;
-        }
 </style>
 </head>
 <body>    <div class="circuit-bg" aria-hidden="true">
@@ -1305,11 +1298,10 @@
     </script>
 
     <script>
-        // Parallax scroll effect for circuit background
+        // Parallax scroll effect: static circuit background, content moves with scroll
         const circuitBg = document.querySelector('.circuit-bg');
-        const lightTrails = document.querySelectorAll('.light-trail');
-        const dataStreams = document.querySelectorAll('.data-stream');
-        const circuitJunctions = document.querySelectorAll('.circuit-junction');
+        const mainContent = document.querySelector('main');
+        const orgChart = document.querySelector('.org-chart');
         
         let ticking = false;
         
@@ -1317,31 +1309,26 @@
             if (!ticking) {
                 window.requestAnimationFrame(function() {
                     const scrolled = window.pageYOffset;
-                    const rate = scrolled * 0.3; // Parallax rate - background moves slower
                     
+                    // Keep circuit background absolutely static
                     if (circuitBg) {
-                        circuitBg.style.transform = 'translate3d(0, ' + rate + 'px, 0)';
+                        circuitBg.style.transform = 'translate3d(0, 0px, 0)';
                     }
                     
-                    // Parallax effect on light trails - move at different rates
-                    lightTrails.forEach(function(trail, index) {
-                        const trailRate = rate * (0.5 + (index * 0.1));
-                        const currentTransform = trail.style.transform || '';
-                        // Keep the animation transform but add parallax offset
-                        trail.style.marginTop = trailRate + 'px';
-                    });
+                    // Subtle parallax on main content - moves slightly faster than scroll
+                    // This creates the effect of content moving down over the static background
+                    if (mainContent) {
+                        const contentOffset = scrolled * 0.15;
+                        mainContent.style.transform = 'translate3d(0, ' + contentOffset + 'px, 0)';
+                        mainContent.style.willChange = 'transform';
+                    }
                     
-                    // Parallax on data streams
-                    dataStreams.forEach(function(stream, index) {
-                        const streamRate = rate * (0.3 + (index * 0.15));
-                        stream.style.transform = 'translateX(' + (streamRate * 0.5) + 'px)';
-                    });
-                    
-                    // Parallax on circuit junctions
-                    circuitJunctions.forEach(function(junction, index) {
-                        const junctionRate = rate * (0.2 + (index * 0.08));
-                        junction.style.transform = 'translateY(' + junctionRate + 'px)';
-                    });
+                    // Subtle parallax on org chart nodes
+                    if (orgChart) {
+                        const nodeOffset = scrolled * 0.08;
+                        orgChart.style.transform = 'translate3d(0, ' + nodeOffset + 'px, 0)';
+                        orgChart.style.willChange = 'transform';
+                    }
                     
                     ticking = false;
                 });
