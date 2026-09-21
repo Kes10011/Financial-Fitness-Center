@@ -539,56 +539,120 @@
             filter: url(#glow-cyan);
         }
 
-        /* Animated light trail particles */
+                /* Animated light trail particles - circuit style with color changing */
         .light-trail {
             position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--accent-cyan);
+            width: 5px;
+            height: 5px;
             border-radius: 50%;
-            box-shadow: 
-                0 0 10px var(--accent-cyan),
-                0 0 20px var(--accent-cyan),
-                0 0 30px var(--accent-gold),
-                0 0 40px var(--accent-cyan);
-            animation: circuitFlow 4s linear infinite;
+            animation: trailColor 6s linear infinite;
             pointer-events: none;
         }
 
-        .light-trail:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; animation-duration: 3s; }
-        .light-trail:nth-child(2) { top: 40%; left: 30%; animation-delay: 1s; animation-duration: 4s; }
-        .light-trail:nth-child(3) { top: 60%; left: 50%; animation-delay: 2s; animation-duration: 3.5s; }
-        .light-trail:nth-child(4) { top: 30%; left: 70%; animation-delay: 0.5s; animation-duration: 4.5s; }
-        .light-trail:nth-child(5) { top: 70%; left: 20%; animation-delay: 1.5s; animation-duration: 3.2s; }
-        .light-trail:nth-child(6) { top: 50%; left: 80%; animation-delay: 2.5s; animation-duration: 3.8s; }
-        .light-trail:nth-child(7) { top: 80%; left: 40%; animation-delay: 0.8s; animation-duration: 4.2s; }
-        .light-trail:nth-child(8) { top: 15%; left: 60%; animation-delay: 1.8s; animation-duration: 3.6s; }
+        /* Each trail follows a different circuit-like path */
+        .light-trail:nth-child(1) { animation-name: circuitPath1; animation-delay: 0s; animation-duration: 5s; }
+        .light-trail:nth-child(2) { animation-name: circuitPath2; animation-delay: 1.5s; animation-duration: 7s; }
+        .light-trail:nth-child(3) { animation-name: circuitPath3; animation-delay: 3s; animation-duration: 6s; }
+        .light-trail:nth-child(4) { animation-name: circuitPath4; animation-delay: 0.8s; animation-duration: 8s; }
+        .light-trail:nth-child(5) { animation-name: circuitPath5; animation-delay: 2.2s; animation-duration: 5.5s; }
+        .light-trail:nth-child(6) { animation-name: circuitPath6; animation-delay: 3.8s; animation-duration: 7.5s; }
+        .light-trail:nth-child(7) { animation-name: circuitPath7; animation-delay: 1.2s; animation-duration: 6.5s; }
+        .light-trail:nth-child(8) { animation-name: circuitPath8; animation-delay: 4s; animation-duration: 5.8s; }
 
-        @keyframes circuitFlow {
-            0% {
-                transform: translate(0, 0) scale(1);
-                opacity: 0;
-            }
-            5% {
-                opacity: 1;
-                transform: translate(0, 0) scale(1.2);
-            }
-            25% {
-                transform: translate(50px, 30px) scale(1.5);
-                opacity: 0.9;
-            }
-            50% {
-                transform: translate(100px, 60px) scale(1.8);
-                opacity: 1;
-            }
-            75% {
-                transform: translate(150px, 90px) scale(1.5);
-                opacity: 0.8;
-            }
-            100% {
-                transform: translate(200px, 120px) scale(0.8);
-                opacity: 0;
-            }
+        @keyframes trailColor {
+            0% { background: #00f0ff; box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37; }
+            25% { background: #D4AF37; box-shadow: 0 0 10px #D4AF37, 0 0 20px #D4AF37, 0 0 30px #ff00e5; }
+            50% { background: #ff00e5; box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5, 0 0 30px #00f0ff; }
+            75% { background: #00ff88; box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #D4AF37; }
+            100% { background: #00f0ff; box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37; }
+        }
+
+        @keyframes circuitPath1 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(100px, 0); }
+            50% { transform: translate(100px, 80px); }
+            70% { transform: translate(0, 80px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        @keyframes circuitPath2 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(-80px, 0); }
+            50% { transform: translate(-80px, -60px); }
+            75% { transform: translate(0, -60px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        @keyframes circuitPath3 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(60px, 0); }
+            40% { transform: translate(60px, -40px); }
+            60% { transform: translate(-20px, -40px); }
+            80% { transform: translate(-20px, 40px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        @keyframes circuitPath4 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(-100px, 0); }
+            50% { transform: translate(-100px, 50px); }
+            70% { transform: translate(0, 50px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        @keyframes circuitPath5 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(80px, 0); }
+            50% { transform: translate(80px, 60px); }
+            75% { transform: translate(0, 60px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        @keyframes circuitPath6 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            20% { transform: translate(-60px, 0); }
+            40% { transform: translate(-60px, 40px); }
+            60% { transform: translate(20px, 40px); }
+            80% { transform: translate(20px, -30px); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        @keyframes circuitPath7 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            30% { transform: translate(0, -70px); }
+            50% { transform: translate(70px, -70px); }
+            70% { transform: translate(70px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        @keyframes circuitPath8 {
+            0% { transform: translate(0, 0); opacity: 0; }
+            10% { opacity: 1; }
+            25% { transform: translate(0, 50px); }
+            50% { transform: translate(-50px, 50px); }
+            75% { transform: translate(-50px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
+        }
+            25% { transform: translate(0, 50px); }
+            50% { transform: translate(-50px, 50px); }
+            75% { transform: translate(-50px, 0); }
+            90% { opacity: 1; }
+            100% { transform: translate(0, 0); opacity: 0; }
         }
 
         /* Circuit grid lines */
@@ -617,41 +681,47 @@
             0%, 100% { 
                 opacity: 0.6;
                 transform: scale(1);
-                box-shadow: 0 0 15px var(--accent-gold), 0 0 30px var(--accent-cyan);
+                box-shadow: 0 0 15px #D4AF37, 0 0 30px #00f0ff;
+            }
+            25% {
+                box-shadow: 0 0 20px #ff00e5, 0 0 40px #D4AF37, 0 0 60px #00f0ff;
             }
             50% { 
                 opacity: 1;
                 transform: scale(1.3);
-                box-shadow: 0 0 25px var(--accent-gold), 0 0 50px var(--accent-cyan), 0 0 75px var(--accent-gold);
+                box-shadow: 0 0 25px #00f0ff, 0 0 50px #00ff88, 0 0 75px #ff00e5;
+            }
+            75% {
+                box-shadow: 0 0 20px #D4AF37, 0 0 40px #ff00e5, 0 0 60px #00f0ff;
             }
         }
 
-        /* Flowing data streams */
+        /* Flowing data streams with color changing */
         .data-stream {
             position: absolute;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--accent-cyan), var(--accent-gold), transparent);
             box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-gold);
-            animation: dataFlow 3s linear infinite;
+            animation: dataFlow 3s linear infinite, streamColor 4s ease-in-out infinite;
             opacity: 0.8;
         }
 
         .data-stream:nth-child(9) {
             top: 25%;
             width: 150px;
-            animation-delay: 0s;
+            animation-delay: 0s, 0s;
         }
 
         .data-stream:nth-child(10) {
             top: 50%;
             width: 200px;
-            animation-delay: 1s;
+            animation-delay: 1s, 1.5s;
         }
 
         .data-stream:nth-child(11) {
             top: 75%;
             width: 180px;
-            animation-delay: 2s;
+            animation-delay: 2s, 3s;
         }
 
         @keyframes dataFlow {
@@ -668,6 +738,18 @@
             100% {
                 transform: translateX(100vw);
                 opacity: 0;
+            }
+        }
+
+        @keyframes streamColor {
+            0%, 100% { 
+                box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #D4AF37;
+            }
+            33% { 
+                box-shadow: 0 0 10px #ff00e5, 0 0 20px #ff00e5, 0 0 30px #00f0ff;
+            }
+            66% { 
+                box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #D4AF37;
             }
         }
 </style>
