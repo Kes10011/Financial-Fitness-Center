@@ -62,75 +62,6 @@
             z-index: 0;
         }
 
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background-color: var(--accent-cyan);
-            top: -100px;
-            right: -100px;
-            box-shadow: 0 0 60px rgba(0, 240, 255, 0.35), 0 0 120px rgba(0, 240, 255, 0.15);
-            animation: orbPulse1 18s ease-in-out infinite;
-        }
-
-        .orb-2 {
-            width: 300px;
-            height: 300px;
-            background-color: var(--accent-magenta);
-            bottom: -50px;
-            left: -50px;
-            box-shadow: 0 0 50px rgba(255, 0, 229, 0.35), 0 0 100px rgba(255, 0, 229, 0.15);
-            animation: orbPulse2 18s ease-in-out infinite;
-        }
-
-        .orb-3 {
-            width: 250px;
-            height: 250px;
-            background-color: var(--accent-green);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.35), 0 0 80px rgba(212, 175, 55, 0.15);
-            animation: orbPulse3 18s ease-in-out infinite;
-        }
-
-        @keyframes orbPulse1 {
-            0% { opacity: 0.4; transform: scale(1); background-color: #D4AF37; box-shadow: 0 0 30px rgba(0, 240, 255, 0.35), 0 0 60px rgba(0, 240, 255, 0.15); }
-            16% { opacity: 0.55; transform: scale(1.08); background-color: #ff00e5; box-shadow: 0 0 30px rgba(255, 0, 229, 0.35), 0 0 60px rgba(255, 0, 229, 0.15); }
-            33% { opacity: 0.45; transform: scale(1.12); background-color: #D4AF37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.35), 0 0 60px rgba(212, 175, 55, 0.15); }
-            50% { opacity: 0.55; transform: scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 30px rgba(255, 59, 59, 0.35), 0 0 60px rgba(255, 59, 59, 0.15); }
-            66% { opacity: 0.45; transform: scale(1.12); background-color: #D4AF37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.35), 0 0 60px rgba(212, 175, 55, 0.15); }
-            83% { opacity: 0.55; transform: scale(1.08); background-color: #ff6b35; box-shadow: 0 0 30px rgba(255, 107, 53, 0.35), 0 0 60px rgba(255, 107, 53, 0.15); }
-            100% { opacity: 0.4; transform: scale(1); background-color: #D4AF37; box-shadow: 0 0 30px rgba(0, 240, 255, 0.35), 0 0 60px rgba(0, 240, 255, 0.15); }
-        }
-
-        @keyframes orbPulse2 {
-            0% { opacity: 0.4; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 25px rgba(255, 0, 229, 0.35), 0 0 50px rgba(255, 0, 229, 0.15); }
-            16% { opacity: 0.55; transform: scale(1.08); background-color: #D4AF37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.35), 0 0 50px rgba(212, 175, 55, 0.15); }
-            33% { opacity: 0.45; transform: scale(1.12); background-color: #ff3b3b; box-shadow: 0 0 25px rgba(255, 59, 59, 0.35), 0 0 50px rgba(255, 59, 59, 0.15); }
-            50% { opacity: 0.55; transform: scale(1.08); background-color: #D4AF37; box-shadow: 0 0 25px rgba(212, 175, 55, 0.35), 0 0 50px rgba(212, 175, 55, 0.15); }
-            66% { opacity: 0.45; transform: scale(1.12); background-color: #ff6b35; box-shadow: 0 0 25px rgba(255, 107, 53, 0.35), 0 0 50px rgba(255, 107, 53, 0.15); }
-            83% { opacity: 0.55; transform: scale(1.08); background-color: #D4AF37; box-shadow: 0 0 25px rgba(0, 240, 255, 0.35), 0 0 50px rgba(0, 240, 255, 0.15); }
-            100% { opacity: 0.4; transform: scale(1); background-color: #ff00e5; box-shadow: 0 0 25px rgba(255, 0, 229, 0.35), 0 0 50px rgba(255, 0, 229, 0.15); }
-        }
-
-        @keyframes orbPulse3 {
-            0% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); background-color: #D4AF37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.35), 0 0 40px rgba(212, 175, 55, 0.15); }
-            16% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff3b3b; box-shadow: 0 0 20px rgba(255, 59, 59, 0.35), 0 0 40px rgba(255, 59, 59, 0.15); }
-            33% { opacity: 0.45; transform: translate(-50%, -50%) scale(1.12); background-color: #D4AF37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.35), 0 0 40px rgba(212, 175, 55, 0.15); }
-            50% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff6b35; box-shadow: 0 0 20px rgba(255, 107, 53, 0.35), 0 0 40px rgba(255, 107, 53, 0.15); }
-            66% { opacity: 0.45; transform: translate(-50%, -50%) scale(1.12); background-color: #D4AF37; box-shadow: 0 0 20px rgba(0, 240, 255, 0.35), 0 0 40px rgba(0, 240, 255, 0.15); }
-            83% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.08); background-color: #ff00e5; box-shadow: 0 0 20px rgba(255, 0, 229, 0.35), 0 0 40px rgba(255, 0, 229, 0.15); }
-            100% { opacity: 0.4; transform: translate(-50%, -50%) scale(1); background-color: #D4AF37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.35), 0 0 40px rgba(212, 175, 55, 0.15); }
-        }
 
         @keyframes logoPulse {
             0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
@@ -2685,9 +2616,6 @@
     </div>
 
     <div class="bg-grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
 
     <nav>
         <div class="logo">
@@ -3586,24 +3514,7 @@
             mouseY = (e.clientY / window.innerHeight - 0.5) * 30;
         });
 
-        function animateOrbs() {
-            currentX += (mouseX - currentX) * 0.05;
-            currentY += (mouseY - currentY) * 0.05;
-
-            const orb1 = document.querySelector('.orb-1');
-            const orb2 = document.querySelector('.orb-2');
-            const orb3 = document.querySelector('.orb-3');
-
-            if (orb1) orb1.style.transform = `translate(${currentX}px, ${currentY}px)`;
-            if (orb2) orb2.style.transform = `translate(${-currentX}px, ${-currentY}px)`;
-            if (orb3) orb3.style.transform = `translate(calc(-50% + ${currentX * 0.5}px), calc(-50% + ${currentY * 0.5}px))`;
-
-            requestAnimationFrame(animateOrbs);
-        }
-
-        animateOrbs();
-
-        const navToggle = document.querySelector('.nav-toggle');
+                const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
 
         if (navToggle && navLinks) {
