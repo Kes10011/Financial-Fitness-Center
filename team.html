@@ -1299,37 +1299,6 @@
         });
     </script>
 
-    <script>
-        // Parallax: content moves over static circuit background
-        const mainContent = document.querySelector('main');
-        const orgChart = document.querySelector('.org-chart');
-        
-        let ticking = false;
-        
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                window.requestAnimationFrame(function() {
-                    const scrolled = window.pageYOffset;
-                    
-                    // Content parallax - moves slightly faster than scroll
-                    if (mainContent) {
-                        const contentOffset = scrolled * 0.15;
-                        mainContent.style.transform = 'translate3d(0, ' + contentOffset + 'px, 0)';
-                    }
-                    
-                    // Org chart subtle parallax
-                    if (orgChart) {
-                        const nodeOffset = scrolled * 0.08;
-                        orgChart.style.transform = 'translate3d(0, ' + nodeOffset + 'px, 0)';
-                    }
-                    
-                    ticking = false;
-                });
-                
-                ticking = true;
-            }
-        });
-    </script>
 </body>
 </html>
 
