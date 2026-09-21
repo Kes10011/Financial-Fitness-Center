@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Team | School of Financial Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-gold: #D4AF37;
+            --accent-cyan: #00f0ff;
+            --accent-magenta: #ff00e5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(212, 175, 55, 0.15);
+            top: -200px;
+            right: -200px;
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 240, 255, 0.1);
+            bottom: -150px;
+            left: -150px;
+            animation: orbFloat 25s ease-in-out infinite reverse;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 0, 229, 0.08);
+            top: 50%;
+            left: 50%;
+            animation: orbFloat 30s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(50px, -50px); }
+            50% { transform: translate(-30px, 30px); }
+            75% { transform: translate(-50px, -30px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 80px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .logo-text span {
+            color: var(--accent-gold);
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 30px;
+            color: var(--accent-gold);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .team-node {
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .team-node:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-node-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 2px solid var(--border);
+            transition: all 0.4s;
+            position: relative;
+            background: var(--bg-secondary);
+        }
+
+        .team-node:hover .team-node-image {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .team-node-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .team-node:hover .team-node-image img {
+            transform: scale(1.05);
+        }
+
+        .team-node-info {
+            text-align: center;
+        }
+
+        .team-node-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .team-node-role {
+            color: var(--accent-gold);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-node-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .team-node-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .team-popup {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .team-node-overlay.active .team-popup {
+            transform: scale(1);
+        }
+
+        .team-popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 32px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .team-popup-close:hover {
+            color: var(--accent-gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .team-popup-header {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .team-popup-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid var(--accent-gold);
+            flex-shrink: 0;
+        }
+
+        .team-popup-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-popup-title {
+            flex: 1;
+        }
+
+        .team-popup-title h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .team-popup-title p {
+            color: var(--accent-gold);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-popup-section {
+            margin-bottom: 24px;
+        }
+
+        .team-popup-section h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .team-popup-section p,
+        .team-popup-section li {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .team-popup-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .team-popup-section li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .team-popup-section li::before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .skill-tag {
+            padding: 8px 14px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            color: var(--accent-gold);
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .team-popup-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin-left: 15px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <img src="LOGO_SOFIT-removebg-preview.png" alt="School of Financial Fitness Logo">
+                    </div>
+                    <div class="logo-text">School of <span>Financial Fitness</span></div>
+                </a>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#courses">Courses</a>
+                    <a href="index.html#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header reveal">
+            <div class="section-tag">Our People</div>
+            <h1 class="section-title">Meet The <span style="color: var(--accent-gold);">Team</span></h1>
+            <p class="section-subtitle">The experts behind School of Financial Fitness. Click any member to view their full profile and skills.</p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Ivan -->
+            <div class="team-node" data-member="ivan">
+                <div class="team-node-image">
+                    <img src="IVAN.png" alt="Ivan Mark Luther Mark">
+                </div>
+                <div class="team-node-info">
+                    <div class="team-node-name">IVAN MARK LUTHER MARK, MFA</div>
+                    <div class="team-node-role">Finance Coach / Director</div>
+                </div>
+            </div>
+
+            <!-- Michelle -->
+            <div class="team-node" data-member="michelle">
+                <div class="team-node-image">
+                    <img src="MICHELLE.png" alt="Michelle Lezama-Mark">
+                </div>
+                <div class="team-node-info">
+                    <div class="team-node-name">MICHELLE LEZAMA-MARK</div>
+                    <div class="team-node-role">Director</div>
+                </div>
+            </div>
+
+            <!-- Wayne -->
+            <div class="team-node" data-member="wayne">
+                <div class="team-node-image">
+                    <img src="WAYNE.png" alt="Wayne Pierre">
+                </div>
+                <div class="team-node-info">
+                    <div class="team-node-name">WAYNE PIERRE</div>
+                    <div class="team-node-role">Business Analyst</div>
+                </div>
+            </div>
+
+            <!-- Kester -->
+            <div class="team-node" data-member="kester">
+                <div class="team-node-image">
+                    <img src="KESTER.png" alt="Kester Charles">
+                </div>
+                <div class="team-node-info">
+                    <div class="team-node-name">KESTER CHARLES</div>
+                    <div class="team-node-role">Marketing Officer</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Team Member Popups -->
+    <div id="team-popup-ivan" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="IVAN.png" alt="Ivan Mark Luther Mark">
+                </div>
+                <div class="team-popup-title">
+                    <h2>IVAN MARK LUTHER MARK, MFA</h2>
+                    <p>Finance Coach / Director</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Profile</h3>
+                <p>Ivan Mark delivers over twenty-five (25) years of experience within the Financial Service Industry and contributes knowledge and expertise in strategic financial management, business development, strategic planning, corporate governance, corporate finance, investment management, corporate restructuring, and private financial advisory services.</p>
+                <p><strong>Motto:</strong> "Continued Value Is Demanded"</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Financial Advisory</div>
+                    <div class="skill-tag">Strategic Planning</div>
+                    <div class="skill-tag">Corporate Governance</div>
+                    <div class="skill-tag">Investment Management</div>
+                    <div class="skill-tag">Business Development</div>
+                    <div class="skill-tag">Corporate Finance</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-popup-michelle" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="MICHELLE.png" alt="Michelle Lezama-Mark">
+                </div>
+                <div class="team-popup-title">
+                    <h2>MICHELLE LEZAMA-MARK</h2>
+                    <p>Director</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Profile</h3>
+                <p>Michelle has over 25 years of experience in Banking and Insurance, including Sales, Marketing and Management. Her profile describes her as having enthusiasm, dedication, creativity and problem-solving abilities, combined with practical experience.</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Experience</h3>
+                <ul>
+                    <li>Republic Bank Limited - Customer Service Representative / Clerk</li>
+                    <li>Mega Insurance Company - Insurance Agent</li>
+                    <li>First Citizens Bank Limited - Multiple roles including Recoveries/Reconciliation Clerk, Loans Interviewing Officer</li>
+                    <li>Marketing work with G & G Holdings, Associated Brands, and Nabisco Royal Inc.</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Achievements</h3>
+                <ul>
+                    <li>Head Prefect</li>
+                    <li>PTA Outstanding Student Award</li>
+                    <li>Banking Sales Award in Forex</li>
+                    <li>Agent of the Month — 2 times among over 600 agents</li>
+                    <li>TTAIFA Ruby, Diamond, and Platinum Production awards</li>
+                    <li>Representation of the Bank at Central Bank</li>
+                    <li>Small Business Programs</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Banking</div>
+                    <div class="skill-tag">Insurance</div>
+                    <div class="skill-tag">Sales</div>
+                    <div class="skill-tag">Marketing</div>
+                    <div class="skill-tag">Management</div>
+                    <div class="skill-tag">Customer Service</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-popup-wayne" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="WAYNE.png" alt="Wayne Pierre">
+                </div>
+                <div class="team-popup-title">
+                    <h2>WAYNE PIERRE</h2>
+                    <p>Business Analyst</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Capabilities Summary</h3>
+                <p>I am trained and knowledgeable in strategic financial management, strategic planning, sales and marketing, project management, and organizational development.</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Qualifications</h3>
+                <ul>
+                    <li>Certified Management Accountant (CMA)</li>
+                    <li>Chartered Professional Accountant (CPA)</li>
+                    <li>Masters Certificate in Project Management — Project Management Institute, U.S.A.</li>
+                    <li>Executive Masters Business Administration — UWI; International Finance/Joint Venture Management</li>
+                    <li>Associate Chartered Institute of Bankers</li>
+                    <li>Chartered Institute of Bankers — London</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Professional Experience</h3>
+                <ul>
+                    <li>Over thirty-five years managerial experience in Accounting and Strategic Financial Management</li>
+                    <li>Currently offers strategic financial management services to small organizations</li>
+                    <li>Seven years as Chief Executive of the Tobago Hospitality and Tourism Institute</li>
+                    <li>Marketing and Sales in Insurance, financial services, and industrial chemicals</li>
+                    <li>Thirteen years at Managerial level in the banking industry</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Other Certifications & Activities</h3>
+                <ul>
+                    <li>Qualified Hospitality Assured Business Advisor — Institute of Hospitality (UK) and Caribbean Tourism Organization (CTO)</li>
+                    <li>Management of Service Quality — Caribbean Tourism Organization</li>
+                    <li>Business Process Re-engineering — Ministry of Public Administration</li>
+                    <li>Customer Service — The Ritz Carlton Leadership Center</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Strategic Finance</div>
+                    <div class="skill-tag">Project Management</div>
+                    <div class="skill-tag">Accounting</div>
+                    <div class="skill-tag">Business Analysis</div>
+                    <div class="skill-tag">Marketing Strategy</div>
+                    <div class="skill-tag">Organizational Development</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="team-popup-kester" class="team-node-overlay">
+        <div class="team-popup">
+            <button class="team-popup-close" aria-label="Close profile">&times;</button>
+            <div class="team-popup-header">
+                <div class="team-popup-image">
+                    <img src="KESTER.png" alt="Kester Charles">
+                </div>
+                <div class="team-popup-title">
+                    <h2>KESTER CHARLES</h2>
+                    <p>Marketing Officer</p>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Profile</h3>
+                <p>Digital marketing and content professional with over 18 years across IT management, e-commerce, sales and social media. Now independent — building <strong>AI-driven content and automation solutions</strong> for small and medium businesses, backed by experience in team leadership and training.</p>
+            </div>
+            <div class="team-popup-section">
+                <h3>Experience</h3>
+                <ul>
+                    <li><strong>Freelance Content Creator & AI Solutions Specialist</strong> — Produce digital content for client brands across social and web platforms. Build AI-driven content, chatbot and automation workflows for clients. Advise businesses on adopting AI tools for marketing and customer service.</li>
+                    <li><strong>Freelance Marketer & Social Media Content Creator</strong> — Planned and ran social media marketing campaigns. Created written, graphic and video content for client pages and ads.</li>
+                    <li><strong>E-commerce & Digital Marketing Specialist / Lecturer</strong> — Trinity College & The Financial Fitness Center. Courses: Digital Marketing, The Art of Persuasion, Customer Service & Conflict Resolution.</li>
+                    <li><strong>Keynote Speaker</strong> — "I AM DIGITAL" Seminar: Social Media Marketing, E-commerce Tactics, Sales & Persuasion.</li>
+                    <li><strong>IT Manager</strong> — CMR Ltd & C-Drive Solutions</li>
+                    <li><strong>Sales Supervisor</strong> — Ron's Automotive</li>
+                </ul>
+            </div>
+            <div class="team-popup-section">
+                <h3>Core Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag">Digital Marketing</div>
+                    <div class="skill-tag">AI Tools & Automation</div>
+                    <div class="skill-tag">Content Creation</div>
+                    <div class="skill-tag">Social Media Management</div>
+                    <div class="skill-tag">E-commerce Strategy</div>
+                    <div class="skill-tag">Sales & Closing</div>
+                    <div class="skill-tag">The Art of Persuasion</div>
+                    <div class="skill-tag">Customer Service</div>
+                    <div class="skill-tag">Conflict Resolution</div>
+                    <div class="skill-tag">Staff Training</div>
+                    <div class="skill-tag">Team Leadership</div>
+                    <div class="skill-tag">Lecturing & Public Speaking</div>
+                </div>
+            </div>
+            <div class="team-popup-section">
+                <h3>Education & Qualifications</h3>
+                <ul>
+                    <li>A+ Computer Technician Programme — BorderCom International</li>
+                    <li>Business Management — San Fernando Technical Institute</li>
+                    <li>Computer Maintenance and Repairs — AddTech</li>
+                    <li>Computer Literacy — National Energy Skills Centre</li>
+                    <li>C.X.C Ordinary Levels — Gasparillo Composite</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 <span>School of Financial Fitness</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Team node popups
+        const teamNodes = document.querySelectorAll('.team-node');
+        const teamPopups = document.querySelectorAll('.team-node-overlay');
+
+        teamNodes.forEach(node => {
+            node.addEventListener('click', function() {
+                const member = this.getAttribute('data-member');
+                const popup = document.getElementById('team-popup-' + member);
+                if (popup) {
+                    popup.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        document.querySelectorAll('.team-popup-close').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.team-node-overlay').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        teamPopups.forEach(popup => {
+            popup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                teamPopups.forEach(popup => popup.classList.remove('active'));
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>
