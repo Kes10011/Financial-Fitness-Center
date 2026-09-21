@@ -3721,6 +3721,54 @@
             <path d="M12 19V5M5 12l7-7 7 7"/>
         </svg>
     </button>
+
+    <script>
+        // Gentle hover sound effect using Web Audio API
+        const hoverSound = (function() {
+            let audioContext = null;
+            
+            function init() {
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+            
+            function playPling() {
+                if (!audioContext) {
+                    init();
+                }
+                
+                if (audioContext) {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                    oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1);
+                    
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.15);
+                }
+            }
+            
+            return { play: playPling };
+        })();
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const clickables = document.querySelectorAll('a, button, .team-node, .course-card, .blog-card, .director-node, .eco-node, .skill-tag, .scroll-to-top, [onclick]');
+            
+            clickables.forEach(function(el) {
+                el.addEventListener('mouseenter', function() {
+                    hoverSound.play();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
