@@ -9,12 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --bg-primary: #0a0a0f;
             --bg-secondary: #111118;
@@ -25,8 +20,9 @@
             --accent-gold: #D4AF37;
             --accent-cyan: #00f0ff;
             --accent-magenta: #ff00e5;
+            --glow-gold: 0 0 30px rgba(212, 175, 55, 0.4);
+            --glow-cyan: 0 0 30px rgba(0, 240, 255, 0.4);
         }
-
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg-primary);
@@ -34,13 +30,10 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-
         .bg-grid {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-image: 
                 linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
@@ -48,7 +41,6 @@
             pointer-events: none;
             z-index: 0;
         }
-
         .orb {
             position: fixed;
             border-radius: 50%;
@@ -57,41 +49,30 @@
             pointer-events: none;
             z-index: 0;
         }
-
         .orb-1 {
-            width: 500px;
-            height: 500px;
+            width: 500px; height: 500px;
             background: rgba(212, 175, 55, 0.15);
-            top: -200px;
-            right: -200px;
+            top: -200px; right: -200px;
             animation: orbFloat 20s ease-in-out infinite;
         }
-
         .orb-2 {
-            width: 400px;
-            height: 400px;
+            width: 400px; height: 400px;
             background: rgba(0, 240, 255, 0.1);
-            bottom: -150px;
-            left: -150px;
+            bottom: -150px; left: -150px;
             animation: orbFloat 25s ease-in-out infinite reverse;
         }
-
         .orb-3 {
-            width: 300px;
-            height: 300px;
+            width: 300px; height: 300px;
             background: rgba(255, 0, 229, 0.08);
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
             animation: orbFloat 30s ease-in-out infinite;
         }
-
         @keyframes orbFloat {
             0%, 100% { transform: translate(0, 0); }
             25% { transform: translate(50px, -50px); }
             50% { transform: translate(-30px, 30px); }
             75% { transform: translate(-50px, -30px); }
         }
-
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -99,19 +80,16 @@
             position: relative;
             z-index: 1;
         }
-
         header {
             padding: 30px 0;
             border-bottom: 1px solid var(--border);
             margin-bottom: 80px;
         }
-
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             display: flex;
             align-items: center;
@@ -119,28 +97,14 @@
             text-decoration: none;
             color: var(--text-primary);
         }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
+        .logo-icon { width: 40px; height: 40px; }
+        .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
         .logo-text {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 18px;
             font-weight: 600;
         }
-
-        .logo-text span {
-            color: var(--accent-gold);
-        }
-
+        .logo-text span { color: var(--accent-gold); }
         nav a {
             color: var(--text-secondary);
             text-decoration: none;
@@ -148,16 +112,11 @@
             font-size: 14px;
             transition: color 0.3s;
         }
-
-        nav a:hover {
-            color: var(--accent-gold);
-        }
-
+        nav a:hover { color: var(--accent-gold); }
         .section-header {
             text-align: center;
             margin-bottom: 80px;
         }
-
         .section-tag {
             display: inline-block;
             padding: 8px 20px;
@@ -171,7 +130,6 @@
             letter-spacing: 2px;
             margin-bottom: 20px;
         }
-
         .section-title {
             font-family: 'Space Grotesk', sans-serif;
             font-size: clamp(2.5rem, 5vw, 4rem);
@@ -179,86 +137,191 @@
             line-height: 1.1;
             margin-bottom: 20px;
         }
-
         .section-subtitle {
             color: var(--text-secondary);
             font-size: 18px;
             max-width: 600px;
             margin: 0 auto;
         }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-bottom: 80px;
+        /* Jarvis-style Org Chart */
+        .org-chart {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            padding: 60px 20px;
+            min-height: 600px;
         }
-
+        .org-chart::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: orgPulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes orgPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+        }
+        .org-stem {
+            position: relative;
+            width: 4px; height: 120px;
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-cyan));
+            box-shadow: var(--glow-gold), var(--glow-cyan);
+            animation: stemGlow 3s ease-in-out infinite;
+        }
+        @keyframes stemGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(0, 240, 255, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6), 0 0 60px rgba(0, 240, 255, 0.4); }
+        }
+        .org-branch {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding-top: 0;
+        }
+        .org-branch::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 80%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+            box-shadow: var(--glow-cyan);
+        }
+        .org-branch-line {
+            position: absolute;
+            top: 0;
+            width: 2px; height: 60px;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-gold));
+            box-shadow: var(--glow-cyan);
+        }
+        .org-branch-line.left {
+            left: 25%;
+            transform: rotate(25deg);
+            transform-origin: top center;
+        }
+        .org-branch-line.right {
+            right: 25%;
+            transform: rotate(-25deg);
+            transform-origin: top center;
+        }
+        .org-row {
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+        .org-row.top { margin-bottom: 0; }
+        .org-row.bottom { margin-top: 0; }
         .team-node {
             position: relative;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
-
-        .team-node:hover {
-            transform: translateY(-10px);
-        }
-
-        .team-node-image {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 20px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            border: 2px solid var(--border);
-            transition: all 0.4s;
+        .team-node:hover { transform: translateY(-10px); }
+        .node-image-wrapper {
             position: relative;
+            width: 140px; height: 140px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-cyan));
+            box-shadow: var(--glow-gold), var(--glow-cyan);
+            transition: all 0.4s;
+        }
+        .team-node:hover .node-image-wrapper {
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.6), 0 0 80px rgba(0, 240, 255, 0.4);
+            transform: scale(1.05);
+        }
+        .node-image-inner {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
             background: var(--bg-secondary);
+            position: relative;
         }
-
-        .team-node:hover .team-node-image {
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
-        }
-
-        .team-node-image img {
-            width: 100%;
-            height: 100%;
+        .node-image-inner img {
+            width: 100%; height: 100%;
             object-fit: cover;
             transition: transform 0.4s;
         }
-
-        .team-node:hover .team-node-image img {
-            transform: scale(1.05);
+        .team-node:hover .node-image-inner img { transform: scale(1.1); }
+        .node-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            animation: holographicSpin 8s linear infinite;
+            pointer-events: none;
         }
-
-        .team-node-info {
-            text-align: center;
+        .node-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -20px; left: -20px; right: -20px; bottom: -20px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            animation: holographicSpin 12s linear infinite reverse;
+            pointer-events: none;
         }
-
-        .team-node-name {
+        @keyframes holographicSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .node-info { text-align: center; position: relative; }
+        .node-name {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 22px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
-        .team-node-role {
-            color: var(--accent-gold);
-            font-size: 14px;
+        .node-role {
+            color: var(--accent-cyan);
+            font-size: 12px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
-
+        .node-status {
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            margin-top: 8px;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(0, 255, 136, 0.8); }
+            50% { opacity: 0.5; box-shadow: 0 0 20px rgba(0, 255, 136, 1); }
+        }
         .team-node-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -267,15 +330,13 @@
             pointer-events: none;
             transition: opacity 0.4s;
         }
-
         .team-node-overlay.active {
             opacity: 1;
             pointer-events: all;
         }
-
         .team-popup {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+            border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 24px;
             padding: 40px;
             max-width: 600px;
@@ -283,176 +344,161 @@
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
-            transform: scale(0.9);
+            transform: scale(0.9) translateY(20px);
             transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.2), 0 0 100px rgba(0, 240, 255, 0.1);
         }
-
         .team-node-overlay.active .team-popup {
-            transform: scale(1);
+            transform: scale(1) translateY(0);
         }
-
         .team-popup-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 20px; right: 20px;
             background: transparent;
             border: none;
             color: var(--text-secondary);
             font-size: 32px;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             transition: all 0.3s;
         }
-
         .team-popup-close:hover {
             color: var(--accent-gold);
             background: rgba(212, 175, 55, 0.1);
+            box-shadow: var(--glow-gold);
         }
-
         .team-popup-header {
             display: flex;
             gap: 24px;
             margin-bottom: 30px;
             align-items: flex-start;
         }
-
         .team-popup-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 16px;
+            width: 120px; height: 120px;
+            border-radius: 50%;
             overflow: hidden;
             border: 2px solid var(--accent-gold);
             flex-shrink: 0;
+            box-shadow: var(--glow-gold);
         }
-
-        .team-popup-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .team-popup-title {
-            flex: 1;
-        }
-
+        .team-popup-image img { width: 100%; height: 100%; object-fit: cover; }
+        .team-popup-title { flex: 1; }
         .team-popup-title h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
         .team-popup-title p {
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
             font-size: 14px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
         }
-
-        .team-popup-section {
-            margin-bottom: 24px;
-        }
-
+        .team-popup-section { margin-bottom: 24px; }
         .team-popup-section h3 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             color: var(--accent-gold);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 12px;
             padding-bottom: 8px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
-
         .team-popup-section p,
         .team-popup-section li {
             color: var(--text-secondary);
             line-height: 1.7;
-            font-size: 15px;
+            font-size: 14px;
         }
-
-        .team-popup-section ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
+        .team-popup-section ul { list-style: none; padding-left: 0; }
         .team-popup-section li {
             padding: 6px 0;
             padding-left: 20px;
             position: relative;
         }
-
         .team-popup-section li::before {
             content: "?";
             position: absolute;
             left: 0;
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
         }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
             margin-top: 12px;
         }
-
         .skill-tag {
             padding: 8px 14px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(0, 240, 255, 0.05);
+            border: 1px solid rgba(0, 240, 255, 0.2);
             border-radius: 8px;
-            color: var(--accent-gold);
+            color: var(--accent-cyan);
             font-size: 13px;
             font-weight: 500;
             text-align: center;
+            transition: all 0.3s;
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
         }
-
+        .skill-tag:hover {
+            background: rgba(0, 240, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+            transform: translateY(-2px);
+        }
         footer {
             padding: 40px 0;
             border-top: 1px solid var(--border);
             text-align: center;
             color: var(--text-secondary);
             font-size: 14px;
+            margin-top: 80px;
         }
-
-        footer span {
-            color: var(--accent-gold);
+        footer span { color: var(--accent-gold); }
+        .scanlines {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(0, 0, 0, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
         }
-
         @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
+            .container { padding: 0 20px; }
+            .org-row { gap: 60px; }
+            .node-image-wrapper { width: 100px; height: 100px; }
+            .node-name { font-size: 14px; }
+            .node-role { font-size: 11px; }
             .team-popup-header {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            nav a {
-                margin-left: 15px;
-                font-size: 12px;
-            }
+            .skills-grid { grid-template-columns: 1fr; }
+            nav a { margin-left: 15px; font-size: 12px; }
         }
     </style>
 </head>
 <body>
     <div class="bg-grid"></div>
+    <div class="scanlines"></div>
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
@@ -483,53 +529,75 @@
             <p class="section-subtitle">The experts behind School of Financial Fitness. Click any member to view their full profile and skills.</p>
         </div>
 
-        <div class="team-grid">
-            <!-- Ivan -->
-            <div class="team-node" data-member="ivan">
-                <div class="team-node-image">
-                    <img src="IVAN.png" alt="Ivan Mark Luther Mark">
+        <div class="org-chart">
+            <!-- Directors Row (Top) -->
+            <div class="org-row top">
+                <div class="team-node" data-member="ivan">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="IVAN.png" alt="Ivan Mark Luther Mark">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">IVAN MARK LUTHER MARK</div>
+                        <div class="node-role">Finance Coach / Director</div>
+                        <div class="node-status"></div>
+                    </div>
                 </div>
-                <div class="team-node-info">
-                    <div class="team-node-name">IVAN MARK LUTHER MARK, MFA</div>
-                    <div class="team-node-role">Finance Coach / Director</div>
+
+                <div class="team-node" data-member="michelle">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="MICHELLE.png" alt="Michelle Lezama-Mark">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">MICHELLE LEZAMA-MARK</div>
+                        <div class="node-role">Director</div>
+                        <div class="node-status"></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Michelle -->
-            <div class="team-node" data-member="michelle">
-                <div class="team-node-image">
-                    <img src="MICHELLE.png" alt="Michelle Lezama-Mark">
-                </div>
-                <div class="team-node-info">
-                    <div class="team-node-name">MICHELLE LEZAMA-MARK</div>
-                    <div class="team-node-role">Director</div>
-                </div>
+            <!-- Central Stem -->
+            <div class="org-stem"></div>
+
+            <!-- Branch Lines -->
+            <div class="org-branch">
+                <div class="org-branch-line left"></div>
+                <div class="org-branch-line right"></div>
             </div>
 
-            <!-- Wayne -->
-            <div class="team-node" data-member="wayne">
-                <div class="team-node-image">
-                    <img src="WAYNE.png" alt="Wayne Pierre">
+            <!-- Bottom Row (Wayne and Kester) -->
+            <div class="org-row bottom">
+                <div class="team-node" data-member="wayne">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="WAYNE.png" alt="Wayne Pierre">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">WAYNE PIERRE</div>
+                        <div class="node-role">Business Analyst</div>
+                        <div class="node-status"></div>
+                    </div>
                 </div>
-                <div class="team-node-info">
-                    <div class="team-node-name">WAYNE PIERRE</div>
-                    <div class="team-node-role">Business Analyst</div>
-                </div>
-            </div>
 
-            <!-- Kester -->
-            <div class="team-node" data-member="kester">
-                <div class="team-node-image">
-                    <img src="KESTER.png" alt="Kester Charles">
-                </div>
-                <div class="team-node-info">
-                    <div class="team-node-name">KESTER CHARLES</div>
-                    <div class="team-node-role">Marketing Officer</div>
+                <div class="team-node" data-member="kester">
+                    <div class="node-image-wrapper">
+                        <div class="node-image-inner">
+                            <img src="KESTER.png" alt="Kester Charles">
+                        </div>
+                    </div>
+                    <div class="node-info">
+                        <div class="node-name">KESTER CHARLES</div>
+                        <div class="node-role">Marketing Officer</div>
+                        <div class="node-status"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-
     <!-- Team Member Popups -->
     <div id="team-popup-ivan" class="team-node-overlay">
         <div class="team-popup">
@@ -612,7 +680,6 @@
             </div>
         </div>
     </div>
-
     <div id="team-popup-wayne" class="team-node-overlay">
         <div class="team-popup">
             <button class="team-popup-close" aria-label="Close profile">&times;</button>
@@ -672,7 +739,6 @@
             </div>
         </div>
     </div>
-
     <div id="team-popup-kester" class="team-node-overlay">
         <div class="team-popup">
             <button class="team-popup-close" aria-label="Close profile">&times;</button>
