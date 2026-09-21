@@ -514,7 +514,6 @@
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
-            will-change: transform;
         }
 
         /* Background image layer with color animation */
@@ -1298,8 +1297,7 @@
     </script>
 
     <script>
-        // Parallax scroll effect: static circuit background, content moves with scroll
-        const circuitBg = document.querySelector('.circuit-bg');
+        // Parallax: static circuit background, content moves with scroll
         const mainContent = document.querySelector('main');
         const orgChart = document.querySelector('.org-chart');
         
@@ -1310,24 +1308,17 @@
                 window.requestAnimationFrame(function() {
                     const scrolled = window.pageYOffset;
                     
-                    // Keep circuit background absolutely static
-                    if (circuitBg) {
-                        circuitBg.style.transform = 'translate3d(0, 0px, 0)';
-                    }
-                    
-                    // Subtle parallax on main content - moves slightly faster than scroll
+                    // Content parallax - moves slightly faster than scroll
                     // This creates the effect of content moving down over the static background
                     if (mainContent) {
                         const contentOffset = scrolled * 0.15;
                         mainContent.style.transform = 'translate3d(0, ' + contentOffset + 'px, 0)';
-                        mainContent.style.willChange = 'transform';
                     }
                     
-                    // Subtle parallax on org chart nodes
+                    // Org chart subtle parallax
                     if (orgChart) {
                         const nodeOffset = scrolled * 0.08;
                         orgChart.style.transform = 'translate3d(0, ' + nodeOffset + 'px, 0)';
-                        orgChart.style.willChange = 'transform';
                     }
                     
                     ticking = false;
