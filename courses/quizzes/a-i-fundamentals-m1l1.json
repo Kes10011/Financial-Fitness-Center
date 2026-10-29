@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m1l1",
+  "title": "Lesson 1 Quiz: What AI Is — and What It Isn't",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which statement best describes an algorithm in the context of financial calculations?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1l1-q1.mp3",
+      "options": [
+        "A system that learns from past data to adjust its outputs.",
+        "A fixed step‑by‑step procedure for solving a problem.",
+        "A process that runs automatically without human intervention.",
+        "A technology that recommends products based on user behavior."
+      ],
+      "answer": 1,
+      "explanation": "An algorithm is a defined sequence of steps to perform a calculation."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Artificial intelligence systems can modify their behavior based on new data.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "AI learns from data and can adjust its behavior."
+    }
+  ]
+}

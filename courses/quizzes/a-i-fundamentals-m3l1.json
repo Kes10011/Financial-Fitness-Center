@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m3l1",
+  "title": "Lesson 1 Quiz: Inside a Neural Network",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What part of a neural network assigns importance to each input signal?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3l1-q1.mp3",
+      "options": [
+        "Activation function",
+        "Weights",
+        "Output layer",
+        "Input layer"
+      ],
+      "answer": 1,
+      "explanation": "Weights are dials that determine how important a specific piece of information is to the network’s decision."
+    },
+    {
+      "type": "tf",
+      "text": "The hidden layers process data without directly interacting with the outside world.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Hidden layers act like internal teams that examine data but do not take raw inputs directly from the environment."
+    }
+  ]
+}

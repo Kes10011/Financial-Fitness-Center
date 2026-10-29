@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m5l1-quiz",
+  "title": "Lesson 1 Quiz: The Power of Consistency and Compound Growth",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "According to the narration, after twenty years of contributing TT$300 per month, what proportion of the final balance TT$135,000 is attributable to compound growth?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5l1-q1.mp3",
+      "options": [
+        "Less than 20%",
+        "About 30%",
+        "Exactly 40%",
+        "More than 40%"
+      ],
+      "answer": 3,
+      "explanation": "The narration states that over twenty years, more than forty percent of the total balance came from compound growth, not from the contributions."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: You must have a massive salary to start benefiting from compound growth in Trinidad and Tobago.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The narration explicitly says you do not need a massive salary to start the process of building wealth through consistency and compound growth."
+    }
+  ]
+}

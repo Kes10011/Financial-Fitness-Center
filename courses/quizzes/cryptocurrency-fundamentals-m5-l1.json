@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m5-l1-quiz",
+  "title": "Lesson 1 Quiz: Reading Price Charts and Market Data",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "How is market capitalisation calculated for a cryptocurrency?",
+      "options": [
+        "Current price multiplied by total supply (including locked tokens)",
+        "Current price multiplied by circulating supply",
+        "Average price over 24 hours multiplied by circulating supply",
+        "Current price divided by circulating supply"
+      ],
+      "answer": 1,
+      "explanation": "Market capitalisation equals current price multiplied by circulating supply.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5l1-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A price rise on tiny volume shows strong momentum.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "False. A price rise on high volume shows strong interest and real momentum; a price rise on tiny volume is weak and can easily reverse.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5l1-q2.mp3"
+    }
+  ]
+}

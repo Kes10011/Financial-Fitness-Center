@@ -1,0 +1,30 @@
+{
+ "id": "defi-m6-l2-quiz",
+ "title": "Lesson 2 Quiz: Regulation and the Caribbean Context",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Why should users convert TT dollars to digital assets only through registered platforms that enforce KYC?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6l2-q1.mp3",
+   "options": [
+    "To skip identity verification entirely",
+    "To avoid account freezes, fraud, and operational headaches.",
+    "To eliminate all transaction fees.",
+    "To hide your transactions from your bank"
+   ],
+   "answer": 1,
+   "explanation": "Using registered platforms with KYC reduces the risk of account freezes, fraud, and operational issues."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Blockchain automatically calculates your local‑currency gain or loss for tax purposes.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Blockchain records do not show local‑currency profit or loss; users must keep their own records."
+  }
+ ]
+}

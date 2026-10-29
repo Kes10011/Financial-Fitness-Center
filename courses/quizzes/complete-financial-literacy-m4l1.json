@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m4l1-quiz",
+  "title": "Lesson 1 Quiz: Saving vs. Investing: What Is the Difference?",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "According to the narration, what is the primary objective of investing?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m4l1-q1.mp3",
+      "options": [
+        "To keep money safe and liquid for emergencies",
+        "To preserve capital with minimal growth",
+        "To build wealth and beat inflation over longer time horizons",
+        "To guarantee principal protection regardless of market fluctuations"
+      ],
+      "answer": 2,
+      "explanation": "The narration states that the primary objective of investing is to build wealth and beat the rising cost of living, which is inflation."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Short-term goals (one to three years) should be placed in safe, liquid savings accounts according to the golden rule.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m4l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration explicitly says that short-term goals—anything you need money for within one to three years—belong strictly in safe, liquid savings accounts."
+    }
+  ]
+}

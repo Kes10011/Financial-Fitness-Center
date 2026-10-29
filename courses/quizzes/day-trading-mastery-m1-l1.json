@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m1-l1-quiz",
+ "title": "Lesson 1 Quiz: What Day Trading Is — and Is Not",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which of the following best describes day trading?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-l1-q1.mp3",
+   "options": [
+    "Holding positions for weeks to capture medium-term trends",
+    "Opening and closing all positions within the same trading day with zero overnight exposure",
+    "Buying stocks for dividend income over 5-20 years",
+    "Using only fundamental analysis to ignore daily price swings"
+   ],
+   "answer": 1,
+   "explanation": "Day trading requires all trades to be closed before market close, avoiding overnight risk."
+  },
+  {
+   "type": "tf",
+   "text": "A day trader may hold a position overnight if they expect the trade to become profitable the next day.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Day trading requires closing all positions before the session ends to avoid overnight news risk."
+  }
+ ]
+}

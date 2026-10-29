@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m6-l1",
+ "title": "Lesson 1 Quiz: Recognising Emotional Triggers in Trading",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which of the following best describes how fear typically manifests in a day trader's execution according to the lesson?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-l1-q1.mp3",
+   "options": [
+    "Causes the trader to increase position size after a winning streak.",
+    "Leads to hesitating on valid setups or exiting winners too early.",
+    "Results in revenge trading after a missed opportunity.",
+    "Makes the trader ignore stop-loss orders."
+   ],
+   "answer": 1,
+   "explanation": "Fear causes hesitation or premature profit‑taking on trades."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Recognizing emotional triggers allows a trader to pause and protect capital.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Identifying triggers enables a pause routine that safeguards funds."
+  }
+ ]
+}

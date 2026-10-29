@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m1l1",
+  "title": "Lesson 1 Quiz: How Stock Markets Actually Work",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does owning a share of stock in a publicly listed company represent?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1l1-q1.mp3",
+      "options": [
+        "A loan made to the company that must be repaid with interest",
+        "Partial ownership of the underlying corporate business",
+        "A guaranteed monthly payout from the stock exchange",
+        "A temporary membership card to use the company's services"
+      ],
+      "answer": 1,
+      "explanation": "Buying a share gives an investor partial ownership in the actual underlying business."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Stock prices fluctuate primarily based on the balance of supply and demand among buyers and sellers.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Stock prices rise when demand to buy exceeds supply to sell and fall when selling supply outweighs buying demand."
+    }
+  ]
+}

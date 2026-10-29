@@ -1,0 +1,54 @@
+{
+  "id": "a-i-fundamentals-m5-quiz",
+  "title": "Module 5 Quiz: Automated Trading & Risk Analysis",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary purpose of a protective stop-loss rule in algorithmic trading?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5-quiz-q1.mp3",
+      "options": [
+        "To guarantee profit on every trade",
+        "To increase trading frequency",
+        "To limit loss by triggering a sell at a pre-set level",
+        "To predict future price movements"
+      ],
+      "answer": 2,
+      "explanation": "A stop-loss order caps losses by automatically selling when the price reaches a preset level."
+    },
+    {
+      "type": "mcq",
+      "text": "What does Value-at-Risk (VaR) measure in AI-supported risk analysis?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5-quiz-q2.mp3",
+      "options": [
+        "The exact loss expected tomorrow",
+        "The maximum possible loss in a year",
+        "The average return of the portfolio",
+        "The loss threshold that could be exceeded with a small probability under normal market conditions"
+      ],
+      "answer": 3,
+      "explanation": "VaR estimates the loss level unlikely to be exceeded given normal market conditions and a confidence level."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A flash crash can be worsened when many automated systems react to similar signals and sell simultaneously.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Concurrent selling by algorithms can accelerate price drops during a flash crash."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: AI-supported risk analysis guarantees that a portfolio will never lose more than the Value-at-Risk amount.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "VaR is a statistical estimate, not a guarantee against larger losses."
+    }
+  ]
+}

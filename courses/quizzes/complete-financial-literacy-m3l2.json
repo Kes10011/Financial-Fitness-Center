@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m3l2-quiz",
+  "title": "Lesson 2 Quiz: Avalanche vs. Snowball: Choosing Your Payoff Plan",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "According to the narration, which debt repayment method prioritizes paying off the debt with the highest interest rate first?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3l2-q1.mp3",
+      "options": [
+        "Avalanche method",
+        "Snowball method",
+        "Both methods",
+        "Neither method"
+      ],
+      "answer": 0,
+      "explanation": "The narration states that the avalanche method focuses on paying the debt with the highest interest rate first to save money on interest over time."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Both the avalanche and snowball methods require you to make the minimum payment on every debt before applying any extra cash to the chosen target debt.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration explicitly says: 'Both methods require you to make the minimum payment on every debt, then put any extra cash toward the chosen target debt.'"
+    }
+  ]
+}

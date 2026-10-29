@@ -1,0 +1,56 @@
+{
+  "id": "kids-m1-quiz",
+  "title": "Module 1 Quiz: What Is Money?",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What problem did people face when swapping goods without money?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m1-quiz-q1.mp3",
+      "options": [
+        "They could not agree on the value of things",
+        "They had too many coins",
+        "They disliked metal",
+        "They liked paper money"
+      ],
+      "answer": 0,
+      "explanation": "The lesson says swapping is confusing because nobody can agree on the value of things."
+    },
+    {
+      "type": "mcq",
+      "text": "Why did people like using smaller coins instead of many gold coins?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m1-quiz-q2.mp3",
+      "options": [
+        "Because gold is heavy and valuable",
+        "Because silver is shiny",
+        "Because copper is cheap",
+        "Because paper is light"
+      ],
+      "answer": 0,
+      "explanation": "The lesson says carrying many gold coins would make your backpack super heavy, so people liked smaller coins."
+    },
+    {
+      "type": "mcq",
+      "text": "What happens when you tap a payment card at a shop?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m1-quiz-q3.mp3",
+      "options": [
+        "The card sends a secret message to the bank",
+        "The card prints money",
+        "The card becomes a coin",
+        "The card tells the shop to give change"
+      ],
+      "answer": 0,
+      "explanation": "The lesson says inside every card is a secret message; when you tap, it sends a quick message to a bank."
+    },
+    {
+      "type": "tf",
+      "text": "Money used to be gold, then paper, and now it is invisible numbers on screens.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m1-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The lesson states money used to be gold, then paper, and now it is invisible numbers on screens."
+    }
+  ]
+}

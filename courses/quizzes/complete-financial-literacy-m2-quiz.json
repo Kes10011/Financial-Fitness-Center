@@ -1,0 +1,54 @@
+{
+  "id": "complete-financial-literacy-m2-quiz",
+  "title": "Module 2 Quiz: Budgeting & Cash Flow Management",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "How should someone with irregular or variable monthly earnings set their baseline spending budget?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2-quiz-q1.mp3",
+      "options": [
+        "Based on their highest expected monthly income",
+        "Based on their average income over five years",
+        "Based on their lowest expected monthly income",
+        "Based on total annual projected revenue divided by 52"
+      ],
+      "answer": 2,
+      "explanation": "To manage irregular income smoothly, you set a baseline budget based on your lowest expected monthly income."
+    },
+    {
+      "type": "mcq",
+      "text": "If an annual car insurance premium is TT$ 2,400, how much should be set aside monthly in a sinking fund?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2-quiz-q2.mp3",
+      "options": [
+        "TT$ 100",
+        "TT$ 200",
+        "TT$ 400",
+        "TT$ 600"
+      ],
+      "answer": 1,
+      "explanation": "Dividing the annual big expense of TT$ 2,400 by 12 months equals TT$ 200 per month."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A budget should be treated as a living document and reviewed monthly, especially before major events like Carnival or back-to-school.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration states that a budget is a living document that should be reviewed and tweaked monthly as life changes."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: When you identify a cash leak, you should immediately reduce that spending category to zero for the following week.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Rather than cutting spending to zero immediately, the narration advises making minor tweaks (micro-adjustments) so you do not feel restricted or miserable."
+    }
+  ]
+}

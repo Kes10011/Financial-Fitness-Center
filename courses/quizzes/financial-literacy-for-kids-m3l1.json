@@ -1,0 +1,30 @@
+{
+  "id": "kids-m3-l1-quiz",
+  "title": "Lesson 1 Quiz: Needs Keep Us Going, Wants Make Us Smile",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which item is a need because it gives us energy?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3l1-q1.mp3",
+      "options": [
+        "Toy car",
+        "Mango",
+        "Video game",
+        "Bright scarf"
+      ],
+      "answer": 1,
+      "explanation": "A mango gives us energy, so it is a need."
+    },
+    {
+      "type": "tf",
+      "text": "Wants help us grow and stay healthy.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Wants make us happy, but needs help us grow and stay healthy."
+    }
+  ]
+}

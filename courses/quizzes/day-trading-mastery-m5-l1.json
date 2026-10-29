@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m5-l1-quiz",
+ "title": "Lesson 1 Quiz: Defining Your Strategy and Entry Rules",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What must a precise entry trigger be for the described strategy?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-l1-q1.mp3",
+   "options": [
+    "A candle that looks strong on the chart",
+    "A clean break and retest of a key intraday support/resistance level, entered only when the candle closes completely past the level",
+    "Following group-chat hype",
+    "Entering as soon as price moves in any direction"
+   ],
+   "answer": 1,
+   "explanation": "The strategy requires a clean break and retest of a key intraday support/resistance level with a close past the level."
+  },
+  {
+   "type": "tf",
+   "text": "The invalidation point is where the setup is dead and where the stop loss should be placed; if price crosses back over the structure line, the reason for the trade is gone.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "The invalidation point marks where the setup fails, and crossing back over the structure line nullifies the trade rationale."
+  }
+ ]
+}

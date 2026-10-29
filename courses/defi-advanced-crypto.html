@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeFi &amp; Advanced Crypto | School of Financial Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/quiz-widget.css">
+    <link rel="stylesheet" href="../assets/greeting.css">
+    <link rel="stylesheet" href="../assets/auth.css">
+    <link rel="stylesheet" href="../assets/admin.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; }
+        a { color: #D4AF37; }
+        .wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px 60px; }
+        .topnav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; }
+        .topnav a { text-decoration: none; font-weight: 600; }
+        .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
+        .brand span { color: #D4AF37; }
+        .tag { display: inline-block; padding: 4px 12px; border: 1px solid rgba(212,175,55,.3); border-radius: 100px; color: #D4AF37; font-size: 12px; font-weight: 600; margin-bottom: 14px; }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-size: 38px; line-height: 1.15; margin-bottom: 14px; }
+        h1 span { color: #D4AF37; }
+        h2 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; margin: 36px 0 14px; }
+        h2 span { color: #D4AF37; }
+        h3 { font-size: 18px; margin-bottom: 8px; }
+        p { color: #d4d4d8; margin-bottom: 12px; }
+        .who { border-left: 3px solid #D4AF37; padding: 12px 16px; background: rgba(212,175,55,.07); border-radius: 0 12px 12px 0; margin: 18px 0; }
+        .price-box { border: 1px solid rgba(212,175,55,.35); border-radius: 16px; padding: 20px; background: rgba(212,175,55,.07); margin: 22px 0; }
+        .price-box .free { font-size: 22px; font-weight: 800; color: #D4AF37; }
+        .price-box p { margin-bottom: 6px; }
+        .mod { border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 20px; margin-bottom: 16px; background: rgba(255,255,255,.03); }
+        .mod-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .mod-num { color: #D4AF37; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+        .mod-price { font-weight: 800; color: #D4AF37; }
+        .mod ul, .m1-list ul { padding-left: 20px; color: #d4d4d8; }
+        .mod li, .m1-list li { margin-bottom: 6px; }
+        .unlock-btn { display: inline-block; margin-top: 14px; padding: 12px 22px; background: rgba(212,175,55,.15); border: 1px solid rgba(212,175,55,.4); border-radius: 12px; color: #D4AF37; font-weight: 600; text-decoration: none; }
+        .fine { font-size: 13px; color: #a1a1aa; margin-top: 10px; }
+        .reg { border: 1px solid rgba(212,175,55,.35); border-radius: 16px; padding: 22px; background: rgba(255,255,255,.03); }
+        .reg label { display: block; font-size: 14px; font-weight: 600; margin: 12px 0 4px; }
+        .reg input, .reg select { width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.15); background: #111118; color: #fff; font-size: 15px; }
+        .reg button { margin-top: 18px; width: 100%; padding: 14px; border: none; border-radius: 12px; background: #D4AF37; color: #111; font-weight: 800; font-size: 16px; cursor: pointer; }
+        .reg .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 14px; color: #d4d4d8; }
+        .reg .check input { width: auto; margin-top: 4px; }
+        .m1-videos video { width: 100%; border-radius: 12px; background: #000; }
+        .lesson-video { margin-bottom: 22px; }
+        .lesson-video h4 { margin-bottom: 8px; }
+        .batch-note { border: 1px dashed rgba(212,175,55,.5); border-radius: 12px; padding: 14px; color: #D4AF37; }
+        .done-msg { display: none; border: 1px solid rgba(212,175,55,.5); border-radius: 12px; padding: 14px; color: #D4AF37; margin-bottom: 16px; }
+        footer { margin-top: 48px; color: #a1a1aa; font-size: 14px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="topnav">
+            <div class="brand">School of <span>Financial Fitness</span></div>
+            <span class="topnav-right"><a href="../index.html#courses">&larr; All Courses</a> <button type="button" class="auth-nav-btn" data-auth-nav>Log in</button></span>
+        </div>
+        <span class="tag">Advanced &middot; 6 modules</span>
+        <h1>DeFi &amp; Advanced Crypto</h1>
+        <p>This advanced course takes you inside decentralized finance with clarity and care, from how protocols actually work to how experienced users evaluate risk before they act. You'll learn to read smart contracts, compare DeFi platforms, and understand strategies like staking and liquidity provision without the hype. Every module pairs practical skills with honest risk education.</p>
+        <div class="who"><strong style="color:#fff;">Who it&rsquo;s for:</strong> Learners who already understand crypto fundamentals — wallets, exchanges, and basic blockchain concepts — and want to move into DeFi with a serious, risk-aware approach.</div>
+        <div class="price-box">
+            <div class="free">Module 1 FREE</div>
+            <p>Following modules: <strong style="color:#fff;">TT$895 each</strong></p>
+            <p>Full-course bundle: <strong style="color:#fff;">TT$3795</strong> (save TT$680 vs buying separately)</p>
+            <a class="unlock-btn bundle-btn" data-whop-course="defi-advanced-crypto" data-whop-item="bundle" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20the%20full-course%20bundle%20of%20the%20DeFi%20%26%20Advanced%20Crypto%20course%20%28TT%243795%2C%20save%20TT%24680%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener">Unlock the Full Course &mdash; Bundle TT$3795 (save TT$680)</a>
+            <p class="fine">Bundle unlocks the entire course. Checkout via Whop &mdash; until the direct checkout link is added, this button opens WhatsApp so the school can send you the checkout link, then your unlock code after purchase.</p>
+            <p class="fine">All prices in Trinidad &amp; Tobago dollars. Finish the whole course and you earn a Certificate of Completion in School of Financial Fitness branding.</p>
+        </div>
+
+        <h2>Module 1: DeFi Ecosystem Overview &mdash; <span>FREE</span></h2>
+        <div class="m1-list">
+            <ul>
+                        <li>What DeFi Actually Is (and Isn't)</li>
+                        <li>Mapping the DeFi Stack</li>
+                        <li>Reading a Protocol Before You Touch It</li>
+            </ul>
+        </div>
+
+        <div class="reg">
+            <h3 style="margin-bottom:4px;">Register free to start Module 1</h3>
+            <p class="fine">Fill this in once and your free Module 1 opens below. Your details go to the school so they can follow up on WhatsApp.</p>
+            <div id="reg-done" class="done-msg">You&rsquo;re registered &mdash; Module 1 is open below. The school has also received your details on WhatsApp.</div>
+            <form id="reg-form">
+                <label for="f-name">Full name *</label>
+                <input id="f-name" name="name" required autocomplete="name">
+                <label for="f-email">Email *</label>
+                <input id="f-email" name="email" type="email" required autocomplete="email">
+                <label for="f-password">Create a password so you can log back in (optional)</label>
+                <input id="f-password" name="password" type="password" autocomplete="new-password" minlength="6">
+                <label for="f-wa">WhatsApp / contact number *</label>
+                <input id="f-wa" name="whatsapp" required autocomplete="tel">
+                <label for="f-course">Course</label>
+                <input id="f-course" value="DeFi &amp; Advanced Crypto" readonly>
+                <label for="f-goal">Your goal as a student</label>
+                <select id="f-goal" name="goal">
+                    <option>Build a budget that works</option>
+                    <option>Get out of debt</option>
+                    <option>Start investing</option>
+                    <option>Understand crypto</option>
+                    <option>Teach my kids about money</option>
+                    <option>Grow my business income</option>
+                    <option>Other</option>
+                </select>
+                <label for="f-heard">How did you hear about us?</label>
+                <select id="f-heard" name="heard">
+                    <option>Instagram</option>
+                    <option>YouTube</option>
+                    <option>WhatsApp</option>
+                    <option>Friend or family</option>
+                    <option>Search</option>
+                    <option>Other</option>
+                </select>
+                <label class="check"><input id="f-consent" type="checkbox" checked> Yes, the school may follow up with me on WhatsApp about this course.</label>
+                <button type="submit">Start Module 1 Free</button>
+            </form>
+        </div>
+                <div id="m1-videos" class="m1-videos" hidden>
+                    <div class="lesson-video">
+                        <h4>Lesson 1: What DeFi Actually Is (and Isn't)</h4>
+                        <video controls preload="metadata" src="../assets/lessons/defi-m1-l1.mp4"></video>
+                        <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                        <div data-quiz="quizzes/defi-advanced-crypto-m1l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Mapping the DeFi Stack"></div>
+                    </div>
+                    <div class="lesson-video">
+                        <h4>Lesson 2: Mapping the DeFi Stack</h4>
+                        <video controls preload="metadata" src="../assets/lessons/defi-m1-l2.mp4"></video>
+                        <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                        <div data-quiz="quizzes/defi-advanced-crypto-m1l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Reading a Protocol Before You Touch It"></div>
+                    </div>
+                    <div class="lesson-video">
+                        <h4>Lesson 3: Reading a Protocol Before You Touch It</h4>
+                        <video controls preload="metadata" src="../assets/lessons/defi-m1-l3.mp4"></video>
+                        <h4 style="margin-top:18px;">Module 1 Quiz &mdash; Test what you learned!</h4>
+                        <div data-quiz="quizzes/defi-advanced-crypto-m1-quiz.json" data-next-label="Next module" data-next-title="Module 2 — Smart Contracts & dApps"></div>
+                    </div>
+                </div>
+
+        <h2>Continue the course</h2>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 2</span><span class="mod-price">TT$895</span></div>
+                    <h3>Smart Contracts &amp; dApps</h3>
+                    <ul>
+                        <li>How Smart Contracts Execute</li>
+                        <li>Using dApps Safely, Step by Step</li>
+                        <li>Spotting Contract Risk and Audits</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m2l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Using dApps Safely, Step by Step"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m2l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Spotting Contract Risk and Audits"></div>
+                    <h4 style="margin-top:18px;">Module 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m2-quiz.json" data-next-label="Next module" data-next-title="Module 3 — Yield Farming & Staking"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%202%3A%20Smart%20Contracts%20%26%20dApps%20of%20the%20DeFi%20%26%20Advanced%20Crypto%20course%20%28TT%24895%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="defi-advanced-crypto" data-whop-item="2">Unlock Module 2 &mdash; TT$895</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 3</span><span class="mod-price">TT$895</span></div>
+                    <h3>Yield Farming &amp; Staking</h3>
+                    <ul>
+                        <li>Staking Fundamentals</li>
+                        <li>Liquidity Pools and Impermanent Loss</li>
+                        <li>Evaluating Yield Without Chasing It</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m3l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Liquidity Pools and Impermanent Loss"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m3l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Evaluating Yield Without Chasing It"></div>
+                    <h4 style="margin-top:18px;">Module 3 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m3-quiz.json" data-next-label="Next module" data-next-title="Module 4 — Advanced Trading Strategies"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%203%3A%20Yield%20Farming%20%26%20Staking%20of%20the%20DeFi%20%26%20Advanced%20Crypto%20course%20%28TT%24895%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="defi-advanced-crypto" data-whop-item="3">Unlock Module 3 &mdash; TT$895</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 4</span><span class="mod-price">TT$895</span></div>
+                    <h3>Advanced Trading Strategies</h3>
+                    <ul>
+                        <li>Reading On-Chain and Market Signals Together</li>
+                        <li>Structured Strategies: DCA, Ranges, and Hedging</li>
+                        <li>Position Sizing and Trade Journaling</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m4l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Structured Strategies: DCA, Ranges, and Hedging"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m4l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Position Sizing and Trade Journaling"></div>
+                    <h4 style="margin-top:18px;">Module 4 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m4-quiz.json" data-next-label="Next module" data-next-title="Module 5 — Risk Management in DeFi"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%204%3A%20Advanced%20Trading%20Strategies%20of%20the%20DeFi%20%26%20Advanced%20Crypto%20course%20%28TT%24895%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="defi-advanced-crypto" data-whop-item="4">Unlock Module 4 &mdash; TT$895</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 5</span><span class="mod-price">TT$895</span></div>
+                    <h3>Risk Management in DeFi</h3>
+                    <ul>
+                        <li>The DeFi Risk Map</li>
+                        <li>Scam, Phishing, and Rug-Pull Defence</li>
+                        <li>Building Your Personal Safety System</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m5l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Scam, Phishing, and Rug-Pull Defence"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m5l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Building Your Personal Safety System"></div>
+                    <h4 style="margin-top:18px;">Module 5 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m5-quiz.json" data-next-label="Next module" data-next-title="Module 6 — Future of Decentralized Finance"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%205%3A%20Risk%20Management%20in%20DeFi%20of%20the%20DeFi%20%26%20Advanced%20Crypto%20course%20%28TT%24895%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="defi-advanced-crypto" data-whop-item="5">Unlock Module 5 &mdash; TT$895</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 6</span><span class="mod-price">TT$895</span></div>
+                    <h3>Future of Decentralized Finance</h3>
+                    <ul>
+                        <li>Layer 2s, Interoperability, and Real-World Assets</li>
+                        <li>Regulation and the Caribbean Context</li>
+                        <li>Building Your Long-Term DeFi Learning Plan</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m6l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Regulation and the Caribbean Context"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m6l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Building Your Long-Term DeFi Learning Plan"></div>
+                    <h4 style="margin-top:18px;">Module 6 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/defi-advanced-crypto-m6-quiz.json" data-next-label="Course complete" data-next-title="You finished the course — your certificate awaits!"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%206%3A%20Future%20of%20Decentralized%20Finance%20of%20the%20DeFi%20%26%20Advanced%20Crypto%20course%20%28TT%24895%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="defi-advanced-crypto" data-whop-item="6">Unlock Module 6 &mdash; TT$895</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+        <footer>
+            <p>School of Financial Fitness, Cunupia, Trinidad &amp; Tobago &middot; WhatsApp 1 (868) 799-5473</p>
+            <p><a href="../index.html#courses">&larr; Back to all courses</a></p>
+        </footer>
+    </div>
+    <script>
+        // Registration gate: on submit, reveal Module 1 videos (if any) and route
+        // the details to the school's WhatsApp prefilled. The client-owned Google
+        // Sheet log connects here once the school shares its sheet/webhook link:
+        // set SHEET_WEBHOOK_URL below to the school's Apps Script URL.
+        var SHEET_WEBHOOK_URL = "";
+        document.getElementById('reg-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = document.getElementById('f-name').value.trim();
+            var email = document.getElementById('f-email').value.trim();
+            var wa = document.getElementById('f-wa').value.trim();
+            var goal = document.getElementById('f-goal').value;
+            var heard = document.getElementById('f-heard').value;
+            var consent = document.getElementById('f-consent').checked ? 'Yes' : 'No';
+            if (!name || !email || !wa) return;
+            var msg = 'Hi School of Financial Fitness, I just registered for FREE Module 1 of DeFi & Advanced Crypto.'
+                + ' Name: ' + name + ' | Email: ' + email + ' | WhatsApp: ' + wa
+                + ' | Goal: ' + goal + ' | Heard via: ' + heard + ' | WhatsApp follow-up consent: ' + consent;
+            if (SHEET_WEBHOOK_URL) {
+                fetch(SHEET_WEBHOOK_URL, { method: 'POST', mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email, whatsapp: wa, course: "DeFi & Advanced Crypto", goal: goal, heard: heard, consent: consent }) });
+            }
+            document.getElementById('reg-form').style.display = 'none';
+            document.getElementById('reg-done').style.display = 'block';
+            var vids = document.getElementById('m1-videos');
+            if (vids) vids.hidden = false;
+            window.open('https://wa.me/18687995473?text=' + encodeURIComponent(msg), '_blank');
+        });
+    </script>
+        <script src="whop-links.js"></script>
+        <script src="../assets/quiz-widget.js"></script>
+        <script src="../assets/greeting.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="../assets/supabase-config.js"></script>
+        <script src="../assets/auth.js"></script>
+        <script src="../assets/auth-ui.js"></script>
+        <script src="../assets/reg-account.js"></script>
+        <script src="../assets/progress.js"></script>
+        <script src="../assets/admin.js"></script>
+</body>
+</html>

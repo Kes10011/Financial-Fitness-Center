@@ -1,0 +1,54 @@
+{
+ "id": "defi-m5-quiz",
+ "title": "Module 5 Quiz: Risk Management in DeFi",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "How does bridge risk differ from smart contract risk on a single blockchain?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5-quiz-q1.mp3",
+   "options": [
+    "Bridge risk specifically involves smart contracts that facilitate moving tokens across different blockchains.",
+    "Bridge risk only applies to centralized exchanges rather than DeFi protocols.",
+    "Bridge risk refers exclusively to governance takeover by whale wallets.",
+    "Bridge risk occurs when stablecoins lose their parity with pegged fiat currencies."
+   ],
+   "answer": 0,
+   "explanation": "Bridge risk specifically targets the cross-chain smart contracts used to transfer tokens between distinct blockchain networks."
+  },
+  {
+   "type": "mcq",
+   "text": "What is the primary security benefit of using separate hot burner wallets for testing new protocols?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5-quiz-q2.mp3",
+   "options": [
+    "Burner wallets automatically revoke contract permissions after every transaction.",
+    "Burner wallets guarantee protection against token de-pegging and economic risks.",
+    "It isolates high-risk interactions so a compromised signature cannot access your main asset stash.",
+    "Burner wallets eliminate the need to inspect contract addresses during signing."
+   ],
+   "answer": 2,
+   "explanation": "Hot burner wallets restrict potential losses to small test balances, keeping your main vault isolated from malicious signatures."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Setting a custom token allowance cap instead of granting unlimited approval helps limit potential loss during a contract exploit.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5-quiz-q3.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Custom allowance caps restrict smart contract access to a specific number of tokens rather than your complete balance."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: A crypto rug-pull happens when developers remove underlying liquidity from a trading pool, rendering the token worthless.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "A rug-pull occurs when developers pull the liquidity backing a token, leaving investors with untradeable, worthless tokens."
+  }
+ ]
+}

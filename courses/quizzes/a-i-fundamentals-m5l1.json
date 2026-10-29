@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m5l1",
+  "title": "Lesson 1 Quiz: Algorithmic and Automated Trading Explained",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary function of an algorithmic trading bot when its predefined conditions are met?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5l1-q1.mp3",
+      "options": [
+        "It waits for a trader's manual approval before acting.",
+        "It automatically executes the corresponding buy or sell order.",
+        "It analyzes news articles to predict market direction.",
+        "It adjusts its strategy based on current emotions."
+      ],
+      "answer": 1,
+      "explanation": "The bot follows its programmed rules and sends the order instantly without human intervention or emotional influence."
+    },
+    {
+      "type": "tf",
+      "text": "Automated trading bots guarantee profitable returns for users.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Bots execute the given strategy faithfully; a flawed strategy will result in losses, so automation does not ensure profit."
+    }
+  ]
+}

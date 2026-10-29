@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m3l2",
+  "title": "Lesson 2 Quiz: Deep Learning in Practice",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "In the context of processing loan application documents, what is a key advantage of using deep learning over traditional machine learning?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3l2-q1.mp3",
+      "options": [
+        "It requires analysts to manually select variables like salary and employment years.",
+        "It automatically identifies patterns from raw scanned documents without manual feature engineering.",
+        "It only works with structured tabular data.",
+        "It eliminates the need for any human oversight."
+      ],
+      "answer": 1,
+      "explanation": "Deep learning models learn hierarchical representations directly from raw data, removing the need for manual feature design."
+    },
+    {
+      "type": "tf",
+      "text": "For simple tabular data such as basic sales logs, traditional machine learning is often faster and cheaper than deep learning.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration says traditional models like decision trees are often faster and cheaper for basic tabular spreadsheets."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "kids-m1-l2-quiz",
+  "title": "Lesson 2 Quiz: Coins, Kings, and Paper Promises",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What material is used to make a bronze coin according to the lesson?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m1l2-q1.mp3",
+      "options": [
+        "copper and tin",
+        "silver",
+        "gold",
+        "paper"
+      ],
+      "answer": 0,
+      "explanation": "The lesson says traders melt copper and tin to make shiny bronze coins."
+    },
+    {
+      "type": "tf",
+      "text": "Banknotes are trusted because the bank keeps the gold safe.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m1l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The lesson states the note is trusted because the bank keeps the gold safe."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "kids-m2-l1-quiz",
+  "title": "Lesson 1 Quiz: Set a Goal, Save the Day",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What happens if you do not have a savings goal?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2l1-q1.mp3",
+      "options": [
+        "Your money grows faster",
+        "Your coins may slide away on sweets or small toys",
+        "Your piggy bank breaks",
+        "You cannot draw a picture"
+      ],
+      "answer": 1,
+      "explanation": "Without a goal, money is easily spent on small treats instead of saving."
+    },
+    {
+      "type": "tf",
+      "text": "Putting a picture of your goal on your wall reminds you to save your pocket money.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The picture acts as a reminder to save, as described in the lesson."
+    }
+  ]
+}

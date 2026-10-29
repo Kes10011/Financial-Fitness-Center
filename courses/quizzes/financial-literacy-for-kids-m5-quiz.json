@@ -1,0 +1,56 @@
+{
+  "id": "kids-m5-quiz",
+  "title": "Module 5 Quiz: Growing & Sharing Money",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does the bank add to your savings each month as a thank-you?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5-quiz-q1.mp3",
+      "options": [
+        "Interest",
+        "A sticker",
+        "A homework sheet",
+        "A cartoon"
+      ],
+      "answer": 0,
+      "explanation": "The bank adds a tiny thank-you gift called interest each month."
+    },
+    {
+      "type": "mcq",
+      "text": "Which of these is a way to earn money by helping?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5-quiz-q2.mp3",
+      "options": [
+        "Running a lemonade stand on a sunny day",
+        "Sleeping in late",
+        "Watching cartoons all day",
+        "Skipping homework"
+      ],
+      "answer": 0,
+      "explanation": "You can set up a cool lemonade stand on a sunny day to earn money."
+    },
+    {
+      "type": "mcq",
+      "text": "How does sharing a snack make you feel according to the lesson?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5-quiz-q3.mp3",
+      "options": [
+        "Your heart feels light and happy",
+        "You feel tired and bored",
+        "You want more snacks only",
+        "You feel angry"
+      ],
+      "answer": 0,
+      "explanation": "Sharing a snack makes the whole group smile and our hearts feel light and happy."
+    },
+    {
+      "type": "tf",
+      "text": "Saving a little money each week helps it grow bigger.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "We learned that saving a little every week helps it grow."
+    }
+  ]
+}

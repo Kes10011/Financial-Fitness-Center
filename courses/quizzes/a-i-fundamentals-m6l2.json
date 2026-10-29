@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m6l2",
+  "title": "Lesson 2 Quiz: Skills and Careers in an AI Economy",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which human skill is highlighted in the lesson as remaining essential because AI struggles with nuance, empathy, and creative problem‑solving?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6l2-q1.mp3",
+      "options": [
+        "Emotional intelligence",
+        "High‑frequency trading algorithms",
+        "Automated credit scoring",
+        "Predictive stock modeling"
+      ],
+      "answer": 0,
+      "explanation": "The narration notes that AI lacks nuance and empathy, leaving emotional intelligence as a vital human capability."
+    },
+    {
+      "type": "tf",
+      "text": "The lesson recommends a small, consistent daily learning habit, such as a free introductory AI course, as a practical upskilling step.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration suggests a free introductory AI course with a small daily learning habit as a practical upskilling step."
+    }
+  ]
+}

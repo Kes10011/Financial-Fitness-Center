@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m2l1-quiz",
+  "title": "Lesson 1 Quiz: Building a Budget That Fits Your Real Life",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which of the following is NOT a step in building a monthly budget as described in the narration?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2l1-q1.mp3",
+      "options": [
+        "List all sources of monthly income",
+        "Calculate net worth",
+        "List fixed monthly bills",
+        "Track variable expenses"
+      ],
+      "answer": 1,
+      "explanation": "The narration outlines the steps as: list income, list fixed bills, track variable expenses, allocate priorities and savings, then calculate and adjust. Calculating net worth is not part of the budgeting process described."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: If your total expenses are greater than your total income, you have a surplus that can be redirected to savings.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The narration states that when expenses exceed income (a negative result), you need to adjust spending or find extra income; a surplus occurs only when income exceeds expenses."
+    }
+  ]
+}

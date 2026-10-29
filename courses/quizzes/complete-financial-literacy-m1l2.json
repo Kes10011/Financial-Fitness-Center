@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m1l2",
+  "title": "Lesson 2 Quiz: Know Your Numbers: Your Personal Money Snapshot",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "How is net worth calculated?",
+      "options": [
+        "Net worth is everything you own plus everything you owe.",
+        "Net worth is everything you own minus everything you owe.",
+        "Net worth is everything you owe minus everything you own.",
+        "Net worth is everything you own multiplied by everything you owe."
+      ],
+      "answer": 1,
+      "explanation": "Net worth equals what you own minus what you owe.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1l2-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Fixed expenses are bills that stay the same each month.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Fixed expenses like rent or mortgage remain constant monthly.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1l2-q2.mp3"
+    }
+  ]
+}

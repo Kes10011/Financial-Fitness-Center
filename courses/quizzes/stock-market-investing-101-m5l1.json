@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m5l1",
+  "title": "Lesson 1 Quiz: Buy-and-Hold and Dividend Investing",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary benefit of reinvesting dividends in a buy‑and‑hold strategy?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5l1-q1.mp3",
+      "options": [
+        "It guarantees higher share price.",
+        "It increases the number of shares owned without additional cash.",
+        "It eliminates market risk.",
+        "It ensures dividends will rise each year."
+      ],
+      "answer": 1,
+      "explanation": "Reinvesting dividends uses the cash payout to buy more shares, growing your holdings over time."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A company's ability to pay dividends depends on its having steady earnings and manageable debt.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration links steady earnings and manageable debt to the likelihood of continued dividend payments."
+    }
+  ]
+}

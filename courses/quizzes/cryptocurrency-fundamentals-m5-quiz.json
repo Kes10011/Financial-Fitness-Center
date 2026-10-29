@@ -1,0 +1,56 @@
+{
+  "id": "crypto-m5-quiz",
+  "title": "Module 5 Quiz: Understanding Market Trends",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Why can a lower-priced cryptocurrency still have a larger market size than a higher-priced one?",
+      "options": [
+        "Because market cap is price multiplied by circulating supply, so a lower price can still yield a larger market cap if the supply is sufficiently high.",
+        "Because price alone determines market capitalization.",
+        "Because higher-priced coins always have larger market caps.",
+        "Because trading volume overrides market cap considerations."
+      ],
+      "answer": 0,
+      "explanation": "Market cap equals price multiplied by circulating supply, so total market size depends on both price and supply: a lower price can still mean a larger market if the circulating supply is high enough.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5-quiz-q1.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "Which pattern indicates an uptrend in price?",
+      "options": [
+        "Higher highs and higher lows",
+        "Lower highs and lower lows",
+        "Sideways movement with equal highs and lows",
+        "Sharp spikes followed by immediate declines"
+      ],
+      "answer": 0,
+      "explanation": "An uptrend is a series of higher highs and higher lows, like climbing a staircase.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5-quiz-q2.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: You should build a personal watchlist of three to five reputable assets and follow them for weeks instead of chasing every trend.",
+      "answer": 0,
+      "explanation": "True. Pick three to five reputable assets, watch how they move over several weeks, and stop chasing every passing trend.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5-quiz-q3.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "If you answer 'no' to any question in your pre\u2011trade checklist (understand the asset, use money you can afford to leave untouched, check it fits your plan), what should you do?",
+      "options": [
+        "Proceed with the trade anyway.",
+        "Increase your position size to compensate for uncertainty.",
+        "Ignore the checklist and rely on market sentiment.",
+        "Pause and step back from placing the order."
+      ],
+      "answer": 3,
+      "explanation": "If you answer no to any checklist question, you pause and step back instead of placing the order.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5-quiz-q4.mp3"
+    }
+  ]
+}

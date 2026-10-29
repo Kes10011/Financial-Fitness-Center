@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m4-l2-quiz",
+ "title": "Lesson 2 Quiz: Stop Losses, Targets, and Risk-to-Reward",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is the primary purpose of a stop loss order?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-l2-q1.mp3",
+   "options": [
+    "To lock in profits at a predetermined level",
+    "To automatically exit a trade to limit loss at a predefined price",
+    "To increase leverage on a position",
+    "To guarantee a profit regardless of market movement"
+   ],
+   "answer": 1,
+   "explanation": "A stop loss is an automated exit order that sells to cut loss at a predefined price."
+  },
+  {
+   "type": "tf",
+   "text": "Position size is calculated by dividing total risk by risk per share, where risk per share equals entry price minus stop loss price.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Position size = total risk divided by risk per share (entry minus stop)."
+  }
+ ]
+}

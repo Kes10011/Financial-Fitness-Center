@@ -1,0 +1,56 @@
+{
+  "id": "kids-m4-quiz",
+  "title": "Module 4 Quiz: Banks Keep Money Safe",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What cannot hurt the money kept in the bank's vault?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4-quiz-q1.mp3",
+      "options": [
+        "Rain",
+        "Fire",
+        "Sleepy puppies",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "The narration says rain, fire, and sleepy puppies cannot touch the money."
+    },
+    {
+      "type": "mcq",
+      "text": "What happens to interest when you save more money in a savings account?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4-quiz-q2.mp3",
+      "options": [
+        "It gets bigger",
+        "It gets smaller",
+        "It stays the same",
+        "It disappears"
+      ],
+      "answer": 0,
+      "explanation": "The narration says the more you save, the bigger the thank‑you (interest) gets over time."
+    },
+    {
+      "type": "mcq",
+      "text": "What does your bank card act like when you use it?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4-quiz-q3.mp3",
+      "options": [
+        "A magic wand",
+        "A key to your vault",
+        "A toy",
+        "A book"
+      ],
+      "answer": 1,
+      "explanation": "The narration says a card is a special key that unlocks your very own bank vault."
+    },
+    {
+      "type": "tf",
+      "text": "A savings account is for spending money every day.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The narration says a savings account is not for spending every day; it is for keeping money safe for something special."
+    }
+  ]
+}

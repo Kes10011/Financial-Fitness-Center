@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m3-l1-quiz",
+  "title": "Lesson 1 Quiz: Choosing Between Hot, Cold, and Custodial Wallets",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which type of wallet keeps private keys completely offline?",
+      "options": [
+        "Hot wallet",
+        "Cold wallet",
+        "Custodial wallet",
+        "A bank savings account"
+      ],
+      "answer": 1,
+      "explanation": "A cold wallet is a physical hardware device that keeps private keys completely offline.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3l1-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: With a custodial wallet, a third party holds your private keys.",
+      "answer": 0,
+      "explanation": "True. In a custodial wallet, a third party, usually a centralized exchange, holds the private keys for you.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3l1-q2.mp3"
+    }
+  ]
+}

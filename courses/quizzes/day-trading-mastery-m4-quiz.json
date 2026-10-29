@@ -1,0 +1,54 @@
+{
+ "id": "day-trading-mastery-m4-quiz",
+ "title": "Module 4 Quiz: Risk Management Strategies",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What maximum percentage of total account equity do most professional day traders recommend risking on any single trade?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-quiz-q1.mp3",
+   "options": [
+    "2 percent",
+    "5 percent",
+    "10 percent",
+    "15 percent"
+   ],
+   "answer": 0,
+   "explanation": "The narration states that most professional traders use 2 percent as a maximum risk limit per trade."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: A protective stop loss is an automated exit order placed with your broker to cut losses at a predefined price.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-quiz-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "A stop loss automatically exits a position at a set price level to limit downside risk."
+  },
+  {
+   "type": "mcq",
+   "text": "To maintain a mathematical edge over time, what is the minimum recommended risk-to-reward ratio for a trade setup?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-quiz-q3.mp3",
+   "options": [
+    "One to one",
+    "One to two",
+    "One to four",
+    "Two to one"
+   ],
+   "answer": 1,
+   "explanation": "A minimum risk-to-reward ratio of one to two ensures potential gains double potential losses on every trade."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: If an account reaches its maximum overall drawdown limit, traders should double their position size to recover capital quickly.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Reaching a maximum overall drawdown limit requires cutting position sizes in half to protect capital."
+  }
+ ]
+}

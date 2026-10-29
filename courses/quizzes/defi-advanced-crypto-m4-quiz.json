@@ -1,0 +1,54 @@
+{
+ "id": "defi-m4-quiz",
+ "title": "Module 4 Quiz: Advanced Trading Strategies",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "According to lesson 3, how is the appropriate position size calculated for a trade?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4-quiz-q1.mp3",
+   "options": [
+    "Multiply total capital by the stop-loss percentage",
+    "Divide the amount you are willing to lose by the stop-loss distance",
+    "Set position size equal to the total capital",
+    "Use the average volume of the asset as the size"
+   ],
+   "answer": 1,
+   "explanation": "Position size equals the risk amount divided by the stop-loss distance to keep risk per trade within limits."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Reviewing a trade journal weekly helps traders spot patterns such as exiting too early or over-trading after a win and adjust their risk parameters accordingly.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4-quiz-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "The weekly journal review serves as a feedback loop that informs adjustments to risk or stop‑loss placement."
+  },
+  {
+   "type": "mcq",
+   "text": "What is the core idea of range trading as explained in lesson 2?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4-quiz-q3.mp3",
+   "options": [
+    "Buying only when price makes new highs",
+    "Placing automated orders to buy near support and sell near resistance to profit from normal volatility",
+    "Avoiding any use of stop‑loss orders",
+    "Relying solely on news events to time entries"
+   ],
+   "answer": 1,
+   "explanation": "Range trading exploits predictable price oscillations between support and resistance without needing to forecast news."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Extremely positive funding rates on perpetual futures suggest that most traders are leveraged long, which can signal an overheated market prone to a sharp pullback.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "High positive funding rates indicate crowded long positions, often preceding a market correction."
+  }
+ ]
+}

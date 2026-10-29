@@ -1,0 +1,54 @@
+{
+  "id": "complete-financial-literacy-m5-quiz",
+  "title": "Module 5 Quiz: Building Wealth Over Time",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "How does compound growth impact long-term savings when consistent monthly deposits are maintained over twenty years?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5-quiz-q1.mp3",
+      "options": [
+        "It contributes a growing portion of the total balance alongside out-of-pocket deposits.",
+        "It caps total growth at a fixed percentage of the initial year's contribution.",
+        "It reduces the overall account balance due to administrative fees.",
+        "It guarantees that zero market volatility will occur over two decades."
+      ],
+      "answer": 0,
+      "explanation": "Over twenty years, compound growth accumulates on top of out-of-pocket contributions, generating an increasing share of the final balance."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Writing a legally binding will ensures property and personal assets are distributed according to the owner's wishes, avoiding court disputes.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5-quiz-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "A clear will explicitly outlines asset distribution to help prevent costly court disputes among family members."
+    },
+    {
+      "type": "mcq",
+      "text": "When constructing a 12-month financial fitness plan, what should be done with a net monthly cash flow surplus?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5-quiz-q3.mp3",
+      "options": [
+        "Allocate specific portions toward prioritized financial goals such as emergency savings and debt repayment.",
+        "Keep the surplus in a non-interest-bearing cash account without tracking.",
+        "Spend the full surplus immediately to prevent lifestyle inflation.",
+        "Convert all surplus funds into short-term high-risk investments regardless of debt obligations."
+      ],
+      "answer": 0,
+      "explanation": "A monthly surplus should be intentionally assigned toward prioritized goals, including emergency funds, debt reduction, and long-term savings."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Private health, life, and property insurance policies serve to protect personal savings and wealth from major financial disruptions.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Private insurance policies fill gaps left by basic state benefits, protecting accumulated savings against unexpected major medical or property losses."
+    }
+  ]
+}

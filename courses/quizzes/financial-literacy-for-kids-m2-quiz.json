@@ -1,0 +1,56 @@
+{
+  "id": "kids-m2-quiz",
+  "title": "Module 2 Quiz: Saving Like a Superhero",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does drawing your savings goal and putting it on the wall help you do?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2-quiz-q1.mp3",
+      "options": [
+        "Forget your goal",
+        "Remember to save your pocket money",
+        "Spend more on toys",
+        "Make your piggy bank full"
+      ],
+      "answer": 1,
+      "explanation": "The picture reminds you to save, as shown in Lesson 1."
+    },
+    {
+      "type": "mcq",
+      "text": "According to the Golden Hero Rule, which habit builds the most savings power?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2-quiz-q2.mp3",
+      "options": [
+        "Saving a big amount once a year",
+        "Saving a small coin every week",
+        "Saving only when you feel like it",
+        "Not saving at all"
+      ],
+      "answer": 1,
+      "explanation": "Saving a little regularly beats saving a lot once, as the rule states."
+    },
+    {
+      "type": "mcq",
+      "text": "If you skip a one‑coin treat today, how many more coins do you need for a ten‑coin cape?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2-quiz-q3.mp3",
+      "options": [
+        "Four",
+        "Five",
+        "Six",
+        "Ten"
+      ],
+      "answer": 1,
+      "explanation": "Skipping the treat saves the coin, leaving you needing five more coins for the cape."
+    },
+    {
+      "type": "tf",
+      "text": "Saving a large amount once is better than saving a little each time.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The Golden Hero Rule says small, regular savings beat a big amount saved once."
+    }
+  ]
+}

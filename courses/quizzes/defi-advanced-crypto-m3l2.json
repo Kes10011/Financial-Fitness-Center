@@ -1,0 +1,30 @@
+{
+ "id": "defi-m3-l2-quiz",
+ "title": "Lesson 2 Quiz: Liquidity Pools and Impermanent Loss",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "How can trading fees earned in a liquidity pool affect impermanent loss?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3l2-q1.mp3",
+   "options": [
+    "They make impermanent loss permanent and unrecoverable",
+    "They have no effect on impermanent loss at all",
+    "They can offset or exceed the loss",
+    "They guarantee your pool share beats simply holding"
+   ],
+   "answer": 2,
+   "explanation": "Impermanent loss is temporary and can be offset or exceeded by the trading fees you earn."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: providing liquidity is advisable for highly volatile token pairs because they generate the highest trading fees.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "The narration advises avoiding highly volatile pairs as impermanent loss could outweigh fee income."
+  }
+ ]
+}

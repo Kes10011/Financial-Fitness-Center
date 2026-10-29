@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m1-l2-quiz",
+  "title": "Lesson 2 Quiz: Blocks, Chains, and Consensus",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is a hash in a blockchain and what happens if a block is altered?",
+      "options": [
+        "A hash is a digital signature that changes if block data changes, instantly alerting the network.",
+        "A hash is a random number that remains the same regardless of changes to the block.",
+        "A hash is a transaction fee paid to miners for adding the block.",
+        "A hash is a user's private key used to sign the block."
+      ],
+      "answer": 0,
+      "explanation": "Each block receives a unique digital signature called a hash; changing even one figure in the block changes its signature instantly and alerts the network.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m1l2-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Each block contains the signature (hash) of the previous block.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Every new block contains the signature of the block before it, forming an unbroken chain.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m1l2-q2.mp3"
+    }
+  ]
+}

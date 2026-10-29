@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m2l2-quiz",
+  "title": "Lesson 2 Quiz: Tracking Cash Flow Without the Overwhelm",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "According to the narration, what is a cash leak?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2l2-q1.mp3",
+      "options": [
+        "Money spent on things you love like Carnival fete.",
+        "Untracked money disappearing on impulse purchases that do not bring real value or align with your goals.",
+        "Fixed monthly bills like rent.",
+        "Savings deposited each week."
+      ],
+      "answer": 1,
+      "explanation": "The narration defines a cash leak as untracked money disappearing on impulse purchases that do not bring real value or align with your goals, distinguishing it from spending on things you love."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: The recommended weekly tracking routine takes about ten minutes once a week, typically on a Sunday evening.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m2l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration states that all you need is ten minutes once a week, usually on a Sunday evening, to review where your dollars went."
+    }
+  ]
+}

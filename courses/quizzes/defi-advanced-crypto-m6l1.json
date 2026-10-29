@@ -1,0 +1,30 @@
+{
+ "id": "defi-m6-l1-quiz",
+ "title": "Lesson 1 Quiz: Layer 2s, Interoperability, and Real-World Assets",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is a primary benefit of using a Layer 2 solution such as Optimism or Arbitrum?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6l1-q1.mp3",
+   "options": [
+    "They increase transaction fees by processing each transaction individually.",
+    "They reduce cost per transaction by batching many transactions before settling on the mainnet.",
+    "They eliminate the need for any blockchain security.",
+    "They allow users to bypass all regulatory requirements."
+   ],
+   "answer": 1,
+   "explanation": "Layer 2 solutions batch many transactions off‑chain and settle them on Ethereum, lowering the cost per transaction."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Cross‑chain bridges enable interoperability by locking a token on the source chain and minting a representation on the destination chain.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Bridges lock tokens on the source chain and mint a representative token on the destination chain to enable cross‑chain movement."
+  }
+ ]
+}

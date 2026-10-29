@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m3-l2",
+ "title": "Lesson 2 Quiz: Key Single and Double Candle Patterns",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which candlestick pattern is defined by an almost identical opening and closing price, resulting in a very thin or nonexistent body?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-l2-q1.mp3",
+   "options": [
+    "Doji",
+    "Hammer",
+    "Bullish Engulfing",
+    "Shooting Star"
+   ],
+   "answer": 0,
+   "explanation": "A Doji reflects market indecision because the open and close are virtually the same."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: A hammer pattern provides the most reliable bullish signal when it forms at the top of an uptrend.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "A hammer is most meaningful at the end of a downtrend, not at a trend top."
+  }
+ ]
+}

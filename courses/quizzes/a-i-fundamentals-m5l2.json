@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m5l2",
+  "title": "Lesson 2 Quiz: AI for Risk Analysis",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which of the following best describes how AI is used to estimate portfolio risk in the lesson?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5l2-q1.mp3",
+      "options": [
+        "AI predicts exact future prices of each asset.",
+        "AI calculates volatility and correlations to compute portfolio variance.",
+        "AI replaces the need for historical data entirely.",
+        "AI only analyzes social media sentiment to determine risk."
+      ],
+      "answer": 1,
+      "explanation": "The lesson explains that machine‑learning algorithms estimate asset volatilities and use historical correlations to compute portfolio variance."
+    },
+    {
+      "type": "tf",
+      "text": "Monte‑Carlo simulation in the lesson generates thousands of possible future price paths to stress‑test the portfolio under different scenarios.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m5l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration states that Monte‑Carlo simulation creates many future price paths for scenario testing and VaR estimation."
+    }
+  ]
+}

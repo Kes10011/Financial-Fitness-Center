@@ -1,0 +1,54 @@
+{
+ "id": "defi-m1-quiz",
+ "title": "Module 1 Quiz: DeFi Ecosystem Overview",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What does a high and steady Total Value Locked (TVL) suggest about a DeFi protocol?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1-quiz-q1.mp3",
+   "options": [
+    "The protocol is likely trusted by users",
+    "The protocol guarantees profits",
+    "The protocol has no smart contract risk",
+    "The protocol is regulated"
+   ],
+   "answer": 0,
+   "explanation": "High steady TVL indicates that users have deposited assets, showing trust in the protocol."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Lack of third‑party audit is a major red flag when evaluating a DeFi protocol.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1-quiz-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Independent audits help verify code safety; missing them signals risk."
+  },
+  {
+   "type": "mcq",
+   "text": "Which governance structure poses the greatest risk to a DeFi protocol's treasury?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1-quiz-q3.mp3",
+   "options": [
+    "Founders hold all voting tokens",
+    "Voting power is spread across the community",
+    "Upgrades require a timelock",
+    "Treasury uses a multi‑signature wallet"
+   ],
+   "answer": 0,
+   "explanation": "If founders control all voting power, they can unilaterally move funds without community approval."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: A healthy DeFi community features developers who answer technical questions openly.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Transparent communication about bugs and downtime is a sign of a healthy project."
+  }
+ ]
+}

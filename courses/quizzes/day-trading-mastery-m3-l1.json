@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m3-l1-quiz",
+ "title": "Lesson 1 Quiz: Anatomy of a Candlestick",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What does the body of a candlestick represent?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-l1-q1.mp3",
+   "options": [
+    "The highest price tested during the period",
+    "The distance between the open and close prices",
+    "The volume traded during the period",
+    "The same as the wick or shadow"
+   ],
+   "answer": 1,
+   "explanation": "The body is the distance between the open and close prices for the period."
+  },
+  {
+   "type": "tf",
+   "text": "A long upper wick indicates that sellers pushed the price back down after an upward move, showing rejection at higher levels.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "A long upper wick forms when price is driven up then rejected, leaving sellers in control."
+  }
+ ]
+}

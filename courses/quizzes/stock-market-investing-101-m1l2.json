@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m1l2",
+  "title": "Lesson 2 Quiz: Brokers, Accounts, and Placing Your First Order",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary function of a stockbroker in Trinidad and Tobago?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1l2-q1.mp3",
+      "options": [
+        "To provide legal advice on tax matters",
+        "To verify identity and route orders to the market",
+        "To set share prices for listed companies",
+        "To manage the Central Depository's vault"
+      ],
+      "answer": 1,
+      "explanation": "Brokers verify client identity and send orders to the exchange."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A limit order guarantees immediate execution at the best available price.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "A limit order only executes if the market reaches the specified price or better, not immediately."
+    }
+  ]
+}

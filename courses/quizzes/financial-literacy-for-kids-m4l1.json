@@ -1,0 +1,30 @@
+{
+  "id": "kids-m4-l1-quiz",
+  "title": "Lesson 1 Quiz: What Is a Bank, Really?",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does the bank helper write next to your name in the notebook?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4l1-q1.mp3",
+      "options": [
+        "The exact number of coins you gave her",
+        "Your favorite color",
+        "The bank's address",
+        "The time of day"
+      ],
+      "answer": 0,
+      "explanation": "The helper writes your name, and next to it the exact number of coins you gave her."
+    },
+    {
+      "type": "tf",
+      "text": "Rain cannot wet the money inside the bank's vault.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration says rain cannot wet the money in the vault."
+    }
+  ]
+}

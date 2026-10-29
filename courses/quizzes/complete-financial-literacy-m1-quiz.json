@@ -1,0 +1,54 @@
+{
+  "id": "complete-financial-literacy-m1-quiz",
+  "title": "Module 1 Quiz: Understanding Personal Finance",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which of the four financial fitness pillars involves putting the money you keep to work so it can increase over time?",
+      "options": [
+        "Earn",
+        "Keep",
+        "Grow",
+        "Protect"
+      ],
+      "answer": 2,
+      "explanation": "Grow means putting the money you kept to work so it can increase over time.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1-quiz-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A negative net worth indicates personal failure.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Negative net worth simply shows current position, not failure.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1-quiz-q2.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "Which statement best describes the primary action in the \"pay yourself first\" system?",
+      "options": [
+        "Transfer a set amount to savings immediately when income arrives",
+        "Save after all bills are paid",
+        "Only save leftover money at month end",
+        "Skip saving until an emergency arises"
+      ],
+      "answer": 0,
+      "explanation": "Pay yourself first moves savings before any other spending.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1-quiz-q3.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: An emergency fund should be invested in the stock market to maximize growth.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Emergency funds stay in liquid, low\u2011risk accounts, not invested.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1-quiz-q4.mp3"
+    }
+  ]
+}

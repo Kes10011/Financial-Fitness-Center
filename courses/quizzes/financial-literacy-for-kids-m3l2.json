@@ -1,0 +1,30 @@
+{
+  "id": "kids-m3-l2-quiz",
+  "title": "Lesson 2 Quiz: The Supermarket Quest",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What should you do if an item is not on your shopping list?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3l2-q1.mp3",
+      "options": [
+        "Put it in the cart anyway",
+        "Leave it and stick to the list",
+        "Ask a friend to buy it",
+        "Buy it if it looks fun"
+      ],
+      "answer": 1,
+      "explanation": "If it's not on the list, it's a want, so we stick to our plan and don't add it."
+    },
+    {
+      "type": "tf",
+      "text": "Bright candy bars by the checkout are on the shopping list.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The candy bars are not on the list; they are sneaky tricks to make us want extra things."
+    }
+  ]
+}

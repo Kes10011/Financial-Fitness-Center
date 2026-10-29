@@ -1,0 +1,54 @@
+{
+ "id": "defi-m3-quiz",
+ "title": "Module 3 Quiz: Yield Farming & Staking",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is the trade-off of direct staking?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3-quiz-q1.mp3",
+   "options": [
+    "You earn rewards with no risk of losing staked tokens",
+    "You get full control but full responsibility for node maintenance, with slashing risk if your node misbehaves",
+    "You must delegate your tokens to a third-party validator",
+    "You automatically receive a liquid derivative token for other protocols"
+   ],
+   "answer": 1,
+   "explanation": "Direct staking means you run your own validator, so you control the node but are liable for slashing if it fails."
+  },
+  {
+   "type": "mcq",
+   "text": "What does a liquidity pool's constant product formula keep unchanged after each trade?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3-quiz-q2.mp3",
+   "options": [
+    "The sum of the two token quantities",
+    "The product of the two token quantities",
+    "The token ratio, which can never change",
+    "The total supply, by minting new tokens after each trade"
+   ],
+   "answer": 1,
+   "explanation": "The constant product formula ensures quantity A × quantity B stays unchanged, causing the pool to rebalance amounts when prices move."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: yield that comes solely from a protocol's own newly minted reward token is sustainable income.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3-quiz-q3.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Yield paid only in freshly printed tokens is token inflation, not sustainable income, and relies on continued demand."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: before depositing, you should check how fast new tokens are minted to pay farmers as part of assessing sustainability.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "The narration lists checking the token emissions rate as a key step in evaluating yield."
+  }
+ ]
+}

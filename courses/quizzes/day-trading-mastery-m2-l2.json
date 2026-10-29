@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m2-l2-quiz",
+ "title": "Lesson 2 Quiz: Indicators That Earn Their Place",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is the primary purpose of the 200 EMA in trading?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-l2-q1.mp3",
+   "options": [
+    "To identify short-term overbought conditions",
+    "To act as a dynamic stop-loss level",
+    "To define the long-term trend bias, with price above it favoring longs",
+    "To measure volume-weighted price"
+   ],
+   "answer": 2,
+   "explanation": "The 200 EMA serves as a big-picture trend baseline; price above it suggests a bullish bias."
+  },
+  {
+   "type": "tf",
+   "text": "Using both a 20 EMA and a 200 EMA on the same chart is unnecessary because they provide identical information.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "The 20 EMA captures short-term dynamics while the 200 EMA reflects the long-term trend; they are not duplicates."
+  }
+ ]
+}

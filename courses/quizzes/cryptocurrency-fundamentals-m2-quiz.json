@@ -1,0 +1,54 @@
+{
+  "id": "crypto-m2-quiz",
+  "title": "Module 2 Quiz: How Cryptocurrencies Work",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What distinguishes a cryptocurrency coin from a token?",
+      "options": [
+        "Coins are mined, tokens are not.",
+        "Coins run on their own blockchain; tokens are built on a host blockchain and require the host's native coin for transfers.",
+        "Coins have a fixed supply, tokens do not.",
+        "Coins can be used for smart contracts, tokens cannot."
+      ],
+      "answer": 1,
+      "explanation": "Coins run on their own blockchains, while tokens are built on a host blockchain and their transfers must be paid for in the host's native coin.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2-quiz-q1.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "According to the transaction flow described, what step comes immediately after a transaction is signed with the private key?",
+      "options": [
+        "The transaction is assembled into a block by validators.",
+        "The transaction is broadcast to the network.",
+        "The transaction waits in the mempool.",
+        "The transaction is confirmed on the ledger."
+      ],
+      "answer": 1,
+      "explanation": "The sequence runs: initiated in the wallet, signed with the private key, broadcast to the network, waiting in the mempool, assembled into a block, then confirmed.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2-quiz-q2.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Sharing your crypto address with others is safe because it is derived from your public key and can be shared freely.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "True. A crypto address is derived from the public key and can be shared freely with anyone who needs to send you funds.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2-quiz-q3.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: If a scammer obtains your private key, they can sweep your funds without your permission.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "True. The private key is the master key that signs transactions; anyone who holds it controls every dollar in the account and can sweep funds without permission.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2-quiz-q4.mp3"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m4l1",
+  "title": "Lesson 1 Quiz: Why Diversification Protects You",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does diversification help protect against?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4l1-q1.mp3",
+      "options": [
+        "Market timing",
+        "Interest rate changes",
+        "Single-stock risk",
+        "Inflation"
+      ],
+      "answer": 2,
+      "explanation": "Diversification reduces the impact of a single stock's poor performance on the overall portfolio."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Spreading investments across different sectors and asset types can reduce the impact of a downturn in any one area.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Spreading investments across different sectors and asset types cushions the portfolio when one investment drops."
+    }
+  ]
+}

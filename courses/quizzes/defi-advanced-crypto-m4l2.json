@@ -1,0 +1,30 @@
+{
+ "id": "defi-m4-l2-quiz",
+ "title": "Lesson 2 Quiz: Structured Strategies: DCA, Ranges, and Hedging",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is the primary benefit of Dollar-Cost Averaging as described in lesson 2?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4l2-q1.mp3",
+   "options": [
+    "It removes all market risk from the trade",
+    "It smooths the average entry cost by buying fixed amounts over time",
+    "It allows traders to predict exact market tops",
+    "It eliminates the need for stop-loss orders"
+   ],
+   "answer": 1,
+   "explanation": "DCA averages entry cost by investing fixed amounts over time without trying to time the bottom."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Hedging a long-term core position by opening a small short position or buying a put option can offset temporary losses if the market drops.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "A hedge gains value when the market falls, offsetting losses on spot holdings."
+  }
+ ]
+}

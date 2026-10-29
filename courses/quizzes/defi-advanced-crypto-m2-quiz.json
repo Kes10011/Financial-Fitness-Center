@@ -1,0 +1,56 @@
+{
+ "id": "defi-m2-quiz",
+ "title": "Module 2 Quiz: Smart Contracts & dApps",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which feature ensures that a smart contract executes the same way for every participant?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2-quiz-q1.mp3",
+   "options": [
+    "The contract runs on a single server",
+    "The code is deterministic and transparent on the blockchain",
+    "Developers can adjust outcomes based on user status",
+    "Users must sign paperwork before execution"
+   ],
+   "answer": 1,
+   "explanation": "The narration describes execution as deterministic and transparent so rules apply equally to all."
+  },
+  {
+   "type": "mcq",
+   "text": "What is the purpose of reviewing token approval prompts before confirming a transaction?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2-quiz-q2.mp3",
+   "options": [
+    "To increase the speed of the transaction",
+    "To ensure the contract can only spend the amount you intend",
+    "To share your private key with the dApp",
+    "To automatically approve unlimited spending"
+   ],
+   "answer": 1,
+   "explanation": "The narration advises setting a custom allowance matching only what you intend to trade."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: An audit report that identifies a critical vulnerability which remains unfixed means the contract is safe to use.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2-quiz-q3.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "The narration says a critical issue where developers have not fixed it makes the contract a no-go zone."
+  },
+  {
+   "type": "mcq",
+   "text": "What does the presence of emergency keys without a timelock indicate about a protocol?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2-quiz-q4.mp3",
+   "options": [
+    "It proves the protocol is fully decentralized",
+    "It gives creators instant control to pause trading or withdraw reserves",
+    "It eliminates the need for audits",
+    "It automatically distributes fees to participants"
+   ],
+   "answer": 1,
+   "explanation": "The narration states such a backdoor key means you are trusting a stranger, not using a decentralized protocol."
+  }
+ ]
+}

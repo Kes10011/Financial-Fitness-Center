@@ -1,0 +1,56 @@
+{
+  "id": "crypto-m3-quiz",
+  "title": "Module 3 Quiz: Setting Up Your First Wallet",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which type of wallet is considered the most secure according to the lessons?",
+      "options": [
+        "Hot wallet",
+        "Custodial wallet",
+        "A wallet app left logged in on a shared phone",
+        "Cold wallet"
+      ],
+      "answer": 3,
+      "explanation": "Cold wallets are hardware devices that keep keys completely offline, making them the most secure storage method.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3-quiz-q1.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "Where should you keep a second handwritten copy of your seed phrase?",
+      "options": [
+        "In the same notebook as the first copy",
+        "On a screenshot stored in your phone",
+        "In a separate secure location",
+        "Saved in a cloud notes app"
+      ],
+      "answer": 2,
+      "explanation": "Keep a second handwritten copy in a completely separate secure location, so one damaged or lost copy does not lock you out.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3-quiz-q2.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "What will a legitimate wallet support agent never ask you for?",
+      "options": [
+        "Your email address for correspondence",
+        "Your seed phrase or private keys",
+        "Your device model for troubleshooting",
+        "Your preferred language setting"
+      ],
+      "answer": 1,
+      "explanation": "No legitimate support will ever request your seed phrase or private keys.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3-quiz-q3.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Using an authenticator app for two-factor authentication is preferred over plain SMS.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "True. Use time-based two-factor authentication from an authenticator app rather than plain SMS text messages.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3-quiz-q4.mp3"
+    }
+  ]
+}

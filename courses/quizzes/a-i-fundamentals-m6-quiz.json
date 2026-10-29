@@ -1,0 +1,54 @@
+{
+  "id": "a-i-fundamentals-m6-quiz",
+  "title": "Module 6 Quiz: Future of AI in Finance",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which statement best describes Agentic AI as discussed in the lesson?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6-quiz-q1.mp3",
+      "options": [
+        "Agentic AI can only respond to user queries with pre-written scripts.",
+        "Agentic AI performs multi-step tasks on its own while staying within defined limits.",
+        "Agentic AI requires constant human input for each step of a process.",
+        "Agentic AI is limited to providing generic monthly budget advice."
+      ],
+      "answer": 1,
+      "explanation": "Agentic AI autonomously carries out multi-step tasks within set boundaries."
+    },
+    {
+      "type": "mcq",
+      "text": "Which of the following is NOT identified as an enduring human skill in an AI economy?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6-quiz-q2.mp3",
+      "options": [
+        "Ability to ask the right questions of AI tools and interpret outputs.",
+        "Capacity to feel and manage emotions in social interactions.",
+        "Skill to generate high-frequency trading algorithms without oversight.",
+        "Willingness to continuously learn and adapt to new tools."
+      ],
+      "answer": 2,
+      "explanation": "Generating trading algorithms without oversight is not listed as an enduring human skill; ethical judgment requires human review."
+    },
+    {
+      "type": "tf",
+      "text": "Before sharing your transaction data with an AI tool, you should verify that its privacy policy clearly explains encryption, storage, and any third-party sharing.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The habit advises checking the policy for those specifics and proceeding only if clear."
+    },
+    {
+      "type": "tf",
+      "text": "AI regulation in finance is designed to create strict safeguards that protect data, prevent bias, and ensure transparency of automated transfers.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The lesson states regulation sets guardrails for data protection, bias prevention, and auditability."
+    }
+  ]
+}

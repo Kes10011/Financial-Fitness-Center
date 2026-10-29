@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m2-l2-quiz",
+  "title": "Lesson 2 Quiz: How Transactions Move From Sender to Receiver",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the mempool in a cryptocurrency network?",
+      "options": [
+        "A permanent ledger of all confirmed transactions",
+        "A pool of unconfirmed transactions waiting to be included in a block",
+        "The cryptographic hash that links blocks together",
+        "A list of fees paid to miners for block creation"
+      ],
+      "answer": 1,
+      "explanation": "After a transaction is broadcast to the peer-to-peer network, it waits in the mempool, the pool of unconfirmed transactions waiting to be included in a block.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2l2-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "The transaction is signed with the private key before it is broadcast to the network.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "True. The steps run: initiation in the wallet, signing with the private key, then broadcasting to the peer-to-peer network.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2l2-q2.mp3"
+    }
+  ]
+}

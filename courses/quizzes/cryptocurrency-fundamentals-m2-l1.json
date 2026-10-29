@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m2-l1-quiz",
+  "title": "Lesson 1 Quiz: Coins, Tokens, and Digital Ownership",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary difference between a coin and a token?",
+      "options": [
+        "A coin can only be used for payments, while a token can represent any asset.",
+        "A coin operates on its own independent blockchain, whereas a token is built on top of an existing blockchain and relies on that host network.",
+        "Tokens are always more valuable than coins because they are newer.",
+        "Coins require smart contracts to function, while tokens do not."
+      ],
+      "answer": 1,
+      "explanation": "A coin runs on its own independent blockchain network, while a token is built on top of an existing blockchain and relies entirely on the host network.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2l1-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "Token transfers can be paid for using the tokens themselves.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "False. To transfer tokens you must still pay the network fee in the host network's native coin, never in the tokens themselves.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m2l1-q2.mp3"
+    }
+  ]
+}

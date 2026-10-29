@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m3l1",
+  "title": "Lesson 1 Quiz: Reading Price Charts with Confidence",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What characterises a market uptrend on a stock chart?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3l1-q1.mp3",
+      "options": [
+        "A series of higher highs and higher lows",
+        "A series of lower highs and lower lows",
+        "Prices remaining strictly within a horizontal range",
+        "Fluctuations driven entirely by balance sheet earnings"
+      ],
+      "answer": 0,
+      "explanation": "An uptrend occurs when price movements form a series of higher highs and higher lows."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A technical resistance level can transform into a new support level after the price breaks above it.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "When price breaks through a previous resistance ceiling, that price level frequently becomes a new support floor."
+    }
+  ]
+}

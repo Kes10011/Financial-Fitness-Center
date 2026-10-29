@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m3l2",
+  "title": "Lesson 2 Quiz: Core Indicators: Moving Averages, RSI, and Volume",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which set of indicator readings would suggest a confirmed uptrend?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3l2-q1.mp3",
+      "options": [
+        "Price below its moving average, RSI very low, trading volume low",
+        "Price above its moving average, RSI in the middle range, trading volume high",
+        "Price above its moving average, RSI very high, trading volume low",
+        "Price below its moving average, RSI in the middle range, trading volume high"
+      ],
+      "answer": 1,
+      "explanation": "An uptrend is confirmed when price is above the moving average, RSI shows moderate momentum, and volume is strong."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A price increase on low volume indicates strong institutional backing.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Low volume on a price rise lacks the conviction needed to signal strong institutional support."
+    }
+  ]
+}

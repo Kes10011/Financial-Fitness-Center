@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m2l1",
+  "title": "Lesson 1 Quiz: Reading a Company's Financial Statements",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which financial report shows a company's financial position as a snapshot of a single day, details what it owns, and lists what it owes?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2l1-q1.mp3",
+      "options": [
+        "Income Statement",
+        "Balance Sheet",
+        "Cash Flow Statement",
+        "Bank Statement"
+      ],
+      "answer": 1,
+      "explanation": "The balance sheet provides a snapshot of a single day, displaying a company's assets and liabilities."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: The Income Statement tracks actual physical cash entering and leaving a company's bank account.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The Cash Flow Statement tracks actual physical cash movements, whereas the Income Statement measures revenue, expenses, and net profit over a period of time."
+    }
+  ]
+}

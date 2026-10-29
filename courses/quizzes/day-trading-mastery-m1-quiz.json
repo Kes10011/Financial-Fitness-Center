@@ -1,0 +1,56 @@
+{
+ "id": "day-trading-mastery-m1-quiz",
+ "title": "Module 1 Quiz: Day Trading Fundamentals",
+ "questions": [
+  {
+   "type": "tf",
+   "text": "Day trading involves holding positions overnight to capture longer-term trends.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-quiz-q1.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Day trading requires closing all positions before the session ends, leaving no overnight exposure."
+  },
+  {
+   "type": "mcq",
+   "text": "Which describes the risk control principle of setting position size based on a fixed percent risk per trade?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-quiz-q2.mp3",
+   "options": [
+    "Adjust position size so that potential profit equals 2% of account.",
+    "Set stop-loss distance so that loss if hit equals a small fixed percent of account equity.",
+    "Use a fixed number of shares regardless of volatility.",
+    "Increase position size after each winning trade to compound gains."
+   ],
+   "answer": 1,
+   "explanation": "Position size is set so that the stop-loss loss equals the predetermined risk percent per trade."
+  },
+  {
+   "type": "mcq",
+   "text": "Which time period offers the highest liquidity and volatility for a trader in Atlantic Standard Time?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-quiz-q3.mp3",
+   "options": [
+    "4:00 AM - 9:30 AM AST (London session alone)",
+    "9:30 AM - 11:30 AM AST (London‑New York overlap)",
+    "11:30 AM - 4:00 PM AST (New York afternoon)",
+    "4:00 PM - 8:00 PM AST (after market close)"
+   ],
+   "answer": 1,
+   "explanation": "The London‑New York overlap from 9:30‑11:30 AM AST is cited as the most liquid/volatile window."
+  },
+  {
+   "type": "mcq",
+   "text": "What is the effect of trading during off‑peak hours on transaction cost?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-quiz-q4.mp3",
+   "options": [
+    "Bid‑ask spread narrows, reducing cost.",
+    "Bid‑ask spread widens, increasing cost for the same trade size.",
+    "Transaction cost remains constant regardless of liquidity.",
+    "Off‑peak trading eliminates the bid‑ask spread."
+   ],
+   "answer": 1,
+   "explanation": "The bid‑ask spread is wide off‑peak, making off‑peak trading more expensive for the same trades."
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "crypto-m1-quiz",
+  "title": "Module 1 Quiz: Introduction to Blockchain Technology",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is a key characteristic of a blockchain as a distributed ledger?",
+      "options": [
+        "Only one central server stores the ledger.",
+        "Each node holds an identical updated copy and the majority rejects any altered copy.",
+        "Nodes can maintain different versions without consensus.",
+        "The ledger is stored exclusively on mining devices."
+      ],
+      "answer": 1,
+      "explanation": "A blockchain is a distributed ledger shared across many computers, with every node holding an identical updated copy and the majority rejecting any altered copy.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m1-quiz-q1.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "What occurs if someone tries to alter an old block in the blockchain?",
+      "options": [
+        "The change is accepted automatically by the network.",
+        "The hash of that block changes, breaking the chain and requiring re-mining of all subsequent blocks, which the majority will reject.",
+        "Only that block is invalidated while later blocks remain valid.",
+        "The network ignores the change and continues processing."
+      ],
+      "answer": 1,
+      "explanation": "Each block contains the previous block's signature; altering an old block changes its hash and breaks every link after it, and majority consensus rejects the altered chain.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m1-quiz-q2.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Blockchain enables cross-border payments to settle in minutes rather than days.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "True. Blockchain-based payments settle in minutes rather than days, compared with traditional transfers that take days.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m1-quiz-q3.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "When a buyer scans a supply-chain token or QR code on a product, what can they verify?",
+      "options": [
+        "The product's price in local currency.",
+        "The estate origin, harvest date, and history of the product.",
+        "The manufacturer's stock price.",
+        "The number of employees at the factory."
+      ],
+      "answer": 1,
+      "explanation": "Scanning a token or QR code lets a buyer verify the estate origin, harvest date, and history of the product.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m1-quiz-q4.mp3"
+    }
+  ]
+}

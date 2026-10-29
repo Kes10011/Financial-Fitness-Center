@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m2l2",
+  "title": "Lesson 2 Quiz: Key Ratios Every Investor Should Know",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which ratio shows how much investors pay for each unit of a company's profit?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2l2-q1.mp3",
+      "options": [
+        "Price-to-Earnings ratio",
+        "Dividend Yield",
+        "Debt-to-Equity ratio",
+        "Return on Equity"
+      ],
+      "answer": 0,
+      "explanation": "The P/E ratio compares share price to earnings per share to indicate what investors pay for profit."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A higher Debt-to-Equity ratio indicates lower financial risk.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "A higher Debt-to-Equity ratio shows greater reliance on debt, which reflects higher financial risk."
+    }
+  ]
+}

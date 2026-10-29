@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m4-l1",
+ "title": "Lesson 1 Quiz: Position Sizing and the Risk-Per-Trade Rule",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "According to the risk-per-trade rule taught in this lesson, what is the maximum percentage of your account you should risk on a single trade if you follow the common professional guideline?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-l1-q1.mp3",
+   "options": [
+    "0.5%",
+    "1%",
+    "2%",
+    "5%"
+   ],
+   "answer": 2,
+   "explanation": "The lesson states most professional traders use 2 percent as a maximum risk per trade."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: The risk-per-trade rule requires you to calculate the dollar amount you are willing to lose before determining your stop‑loss distance.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m4-l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "The lesson outlines the sequence: risk percentage → risk amount → stop‑loss distance → position size."
+  }
+ ]
+}

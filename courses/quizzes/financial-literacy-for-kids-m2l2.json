@@ -1,0 +1,30 @@
+{
+  "id": "kids-m2-l2-quiz",
+  "title": "Lesson 2 Quiz: The Piggy Bank Power-Up",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which saving habit is stronger according to the Golden Hero Rule?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2l2-q1.mp3",
+      "options": [
+        "Saving many coins once a month",
+        "Saving one coin every week",
+        "Saving only when you have extra",
+        "Not saving at all"
+      ],
+      "answer": 1,
+      "explanation": "Saving a little each time builds more power than saving a lot once."
+    },
+    {
+      "type": "tf",
+      "text": "A piggy bank works like a battery that gains power each time you add a coin.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m2l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Each coin added gives the piggy bank more saving power, like charging a battery."
+    }
+  ]
+}

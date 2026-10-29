@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m1l2",
+  "title": "Lesson 2 Quiz: A Brief History That Explains Today",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which statement best describes the evolution from early rule-based AI to modern generative AI?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1l2-q1.mp3",
+      "options": [
+        "Rule-based systems used neural networks to learn patterns from data.",
+        "Early AI relied on explicit if-then rules, while modern generative AI creates new content from learned patterns.",
+        "Generative AI requires manual coding for each possible scenario.",
+        "Machine learning removed the need for any data input."
+      ],
+      "answer": 1,
+      "explanation": "Early rule-based systems depended on explicit programming for every scenario, whereas modern generative AI learns patterns and can generate new content."
+    },
+    {
+      "type": "tf",
+      "text": "Traditional machine learning allows computers to spot patterns in data without explicit programming for each rule.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "In traditional machine learning, algorithms learn patterns from data, eliminating the need for manually coding each rule."
+    }
+  ]
+}

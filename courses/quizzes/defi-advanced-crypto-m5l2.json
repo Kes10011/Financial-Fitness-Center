@@ -1,0 +1,30 @@
+{
+ "id": "defi-m5-l2-quiz",
+ "title": "Lesson 2 Quiz: Scam, Phishing, and Rug-Pull Defence",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Why are unlimited token approvals particularly dangerous when interacting with smart contracts?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5l2-q1.mp3",
+   "options": [
+    "They lock your wallet completely from taking any future transactions.",
+    "They allow a malicious smart contract to drain your entire token balance rather than just the deposit amount.",
+    "They permanently change your hardware wallet security settings.",
+    "They prevent you from revoking permissions in the future."
+   ],
+   "answer": 1,
+   "explanation": "An unlimited token approval grants a contract access to your full token balance, enabling a bad actor to drain the entire wallet."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: To protect against phishing, you should search for official dApps via search engine advertisements instead of using bookmarked links.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "You should use verified bookmarks rather than search engine ads, as scammers frequently buy top ad spots to promote fake sites."
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "stock-market-investing-101-m1-quiz",
+  "title": "Module 1 Quiz: Stock Market Basics",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary function of the Trinidad and Tobago Central Depository (TTCD) when an investor buys shares through a licensed broker?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1-quiz-q1.mp3",
+      "options": [
+        "It guarantees the execution speed of all limit orders placed on the exchange.",
+        "It holds share certificates electronically in a digital vault, eliminating paper certificates.",
+        "It determines daily stock price ceilings and floors based on corporate profit releases.",
+        "It acts as the primary regulatory body licensing stockbrokers across the local market."
+      ],
+      "answer": 1,
+      "explanation": "The TTCD serves as a secure digital vault that stores share certificates electronically, doing away with physical paper certificates."
+    },
+    {
+      "type": "mcq",
+      "text": "How does a limit order differ from a market order when buying or selling shares on an exchange?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1-quiz-q2.mp3",
+      "options": [
+        "A limit order guarantees immediate trade execution regardless of the prevailing price.",
+        "A limit order gives total price control by executing only at a specified price or better, whereas a market order prioritizes immediate execution.",
+        "A limit order automatically routes shares through the securities commission instead of a broker.",
+        "A limit order tracks the overall composite index to adjust trade pricing automatically."
+      ],
+      "answer": 1,
+      "explanation": "A limit order ensures a trade occurs only at the designated price floor/ceiling or better, sacrificing guaranteed immediate execution for complete price control."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Purchasing stock in a publicly listed company makes an investor a partial owner of that actual corporate enterprise.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Buying shares in a listed company grants the investor partial ownership of the real corporate business."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: The TTSE Composite Index requires investors to manually check every individual stock to measure overall market direction.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m1-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The TTSE Composite Index tracks the combined performance of listed companies to provide a quick snapshot of overall market trends without needing to check each stock individually."
+    }
+  ]
+}

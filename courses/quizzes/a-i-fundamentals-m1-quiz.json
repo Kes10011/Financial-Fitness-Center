@@ -1,0 +1,54 @@
+{
+  "id": "a-i-fundamentals-m1-quiz",
+  "title": "Module 1 Quiz: Introduction to Artificial Intelligence",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What distinguishes an AI system from a simple automated algorithm?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1-quiz-q1.mp3",
+      "options": [
+        "AI requires human input each time",
+        "AI only works with structured data",
+        "AI learns from data and adjusts its behavior",
+        "AI cannot handle new situations"
+      ],
+      "answer": 2,
+      "explanation": "AI systems learn from data and can change their behavior."
+    },
+    {
+      "type": "mcq",
+      "text": "What enabled traditional machine learning to move beyond rule-based systems?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1-quiz-q2.mp3",
+      "options": [
+        "Algorithms identified patterns from large datasets without explicit rules",
+        "Developers manually coded every rule",
+        "Systems relied solely on if-then statements",
+        "No data was needed"
+      ],
+      "answer": 0,
+      "explanation": "ML algorithms find patterns in data without humans writing every rule."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Recommendation engines are designed to discourage spending.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "They encourage seamless, friction-free spending."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: An algorithm is a step-by-step set of instructions that solves a specific problem or performs a calculation.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m1-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "That is the definition of an algorithm."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "kids-m5-l2-quiz",
+  "title": "Lesson 2 Quiz: Earn by Helping",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "How can you earn money by helping a neighbor?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5l2-q1.mp3",
+      "options": [
+        "Raking leaves and washing the car",
+        "Playing video games",
+        "Watching TV",
+        "Taking a nap"
+      ],
+      "answer": 0,
+      "explanation": "You earn money when you rake the yard and wash the car for a neighbor."
+    },
+    {
+      "type": "tf",
+      "text": "Earning money feels special only when you get it for free.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Earning money feels special because you worked for it yourself."
+    }
+  ]
+}

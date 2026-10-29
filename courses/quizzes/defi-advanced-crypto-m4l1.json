@@ -1,0 +1,30 @@
+{
+ "id": "defi-m4-l1-quiz",
+ "title": "Lesson 1 Quiz: Reading On-Chain and Market Signals Together",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which combination of signals helps traders avoid fake breakouts according to lesson 1?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4l1-q1.mp3",
+   "options": [
+    "Price action only",
+    "Price action and volume",
+    "Price action, volume, funding rates, and on-chain wallet activity",
+    "Funding rates only"
+   ],
+   "answer": 2,
+   "explanation": "Using all four signals together avoids fake breakouts and high-leverage traps."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: When large amounts of crypto move from centralized exchanges to private cold wallets, it indicates major holders are accumulating for the long term.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m4l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Moving funds off exchanges suggests long-term accumulation by major holders."
+  }
+ ]
+}

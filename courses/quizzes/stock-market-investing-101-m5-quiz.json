@@ -1,0 +1,54 @@
+{
+  "id": "stock-market-investing-101-m5-quiz",
+  "title": "Module 5 Quiz: Long-Term Investment Strategies",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary mechanism of dividend reinvestment in a long-term strategy?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5-quiz-q1.mp3",
+      "options": [
+        "Using distributed profits to purchase additional shares without spending new personal cash",
+        "Selling existing shares when prices peak to generate cash dividends",
+        "Borrowing funds to increase total share count during market drops",
+        "Switching all portfolio assets into cash to prevent short-term losses"
+      ],
+      "answer": 0,
+      "explanation": "Reinvesting dividends turns cash distributions into additional shares without requiring extra cash outlay."
+    },
+    {
+      "type": "mcq",
+      "text": "How does dollar-cost averaging automatically respond to fluctuating share prices?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5-quiz-q2.mp3",
+      "options": [
+        "It buys an equal number of shares at every scheduled purchase date",
+        "It purchases fewer shares when prices are lower and more shares when prices are higher",
+        "It purchases more shares when prices are lower and fewer shares when prices are higher",
+        "It pauses all purchases automatically whenever share prices decline"
+      ],
+      "answer": 2,
+      "explanation": "Investing a fixed amount means you acquire more shares when prices are low and fewer shares when prices are high."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Dollar-cost averaging completely removes investment risk and guarantees a lower average purchase price.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Dollar-cost averaging does not remove investment risk or guarantee a lower purchase price."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A written investment plan helps investors avoid emotional decision-making by establishing clear guidelines before market volatility occurs.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "A written policy statement acts as an anchor that removes guesswork and prevents panic during market fluctuations."
+    }
+  ]
+}

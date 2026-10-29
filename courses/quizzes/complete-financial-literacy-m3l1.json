@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m3l1-quiz",
+  "title": "Lesson 1 Quiz: Know Exactly What You Owe",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "According to the narration, if a debt statement does not show a minimum payment, how should you estimate it?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3l1-q1.mp3",
+      "options": [
+        "Two percent of the outstanding balance",
+        "Three percent of the outstanding balance",
+        "Five percent of the outstanding balance",
+        "Ten percent of the outstanding balance"
+      ],
+      "answer": 1,
+      "explanation": "The narration advises estimating the minimum payment as roughly three percent of the outstanding balance when it is not listed."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: In the example debt snapshot, the total debt is TT$29,200 and the combined minimum monthly payment is TT$836.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration explicitly states that the total debt across the four example debts is TT$29,200 and the combined minimum payment is TT$836."
+    }
+  ]
+}

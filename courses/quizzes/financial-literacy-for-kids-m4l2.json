@@ -1,0 +1,30 @@
+{
+  "id": "kids-m4-l2-quiz",
+  "title": "Lesson 2 Quiz: Your Very Own Account",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is it called when you put money into your savings account?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4l2-q1.mp3",
+      "options": [
+        "A deposit",
+        "A withdrawal",
+        "A PIN",
+        "A vault"
+      ],
+      "answer": 0,
+      "explanation": "When you put money in, we call that a deposit."
+    },
+    {
+      "type": "tf",
+      "text": "Interest is a thank‑you gift for keeping your money safe in a savings account.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m4l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration says banks add a little extra money called interest as a thank‑you gift."
+    }
+  ]
+}

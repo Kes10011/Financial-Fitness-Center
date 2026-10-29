@@ -1,0 +1,54 @@
+{
+ "id": "day-trading-mastery-m3-quiz",
+ "title": "Module 3 Quiz: Reading Candlestick Patterns",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What does a long upper wick on a candlestick indicate?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-quiz-q1.mp3",
+   "options": [
+    "Buyers pushed price higher",
+    "Market indecision",
+    "Sellers pushed buyers back down from the high",
+    "Strong buying dominance"
+   ],
+   "answer": 2,
+   "explanation": "A long upper wick shows sellers rejected higher prices, pushing price down from the high."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: A Bullish Engulfing pattern consists of a small red candle followed by a larger green candle that completely engulfs the previous red candle's body.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-quiz-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "A Bullish Engulfing shows a shift from selling to buying dominance as the green candle overtakes the red candle's body."
+  },
+  {
+   "type": "mcq",
+   "text": "What is a necessary condition for trusting a Morning Star reversal according to the lesson?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-quiz-q3.mp3",
+   "options": [
+    "The pattern must occur during low volume",
+    "The pattern must be preceded by a series of doji candles",
+    "The middle candle must be a long red candle",
+    "The final green candle must close well above the midpoint of the first red candle"
+   ],
+   "answer": 3,
+   "explanation": "The Morning Star requires the third candle to close well above the midpoint of the first candle."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: A Doji pattern always indicates a strong bullish reversal.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m3-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "A Doji shows indecision, not a bullish reversal."
+  }
+ ]
+}

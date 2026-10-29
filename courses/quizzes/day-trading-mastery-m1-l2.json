@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m1-l2-quiz",
+ "title": "Lesson 2 Quiz: Markets, Sessions, and Liquidity",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which time period offers the highest liquidity and volatility for a trader operating in Atlantic Standard Time?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-l2-q1.mp3",
+   "options": [
+    "4:00 AM - 9:30 AM AST (London session alone)",
+    "9:30 AM - 11:30 AM AST (London-New York overlap)",
+    "11:30 AM - 4:00 PM AST (New York afternoon)",
+    "4:00 PM - 8:00 PM AST (after New York close)"
+   ],
+   "answer": 1,
+   "explanation": "The London-New York overlap (9:30-11:30 AM AST) combines two major sessions, producing peak liquidity and volatility."
+  },
+  {
+   "type": "tf",
+   "text": "Trading outside the London-New York overlap typically results in tighter bid-ask spreads due to lower competition.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m1-l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Bid-ask spreads are narrow during peak liquidity (the overlap) and widen off-peak, increasing transaction cost."
+  }
+ ]
+}

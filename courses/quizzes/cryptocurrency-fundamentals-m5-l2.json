@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m5-l2-quiz",
+  "title": "Lesson 2 Quiz: Trends, Support, and Resistance",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "How do you recognise an uptrend?",
+      "options": [
+        "A series of higher highs and higher lows",
+        "A series of lower highs and lower lows",
+        "Price moving within a range with roughly equal highs and lows",
+        "Price consistently making lower highs but higher lows"
+      ],
+      "answer": 0,
+      "explanation": "An uptrend is defined as a series of higher highs and higher lows, like climbing a staircase.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5l2-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Support is a ceiling where selling interest halts a rise.",
+      "answer": 1,
+      "explanation": "Support is a price level where buying interest tends to stop a fall, acting like a floor. Resistance is the ceiling where selling interest halts a rise.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m5l2-q2.mp3"
+    }
+  ]
+}

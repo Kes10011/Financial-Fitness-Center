@@ -1,0 +1,30 @@
+{
+  "id": "kids-m5-l1-quiz",
+  "title": "Lesson 1 Quiz: Money Seeds: How Savings Grow",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does the bank give you each month as a thank-you for saving?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5l1-q1.mp3",
+      "options": [
+        "Interest",
+        "A new toy",
+        "A school grade",
+        "A video game"
+      ],
+      "answer": 0,
+      "explanation": "The bank adds a tiny thank-you gift called interest each month."
+    },
+    {
+      "type": "tf",
+      "text": "You must work extra each week for your savings to grow.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m5l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The bank's thank-you makes money grow without any extra work."
+    }
+  ]
+}

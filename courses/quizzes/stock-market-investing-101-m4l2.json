@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m4l2",
+  "title": "Lesson 2 Quiz: Building a Balanced Sample Portfolio",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the first step before selecting investments for a balanced portfolio?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4l2-q1.mp3",
+      "options": [
+        "Choose the highest‑yielding stocks",
+        "Define your goal, time horizon, and risk tolerance",
+        "Pick a single asset class to simplify management",
+        "Invest all funds in defensive assets"
+      ],
+      "answer": 1,
+      "explanation": "The narration states you must define goal, timeline, and risk tolerance before buying assets."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Diversifying across different asset classes can help cushion the blow if one investment performs poorly.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration explains that spreading investments protects you when a single stock takes a hit."
+    }
+  ]
+}

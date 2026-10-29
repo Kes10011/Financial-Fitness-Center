@@ -1,0 +1,30 @@
+{
+ "id": "defi-m3-l1-quiz",
+ "title": "Lesson 1 Quiz: Staking Fundamentals",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What does liquid staking give you in exchange for your staked assets?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3l1-q1.mp3",
+   "options": [
+    "Immediate withdrawal of your staked tokens with no lock-up period",
+    "A derivative token usable in other DeFi applications while the original tokens stay locked",
+    "Complete elimination of slashing risk",
+    "A requirement to run your own validator node"
+   ],
+   "answer": 1,
+   "explanation": "Liquid staking protocols issue a derivative token representing your deposit, usable elsewhere while the underlying stays locked."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: if you delegate your tokens to a validator and they act dishonestly, your delegated tokens are not exposed to slashing risk.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m3l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Delegated tokens can still face slashing if the validator misbehaves."
+  }
+ ]
+}

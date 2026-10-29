@@ -1,0 +1,30 @@
+{
+  "id": "cryptocurrency-fundamentals-m4-l2",
+  "title": "Lesson 2 Quiz: Placing Your First Buy and Sell Orders",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which statement accurately describes a market order?",
+      "options": [
+        "It executes instantly at the current best price, prioritizing speed over price control.",
+        "It sets a specific price limit and only executes if the market reaches that price.",
+        "It guarantees the exact price you see when placing the order.",
+        "It eliminates any risk of slippage."
+      ],
+      "answer": 0,
+      "explanation": "Market orders prioritize immediate execution at the prevailing price, accepting possible slippage.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4-l2-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A limit order will always be filled eventually because it waits for the market to reach your specified price.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "A limit order may never fill if the market never reaches the set price.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4-l2-q2.mp3"
+    }
+  ]
+}

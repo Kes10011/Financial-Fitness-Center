@@ -1,0 +1,30 @@
+{
+ "id": "defi-m2-l1-quiz",
+ "title": "Lesson 1 Quiz: How Smart Contracts Execute",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What characteristic of a smart contract guarantees that its rules cannot be altered after it is deployed?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2l1-q1.mp3",
+   "options": [
+    "The contract is hosted on a private server",
+    "The code is immutable and stored across a decentralized network",
+    "The developer holds a private key to modify it",
+    "Users can vote to change the rules each month"
+   ],
+   "answer": 1,
+   "explanation": "The narration states that once deployed, no individual or developer can alter the rules mid-way."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: In a collateralized lending smart contract, the collateral is returned automatically when the loan plus fee is fully repaid.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "The narration explains that the contract returns collateral when full repayment arrives."
+  }
+ ]
+}

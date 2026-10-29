@@ -1,0 +1,56 @@
+{
+ "id": "day-trading-mastery-m2-quiz",
+ "title": "Module 2 Quiz: Technical Analysis Deep Dive",
+ "questions": [
+  {
+   "type": "tf",
+   "text": "In a strong uptrend, an RSI reading above 70 always indicates an imminent price reversal.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-quiz-q1.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "In a strong uptrend RSI can stay overbought for hours while price climbs, so never short just because RSI is high."
+  },
+  {
+   "type": "mcq",
+   "text": "What does high volume on a price breakout indicate?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-quiz-q2.mp3",
+   "options": [
+    "The breakout is likely to fail due to lack of interest",
+    "The move lacks conviction and may reverse quickly",
+    "Strong market commitment behind the breakout, increasing its reliability",
+    "Volume is irrelevant to breakout validity"
+   ],
+   "answer": 2,
+   "explanation": "High volume accompanying a breakout shows strong participation, supporting the validity of the move."
+  },
+  {
+   "type": "mcq",
+   "text": "How is an uptrend defined in technical analysis?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-quiz-q3.mp3",
+   "options": [
+    "Lower highs and lower lows",
+    "Higher highs and higher lows",
+    "Equal highs and equal lows",
+    "Random price swings without pattern"
+   ],
+   "answer": 1,
+   "explanation": "An uptrend consists of higher highs and higher lows."
+  },
+  {
+   "type": "mcq",
+   "text": "What does price trading above the 200 EMA indicate for a trader?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-quiz-q4.mp3",
+   "options": [
+    "Look for short trades only",
+    "Look for long trades only",
+    "Ignore the EMA as it is irrelevant",
+    "Switch to a lower timeframe for entries"
+   ],
+   "answer": 1,
+   "explanation": "Price above the 200 EMA means the big‑picture trend is up, so only long trades are considered."
+  }
+ ]
+}

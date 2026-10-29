@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m3-l2-quiz",
+  "title": "Lesson 2 Quiz: Creating and Backing Up Your Wallet",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "A seed phrase is a master key made of how many random words?",
+      "options": [
+        "Twelve or twenty-four",
+        "Six",
+        "Forty",
+        "One hundred"
+      ],
+      "answer": 0,
+      "explanation": "A seed phrase is a master key made of twelve or twenty-four random words.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3l2-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "Storing your seed phrase as a screenshot in your phone notes is safe.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Anything connected to the internet, including phone notes and screenshots, can be hacked or exposed through cloud backups, so it is not safe.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m3l2-q2.mp3"
+    }
+  ]
+}

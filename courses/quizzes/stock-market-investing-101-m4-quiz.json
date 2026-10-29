@@ -1,0 +1,54 @@
+{
+  "id": "stock-market-investing-101-m4-quiz",
+  "title": "Module 4 Quiz: Portfolio Diversification",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the primary benefit of spreading investments across different companies, sectors, and asset types?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4-quiz-q1.mp3",
+      "options": [
+        "It guarantees higher returns",
+        "It eliminates all investment risk",
+        "It reduces the impact of a downturn in any single area",
+        "It requires predicting which company will perform best"
+      ],
+      "answer": 2,
+      "explanation": "Spreading investments lowers the chance that a single area's decline will heavily affect the whole portfolio."
+    },
+    {
+      "type": "mcq",
+      "text": "What happens to a portfolio's risk level when some holdings grow significantly while others remain unchanged over time?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4-quiz-q2.mp3",
+      "options": [
+        "The portfolio's asset allocation shifts, potentially increasing risk",
+        "The risk level stays exactly the same",
+        "The portfolio becomes more conservative than originally intended",
+        "The investor must immediately sell all holdings"
+      ],
+      "answer": 0,
+      "explanation": "As some investments grow, their share of the portfolio rises, changing the original risk balance."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Diversification means you do not need to predict which company will perform best; you rely on the overall growth of the economy rather than the luck of a single business.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Diversification removes the need to pick a single winning company."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Past performance is a guarantee of future returns.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m4-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Past performance never guarantees future results."
+    }
+  ]
+}

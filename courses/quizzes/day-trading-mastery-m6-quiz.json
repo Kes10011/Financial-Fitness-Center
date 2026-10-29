@@ -1,0 +1,54 @@
+{
+ "id": "day-trading-mastery-m6-quiz",
+ "title": "Module 6 Quiz: Psychology of Trading",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which behavior indicates fear according to Lesson 1?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-quiz-q1.mp3",
+   "options": [
+    "Entering after price surged due to FOMO",
+    "Doubling position size after a win",
+    "Hesitating to take a valid setup after a small loss",
+    "Reviewing journal after a loss"
+   ],
+   "answer": 2,
+   "explanation": "Fear manifests as hesitating on valid setups after small losses or panic‑closing profitable trades early."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Discipline means sitting on your hands until the market comes to your predefined zone instead of chasing a move.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-quiz-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Lesson 2 defines discipline as waiting for the market to reach your pre‑set zone rather than chasing moves."
+  },
+  {
+   "type": "mcq",
+   "text": "What is the first step in reviewing setbacks per Lesson 3?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-quiz-q3.mp3",
+   "options": [
+    "Increase position size to recover losses",
+    "Set a deadline for recovering losses",
+    "Remove stop‑loss to chase recovery",
+    "Recognise emotional influence and stop trading if needed"
+   ],
+   "answer": 3,
+   "explanation": "Step one is to recognise emotional influence and stop trading if you are angry, anxious, rushed or desperate."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Fear shows up as entering trades after price has already surged, driven by FOMO.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Entering after a surge due to FOMO is a sign of greed, not fear."
+  }
+ ]
+}

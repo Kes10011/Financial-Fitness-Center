@@ -1,0 +1,54 @@
+{
+ "id": "day-trading-mastery-m5-quiz",
+ "title": "Module 5 Quiz: Building a Trading Plan",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "According to the defined strategy, which condition must be satisfied before placing an entry order?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-quiz-q1.mp3",
+   "options": [
+    "The candle closes completely above the identified support or resistance level",
+    "The candle opens above the identified level",
+    "The price merely touches the identified level during the session",
+    "Any positive market sentiment is sufficient"
+   ],
+   "answer": 0,
+   "explanation": "Entry is allowed only after a confirmed candle close beyond the key level."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: The pre‑market routine should begin at least thirty to forty‑five minutes before the market opens.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-quiz-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "A early pre‑market check gives time to assess news, chart levels, and risk limits."
+  },
+  {
+   "type": "mcq",
+   "text": "Which performance metric is obtained by dividing gross profits by gross losses?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-quiz-q3.mp3",
+   "options": [
+    "Win Rate",
+    "Sharpe Ratio",
+    "Profit Factor",
+    "Average Win‑to‑Loss Ratio"
+   ],
+   "answer": 2,
+   "explanation": "Profit Factor equals total gross profit divided by total gross loss."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: The invalidation point (stop‑loss) is set to define the maximum acceptable profit target.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "The invalidation point limits loss, not profit, and protects capital if the trade fails."
+  }
+ ]
+}

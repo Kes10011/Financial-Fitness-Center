@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m2-l1-quiz",
+ "title": "Lesson 1 Quiz: Chart Types, Timeframes, and Trend Structure",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "According to top-down analysis, which timeframe is primarily used to identify the overall trend and major support/resistance levels?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-l1-q1.mp3",
+   "options": [
+    "5-minute chart",
+    "1-hour chart",
+    "4-hour or daily chart",
+    "Tick-by-tick chart"
+   ],
+   "answer": 2,
+   "explanation": "Higher timeframes such as 4-hour or daily charts reveal the dominant trend and key levels."
+  },
+  {
+   "type": "tf",
+   "text": "In a sideways market, price makes higher highs and higher lows.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m2-l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "A sideways or ranging market shows roughly equal highs and lows, not higher highs and higher lows."
+  }
+ ]
+}

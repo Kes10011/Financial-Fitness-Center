@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m6l1",
+  "title": "Lesson 1 Quiz: What's Coming Next",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "According to the narration, what distinguishes an AI agent from a traditional chatbot?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6l1-q1.mp3",
+      "options": [
+        "Only answer questions like a chatbot.",
+        "Execute multi-step tasks autonomously within set boundaries.",
+        "Requires constant human approval for each step.",
+        "Operates only in cryptocurrency markets."
+      ],
+      "answer": 1,
+      "explanation": "The narration states that an AI agent can execute multi-step tasks autonomously within set boundaries, unlike chatbots that only answer questions."
+    },
+    {
+      "type": "tf",
+      "text": "AI regulation establishes guardrails to protect personal data and ensure transparency in automated financial decisions.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m6l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration explains that regulation creates guardrails around data privacy, bias prevention, and transparent, auditable automated decisions."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m4l2",
+  "title": "Lesson 2 Quiz: Fraud Detection and Credit Decisions",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does AI use to build a profile of a customer's normal routine for fraud detection?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m4l2-q1.mp3",
+      "options": [
+        "The customer's credit score only",
+        "The customer's unique daily spending habits (where they shop, time of day, amount)",
+        "The customer's employment history",
+        "The customer's social media activity"
+      ],
+      "answer": 1,
+      "explanation": "AI analyzes where, when, and how much a customer typically spends to establish normal behavior."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: You have the right to request a human review of an automated credit decision that affects your access to credit.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m4l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Regulations grant the right to human review of automated credit decisions."
+    }
+  ]
+}

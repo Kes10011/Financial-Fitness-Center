@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m5l2-quiz",
+  "title": "Lesson 2 Quiz: Protecting What You Build: Insurance, NIS, and Estate Basics",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which of the following is NOT a benefit funded by NIS contributions according to the narration?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5l2-q1.mp3",
+      "options": [
+        "Sickness benefits",
+        "Maternity leave",
+        "Invalidity coverage",
+        "Travel insurance"
+      ],
+      "answer": 3,
+      "explanation": "The narration states that NIS contributions fund sickness benefits, maternity leave, invalidity coverage, and a monthly retirement pension; travel insurance is not listed as an NIS-funded benefit."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Naming direct beneficiaries on financial products such as life insurance policies, credit union accounts, and pension plans allows the funds to be received directly without waiting through probate.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m5l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration explains that naming direct beneficiaries on these financial products lets the funds be received directly, avoiding months or years of probate."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "stock-market-investing-101-m2-quiz",
+  "title": "Module 2 Quiz: Fundamental Analysis",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does the bottom line of an income statement represent?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2-quiz-q1.mp3",
+      "options": [
+        "Total revenue collected from sales",
+        "Profit after expenses, taxes, and salaries",
+        "Amount of cash generated from operations",
+        "Value of shareholders' equity"
+      ],
+      "answer": 1,
+      "explanation": "The bottom line shows the profit remaining after all expenses, taxes, and salaries are subtracted from revenue."
+    },
+    {
+      "type": "mcq",
+      "text": "What does the cash flow statement primarily track?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2-quiz-q2.mp3",
+      "options": [
+        "Physical cash moving in and out from operations, investing, and financing activities",
+        "Total revenue earned over a fiscal year",
+        "The company's market share relative to competitors",
+        "The proportion of debt to equity in the capital structure"
+      ],
+      "answer": 0,
+      "explanation": "It records the actual cash inflows and outflows from the three main business activities."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A durable competitive advantage, such as brand strength or high switching costs, helps protect a company's profit margins over time.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "A strong moat protects profit margins year after year even when the economy faces headwinds."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: The debt-to-equity ratio measures how effectively management uses owners' money to generate profits.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m2-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Debt-to-equity assesses financial leverage, whereas return on equity evaluates profit generation from equity."
+    }
+  ]
+}

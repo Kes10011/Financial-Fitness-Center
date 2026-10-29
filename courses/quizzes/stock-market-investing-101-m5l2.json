@@ -1,0 +1,30 @@
+{
+  "id": "stock-market-investing-101-m5l2",
+  "title": "Lesson 2 Quiz: Dollar-Cost Averaging in Practice",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the main advantage of using dollar\u2011cost averaging as an investment strategy?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5l2-q1.mp3",
+      "options": [
+        "It spreads purchases over time, reducing the impact of trying to time the market",
+        "It guarantees higher returns than investing a lump sum",
+        "It eliminates all investment risk",
+        "It ensures you always buy at the lowest possible price"
+      ],
+      "answer": 0,
+      "explanation": "Spreading purchases over time avoids the need to predict market peaks and troughs, which is the core benefit of dollar\u2011cost averaging."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Dollar\u2011cost averaging eliminates the risk of loss in an investment.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m5l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Even with regular contributions, the value of the investment can still decline, so risk is not removed."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "kids-m3-quiz",
+  "title": "Module 3 Quiz: Needs vs Wants",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "When you have money to spend, what should come first?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3-quiz-q1.mp3",
+      "options": [
+        "Your needs, then your wants",
+        "Your wants, then your needs",
+        "Only wants",
+        "Only treats"
+      ],
+      "answer": 0,
+      "explanation": "First we fill the needs, then we can enjoy the wants."
+    },
+    {
+      "type": "mcq",
+      "text": "When you see a treat not on your list at the checkout, what should you do?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3-quiz-q2.mp3",
+      "options": [
+        "Buy it because it looks fun",
+        "Put it in the cart to share",
+        "Enjoy the smell and walk on",
+        "Ask the cashier for a discount"
+      ],
+      "answer": 2,
+      "explanation": "If it's not on the list, it's a want, so we enjoy the smell and continue with our plan."
+    },
+    {
+      "type": "mcq",
+      "text": "You have four coins, a mango costs two coins and a toy car costs five coins. What can you buy?",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3-quiz-q3.mp3",
+      "options": [
+        "Both mango and toy car",
+        "Only the mango",
+        "Only the toy car",
+        "Neither item"
+      ],
+      "answer": 1,
+      "explanation": "Together they cost seven coins, which is more than you have, so you can only buy the mango."
+    },
+    {
+      "type": "tf",
+      "text": "Saving a coin for later is a good idea if you already have a sticker book.",
+      "audio": "../assets/quiz-audio/financial-literacy-for-kids-m3-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Since the sticker is a want and you already have a book, saving the coin is wise."
+    }
+  ]
+}

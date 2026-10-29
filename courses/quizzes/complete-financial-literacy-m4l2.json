@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m4l2-quiz",
+  "title": "Lesson 2 Quiz: Risk, Return, and Time Horizon Explained Simply",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "According to the lesson, which statement best describes how time horizon affects risk tolerance for investing?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m4l2-q1.mp3",
+      "options": [
+        "Longer time horizon means you should avoid all risk.",
+        "Short time horizon allows you to take on higher risk for greater returns.",
+        "Longer time horizon gives you cushion to handle market volatility, allowing higher-risk investments.",
+        "Time horizon has no impact on risk tolerance."
+      ],
+      "answer": 2,
+      "explanation": "The narration explains that a longer time horizon gives you room to ride out market ups and downs, providing the cushion needed to handle volatility and thus allowing higher-risk investments for long-term goals."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Higher potential returns almost always come with higher risk.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m4l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration states: 'Higher potential returns almost always come with higher risk.'"
+    }
+  ]
+}

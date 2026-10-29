@@ -1,0 +1,30 @@
+{
+ "id": "defi-m5-l1-quiz",
+ "title": "Lesson 1 Quiz: The DeFi Risk Map",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is oracle risk in Decentralized Finance?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5l1-q1.mp3",
+   "options": [
+    "A coding error in a smart contract that lets hackers drain funds.",
+    "Inaccurate price feed data that misvalues assets or causes unfair liquidations.",
+    "Whale wallet holders voting to drain protocol treasuries.",
+    "Cross-chain bridge contracts being exploited during token transfers."
+   ],
+   "answer": 1,
+   "explanation": "Oracle risk occurs when inaccurate price feed data tricks a protocol into misvaluing assets or triggering unfair liquidations."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Unlike traditional finance, DeFi protocols do not offer bank-backed deposit insurance or regulatory safety nets.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m5l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "In DeFi, you act as your own risk manager because traditional bank insurance and regulatory oversight do not exist to protect deposits."
+  }
+ ]
+}

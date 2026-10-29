@@ -1,0 +1,30 @@
+{
+  "id": "complete-financial-literacy-m1l1",
+  "title": "Lesson 1 Quiz: What Financial Fitness Really Means",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which statement best describes wealth as defined in the lesson?",
+      "options": [
+        "The money that comes in each month",
+        "The total amount of your debts",
+        "What you keep and build over time",
+        "The amount saved in a checking account"
+      ],
+      "answer": 2,
+      "explanation": "Wealth is described as what you keep and build over time.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1l1-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: The 'keep' pillar refers to earning more money.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Keep means managing what you earn, not earning more.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m1l1-q2.mp3"
+    }
+  ]
+}

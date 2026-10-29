@@ -1,0 +1,30 @@
+{
+ "id": "defi-m2-l2-quiz",
+ "title": "Lesson 2 Quiz: Using dApps Safely, Step by Step",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Why should you set a custom token allowance instead of granting unlimited approval?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2l2-q1.mp3",
+   "options": [
+    "Unlimited approval reduces transaction fees",
+    "Custom allowance limits the contract's ability to spend tokens beyond intended amount",
+    "Unlimited approval is required for all dApps",
+    "Custom approval prevents you from connecting your wallet"
+   ],
+   "answer": 1,
+   "explanation": "The narration warns that unlimited approval lets a contract spend remaining tokens even after you close the tab."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Connecting your wallet to a dApp shares your private key with the dApp.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m2l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "The narration says connecting only shares your public address, letting the dApp read your balance."
+  }
+ ]
+}

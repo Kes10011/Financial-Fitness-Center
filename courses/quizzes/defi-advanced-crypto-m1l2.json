@@ -1,0 +1,30 @@
+{
+ "id": "defi-m1-l2-quiz",
+ "title": "Lesson 2 Quiz: Mapping the DeFi Stack",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which layer of the DeFi stack provides the stable settlement currency for transactions?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1l2-q1.mp3",
+   "options": [
+    "Stablecoins",
+    "Decentralized exchanges",
+    "Lending markets",
+    "Aggregators"
+   ],
+   "answer": 0,
+   "explanation": "Stablecoins are designed to maintain a stable value, serving as the settlement layer."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Aggregators automatically find the best swap rates across multiple DEXs and lending protocols.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "Aggregators scan multiple protocols to route trades at optimal rates."
+  }
+ ]
+}

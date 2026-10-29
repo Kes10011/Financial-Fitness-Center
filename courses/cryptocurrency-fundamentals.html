@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Fundamentals | School of Financial Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/quiz-widget.css">
+    <link rel="stylesheet" href="../assets/greeting.css">
+    <link rel="stylesheet" href="../assets/auth.css">
+    <link rel="stylesheet" href="../assets/admin.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; }
+        a { color: #D4AF37; }
+        .wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px 60px; }
+        .topnav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; }
+        .topnav a { text-decoration: none; font-weight: 600; }
+        .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
+        .brand span { color: #D4AF37; }
+        .tag { display: inline-block; padding: 4px 12px; border: 1px solid rgba(212,175,55,.3); border-radius: 100px; color: #D4AF37; font-size: 12px; font-weight: 600; margin-bottom: 14px; }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-size: 38px; line-height: 1.15; margin-bottom: 14px; }
+        h1 span { color: #D4AF37; }
+        h2 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; margin: 36px 0 14px; }
+        h2 span { color: #D4AF37; }
+        h3 { font-size: 18px; margin-bottom: 8px; }
+        p { color: #d4d4d8; margin-bottom: 12px; }
+        .who { border-left: 3px solid #D4AF37; padding: 12px 16px; background: rgba(212,175,55,.07); border-radius: 0 12px 12px 0; margin: 18px 0; }
+        .price-box { border: 1px solid rgba(212,175,55,.35); border-radius: 16px; padding: 20px; background: rgba(212,175,55,.07); margin: 22px 0; }
+        .price-box .free { font-size: 22px; font-weight: 800; color: #D4AF37; }
+        .price-box p { margin-bottom: 6px; }
+        .mod { border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 20px; margin-bottom: 16px; background: rgba(255,255,255,.03); }
+        .mod-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .mod-num { color: #D4AF37; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+        .mod-price { font-weight: 800; color: #D4AF37; }
+        .mod ul, .m1-list ul { padding-left: 20px; color: #d4d4d8; }
+        .mod li, .m1-list li { margin-bottom: 6px; }
+        .unlock-btn { display: inline-block; margin-top: 14px; padding: 12px 22px; background: rgba(212,175,55,.15); border: 1px solid rgba(212,175,55,.4); border-radius: 12px; color: #D4AF37; font-weight: 600; text-decoration: none; }
+        .fine { font-size: 13px; color: #a1a1aa; margin-top: 10px; }
+        .reg { border: 1px solid rgba(212,175,55,.35); border-radius: 16px; padding: 22px; background: rgba(255,255,255,.03); }
+        .reg label { display: block; font-size: 14px; font-weight: 600; margin: 12px 0 4px; }
+        .reg input, .reg select { width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.15); background: #111118; color: #fff; font-size: 15px; }
+        .reg button { margin-top: 18px; width: 100%; padding: 14px; border: none; border-radius: 12px; background: #D4AF37; color: #111; font-weight: 800; font-size: 16px; cursor: pointer; }
+        .reg .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 14px; color: #d4d4d8; }
+        .reg .check input { width: auto; margin-top: 4px; }
+        .m1-videos video { width: 100%; border-radius: 12px; background: #000; }
+        .lesson-video { margin-bottom: 22px; }
+        .lesson-video h4 { margin-bottom: 8px; }
+        .batch-note { border: 1px dashed rgba(212,175,55,.5); border-radius: 12px; padding: 14px; color: #D4AF37; }
+        .done-msg { display: none; border: 1px solid rgba(212,175,55,.5); border-radius: 12px; padding: 14px; color: #D4AF37; margin-bottom: 16px; }
+        footer { margin-top: 48px; color: #a1a1aa; font-size: 14px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="topnav">
+            <div class="brand">School of <span>Financial Fitness</span></div>
+            <span class="topnav-right"><a href="../index.html#courses">&larr; All Courses</a> <button type="button" class="auth-nav-btn" data-auth-nav>Log in</button></span>
+        </div>
+        <span class="tag">Beginner &middot; 5 modules</span>
+        <h1>Cryptocurrency Fundamentals</h1>
+        <p>This course gives you a clear, jargon-free foundation in how cryptocurrency actually works, from the blockchain underneath it to the wallet in your hands. You will learn how to set up securely, make your first transactions with confidence, and read the market without the noise and hype.</p>
+        <div class="who"><strong style="color:#fff;">Who it&rsquo;s for:</strong> Complete beginners in Trinidad and Tobago and beyond who have heard about crypto but want a safe, structured starting point before putting any money at risk.</div>
+        <div class="price-box">
+            <div class="free">Module 1 FREE</div>
+            <p>Following modules: <strong style="color:#fff;">TT$595 each</strong></p>
+            <p>Full-course bundle: <strong style="color:#fff;">TT$1995</strong> (save TT$385 vs buying separately)</p>
+            <a class="unlock-btn bundle-btn" data-whop-course="cryptocurrency-fundamentals" data-whop-item="bundle" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20the%20full-course%20bundle%20of%20the%20Cryptocurrency%20Fundamentals%20course%20%28TT%241995%2C%20save%20TT%24385%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener">Unlock the Full Course &mdash; Bundle TT$1995 (save TT$385)</a>
+            <p class="fine">Bundle unlocks the entire course. Checkout via Whop &mdash; until the direct checkout link is added, this button opens WhatsApp so the school can send you the checkout link, then your unlock code after purchase.</p>
+            <p class="fine">All prices in Trinidad &amp; Tobago dollars. Finish the whole course and you earn a Certificate of Completion in School of Financial Fitness branding.</p>
+        </div>
+
+        <h2>Module 1: Introduction to Blockchain Technology &mdash; <span>FREE</span></h2>
+        <div class="m1-list">
+            <ul>
+                        <li>What a Blockchain Actually Is</li>
+                        <li>Blocks, Chains, and Consensus</li>
+                        <li>Why Blockchain Matters Beyond Crypto</li>
+            </ul>
+        </div>
+
+        <div class="reg">
+            <h3 style="margin-bottom:4px;">Register free to start Module 1</h3>
+            <p class="fine">Fill this in once and your free Module 1 opens below. Your details go to the school so they can follow up on WhatsApp.</p>
+            <div id="reg-done" class="done-msg">You&rsquo;re registered &mdash; Module 1 is open below. The school has also received your details on WhatsApp.</div>
+            <form id="reg-form">
+                <label for="f-name">Full name *</label>
+                <input id="f-name" name="name" required autocomplete="name">
+                <label for="f-email">Email *</label>
+                <input id="f-email" name="email" type="email" required autocomplete="email">
+                <label for="f-password">Create a password so you can log back in (optional)</label>
+                <input id="f-password" name="password" type="password" autocomplete="new-password" minlength="6">
+                <label for="f-wa">WhatsApp / contact number *</label>
+                <input id="f-wa" name="whatsapp" required autocomplete="tel">
+                <label for="f-course">Course</label>
+                <input id="f-course" value="Cryptocurrency Fundamentals" readonly>
+                <label for="f-goal">Your goal as a student</label>
+                <select id="f-goal" name="goal">
+                    <option>Build a budget that works</option>
+                    <option>Get out of debt</option>
+                    <option>Start investing</option>
+                    <option>Understand crypto</option>
+                    <option>Teach my kids about money</option>
+                    <option>Grow my business income</option>
+                    <option>Other</option>
+                </select>
+                <label for="f-heard">How did you hear about us?</label>
+                <select id="f-heard" name="heard">
+                    <option>Instagram</option>
+                    <option>YouTube</option>
+                    <option>WhatsApp</option>
+                    <option>Friend or family</option>
+                    <option>Search</option>
+                    <option>Other</option>
+                </select>
+                <label class="check"><input id="f-consent" type="checkbox" checked> Yes, the school may follow up with me on WhatsApp about this course.</label>
+                <button type="submit">Start Module 1 Free</button>
+            </form>
+        </div>
+                <div id="m1-videos" class="m1-videos" hidden>
+                    <div class="lesson-video">
+                        <h4>Lesson 1: What a Blockchain Actually Is</h4>
+                        <video controls preload="metadata" src="../assets/lessons/crypto-m1-l1.mp4"></video>
+                        <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                        <div data-quiz="quizzes/cryptocurrency-fundamentals-m1-l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Blocks, Chains, and Consensus"></div>
+                    </div>
+                    <div class="lesson-video">
+                        <h4>Lesson 2: Blocks, Chains, and Consensus</h4>
+                        <video controls preload="metadata" src="../assets/lessons/crypto-m1-l2.mp4"></video>
+                        <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                        <div data-quiz="quizzes/cryptocurrency-fundamentals-m1-l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Why Blockchain Matters Beyond Crypto"></div>
+                    </div>
+                    <div class="lesson-video">
+                        <h4>Lesson 3: Why Blockchain Matters Beyond Crypto</h4>
+                        <video controls preload="metadata" src="../assets/lessons/crypto-m1-l3.mp4"></video>
+                        <h4 style="margin-top:18px;">Module 1 Quiz &mdash; Test what you learned!</h4>
+                        <div data-quiz="quizzes/cryptocurrency-fundamentals-m1-quiz.json" data-next-label="Next module" data-next-title="Module 2 — How Cryptocurrencies Work"></div>
+                    </div>
+                </div>
+
+        <h2>Continue the course</h2>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 2</span><span class="mod-price">TT$595</span></div>
+                    <h3>How Cryptocurrencies Work</h3>
+                    <ul>
+                        <li>Coins, Tokens, and Digital Ownership</li>
+                        <li>How Transactions Move From Sender to Receiver</li>
+                        <li>Public Keys, Private Keys, and Addresses</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m2-l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — How Transactions Move From Sender to Receiver"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m2-l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Public Keys, Private Keys, and Addresses"></div>
+                    <h4 style="margin-top:18px;">Module 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m2-quiz.json" data-next-label="Next module" data-next-title="Module 3 — Setting Up Your First Wallet"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%202%3A%20How%20Cryptocurrencies%20Work%20of%20the%20Cryptocurrency%20Fundamentals%20course%20%28TT%24595%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="cryptocurrency-fundamentals" data-whop-item="2">Unlock Module 2 &mdash; TT$595</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 3</span><span class="mod-price">TT$595</span></div>
+                    <h3>Setting Up Your First Wallet</h3>
+                    <ul>
+                        <li>Choosing Between Hot, Cold, and Custodial Wallets</li>
+                        <li>Creating and Backing Up Your Wallet</li>
+                        <li>Securing Your Wallet Against Common Threats</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m3-l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Creating and Backing Up Your Wallet"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m3-l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Securing Your Wallet Against Common Threats"></div>
+                    <h4 style="margin-top:18px;">Module 3 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m3-quiz.json" data-next-label="Next module" data-next-title="Module 4 — Buying &amp; Selling Crypto Safely"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%203%3A%20Setting%20Up%20Your%20First%20Wallet%20of%20the%20Cryptocurrency%20Fundamentals%20course%20%28TT%24595%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="cryptocurrency-fundamentals" data-whop-item="3">Unlock Module 3 &mdash; TT$595</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 4</span><span class="mod-price">TT$595</span></div>
+                    <h3>Buying &amp; Selling Crypto Safely</h3>
+                    <ul>
+                        <li>Choosing a Reputable Exchange</li>
+                        <li>Placing Your First Buy and Sell Orders</li>
+                        <li>Spotting Scams, Fees, and Hidden Costs</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m4-l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Placing Your First Buy and Sell Orders"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m4-l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Spotting Scams, Fees, and Hidden Costs"></div>
+                    <h4 style="margin-top:18px;">Module 4 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m4-quiz.json" data-next-label="Next module" data-next-title="Module 5 — Understanding Market Trends"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%204%3A%20Buying%20%26%20Selling%20Crypto%20Safely%20of%20the%20Cryptocurrency%20Fundamentals%20course%20%28TT%24595%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="cryptocurrency-fundamentals" data-whop-item="4">Unlock Module 4 &mdash; TT$595</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 5</span><span class="mod-price">TT$595</span></div>
+                    <h3>Understanding Market Trends</h3>
+                    <ul>
+                        <li>Reading Price Charts and Market Data</li>
+                        <li>Trends, Support, and Resistance</li>
+                        <li>Building a Calm, Informed Approach</li>
+                    </ul>
+                    <h4 style="margin-top:18px;">Lesson 1 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m5-l1.json" data-next-label="Next lesson" data-next-title="Lesson 2 — Trends, Support, and Resistance"></div>
+                    <h4 style="margin-top:18px;">Lesson 2 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m5-l2.json" data-next-label="Next lesson" data-next-title="Lesson 3 — Building a Calm, Informed Approach"></div>
+                    <h4 style="margin-top:18px;">Module 5 Quiz &mdash; Test what you learned!</h4>
+                    <div data-quiz="quizzes/cryptocurrency-fundamentals-m5-quiz.json" data-next-label="Course complete" data-next-title="You finished the course — your certificate awaits!"></div>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%205%3A%20Understanding%20Market%20Trends%20of%20the%20Cryptocurrency%20Fundamentals%20course%20%28TT%24595%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="cryptocurrency-fundamentals" data-whop-item="5">Unlock Module 5 &mdash; TT$595</a>
+                    <p class="fine">Secure checkout via Whop &mdash; the school shares your checkout link in chat, then sends your unlock code after purchase.</p>
+                </div>
+        <footer>
+            <p>School of Financial Fitness, Cunupia, Trinidad &amp; Tobago &middot; WhatsApp 1 (868) 799-5473</p>
+            <p><a href="../index.html#courses">&larr; Back to all courses</a></p>
+        </footer>
+    </div>
+    <script>
+        // Registration gate: on submit, reveal Module 1 videos (if any) and route
+        // the details to the school's WhatsApp prefilled. The client-owned Google
+        // Sheet log connects here once the school shares its sheet/webhook link:
+        // set SHEET_WEBHOOK_URL below to the school's Apps Script URL.
+        var SHEET_WEBHOOK_URL = "";
+        document.getElementById('reg-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = document.getElementById('f-name').value.trim();
+            var email = document.getElementById('f-email').value.trim();
+            var wa = document.getElementById('f-wa').value.trim();
+            var goal = document.getElementById('f-goal').value;
+            var heard = document.getElementById('f-heard').value;
+            var consent = document.getElementById('f-consent').checked ? 'Yes' : 'No';
+            if (!name || !email || !wa) return;
+            var msg = 'Hi School of Financial Fitness, I just registered for FREE Module 1 of Cryptocurrency Fundamentals.'
+                + ' Name: ' + name + ' | Email: ' + email + ' | WhatsApp: ' + wa
+                + ' | Goal: ' + goal + ' | Heard via: ' + heard + ' | WhatsApp follow-up consent: ' + consent;
+            if (SHEET_WEBHOOK_URL) {
+                fetch(SHEET_WEBHOOK_URL, { method: 'POST', mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email, whatsapp: wa, course: "Cryptocurrency Fundamentals", goal: goal, heard: heard, consent: consent }) });
+            }
+            document.getElementById('reg-form').style.display = 'none';
+            document.getElementById('reg-done').style.display = 'block';
+            var vids = document.getElementById('m1-videos');
+            if (vids) vids.hidden = false;
+            window.open('https://wa.me/18687995473?text=' + encodeURIComponent(msg), '_blank');
+        });
+    </script>
+        <script src="whop-links.js"></script>
+        <script src="../assets/quiz-widget.js"></script>
+        <script src="../assets/greeting.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="../assets/supabase-config.js"></script>
+        <script src="../assets/auth.js"></script>
+        <script src="../assets/auth-ui.js"></script>
+        <script src="../assets/reg-account.js"></script>
+        <script src="../assets/progress.js"></script>
+        <script src="../assets/admin.js"></script>
+</body>
+</html>

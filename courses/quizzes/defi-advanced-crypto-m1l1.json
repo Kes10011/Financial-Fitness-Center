@@ -1,0 +1,30 @@
+{
+ "id": "defi-m1-l1-quiz",
+ "title": "Lesson 1 Quiz: What DeFi Actually Is (and Isn't)",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "Which risk is eliminated by using DeFi instead of a centralized bank?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1l1-q1.mp3",
+   "options": [
+    "Counterparty risk",
+    "Smart contract risk",
+    "Regulatory oversight risk",
+    "Liquidity risk"
+   ],
+   "answer": 0,
+   "explanation": "DeFi removes the need to trust a custodian, eliminating counterparty risk."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: In DeFi, you keep control of your private keys when you connect a self-custody wallet.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m1l1-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "DeFi requires you to manage your own keys, giving you direct control."
+  }
+ ]
+}

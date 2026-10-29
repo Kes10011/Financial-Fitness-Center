@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m4l1",
+  "title": "Lesson 1 Quiz: Banking, Payments, and Customer Service",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which AI technologies are used together to verify a customer's identity during digital bank onboarding?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m4l1-q1.mp3",
+      "options": [
+        "Facial recognition and optical character recognition (OCR)",
+        "Voice recognition and fingerprint scanning",
+        "Blockchain ledgers and smart contracts",
+        "QR codes and near-field communication (NFC)"
+      ],
+      "answer": 0,
+      "explanation": "AI facial recognition and OCR scan the national ID and match it to a selfie for instant verification."
+    },
+    {
+      "type": "tf",
+      "text": "AI-powered chatbots can handle routine banking inquiries around the clock, allowing human agents to focus on more complex financial decisions.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m4l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "The narration states AI-driven chatbots handle millions of routine inquiries 24/7, freeing humans for complex decisions."
+    }
+  ]
+}

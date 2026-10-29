@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m6-l2-quiz",
+ "title": "Lesson 2 Quiz: Building Discipline and Patience",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What does discipline in trading primarily involve according to the lesson?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-l2-q1.mp3",
+   "options": [
+    "Chasing fast-moving prices to capture quick gains",
+    "Waiting for price to come to your predefined zone rather than chasing a move already running",
+    "Trading based on news headlines without analysis",
+    "Increasing position size after a win"
+   ],
+   "answer": 1,
+   "explanation": "Discipline means waiting for price to reach your predefined zone instead of chasing an already extended move."
+  },
+  {
+   "type": "tf",
+   "text": "If a trade setup requires a stop loss of TT$500 on a TT$10,000 account, you should still take the trade because it offers high profit potential.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m6-l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Risking TT$500 exceeds the 2% rule (TT$200 max), so taking the trade would violate proper risk management and endanger capital."
+  }
+ ]
+}

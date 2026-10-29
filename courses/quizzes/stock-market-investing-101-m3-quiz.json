@@ -1,0 +1,54 @@
+{
+  "id": "stock-market-investing-101-m3-quiz",
+  "title": "Module 3 Quiz: Technical Analysis Essentials",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What defines a market uptrend on a stock price chart?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3-quiz-q1.mp3",
+      "options": [
+        "A series of higher highs and higher lows",
+        "A continuous horizontal range of prices",
+        "A series of lower highs and lower lows",
+        "A price sitting consistently below its moving average"
+      ],
+      "answer": 0,
+      "explanation": "An uptrend is characterized by prices making higher highs and higher lows over a given period."
+    },
+    {
+      "type": "mcq",
+      "text": "In technical analysis, what happens when a stock price successfully breaks above a previous resistance ceiling?",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3-quiz-q2.mp3",
+      "options": [
+        "The stock immediately enters an oversold status",
+        "The former resistance ceiling frequently transforms into a new support floor",
+        "The stock's trading volume drops to zero",
+        "The moving average automatically flips direction"
+      ],
+      "answer": 1,
+      "explanation": "Once a stock breaks through a resistance level, that previous ceiling often becomes its new support level on subsequent pullbacks."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: A Relative Strength Index (RSI) reading above 70 indicates that a stock is considered oversold.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "An RSI reading above 70 indicates that a stock is overbought, whereas a reading below 30 indicates it is oversold."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Position sizing determines the number of shares to buy based on the maximum amount of capital you are willing to risk on a single trade.",
+      "audio": "../assets/quiz-audio/stock-market-investing-101-m3-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Position sizing aligns your order size with your predetermined portfolio risk limit rather than total cash balance."
+    }
+  ]
+}

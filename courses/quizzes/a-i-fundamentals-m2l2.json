@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m2l2",
+  "title": "Lesson 2 Quiz: Supervised, Unsupervised, and Reinforcement Learning",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which statement correctly describes supervised learning when applied to financial data?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2l2-q1.mp3",
+      "options": [
+        "It discovers hidden groupings in data without any predefined labels.",
+        "It learns by receiving rewards or penalties after taking actions in an environment.",
+        "It uses labeled historical data to map inputs to known outcomes for prediction.",
+        "It requires no data and relies solely on expert rules."
+      ],
+      "answer": 2,
+      "explanation": "Supervised learning trains on labeled data to predict outcomes."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Reinforcement learning learns through trial, error, and feedback to maximize long-term results.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2l2-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "RL adjusts its strategy based on rewards and penalties to maximize cumulative reward."
+    }
+  ]
+}

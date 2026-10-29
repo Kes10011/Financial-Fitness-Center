@@ -1,0 +1,54 @@
+{
+  "id": "a-i-fundamentals-m3-quiz",
+  "title": "Module 3 Quiz: Neural Networks & Deep Learning",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What is the role of the hidden layers in a neural network?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3-quiz-q1.mp3",
+      "options": [
+        "They receive raw input data from the outside world.",
+        "They produce the final prediction or action.",
+        "They examine every piece of data from different angles to spot subtle patterns.",
+        "They adjust the learning rate during training."
+      ],
+      "answer": 2,
+      "explanation": "Hidden layers process inputs to detect patterns."
+    },
+    {
+      "type": "mcq",
+      "text": "What advantage do deep learning neural networks have over traditional machine learning models?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3-quiz-q2.mp3",
+      "options": [
+        "They require less data to train effectively.",
+        "They automatically extract complex patterns from raw, unstructured data without manual feature design.",
+        "They eliminate the need for any computing power.",
+        "They only work with structured spreadsheet data."
+      ],
+      "answer": 1,
+      "explanation": "Deep learning extracts features automatically from raw data."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Generative AI models can produce fluent-sounding answers that contain made-up information because they predict word probabilities rather than retrieve verified facts.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "This describes the hallucination phenomenon."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: The input layer directly adjusts the weights of connections based on prediction errors.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m3-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Input layer only receives data; weight adjustment occurs during training in hidden/output layers."
+    }
+  ]
+}

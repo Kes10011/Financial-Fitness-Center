@@ -1,0 +1,54 @@
+{
+  "id": "complete-financial-literacy-m3-quiz",
+  "title": "Module 3 Quiz: Debt Management Strategies",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "When setting up a debt snapshot, what is the recommended four-column format for organizing your debt information?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3-quiz-q1.mp3",
+      "options": [
+        "Creditor, Account Number, Due Date, and Principal Paid",
+        "Creditor, Balance (TT$), Interest Rate (APR %), and Minimum Monthly Payment (TT$)",
+        "Creditor, Original Balance, Collateral Type, and Credit Score",
+        "Creditor, Monthly Salary, Monthly Expenses, and Net Savings"
+      ],
+      "answer": 1,
+      "explanation": "Lesson 1 specifies creating a table with columns for Creditor, Balance (TT$), Interest Rate (APR %), and Minimum Monthly Payment (TT$)."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: The snowball method prioritizes paying off the debt with the highest interest rate first to minimize total interest paid over time.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3-quiz-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "The snowball method starts with the smallest balance to secure quick wins, whereas the avalanche method targets the highest interest rate first."
+    },
+    {
+      "type": "mcq",
+      "text": "When negotiating restructured repayment terms with a lender, what key step should you always take before leaving the branch?",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3-quiz-q3.mp3",
+      "options": [
+        "Pay off the entire loan principal immediately",
+        "Secure your newly agreed terms in writing",
+        "Sign an agreement for a new high-interest credit card",
+        "Surrender your credit union membership"
+      ],
+      "answer": 1,
+      "explanation": "Lesson 3 instructs borrowers to never leave the branch without securing their newly agreed terms in writing."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Consolidating multiple debts into a single lower monthly payment over an extended repayment term will always reduce the total cash amount of interest paid.",
+      "audio": "../assets/quiz-audio/complete-financial-literacy-m3-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Lesson 3 notes that extending debt over a longer term often increases the overall total dollar amount of interest paid over the life of the contract."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "cryptocurrency-fundamentals-m4-quiz",
+  "title": "Module 4 Quiz: Buying & Selling Crypto Safely",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which of the following is a key indicator of a reputable cryptocurrency exchange?",
+      "options": [
+        "Offers guaranteed returns",
+        "Publishes regular Proof of Reserves audits",
+        "Requires no KYC verification",
+        "Allows anonymous withdrawals"
+      ],
+      "answer": 1,
+      "explanation": "Reputable exchanges publish Proof of Reserves to prove they hold customer assets.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4-quiz-q1.mp3"
+    },
+    {
+      "type": "mcq",
+      "text": "What is the main risk associated with placing a market order?",
+      "options": [
+        "It may never execute if price not reached",
+        "It incurs higher deposit fees than limit orders",
+        "It may execute at a price different from the quoted price due to slippage",
+        "It requires setting a maximum price"
+      ],
+      "answer": 2,
+      "explanation": "Market orders prioritize speed and can suffer slippage, executing at a different price than quoted.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4-quiz-q2.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Calculating total transaction cost percentage before confirming a trade is unnecessary.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Calculating total cost helps avoid hidden fees.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4-quiz-q3.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Before depositing funds, you should verify that the exchange supports withdrawals to your local bank account.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Verifying supported local payout methods prevents funds from being trapped.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4-quiz-q4.mp3"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "a-i-fundamentals-m2-quiz",
+  "title": "Module 2 Quiz: Machine Learning Basics",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "In the context of training a machine learning model for loan approval, what is the purpose of the debt-to-income ratio?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2-quiz-q1.mp3",
+      "options": [
+        "The label indicating loan approval or rejection",
+        "The error metric minimized during training",
+        "A measurable characteristic (feature) used to describe each loan applicant",
+        "The total number of training examples"
+      ],
+      "answer": 2,
+      "explanation": "The debt-to-income ratio is a feature describing each applicant."
+    },
+    {
+      "type": "mcq",
+      "text": "Which type of learning involves the model receiving a reward or penalty after each action to improve its long-term strategy?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2-quiz-q2.mp3",
+      "options": [
+        "Reinforcement learning",
+        "Supervised learning",
+        "Unsupervised learning",
+        "Transfer learning"
+      ],
+      "answer": 0,
+      "explanation": "Reinforcement learning uses rewards/penalties to adjust strategies over time."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Overfitting makes a model more accurate when faced with new, unseen data.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2-quiz-q3.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Overfitting causes poor generalization to new data."
+    },
+    {
+      "type": "tf",
+      "text": "True or false: In unsupervised learning, the model is given labeled examples to learn the correct output for each input.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2-quiz-q4.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Unsupervised learning works with unlabeled data to find hidden patterns."
+    }
+  ]
+}

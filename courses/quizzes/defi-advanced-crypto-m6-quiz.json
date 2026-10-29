@@ -1,0 +1,54 @@
+{
+ "id": "defi-m6-quiz",
+ "title": "Module 6 Quiz: Future of Decentralized Finance",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is a recommended practice for maintaining a disciplined DeFi learning routine?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6-quiz-q1.mp3",
+   "options": [
+    "Spend hours each day chasing hype on social media.",
+    "Allocate a regular time each week to review protocols, track updates, and check developer activity.",
+    "Invest all funds into the newest yield farm without research.",
+    "Rely solely on influencers for investment advice."
+   ],
+   "answer": 1,
+   "explanation": "Setting a regular weekly time to review protocols and updates supports consistent, informed learning."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: You should never commit capital to a yield pool or protocol unless you can explain its source of yield clearly to a friend.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6-quiz-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "If you cannot describe where the yield comes from in plain language, you are effectively providing the yield yourself."
+  },
+  {
+   "type": "mcq",
+   "text": "Which storage method is advised for protecting primary DeFi assets from online threats?",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6-quiz-q3.mp3",
+   "options": [
+    "Leaving funds on a centralized exchange’s hot wallet.",
+    "Storing assets in a hardware wallet offline.",
+    "Writing the seed phrase on a public forum.",
+    "Sharing private keys with friends for backup."
+   ],
+   "answer": 1,
+   "explanation": "Hardware wallets keep private keys offline, protecting assets from online hacks."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: Tokenised real‑world assets remove all regulatory concerns because they are purely digital.",
+   "audio": "../assets/quiz-audio/defi-advanced-crypto-m6-quiz-q4.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 1,
+   "explanation": "Tokenised RWAs still face regulatory scrutiny and may be treated as securities requiring disclosures."
+  }
+ ]
+}

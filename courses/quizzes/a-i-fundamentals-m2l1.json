@@ -1,0 +1,30 @@
+{
+  "id": "a-i-fundamentals-m2l1",
+  "title": "Lesson 1 Quiz: How Machines Learn From Data",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "What does the term 'training data' refer to in machine learning?",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2l1-q1.mp3",
+      "options": [
+        "The final rule the computer uses to make predictions",
+        "The set of examples shown to the computer so it can learn patterns",
+        "The method used to adjust the decision threshold",
+        "The predicted result for each new example"
+      ],
+      "answer": 1,
+      "explanation": "Training data is the collection of examples provided to the computer for it to discover patterns."
+    },
+    {
+      "type": "tf",
+      "text": "Features are the measurable characteristics that describe each example in the training data.",
+      "audio": "../assets/quiz-audio/a-i-fundamentals-m2l1-q2.mp3",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Features such as employment length and guarantor status help the model distinguish between outcomes."
+    }
+  ]
+}

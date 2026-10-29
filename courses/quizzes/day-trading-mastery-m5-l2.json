@@ -1,0 +1,30 @@
+{
+ "id": "day-trading-mastery-m5-l2",
+ "title": "Lesson 2 Quiz: Creating Your Pre-Market and Post-Market Routines",
+ "questions": [
+  {
+   "type": "mcq",
+   "text": "What is the primary purpose of establishing a daily maximum risk limit during a pre-market routine?",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-l2-q1.mp3",
+   "options": [
+    "To decide how many trades to take each day",
+    "To prevent emotional decision-making and catastrophic losses during a trading session",
+    "To determine the exact time to exit winning positions",
+    "To eliminate the need for setting individual trade stop-loss orders"
+   ],
+   "answer": 1,
+   "explanation": "Setting a clear daily risk limit beforehand ensures strict risk management and protects account capital from severe drawdowns."
+  },
+  {
+   "type": "tf",
+   "text": "True or false: A post-market review involves logging technical metrics, reviewing emotional discipline, and updating capital records.",
+   "audio": "../assets/quiz-audio/day-trading-mastery-m5-l2-q2.mp3",
+   "options": [
+    "True",
+    "False"
+   ],
+   "answer": 0,
+   "explanation": "The post-market checklist requires reviewing technical trade data, emotional discipline, and net performance results to improve trading skills."
+  }
+ ]
+}

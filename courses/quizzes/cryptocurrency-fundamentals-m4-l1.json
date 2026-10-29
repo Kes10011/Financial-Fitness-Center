@@ -1,0 +1,30 @@
+{
+  "id": "crypto-m4-l1-quiz",
+  "title": "Lesson 1 Quiz: Choosing a Reputable Exchange",
+  "questions": [
+    {
+      "type": "mcq",
+      "text": "Which of these is a red flag when choosing a cryptocurrency exchange?",
+      "options": [
+        "No clear leadership and no published reserve audits",
+        "Two-factor authentication and cold storage for user funds",
+        "Published Proof of Reserves audits",
+        "A verified withdrawal path to your local bank account"
+      ],
+      "answer": 0,
+      "explanation": "An exchange operating with no clear leadership and no published reserve audits is a red flag: run the other way. The other three options are marks of a reputable exchange.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4l1-q1.mp3"
+    },
+    {
+      "type": "tf",
+      "text": "True or false: Proof of Reserves audits prove an exchange actually holds its customers' deposited assets.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "True. A reputable exchange publishes regular Proof of Reserves audits proving it actually holds the assets its customers deposit.",
+      "audio": "../assets/quiz-audio/cryptocurrency-fundamentals-m4l1-q2.mp3"
+    }
+  ]
+}
