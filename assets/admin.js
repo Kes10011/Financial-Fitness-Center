@@ -17,11 +17,12 @@
 (function () {
     'use strict';
 
-    // SHA-256 hashes of the three admin passwords (Kester, Ivan, Michelle).
+    // SHA-256 hashes of the three admin passwords (set 2026-10-29, Kester's call).
+    // Any one of them unlocks admin mode — the file never stores plain text.
     var HASHES = {
-        '7fc831a8f8557be7bcbd1ad57ce77e3eb4f842e6296c5c779af5222aa2f6bf83': true,
-        '4a578c9056a3e88099b1b254c6285d1b24bcfe84ffc49826aee961e778c17ea1': true,
-        '31348b748445feb49252955ab7be744712abb9314c8c327b65a830c37101ddc9': true
+        '99fced99249329e2edce502eb28101dd4c99348fd32feadf75eb13382a84318f': true,
+        '4458ae13f5801951210fb4cebece51690291b7656a641479998672a2bdbef5af': true,
+        '2c4029e5e8a8a9ec5abb2d6468df6d5265c98b4d16d07d3ed707d68e6fdeb1bf': true
     };
     var FLAG = 'finfit-admin';
 
