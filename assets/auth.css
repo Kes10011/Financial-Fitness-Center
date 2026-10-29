@@ -1,0 +1,188 @@
+/* School of Financial Fitness — login modal, nav button, Continue card.
+ * Navy #0a0a0f + gold #D4AF37, matching the site. All text is light on
+ * dark (never light-on-light); every interactive element has a visible
+ * gold focus ring for keyboard users. */
+
+.auth-nav-btn {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, .55);
+    color: #D4AF37;
+    font: 600 14px 'Inter', sans-serif;
+    padding: 8px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.auth-nav-btn:hover { background: rgba(212, 175, 55, .15); }
+.auth-nav-btn:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+}
+
+/* Course pages: keeps "All Courses" + Log in together on the right. */
+.topnav-right {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+
+body.auth-open { overflow: hidden; }
+
+.auth-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, .72);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8vh 16px 16px;
+    overflow-y: auto;
+}
+.auth-overlay[hidden] { display: none; }
+
+.auth-modal {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #14141f;
+    border: 1px solid rgba(212, 175, 55, .45);
+    border-radius: 16px;
+    padding: 28px 24px 24px;
+    color: #fff;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .6);
+}
+.auth-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    background: none;
+    border: none;
+    color: #d4d4d8;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+.auth-close:hover { color: #fff; }
+.auth-close:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+.auth-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    margin: 0 28px 6px 0;
+}
+.auth-sub { color: #d4d4d8; margin: 0 0 16px; font-size: 14px; }
+
+.auth-modal label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+    color: #fff;
+}
+.auth-modal input[type="email"],
+.auth-modal input[type="password"],
+.auth-modal input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: #0a0a0f;
+    color: #fff;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.auth-modal input:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 1px;
+    border-color: #D4AF37;
+}
+.auth-submit {
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #D4AF37;
+    color: #0a0a0f;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.auth-submit:hover { filter: brightness(1.08); }
+.auth-submit:disabled { opacity: .6; cursor: wait; }
+.auth-submit:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+.auth-links { font-size: 14px; color: #d4d4d8; margin-top: 14px; }
+.auth-links button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #D4AF37;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.auth-links button:focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+.auth-fine { font-size: 13px; color: #a1a1aa; margin-top: 10px; }
+.auth-msg { font-size: 14px; font-weight: 600; min-height: 0; }
+.auth-msg:empty { display: none; }
+.auth-msg.error {
+    color: #ff9d9d;
+    background: rgba(255, 100, 100, .1);
+    border: 1px solid rgba(255, 100, 100, .35);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+}
+.auth-msg.success {
+    color: #8fe3a0;
+    background: rgba(80, 200, 120, .1);
+    border: 1px solid rgba(80, 200, 120, .35);
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+}
+.auth-connecting p { color: #d4d4d8; }
+.auth-account-line { color: #fff; margin-bottom: 6px; }
+
+/* Continue-where-you-left-off card (rendered by progress.js). */
+.continue-card {
+    border: 1px solid rgba(212, 175, 55, .5);
+    border-radius: 16px;
+    padding: 18px 20px;
+    background: rgba(212, 175, 55, .08);
+    margin-bottom: 22px;
+}
+.continue-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+    margin: 0 0 4px;
+    color: #fff;
+}
+.continue-card p { color: #d4d4d8; margin: 0 0 12px; font-size: 14px; }
+.continue-card a {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #D4AF37;
+    color: #0a0a0f;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.continue-card a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}

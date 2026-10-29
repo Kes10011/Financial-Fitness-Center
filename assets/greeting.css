@@ -1,0 +1,38 @@
+/* School of Financial Fitness — Personalized greeting styles.
+   Scoped under .finfit-greeting / .finfit-welcome-back so nothing leaks
+   into page styles. Matches the site theme: near-black navy panels, gold
+   accents, same as the quiz widget. */
+.finfit-greeting {
+    border: 1px solid rgba(212, 175, 55, .35);
+    border-radius: 16px;
+    padding: 22px;
+    background: rgba(255, 255, 255, .03);
+    margin: 18px 0;
+}
+.finfit-greeting-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid rgba(212, 175, 55, .3);
+    border-radius: 100px;
+    color: #D4AF37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.finfit-greeting-title { font-size: 21px; margin-bottom: 10px; color: #fff; }
+.finfit-greeting-sub { color: #d4d4d8; margin-bottom: 16px; }
+.finfit-greeting-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.finfit-greeting-btn {
+    padding: 13px 24px; border: none; border-radius: 12px;
+    background: #D4AF37; color: #111; font-weight: 800; font-size: 16px; cursor: pointer;
+}
+.finfit-greeting-skip {
+    padding: 13px 18px; border-radius: 12px; cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, .2); background: transparent;
+    color: #d4d4d8; font-size: 15px; font-weight: 600;
+}
+.finfit-welcome-back {
+    color: #D4AF37; font-weight: 700; font-size: 15px; margin: 14px 0 0;
+}

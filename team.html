@@ -960,6 +960,22 @@
             80% { transform: translate(-30px, -40px); }
             90% { opacity: 1; }
             100% { transform: translate(0, 0); opacity: 0; }
+        }
+
+        .sound-toggle {
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            border-radius: 999px;
+            color: #D4AF37;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 14px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .sound-toggle[aria-pressed="false"] {
+            opacity: 0.65;
         }</style>
 </head>
 <body>    <div class="circuit-bg" aria-hidden="true">
@@ -1063,6 +1079,7 @@
                     <a href="index.html#about">About</a>
                     <a href="index.html#courses">Courses</a>
                     <a href="index.html#contact">Contact</a>
+                    <button type="button" class="sound-toggle" id="soundToggle" aria-pressed="true" aria-label="Turn hover sounds off">🔊 Sound on</button>
                 </nav>
             </div>
         </div>
@@ -1394,6 +1411,10 @@
         // Gentle hover sound effect using Web Audio API
         const hoverSound = (function() {
             let audioContext = null;
+            // Hover sounds are ON by default; a visitor must choose to
+            // turn them off. This flag gates ONLY the hover notes — never
+            // lesson videos or any other audio on the page.
+            let enabled = true;
             
             function init() {
                 if (!audioContext) {
@@ -1477,22 +1498,49 @@
             }
             
             function playForElement(el) {
+                if (!enabled) return;
                 const note = getNoteForElement(el);
                 playNote(note);
             }
-            
-            return { play: playForElement };
+
+            return {
+                play: playForElement,
+                setEnabled: function (v) { enabled = !!v; },
+                isEnabled: function () { return enabled; }
+            };
         })();
         
         // Add hover sound to all clickable elements
         document.addEventListener('DOMContentLoaded', function() {
-            const clickables = document.querySelectorAll('a, button, .team-node, .team-popup-close, [onclick]');
+            // Hover sound on EVERY clickable thing, the same way across
+            // the board (Kester, 2026-10-24).
+            const clickables = document.querySelectorAll('a, button, .team-node, [onclick]');
             
             clickables.forEach(function(el) {
                 el.addEventListener('mouseenter', function() {
                     hoverSound.play(this);
                 });
             });
+
+            // Sound toggle: ON by default; the visitor must choose OFF.
+            // Choice persists in this browser. Hover notes only — videos
+            // are never touched by this switch.
+            var soundToggle = document.getElementById('soundToggle');
+            if (soundToggle) {
+                function applySoundState(on) {
+                    hoverSound.setEnabled(on);
+                    soundToggle.textContent = on ? '🔊 Sound on' : '🔇 Sound off';
+                    soundToggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    soundToggle.setAttribute('aria-label', on ? 'Turn hover sounds off' : 'Turn hover sounds on');
+                    try { localStorage.setItem('finfit-hover-sound', on ? 'on' : 'off'); } catch (e) {}
+                }
+                var stored = null;
+                try { stored = localStorage.getItem('finfit-hover-sound'); } catch (e) {}
+                applySoundState(stored !== 'off');
+                soundToggle.addEventListener('click', function () {
+                    applySoundState(!hoverSound.isEnabled());
+                });
+            }
         });
     </script>
 </body>

@@ -1,0 +1,64 @@
+/* School of Financial Fitness — Interactive Quiz Widget styles.
+   Scoped under .quiz-widget so it never leaks into page styles.
+   Matches the site theme: near-black navy panels, gold accents. */
+.quiz-widget {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, .35);
+    border-radius: 16px;
+    padding: 22px;
+    background: rgba(255, 255, 255, .03);
+    margin: 18px 0;
+}
+.quiz-widget .quiz-tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid rgba(212, 175, 55, .3);
+    border-radius: 100px;
+    color: #D4AF37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.quiz-widget .quiz-title { font-size: 21px; margin-bottom: 10px; color: #fff; }
+.quiz-widget .quiz-intro { color: #d4d4d8; margin-bottom: 14px; }
+.quiz-widget .quiz-progress { color: #D4AF37; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
+.quiz-widget .quiz-question { font-size: 19px; font-weight: 600; color: #fff; margin-bottom: 14px; }
+.quiz-widget .quiz-audio-row { margin-bottom: 14px; }
+.quiz-widget .quiz-replay-btn {
+    padding: 9px 16px; border-radius: 100px; border: 1px solid rgba(212, 175, 55, .4);
+    background: rgba(212, 175, 55, .12); color: #D4AF37; font-weight: 600; font-size: 14px; cursor: pointer;
+}
+.quiz-widget .quiz-options { display: grid; gap: 10px; }
+.quiz-widget .quiz-option {
+    text-align: left; padding: 13px 16px; border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .15); background: #111118;
+    color: #fff; font-size: 16px; cursor: pointer;
+}
+.quiz-widget .quiz-option-letter { display: inline-block; min-width: 22px; color: #D4AF37; font-weight: 800; margin-right: 8px; }
+.quiz-widget .quiz-option:hover:not(:disabled) { border-color: rgba(212, 175, 55, .6); }
+.quiz-widget .quiz-option:disabled { opacity: .55; cursor: default; }
+.quiz-widget .quiz-option.correct { background: rgba(34, 197, 94, .18); border-color: #22c55e; color: #bbf7d0; opacity: 1; }
+.quiz-widget .quiz-option.wrong { background: rgba(239, 68, 68, .12); border-color: rgba(239, 68, 68, .5); color: #fecaca; }
+.quiz-widget .quiz-feedback { min-height: 24px; margin-top: 12px; font-weight: 600; }
+.quiz-widget .quiz-feedback.wrong { color: #fca5a5; }
+.quiz-widget .quiz-explanation {
+    margin-top: 12px; padding: 12px 16px; border-left: 3px solid #22c55e;
+    background: rgba(34, 197, 94, .08); border-radius: 0 12px 12px 0; color: #d4d4d8;
+}
+.quiz-widget .quiz-start-btn, .quiz-widget .quiz-next-btn {
+    margin-top: 16px; padding: 13px 24px; border: none; border-radius: 12px;
+    background: #D4AF37; color: #111; font-weight: 800; font-size: 16px; cursor: pointer;
+}
+.quiz-widget .quiz-error { color: #fca5a5; }
+.quiz-widget .quiz-confetti { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.quiz-widget .quiz-confetti-piece {
+    position: absolute; top: -14px; width: 9px; height: 14px; border-radius: 2px;
+    animation-name: quiz-confetti-fall; animation-timing-function: ease-in; animation-fill-mode: forwards;
+}
+@keyframes quiz-confetti-fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(340px) rotate(540deg); opacity: 0; }
+}

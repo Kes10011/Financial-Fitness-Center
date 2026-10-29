@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         * {
@@ -430,6 +431,109 @@
             margin: 0 auto;
         }
 
+        #viral-course {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        /* Kids section ONLY: its own poppin' rounded font, apart from the
+           site's Space Grotesk / Inter. Nothing outside #viral-course
+           is touched by these rules. */
+        #viral-course * {
+            font-family: 'Fredoka', 'Inter', sans-serif;
+        }
+
+        .viral-banner {
+            border: 1px solid rgba(212,175,55,.5);
+            border-radius: 28px;
+            padding: 40px 36px;
+            background: linear-gradient(135deg, rgba(212,175,55,.18), rgba(212,175,55,.03));
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .viral-heading {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: #D4AF37;
+            font-weight: 700;
+            font-size: 44px;
+            line-height: 1.1;
+            margin-bottom: 14px;
+        }
+
+        .viral-flame {
+            font-size: 64px;
+            line-height: 1;
+        }
+
+        .viral-banner h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .viral-banner p {
+            color: var(--text-secondary);
+            max-width: 640px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .viral-meta {
+            color: #D4AF37;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 12px;
+        }
+
+        .viral-price {
+            font-weight: 700;
+            color: #D4AF37;
+            font-size: 20px;
+            margin-top: 8px;
+        }
+
+        .viral-banner .viral-btn {
+            white-space: nowrap;
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        .viral-sticker {
+            flex: 0 0 auto;
+            width: 150px;
+            filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+            animation: sticker-dance 2.4s ease-in-out infinite;
+        }
+
+        .viral-sticker svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        @keyframes sticker-dance {
+            0%, 100% { transform: rotate(-6deg) translateY(0); }
+            50% { transform: rotate(6deg) translateY(-10px); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .viral-sticker { animation: none; }
+        }
+
+        @media (max-width: 640px) {
+            .viral-heading { font-size: 30px; }
+            .viral-flame { font-size: 46px; }
+            .viral-banner h2 { font-size: 28px; }
+            .viral-sticker { width: 110px; }
+        }
+
         .course-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -694,6 +798,46 @@
             width: 20px;
             height: 20px;
             fill: currentColor;
+        }
+
+
+        .view-course-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px 24px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            color: #D4AF37;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .view-course-btn:hover {
+            transform: translateY(-2px);
+            background: rgba(212, 175, 55, 0.25);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+        }
+
+        .thumb-kids {
+            background: linear-gradient(135deg, #3b2d0a, #8a6a1f, #D4AF37);
+        }
+
+        .course-price {
+            margin-top: 16px;
+            padding: 12px 14px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 10px;
+            background: rgba(212, 175, 55, 0.08);
+            color: #D4AF37;
+            font-size: 14px;
+            font-weight: 600;
         }
 
         /* Blog Section */
@@ -1230,7 +1374,7 @@
         ::-webkit-scrollbar-thumb:hover {
             background: rgba(255,255,255,0.2);
         }
-    /* ========== ABOUT US — DIGITAL MOTION ========== */
+    /* ========== ABOUT US ï¿½ DIGITAL MOTION ========== */
 .about-digital {
     position: relative;
     padding: 120px 40px;
@@ -1548,12 +1692,14 @@
     color: #fff;
 }
 
-/* Position 5 nodes around the circle */
-.eco-node[data-index="0"] { top: 10%; left: 50%; transform: translateX(-50%); }
-.eco-node[data-index="1"] { top: 35%; right: 5%; }
-.eco-node[data-index="2"] { bottom: 25%; right: 10%; }
-.eco-node[data-index="3"] { bottom: 10%; left: 50%; transform: translateX(-50%); }
-.eco-node[data-index="4"] { top: 35%; left: 5%; }
+/* Position 7 nodes around the circle (one per course) */
+.eco-node[data-index="0"] { top: 6%; left: 50%; transform: translateX(-50%); }
+.eco-node[data-index="1"] { top: 22%; right: 6%; }
+.eco-node[data-index="2"] { top: 52%; right: 1%; }
+.eco-node[data-index="3"] { bottom: 18%; right: 7%; }
+.eco-node[data-index="4"] { bottom: 18%; left: 7%; }
+.eco-node[data-index="5"] { top: 52%; left: 1%; }
+.eco-node[data-index="6"] { top: 22%; left: 6%; }
 
 .eco-node[data-index="0"]:hover { transform: translateX(-50%) scale(1.1); }
 
@@ -1607,11 +1753,13 @@
         font-size: 11px;
         max-width: 100px;
     }
-    .eco-node[data-index="0"] { top: 5%; }
-    .eco-node[data-index="1"] { top: 30%; right: 0; }
-    .eco-node[data-index="2"] { bottom: 20%; right: 5%; }
-    .eco-node[data-index="3"] { bottom: 5%; }
-    .eco-node[data-index="4"] { top: 30%; left: 0; }
+    .eco-node[data-index="0"] { top: 3%; }
+    .eco-node[data-index="1"] { top: 20%; right: 0; }
+    .eco-node[data-index="2"] { top: 50%; right: 0; }
+    .eco-node[data-index="3"] { bottom: 18%; right: 3%; }
+    .eco-node[data-index="4"] { bottom: 18%; left: 3%; }
+    .eco-node[data-index="5"] { top: 50%; left: 0; }
+    .eco-node[data-index="6"] { top: 20%; left: 0; }
 }
 
 /* COMPANY DIRECTORS SECTION */
@@ -2331,6 +2479,18 @@
     line-height: 1.7;
 }
 
+.eco-info-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-weight: 700;
+    color: #D4AF37;
+    text-decoration: none;
+}
+
+.eco-info-link:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .eco-info-box {
         max-width: 90%;
@@ -2345,23 +2505,28 @@
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
-    right: 30px;
-    width: 50px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: auto;
     height: 50px;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    border-radius: 50%;
-    color: #D4AF37;
-    font-size: 24px;
+    padding: 0 20px;
+    gap: 8px;
+    background: #D4AF37;
+    border: 2px solid #0a0a0f;
+    border-radius: 999px;
+    color: #0a0a0f;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 999;
-    backdrop-filter: blur(20px);
+    transition: opacity 0.4s, visibility 0.4s, transform 0.4s, background 0.3s;
+    z-index: 10000;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
 .scroll-to-top.visible {
@@ -2370,9 +2535,34 @@
 }
 
 .scroll-to-top:hover {
-    background: rgba(212, 175, 55, 0.3);
-    transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    background: #e5c15a;
+    transform: translateX(-50%) translateY(-5px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 100px;
+        height: 46px;
+        padding: 0 16px;
+        font-size: 14px;
+    }
+}
+
+.sound-toggle {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    border-radius: 999px;
+    color: #D4AF37;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sound-toggle[aria-pressed="false"] {
+    opacity: 0.65;
 }
 
         /* Circuit board background with multicolored light streaks */
@@ -2595,6 +2785,8 @@
             100% { transform: translate(0, 0); opacity: 0; }
         }
 </style>
+    <link rel="stylesheet" href="assets/auth.css">
+    <link rel="stylesheet" href="assets/admin.css">
 </head>
 <body>    <div class="circuit-bg" aria-hidden="true">
         <div class="light-trail"></div>
@@ -2636,6 +2828,9 @@
         </ul>
         <a href="https://wa.me/18687995473" class="nav-cta" target="_blank" rel="noopener">Get Started</a>
         <a href="https://wa.me/18687995473" class="nav-cta nav-cta-mobile" target="_blank" rel="noopener">Get Started</a>
+        <button type="button" class="auth-nav-btn" data-auth-nav>Log in</button>
+        <button type="button" class="sound-toggle" id="soundToggle" aria-pressed="true" aria-label="Turn hover sounds off">ðŸ”Š Sound on</button>
+        <button type="button" class="admin-nav-btn" id="adminNavBtn">Admin</button>
     </nav>
 
     <section class="hero">
@@ -2678,6 +2873,293 @@
                     <div class="stat-number">24/7</div>
                     <div class="stat-label">Support Access</div>
                 </div></div>
+        </div>
+    </section>
+
+    <section id="courses">
+        <div class="section-header reveal">
+            <div class="section-tag">Our Curriculum</div>
+            <h2 class="section-title">Master <span style="color: #D4AF37;">Financial Markets</span></h2>
+            <p class="section-subtitle">Comprehensive courses designed to take you from beginner to advanced trader and investor.</p>
+        </div>
+        <div class="courses-grid">
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-crypto">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="7.2" rx="7" ry="2.4"/><path d="M5 7.2v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4"/><path d="M5 11.2v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4"/></svg></span>
+                        <span class="thumb-label">Blockchain Ready</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Beginner</span>
+                    <h3>Cryptocurrency Fundamentals</h3>
+                    <p>Master the basics of cryptocurrency, blockchain technology, and digital assets. Learn how to safely buy, store, and trade crypto.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">J</span>
+                            <span class="avatar avatar-2">M</span>
+                            <span class="avatar avatar-3">A</span>
+                            <span class="avatar avatar-4">K</span>
+                        </div>
+                        <span><span class="count">1,847</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Introduction to Blockchain Technology</li>
+                            <li>How Cryptocurrencies Work</li>
+                            <li>Setting Up Your First Wallet</li>
+                            <li>Buying & Selling Crypto Safely</li>
+                            <li>Understanding Market Trends</li>
+                        </ul>
+                    </div>
+                                        <div class="course-price">Module 1 FREE &middot; TT$595/module</div>
+                    <div class="course-footer">
+                        <a href="courses/cryptocurrency-fundamentals.html" class="view-course-btn">Start for Free</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-trading">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20.5h18"/><path d="M3 20.5V4"/><polyline points="5,16 9.5,11.5 13,13.5 20,6"/><polyline points="16,6 20,6 20,10"/></svg></span>
+                        <span class="thumb-label">Live Trading</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Intermediate</span>
+                    <h3>Day Trading Mastery</h3>
+                    <p>Learn proven day trading strategies, technical analysis, and risk management from a professional trader.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">R</span>
+                            <span class="avatar avatar-2">S</span>
+                            <span class="avatar avatar-3">T</span>
+                            <span class="avatar avatar-4">L</span>
+                        </div>
+                        <span><span class="count">2,153</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Day Trading Fundamentals</li>
+                            <li>Technical Analysis Deep Dive</li>
+                            <li>Reading Candlestick Patterns</li>
+                            <li>Risk Management Strategies</li>
+                            <li>Building a Trading Plan</li>
+                            <li>Psychology of Trading</li>
+                        </ul>
+                    </div>
+                                        <div class="course-price">Module 1 FREE &middot; TT$745/module</div>
+                    <div class="course-footer">
+                        <a href="courses/day-trading-mastery.html" class="view-course-btn">Start for Free</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-finance">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.2c0-3.6 3.1-6.2 7.2-6.2 1.1 0 2.1.2 3 .6.6-.5 1.4-.8 2.2-.9.3 0 .5.3.4.6-.2.5-.4.9-.7 1.3A6 6 0 0 1 18 12.5c0 3.9-3.2 7-7.1 7s-6.9-3-6.9-7.3z"/><line x1="8.2" y1="19.3" x2="8.2" y2="21"/><line x1="13.8" y1="19.3" x2="13.8" y2="21"/><line x1="9.6" y1="9.4" x2="12.6" y2="9.4"/><path d="M6.3 7.6 7.4 5.4l1.3 1.7"/><circle cx="8.6" cy="11" r=".6" fill="currentColor" stroke="none"/></svg></span>
+                        <span class="thumb-label">Financial Literacy</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Beginner</span>
+                    <h3>Complete Financial Literacy</h3>
+                    <p>Build a solid foundation in personal finance, budgeting, investing, and wealth building strategies.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">P</span>
+                            <span class="avatar avatar-2">N</span>
+                            <span class="avatar avatar-3">C</span>
+                            <span class="avatar avatar-4">D</span>
+                        </div>
+                        <span><span class="count">1,562</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Understanding Personal Finance</li>
+                            <li>Budgeting & Cash Flow Management</li>
+                            <li>Debt Management Strategies</li>
+                            <li>Introduction to Investing</li>
+                            <li>Building Wealth Over Time</li>
+                        </ul>
+                    </div>
+                                        <div class="course-price">Module 1 FREE &middot; TT$525/module</div>
+                    <div class="course-footer">
+                        <a href="courses/complete-financial-literacy.html" class="view-course-btn">Start for Free</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-stocks">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="M12 12 19.8 16.5"/></svg></span>
+                        <span class="thumb-label">Stock Analysis</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Intermediate</span>
+                    <h3>Stock Market Investing 101</h3>
+                    <p>Learn how to analyze, select, and invest in stocks for long-term wealth creation.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">B</span>
+                            <span class="avatar avatar-2">E</span>
+                            <span class="avatar avatar-3">F</span>
+                            <span class="avatar avatar-4">G</span>
+                        </div>
+                        <span><span class="count">1,934</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Stock Market Basics</li>
+                            <li>Fundamental Analysis</li>
+                            <li>Technical Analysis Essentials</li>
+                            <li>Portfolio Diversification</li>
+                            <li>Long-Term Investment Strategies</li>
+                        </ul>
+                    </div>
+                                        <div class="course-price">Module 1 FREE &middot; TT$675/module</div>
+                    <div class="course-footer">
+                        <a href="courses/stock-market-investing-101.html" class="view-course-btn">Start for Free</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-defi">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 19 5.5v6c0 5-3.5 8.2-7 9.2-3.5-1-7-4.2-7-9.2v-6z"/><rect x="9.4" y="11.6" width="5.2" height="4.2" rx="1"/><path d="M10.4 11.6v-1.5a1.6 1.6 0 0 1 3.2 0v1.5"/></svg></span>
+                        <span class="thumb-label">DeFi Protocol</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Advanced</span>
+                    <h3>DeFi & Advanced Crypto</h3>
+                    <p>Deep dive into decentralized finance, smart contracts, and advanced cryptocurrency concepts.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">H</span>
+                            <span class="avatar avatar-2">I</span>
+                            <span class="avatar avatar-3">J</span>
+                            <span class="avatar avatar-4">K</span>
+                        </div>
+                        <span><span class="count">987</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>DeFi Ecosystem Overview</li>
+                            <li>Smart Contracts & dApps</li>
+                            <li>Yield Farming & Staking</li>
+                            <li>Advanced Trading Strategies</li>
+                            <li>Risk Management in DeFi</li>
+                            <li>Future of Decentralized Finance</li>
+                        </ul>
+                    </div>
+                                        <div class="course-price">Module 1 FREE &middot; TT$895/module</div>
+                    <div class="course-footer">
+                        <a href="courses/defi-advanced-crypto.html" class="view-course-btn">Start for Free</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card reveal">
+                <div class="course-thumb thumb-ai">
+                    <div class="course-thumb-inner">
+                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg></span>
+                        <span class="thumb-label">Artificial Intelligence</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <span class="course-tag">Intermediate</span>
+                    <h3>A.I Fundamentals</h3>
+                    <p>Understand the core concepts of artificial intelligence, machine learning, and how AI is transforming the financial industry.</p>
+                    <div class="course-students">
+                        <div class="avatar-stack">
+                            <span class="avatar avatar-1">D</span>
+                            <span class="avatar avatar-2">E</span>
+                            <span class="avatar avatar-3">F</span>
+                            <span class="avatar avatar-4">G</span>
+                        </div>
+                        <span><span class="count">1,234</span> students registered</span>
+                    </div>
+                    <div class="modules">
+                        <div class="modules-title">Course Modules</div>
+                        <ul class="module-list">
+                            <li>Introduction to Artificial Intelligence</li>
+                            <li>Machine Learning Basics</li>
+                            <li>Neural Networks & Deep Learning</li>
+                            <li>AI in Financial Services</li>
+                            <li>Automated Trading & Risk Analysis</li>
+                            <li>Future of AI in Finance</li>
+                        </ul>
+                    </div>
+                                        <div class="course-price">Module 1 FREE &middot; TT$745/module</div>
+                    <div class="course-footer">
+                        <a href="courses/ai-fundamentals.html" class="view-course-btn">Start for Free</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="viral-course">
+        <div class="viral-banner reveal">
+            <div class="viral-text">
+                <div class="viral-heading"><span class="viral-flame">&#128293;</span> Our Most Viral Course of the Month</div>
+                <h2>Financial Literacy for Kids</h2>
+                <p>A story-powered adventure that teaches children, suggested ages 7&ndash;12, how money really works &mdash; from barter days and gold coins to bank vaults, cards, and phones &mdash; with savings goals, needs vs wants, and a hero mission in every lesson.</p>
+                <p class="viral-meta">Beginner &middot; Suggested ages 7&ndash;12 &middot; 5 modules</p>
+                <div class="viral-price">Module 1 FREE &middot; TT$350/module</div>
+            </div>
+            <div class="viral-sticker" aria-hidden="true">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <defs>
+                        <radialGradient id="petalPink" cx="50%" cy="35%" r="75%">
+                            <stop offset="0%" stop-color="#FF8FBE"/>
+                            <stop offset="100%" stop-color="#FF5DA2"/>
+                        </radialGradient>
+                        <radialGradient id="petalOrange" cx="50%" cy="35%" r="75%">
+                            <stop offset="0%" stop-color="#FFC95E"/>
+                            <stop offset="100%" stop-color="#FF9F1C"/>
+                        </radialGradient>
+                        <radialGradient id="centerGold" cx="50%" cy="35%" r="75%">
+                            <stop offset="0%" stop-color="#FFE97A"/>
+                            <stop offset="100%" stop-color="#FFD93D"/>
+                        </radialGradient>
+                    </defs>
+                    <g stroke="#fff" stroke-width="4" stroke-linejoin="round">
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalPink)" transform="rotate(0 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalOrange)" transform="rotate(30 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalPink)" transform="rotate(60 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalOrange)" transform="rotate(90 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalPink)" transform="rotate(120 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalOrange)" transform="rotate(150 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalPink)" transform="rotate(180 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalOrange)" transform="rotate(210 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalPink)" transform="rotate(240 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalOrange)" transform="rotate(270 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalPink)" transform="rotate(300 100 100)"/>
+                        <ellipse cx="100" cy="42" rx="21" ry="36" fill="url(#petalOrange)" transform="rotate(330 100 100)"/>
+                    </g>
+                    <circle cx="100" cy="100" r="40" fill="url(#centerGold)" stroke="#fff" stroke-width="4"/>
+                    <circle cx="88" cy="94" r="5.5" fill="#3B2A1A"/>
+                    <circle cx="112" cy="94" r="5.5" fill="#3B2A1A"/>
+                    <path d="M82 108 Q100 126 118 108" fill="none" stroke="#3B2A1A" stroke-width="5" stroke-linecap="round"/>
+                    <circle cx="80" cy="82" r="5" fill="#fff" opacity=".85"/>
+                    <circle cx="122" cy="80" r="3.5" fill="#fff" opacity=".7"/>
+                </svg>
+            </div>
+            <a href="courses/financial-literacy-for-kids.html" class="view-course-btn viral-btn">View Course &rarr;</a>
         </div>
     </section>
 
@@ -2752,23 +3234,31 @@
                 <div class="eco-nodes">
                     <div class="eco-node" data-index="0">
                         <div class="eco-dot"></div>
-                        <span>Personal Financial Coaching</span>
+                        <span>Complete Financial Literacy</span>
                     </div>
                     <div class="eco-node" data-index="1">
                         <div class="eco-dot"></div>
-                        <span>Children's Financial Literacy</span>
+                        <span>Cryptocurrency Fundamentals</span>
                     </div>
                     <div class="eco-node" data-index="2">
                         <div class="eco-dot"></div>
-                        <span>Business Digital Transition</span>
+                        <span>Stock Market Investing</span>
                     </div>
                     <div class="eco-node" data-index="3">
                         <div class="eco-dot"></div>
-                        <span>Digital Portfolio Management</span>
+                        <span>Day Trading Mastery</span>
                     </div>
                     <div class="eco-node" data-index="4">
                         <div class="eco-dot"></div>
-                        <span>Web 3 Integration</span>
+                        <span>A.I Fundamentals</span>
+                    </div>
+                    <div class="eco-node" data-index="5">
+                        <div class="eco-dot"></div>
+                        <span>DeFi &amp; Advanced Crypto</span>
+                    </div>
+                    <div class="eco-node" data-index="6">
+                        <div class="eco-dot"></div>
+                        <span>Financial Literacy for Kids</span>
                     </div>
                 </div></div>
         
@@ -2776,6 +3266,7 @@
                     <button class="eco-info-close" aria-label="Close">&times;</button>
                     <h4 class="eco-info-title"></h4>
                     <p class="eco-info-desc"></p>
+                    <a class="eco-info-link" href="#">View Course &rarr;</a>
                 </div>
             </div>
 
@@ -2842,49 +3333,49 @@
                             <li>Corporate Restructuring</li>
                             <li>Private Financial Advisory Services</li>
                         </ul>
-                        <p><strong>Motto:</strong> “Continued Value Is Demanded”</p>
+                        <p><strong>Motto:</strong> ï¿½Continued Value Is Demandedï¿½</p>
                     </div>
                     
                     <div class="director-popup-section">
                         <h3>PROFESSIONAL EXPERIENCE</h3>
                         <div class="director-timeline">
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">2016–Present</div>
+                                <div class="timeline-period">2016ï¿½Present</div>
                                 <h4>OES / OneAcademy Ltd.</h4>
-                                <p>Dealshaker Online Global Marketplace — Caribbean Manager</p>
+                                <p>Dealshaker Online Global Marketplace ï¿½ Caribbean Manager</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">2009–2012</div>
+                                <div class="timeline-period">2009ï¿½2012</div>
                                 <h4>Sagicor Life Inc.</h4>
                                 <p>Branch Manager</p>
                                 <p>Responsibilities included managing, coaching and inspiring a team of 26 Financial Advisors, ensuring branch targets were met, conducting weekly strategy meetings, liaising with stakeholders, and recruiting, training and developing new advisors.</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">2006–2009</div>
+                                <div class="timeline-period">2006ï¿½2009</div>
                                 <h4>Clico Financial Services Centre</h4>
                                 <p>Unit Manager</p>
                                 <p>Managed and supervised a team of six Sales Agents, developed new markets and sales strategies, assisted agents with sales techniques, presentation skills and closing techniques, and ensured unit targets were met.</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">1997–2006</div>
+                                <div class="timeline-period">1997ï¿½2006</div>
                                 <h4>Clico Financial Services Centre</h4>
                                 <p>Sales Representative</p>
                                 <p>Sales and marketing of products and financial services to companies, institutions and individuals, while developing new markets and servicing existing clients.</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">1994–1996</div>
+                                <div class="timeline-period">1994ï¿½1996</div>
                                 <h4>GTM Life</h4>
                                 <p>Sales Representative</p>
                                 <p>Sales and marketing of products and financial services and development of new markets and existing client relationships.</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">1989–1994</div>
+                                <div class="timeline-period">1989ï¿½1994</div>
                                 <h4>Ministry of National Security</h4>
                                 <p>Clerk 1 and 2</p>
                                 <p>Responsibilities included payroll processing, attendance records, leave processing, station transfers, licenses and related administrative functions.</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">2004–2007</div>
+                                <div class="timeline-period">2004ï¿½2007</div>
                                 <h4>Choppers West Indian and Grill Foods</h4>
                                 <p>Manager/Owner</p>
                                 <p>Management and operation of restaurant.</p>
@@ -2895,14 +3386,14 @@
                     <div class="director-popup-section">
                         <h3>EDUCATION & TRAINING</h3>
                         <ul class="director-education-list">
-                            <li class="director-education-item"><span>Limra International — Master Financial Advisor (MFA)</span></li>
-                            <li class="director-education-item"><span>American College — Certified Financial Planner (CFP), incomplete</span></li>
-                            <li class="director-education-item"><span>Limra International — Field Sales Management (FSS)</span></li>
-                            <li class="director-education-item"><span>Limra International — Field Management Training (FMS)</span></li>
-                            <li class="director-education-item"><span>Limra International — Agency Management Training Course (AMTC)</span></li>
-                            <li class="director-education-item"><span>St. David College — Project Management (PMP), incomplete / presently pursuing</span></li>
-                            <li class="director-education-item"><span>University of the West Indies Continuing Studies — A Level</span></li>
-                            <li class="director-education-item"><span>St Joseph's College — O Level</span></li>
+                            <li class="director-education-item"><span>Limra International ï¿½ Master Financial Advisor (MFA)</span></li>
+                            <li class="director-education-item"><span>American College ï¿½ Certified Financial Planner (CFP), incomplete</span></li>
+                            <li class="director-education-item"><span>Limra International ï¿½ Field Sales Management (FSS)</span></li>
+                            <li class="director-education-item"><span>Limra International ï¿½ Field Management Training (FMS)</span></li>
+                            <li class="director-education-item"><span>Limra International ï¿½ Agency Management Training Course (AMTC)</span></li>
+                            <li class="director-education-item"><span>St. David College ï¿½ Project Management (PMP), incomplete / presently pursuing</span></li>
+                            <li class="director-education-item"><span>University of the West Indies Continuing Studies ï¿½ A Level</span></li>
+                            <li class="director-education-item"><span>St Joseph's College ï¿½ O Level</span></li>
                         </ul>
                     </div>
                     
@@ -2911,11 +3402,11 @@
                         <div class="director-achievements">
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">National LUATT Sales Award — 3 years</div>
+                                <div class="director-achievement-text">National LUATT Sales Award ï¿½ 3 years</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">LUATT Industry Mega Producer Award — 3 years</div>
+                                <div class="director-achievement-text">LUATT Industry Mega Producer Award ï¿½ 3 years</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
@@ -2927,23 +3418,23 @@
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">Million Dollar Round Table — 7 years</div>
+                                <div class="director-achievement-text">Million Dollar Round Table ï¿½ 7 years</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">Court of the Table — 1 year</div>
+                                <div class="director-achievement-text">Court of the Table ï¿½ 1 year</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">Centurion Award — 5 years</div>
+                                <div class="director-achievement-text">Centurion Award ï¿½ 5 years</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">Knight of the Inner Circle — 5 years</div>
+                                <div class="director-achievement-text">Knight of the Inner Circle ï¿½ 5 years</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">Clico Leaders Club — 8 years</div>
+                                <div class="director-achievement-text">Clico Leaders Club ï¿½ 8 years</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
@@ -3007,19 +3498,19 @@
                         <h3>PROFESSIONAL EXPERIENCE</h3>
                         <div class="director-timeline">
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">May 1995 – June 2001</div>
+                                <div class="timeline-period">May 1995 ï¿½ June 2001</div>
                                 <h4>Republic Bank Limited</h4>
                                 <p>Customer Service Representative / Clerk</p>
                                 <p>Her responsibilities included selling banking products and services, marketing and telemarketing foreign exchange products, attending to customer transactions and other banking functions.</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">April–May 1995</div>
+                                <div class="timeline-period">Aprilï¿½May 1995</div>
                                 <h4>Mega Insurance Company / formerly GTM Life Insurance Company Limited</h4>
                                 <p>Insurance Agent</p>
                                 <p>Sales and marketing of company products, servicing existing clients and organizing clients' estates as they pertain to financial planning.</p>
                             </div>
                             <div class="director-timeline-entry">
-                                <div class="timeline-period">1990–1995</div>
+                                <div class="timeline-period">1990ï¿½1995</div>
                                 <h4>First Citizens Bank Limited / formerly Workers Bank 1989 Limited</h4>
                                 <p>Her documented roles included Recoveries/Reconciliation Clerk, Salaries/Standing Orders Clerk, Loans Interviewing Officer and Customer Service Representative.</p>
                                 <p>The profile also documents responsibilities involving loans, customer accounts, banking transactions, marketing, foreign exchange and Central Bank-related functions.</p>
@@ -3027,9 +3518,9 @@
                             <div class="director-timeline-entry">
                                 <div class="timeline-period">Additional Marketing Experience</div>
                                 <h4>Marketing Work With:</h4>
-                                <p>• G & G Holdings</p>
-                                <p>• Associated Brands</p>
-                                <p>• Nabisco Royal Inc.</p>
+                                <p>ï¿½ G & G Holdings</p>
+                                <p>ï¿½ Associated Brands</p>
+                                <p>ï¿½ Nabisco Royal Inc.</p>
                             </div>
                         </div>
                     </div>
@@ -3051,7 +3542,7 @@
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
-                                <div class="director-achievement-text">Agent of the Month — 2 times among over 600 agents</div>
+                                <div class="director-achievement-text">Agent of the Month ï¿½ 2 times among over 600 agents</div>
                             </div>
                             <div class="director-achievement">
                                 <div class="director-achievement-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2"/><path d="M6 5h12"/><path d="M12 5v12"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
@@ -3099,252 +3590,6 @@
             </a>
         </div>
 
-    </section>
-    <section id="courses">
-        <div class="section-header reveal">
-            <div class="section-tag">Our Curriculum</div>
-            <h2 class="section-title">Master <span style="color: #D4AF37;">Financial Markets</span></h2>
-            <p class="section-subtitle">Comprehensive courses designed to take you from beginner to advanced trader and investor.</p>
-        </div>
-        <div class="courses-grid">
-
-            <div class="course-card reveal">
-                <div class="course-thumb thumb-crypto">
-                    <div class="course-thumb-inner">
-                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="7.2" rx="7" ry="2.4"/><path d="M5 7.2v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4"/><path d="M5 11.2v4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4v-4"/></svg></span>
-                        <span class="thumb-label">Blockchain Ready</span>
-                    </div>
-                </div>
-                <div class="course-content">
-                    <span class="course-tag">Beginner</span>
-                    <h3>Cryptocurrency Fundamentals</h3>
-                    <p>Master the basics of cryptocurrency, blockchain technology, and digital assets. Learn how to safely buy, store, and trade crypto.</p>
-                    <div class="course-students">
-                        <div class="avatar-stack">
-                            <span class="avatar avatar-1">J</span>
-                            <span class="avatar avatar-2">M</span>
-                            <span class="avatar avatar-3">A</span>
-                            <span class="avatar avatar-4">K</span>
-                        </div>
-                        <span><span class="count">1,847</span> students registered</span>
-                    </div>
-                    <div class="modules">
-                        <div class="modules-title">Course Modules</div>
-                        <ul class="module-list">
-                            <li>Introduction to Blockchain Technology</li>
-                            <li>How Cryptocurrencies Work</li>
-                            <li>Setting Up Your First Wallet</li>
-                            <li>Buying & Selling Crypto Safely</li>
-                            <li>Understanding Market Trends</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Cryptocurrency%20Fundamentals%20course" class="whatsapp-btn" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                            Inquire on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card reveal">
-                <div class="course-thumb thumb-trading">
-                    <div class="course-thumb-inner">
-                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20.5h18"/><path d="M3 20.5V4"/><polyline points="5,16 9.5,11.5 13,13.5 20,6"/><polyline points="16,6 20,6 20,10"/></svg></span>
-                        <span class="thumb-label">Live Trading</span>
-                    </div>
-                </div>
-                <div class="course-content">
-                    <span class="course-tag">Intermediate</span>
-                    <h3>Day Trading Mastery</h3>
-                    <p>Learn proven day trading strategies, technical analysis, and risk management from a professional trader.</p>
-                    <div class="course-students">
-                        <div class="avatar-stack">
-                            <span class="avatar avatar-1">R</span>
-                            <span class="avatar avatar-2">S</span>
-                            <span class="avatar avatar-3">T</span>
-                            <span class="avatar avatar-4">L</span>
-                        </div>
-                        <span><span class="count">2,153</span> students registered</span>
-                    </div>
-                    <div class="modules">
-                        <div class="modules-title">Course Modules</div>
-                        <ul class="module-list">
-                            <li>Day Trading Fundamentals</li>
-                            <li>Technical Analysis Deep Dive</li>
-                            <li>Reading Candlestick Patterns</li>
-                            <li>Risk Management Strategies</li>
-                            <li>Building a Trading Plan</li>
-                            <li>Psychology of Trading</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Day%20Trading%20Mastery%20course" class="whatsapp-btn" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                            Inquire on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card reveal">
-                <div class="course-thumb thumb-finance">
-                    <div class="course-thumb-inner">
-                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.2c0-3.6 3.1-6.2 7.2-6.2 1.1 0 2.1.2 3 .6.6-.5 1.4-.8 2.2-.9.3 0 .5.3.4.6-.2.5-.4.9-.7 1.3A6 6 0 0 1 18 12.5c0 3.9-3.2 7-7.1 7s-6.9-3-6.9-7.3z"/><line x1="8.2" y1="19.3" x2="8.2" y2="21"/><line x1="13.8" y1="19.3" x2="13.8" y2="21"/><line x1="9.6" y1="9.4" x2="12.6" y2="9.4"/><path d="M6.3 7.6 7.4 5.4l1.3 1.7"/><circle cx="8.6" cy="11" r=".6" fill="currentColor" stroke="none"/></svg></span>
-                        <span class="thumb-label">Financial Literacy</span>
-                    </div>
-                </div>
-                <div class="course-content">
-                    <span class="course-tag">Beginner</span>
-                    <h3>Complete Financial Literacy</h3>
-                    <p>Build a solid foundation in personal finance, budgeting, investing, and wealth building strategies.</p>
-                    <div class="course-students">
-                        <div class="avatar-stack">
-                            <span class="avatar avatar-1">P</span>
-                            <span class="avatar avatar-2">N</span>
-                            <span class="avatar avatar-3">C</span>
-                            <span class="avatar avatar-4">D</span>
-                        </div>
-                        <span><span class="count">1,562</span> students registered</span>
-                    </div>
-                    <div class="modules">
-                        <div class="modules-title">Course Modules</div>
-                        <ul class="module-list">
-                            <li>Understanding Personal Finance</li>
-                            <li>Budgeting & Cash Flow Management</li>
-                            <li>Debt Management Strategies</li>
-                            <li>Introduction to Investing</li>
-                            <li>Building Wealth Over Time</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Complete%20Financial%20Literacy%20course" class="whatsapp-btn" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                            Inquire on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card reveal">
-                <div class="course-thumb thumb-stocks">
-                    <div class="course-thumb-inner">
-                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 12V3"/><path d="M12 12 19.8 16.5"/></svg></span>
-                        <span class="thumb-label">Stock Analysis</span>
-                    </div>
-                </div>
-                <div class="course-content">
-                    <span class="course-tag">Intermediate</span>
-                    <h3>Stock Market Investing 101</h3>
-                    <p>Learn how to analyze, select, and invest in stocks for long-term wealth creation.</p>
-                    <div class="course-students">
-                        <div class="avatar-stack">
-                            <span class="avatar avatar-1">B</span>
-                            <span class="avatar avatar-2">E</span>
-                            <span class="avatar avatar-3">F</span>
-                            <span class="avatar avatar-4">G</span>
-                        </div>
-                        <span><span class="count">1,934</span> students registered</span>
-                    </div>
-                    <div class="modules">
-                        <div class="modules-title">Course Modules</div>
-                        <ul class="module-list">
-                            <li>Stock Market Basics</li>
-                            <li>Fundamental Analysis</li>
-                            <li>Technical Analysis Essentials</li>
-                            <li>Portfolio Diversification</li>
-                            <li>Long-Term Investment Strategies</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20Stock%20Market%20Investing%20101%20course" class="whatsapp-btn" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                            Inquire on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card reveal">
-                <div class="course-thumb thumb-defi">
-                    <div class="course-thumb-inner">
-                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6 19 5.5v6c0 5-3.5 8.2-7 9.2-3.5-1-7-4.2-7-9.2v-6z"/><rect x="9.4" y="11.6" width="5.2" height="4.2" rx="1"/><path d="M10.4 11.6v-1.5a1.6 1.6 0 0 1 3.2 0v1.5"/></svg></span>
-                        <span class="thumb-label">DeFi Protocol</span>
-                    </div>
-                </div>
-                <div class="course-content">
-                    <span class="course-tag">Advanced</span>
-                    <h3>DeFi & Advanced Crypto</h3>
-                    <p>Deep dive into decentralized finance, smart contracts, and advanced cryptocurrency concepts.</p>
-                    <div class="course-students">
-                        <div class="avatar-stack">
-                            <span class="avatar avatar-1">H</span>
-                            <span class="avatar avatar-2">I</span>
-                            <span class="avatar avatar-3">J</span>
-                            <span class="avatar avatar-4">K</span>
-                        </div>
-                        <span><span class="count">987</span> students registered</span>
-                    </div>
-                    <div class="modules">
-                        <div class="modules-title">Course Modules</div>
-                        <ul class="module-list">
-                            <li>DeFi Ecosystem Overview</li>
-                            <li>Smart Contracts & dApps</li>
-                            <li>Yield Farming & Staking</li>
-                            <li>Advanced Trading Strategies</li>
-                            <li>Risk Management in DeFi</li>
-                            <li>Future of Decentralized Finance</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20DeFi%20&%20Advanced%20Crypto%20course" class="whatsapp-btn" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                            Inquire on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="course-card reveal">
-                <div class="course-thumb thumb-ai">
-                    <div class="course-thumb-inner">
-                        <span class="thumb-icon"><svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg></span>
-                        <span class="thumb-label">Artificial Intelligence</span>
-                    </div>
-                </div>
-                <div class="course-content">
-                    <span class="course-tag">Intermediate</span>
-                    <h3>A.I Fundamentals</h3>
-                    <p>Understand the core concepts of artificial intelligence, machine learning, and how AI is transforming the financial industry.</p>
-                    <div class="course-students">
-                        <div class="avatar-stack">
-                            <span class="avatar avatar-1">D</span>
-                            <span class="avatar avatar-2">E</span>
-                            <span class="avatar avatar-3">F</span>
-                            <span class="avatar avatar-4">G</span>
-                        </div>
-                        <span><span class="count">1,234</span> students registered</span>
-                    </div>
-                    <div class="modules">
-                        <div class="modules-title">Course Modules</div>
-                        <ul class="module-list">
-                            <li>Introduction to Artificial Intelligence</li>
-                            <li>Machine Learning Basics</li>
-                            <li>Neural Networks & Deep Learning</li>
-                            <li>AI in Financial Services</li>
-                            <li>Automated Trading & Risk Analysis</li>
-                            <li>Future of AI in Finance</li>
-                        </ul>
-                    </div>
-                    <div class="course-footer">
-                        <a href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness,%20I'm%20interested%20in%20the%20A.I%20Fundamentals%20course" class="whatsapp-btn" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118-.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                            Inquire on WhatsApp
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
     <section id="blog">
@@ -3643,14 +3888,17 @@
     var infoBox = document.getElementById('eco-info-box');
     var infoTitle = infoBox ? infoBox.querySelector('.eco-info-title') : null;
     var infoDesc = infoBox ? infoBox.querySelector('.eco-info-desc') : null;
+    var infoLink = infoBox ? infoBox.querySelector('.eco-info-link') : null;
     var closeBtn = infoBox ? infoBox.querySelector('.eco-info-close') : null;
 
     var descriptions = {
-        '0': 'One-on-one guidance to help you build a personalized financial plan tailored to your unique goals and circumstances.',
-        '1': 'Educational programs designed to teach young people the fundamentals of money management and financial responsibility.',
-        '2': 'Comprehensive support for businesses moving into the digital economy, including strategy, tools, and implementation.',
-        '3': 'Advanced tools and strategies for managing and growing your digital assets and investment portfolios.',
-        '4': 'Explore the future of the internet with decentralized technologies, blockchain, and next-generation digital platforms.'
+        '0': { desc: 'The foundation course: build a complete personal finance system step by step \u2014 budgeting in TT dollars, managing debt, handling everyday expenses, and taking your first informed steps into investing. Practical and jargon-free, designed for real life in Trinidad and Tobago.', url: 'courses/complete-financial-literacy.html' },
+        '1': { desc: 'A clear, jargon-free foundation in how cryptocurrency actually works \u2014 from the blockchain underneath it to the wallet in your hands. Set up securely, make your first transactions with confidence, and read the market without the noise and hype.', url: 'courses/cryptocurrency-fundamentals.html' },
+        '2': { desc: 'How the stock market works and how thoughtful investors analyse companies, read charts, and build diversified portfolios \u2014 thinking in years rather than days, with examples from the TT Stock Exchange and global markets.', url: 'courses/stock-market-investing-101.html' },
+        '3': { desc: 'The disciplined, methodical approach that separates structured day trading from guessing \u2014 technical analysis, candlestick patterns, risk controls, and a written trading plan you can actually follow.', url: 'courses/day-trading-mastery.html' },
+        '4': { desc: 'How AI and machine learning actually work, applied directly to money \u2014 financial services, analysis, and automation. Learn to evaluate AI tools critically and use them responsibly. No coding background needed.', url: 'courses/ai-fundamentals.html' },
+        '5': { desc: 'Inside decentralized finance with clarity and care \u2014 how protocols actually work, how to read smart contracts, and how experienced users evaluate risk before they act. Best after Crypto Fundamentals.', url: 'courses/defi-advanced-crypto.html' },
+        '6': { desc: 'A story-powered adventure teaching children how money really works \u2014 from barter days to cards and phones \u2014 then the habits that matter: savings goals, needs vs wants, banks, and growing and sharing money. Suggested ages 7\u201312.', url: 'courses/financial-literacy-for-kids.html' }
     };
 
     ecoNodes.forEach(function(node) {
@@ -3660,7 +3908,9 @@
             var title = this.querySelector('span').textContent;
 
             if (infoTitle) infoTitle.textContent = title;
-            if (infoDesc) infoDesc.textContent = descriptions[index] || '';
+            var entry = descriptions[index] || {};
+            if (infoDesc) infoDesc.textContent = entry.desc || '';
+            if (infoLink && entry.url) { infoLink.href = entry.url; }
 
             if (infoBox) {
                 var rect = this.getBoundingClientRect();
@@ -3699,33 +3949,23 @@
         }
     });
 })();
-    // Scroll to top button
-    var scrollBtn = document.getElementById('scrollToTop');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollBtn.classList.add('visible');
-            } else {
-                scrollBtn.classList.remove('visible');
-            }
-        });
-
-        scrollBtn.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
     </script>
 
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 19V5M5 12l7-7 7 7"/>
         </svg>
+        <span>Back to top</span>
     </button>
 
     <script>
         // Gentle hover sound effect using Web Audio API
         const hoverSound = (function() {
             let audioContext = null;
+            // Hover sounds are ON by default; a visitor must choose to
+            // turn them off. This flag gates ONLY the hover notes â€” never
+            // lesson videos or any other audio on the page.
+            let enabled = true;
             
             function init() {
                 if (!audioContext) {
@@ -3816,23 +4056,80 @@
             }
             
             function playForElement(el) {
+                if (!enabled) return;
                 const note = getNoteForElement(el);
                 playNote(note);
             }
-            
-            return { play: playForElement };
+
+            return {
+                play: playForElement,
+                setEnabled: function (v) { enabled = !!v; },
+                isEnabled: function () { return enabled; }
+            };
         })();
         
         document.addEventListener('DOMContentLoaded', function() {
-            const clickables = document.querySelectorAll('a, button, .team-node, .course-card, .blog-card, .director-node, .eco-node, .skill-tag, .scroll-to-top, [onclick]');
+            // Hover sound on EVERY clickable thing, the same way across
+            // the board (Kester, 2026-10-24): links, buttons, and all
+            // nodes (course orbit, directors, team). Card bodies and
+            // other non-clickable surfaces stay silent â€” they have no
+            // click action, so they are not clickable things.
+            const clickables = document.querySelectorAll('a, button, .team-node, .director-node, .eco-node, [onclick]');
             
             clickables.forEach(function(el) {
                 el.addEventListener('mouseenter', function() {
                     hoverSound.play(this);
                 });
             });
+
+            // Sound toggle: ON by default; the visitor must choose OFF.
+            // Choice persists in this browser. Hover notes only â€” videos
+            // are never touched by this switch.
+            var soundToggle = document.getElementById('soundToggle');
+            if (soundToggle) {
+                function applySoundState(on) {
+                    hoverSound.setEnabled(on);
+                    soundToggle.textContent = on ? 'ðŸ”Š Sound on' : 'ðŸ”‡ Sound off';
+                    soundToggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+                    soundToggle.setAttribute('aria-label', on ? 'Turn hover sounds off' : 'Turn hover sounds on');
+                    try { localStorage.setItem('finfit-hover-sound', on ? 'on' : 'off'); } catch (e) {}
+                }
+                var stored = null;
+                try { stored = localStorage.getItem('finfit-hover-sound'); } catch (e) {}
+                applySoundState(stored !== 'off');
+                soundToggle.addEventListener('click', function () {
+                    applySoundState(!hoverSound.isEnabled());
+                });
+            }
         });
     </script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="assets/supabase-config.js"></script>
+        <script src="assets/auth.js"></script>
+        <script src="assets/auth-ui.js"></script>
+        <script src="assets/reg-account.js"></script>
+        <script src="assets/progress.js"></script>
+        <script src="assets/admin.js"></script>
+        <script>
+        // Back to top button â€” standalone block on purpose: no other
+        // script on the page can stop this from registering.
+        (function () {
+            var btn = document.getElementById('scrollToTop');
+            if (!btn) return;
+            function toggle() {
+                if (window.pageYOffset > 300) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            }
+            window.addEventListener('scroll', toggle, { passive: true });
+            toggle();
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+        </script>
 </body>
 </html>
 
