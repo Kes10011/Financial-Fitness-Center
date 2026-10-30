@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Literacy for Teenagers | School of Financial Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/quiz-widget.css">
+    <link rel="stylesheet" href="../assets/greeting.css">
+    <link rel="stylesheet" href="../assets/auth.css">
+    <link rel="stylesheet" href="../assets/admin.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #fff; line-height: 1.6; }
+        a { color: #D4AF37; }
+        .wrap { max-width: 860px; margin: 0 auto; padding: 28px 20px 60px; }
+        .topnav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 34px; }
+        .topnav a { text-decoration: none; font-weight: 600; }
+        .brand { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
+        .brand span { color: #D4AF37; }
+        .tag { display: inline-block; padding: 4px 12px; border: 1px solid rgba(212,175,55,.3); border-radius: 100px; color: #D4AF37; font-size: 12px; font-weight: 600; margin-bottom: 14px; }
+        h1 { font-family: 'Space Grotesk', sans-serif; font-size: 38px; line-height: 1.15; margin-bottom: 14px; }
+        h1 span { color: #D4AF37; }
+        h2 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; margin: 36px 0 14px; }
+        h2 span { color: #D4AF37; }
+        h3 { font-size: 18px; margin-bottom: 8px; }
+        p { color: #d4d4d8; margin-bottom: 12px; }
+        .who { border-left: 3px solid #D4AF37; padding: 12px 16px; background: rgba(212,175,55,.07); border-radius: 0 12px 12px 0; margin: 18px 0; }
+        .price-box { border: 1px solid rgba(212,175,55,.35); border-radius: 16px; padding: 20px; background: rgba(212,175,55,.07); margin: 22px 0; }
+        .price-box .free { font-size: 22px; font-weight: 800; color: #D4AF37; }
+        .price-box p { margin-bottom: 6px; }
+        .mod { border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 20px; margin-bottom: 16px; background: rgba(255,255,255,.03); }
+        .mod-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .mod-num { color: #D4AF37; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+        .mod-price { font-weight: 800; color: #D4AF37; }
+        .mod ul, .m1-list ul { padding-left: 20px; color: #d4d4d8; }
+        .mod li, .m1-list li { margin-bottom: 6px; }
+        .unlock-btn { display: inline-block; margin-top: 14px; padding: 12px 22px; background: rgba(212,175,55,.15); border: 1px solid rgba(212,175,55,.4); border-radius: 12px; color: #D4AF37; font-weight: 600; text-decoration: none; }
+        .fine { font-size: 13px; color: #a1a1aa; margin-top: 10px; }
+        .reg { border: 1px solid rgba(212,175,55,.35); border-radius: 16px; padding: 22px; background: rgba(255,255,255,.03); }
+        .reg label { display: block; font-size: 14px; font-weight: 600; margin: 12px 0 4px; }
+        .reg input, .reg select { width: 100%; padding: 11px 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,.15); background: #111118; color: #fff; font-size: 15px; }
+        .reg button { margin-top: 18px; width: 100%; padding: 14px; border: none; border-radius: 12px; background: #D4AF37; color: #111; font-weight: 800; font-size: 16px; cursor: pointer; }
+        .reg .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 14px; color: #d4d4d8; }
+        .reg .check input { width: auto; margin-top: 4px; }
+        .m1-videos video { width: 100%; border-radius: 12px; background: #000; }
+        .lesson-video { margin-bottom: 22px; }
+        .lesson-video h4 { margin-bottom: 8px; }
+        .batch-note { border: 1px dashed rgba(212,175,55,.5); border-radius: 12px; padding: 14px; color: #D4AF37; }
+        .done-msg { display: none; border: 1px solid rgba(212,175,55,.5); border-radius: 12px; padding: 14px; color: #D4AF37; margin-bottom: 16px; }
+        footer { margin-top: 48px; color: #a1a1aa; font-size: 14px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="topnav">
+            <div class="brand">School of <span>Financial Fitness</span></div>
+            <span class="topnav-right"><a href="../index.html#courses">&larr; All Courses</a> <button type="button" class="auth-nav-btn" data-auth-nav>Log in</button></span>
+        </div>
+        <span class="tag">Beginner &middot; Suggested ages 13&ndash;17 &middot; 5 modules</span>
+        <h1>Financial Literacy for <span>Teenagers</span></h1>
+        <p>Money starts mattering fast at this age — allowance, part-time work, phones, sneakers, pressure to spend. This course teaches teenagers how money really works, in plain words: what money is, how to budget an allowance or a first paycheck, how to pay yourself first, and how investing works — including the honest part, that investments can go up <em>and</em> down. Then it gets hands-on: building a practice portfolio with play money (never real money), tracking it, rebalancing it, and staying calm when markets move. It closes with the habits that grow money for life, how to spot scams and social-media money traps, and a real 5-year money plan.</p>
+        <div class="who"><strong style="color:#fff;">Who it&rsquo;s for:</strong> Teenagers 13&ndash;17 who want to get smart about money early — and the parents and guardians walking with them. One plain-words rule for this course: all practice stays simulated with play money, and a parent or guardian manages the real-money side while the teen learns.</div>
+        <div class="price-box">
+            <div class="free">Module 1 FREE</div>
+            <p>Following modules: <strong style="color:#fff;">TT$350 each</strong></p>
+            <p>Full-course bundle: <strong style="color:#fff;">TT$1095</strong> (save TT$305 vs buying separately)</p>
+            <a class="unlock-btn bundle-btn" data-whop-course="financial-literacy-for-teenagers" data-whop-item="bundle" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20the%20full-course%20bundle%20of%20the%20Financial%20Literacy%20for%20Teenagers%20course%20%28TT%241095%2C%20save%20TT%24305%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener">Unlock the Full Course &mdash; Bundle TT$1095 (save TT$305)</a>
+            <p class="fine">Bundle unlocks the entire course. Secure checkout via Whop &mdash; your unlock code arrives right after purchase.</p>
+            <p class="fine">All prices in Trinidad &amp; Tobago dollars. Finish the whole course and you earn a Certificate of Completion in School of Financial Fitness branding.</p>
+        </div>
+
+        <h2>Module 1: Money Basics for Teens &mdash; <span>FREE</span></h2>
+        <div class="m1-list">
+            <ul>
+                        <li>What Money Really Is (and Isn&rsquo;t)</li>
+                        <li>Your First Paycheck: Allowance, Chores &amp; Part-Time Work</li>
+                        <li>Needs, Wants &amp; the Pressure to Spend</li>
+            </ul>
+        </div>
+
+        <div class="reg">
+            <h3 style="margin-bottom:4px;">Register free to start Module 1</h3>
+            <p class="fine">Fill this in once and your free Module 1 opens below. Your details go to the school so they can follow up on WhatsApp.</p>
+            <div id="reg-done" class="done-msg">You&rsquo;re registered &mdash; Module 1 is open below. The school has also received your details on WhatsApp.</div>
+            <form id="reg-form">
+                <label for="f-name">Full name *</label>
+                <input id="f-name" name="name" required autocomplete="name">
+                <label for="f-email">Email *</label>
+                <input id="f-email" name="email" type="email" required autocomplete="email">
+                <label for="f-password">Create a password so you can log back in (optional)</label>
+                <input id="f-password" name="password" type="password" autocomplete="new-password" minlength="6">
+                <label for="f-wa">WhatsApp / contact number *</label>
+                <input id="f-wa" name="whatsapp" required autocomplete="tel">
+                <label for="f-course">Course</label>
+                <input id="f-course" value="Financial Literacy for Teenagers" readonly>
+                <label for="f-goal">Your goal as a student</label>
+                <select id="f-goal" name="goal">
+                    <option>Build a budget that works</option>
+                    <option>Save for something big</option>
+                    <option>Start investing (with my parent)</option>
+                    <option>Understand crypto</option>
+                    <option>Stop overspending</option>
+                    <option>Grow my money</option>
+                    <option>Other</option>
+                </select>
+                <label for="f-heard">How did you hear about us?</label>
+                <select id="f-heard" name="heard">
+                    <option>Instagram</option>
+                    <option>YouTube</option>
+                    <option>WhatsApp</option>
+                    <option>Friend or family</option>
+                    <option>Search</option>
+                    <option>Other</option>
+                </select>
+                <label class="check"><input id="f-consent" type="checkbox" checked> Yes, the school may follow up with me on WhatsApp about this course.</label>
+                <button type="submit">Start Module 1 Free</button>
+            </form>
+        </div>
+                <div id="m1-videos" class="m1-videos" hidden>
+                    <div class="lesson-video">
+                        <h4>Lesson 1: What Money Really Is (and Isn&rsquo;t)</h4>
+                        <video controls preload="metadata" src="../assets/lessons/teen-m1-l1.mp4"></video>
+                    </div>
+                    <div class="lesson-video">
+                        <h4>Lesson 2: Your First Paycheck: Allowance, Chores &amp; Part-Time Work</h4>
+                        <video controls preload="metadata" src="../assets/lessons/teen-m1-l2.mp4"></video>
+                    </div>
+                    <div class="lesson-video">
+                        <h4>Lesson 3: Needs, Wants &amp; the Pressure to Spend</h4>
+                        <video controls preload="metadata" src="../assets/lessons/teen-m1-l3.mp4"></video>
+                    </div>
+                </div>
+
+        <h2>Continue the course</h2>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 2</span><span class="mod-price">TT$350</span></div>
+                    <h3>Budgeting &amp; Saving</h3>
+                    <ul>
+                        <li>A Budget That Fits Your Life</li>
+                        <li>Pay Yourself First</li>
+                        <li>Bank Accounts for Teens (with a parent)</li>
+                    </ul>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%202%3A%20Budgeting%20%26%20Saving%20of%20the%20Financial%20Literacy%20for%20Teenagers%20course%20%28TT%24350%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="financial-literacy-for-teenagers" data-whop-item="2">Unlock Module 2 &mdash; TT$350</a>
+                    <p class="fine">Secure checkout via Whop &mdash; your unlock code arrives right after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 3</span><span class="mod-price">TT$350</span></div>
+                    <h3>Investing Basics</h3>
+                    <ul>
+                        <li>What Investing Actually Means</li>
+                        <li>Stocks, Bonds &amp; ETFs: The Main Pieces</li>
+                        <li>Risk, Reward &amp; the Power of Starting Early</li>
+                    </ul>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%203%3A%20Investing%20Basics%20of%20the%20Financial%20Literacy%20for%20Teenagers%20course%20%28TT%24350%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="financial-literacy-for-teenagers" data-whop-item="3">Unlock Module 3 &mdash; TT$350</a>
+                    <p class="fine">Secure checkout via Whop &mdash; your unlock code arrives right after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 4</span><span class="mod-price">TT$350</span></div>
+                    <h3>Build Your Portfolio</h3>
+                    <ul>
+                        <li>Your First $10,000 Play Portfolio</li>
+                        <li>Picking Your Mix</li>
+                        <li>Tracking, Rebalancing &amp; Staying Calm</li>
+                    </ul>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%204%3A%20Build%20Your%20Portfolio%20of%20the%20Financial%20Literacy%20for%20Teenagers%20course%20%28TT%24350%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="financial-literacy-for-teenagers" data-whop-item="4">Unlock Module 4 &mdash; TT$350</a>
+                    <p class="fine">Secure checkout via Whop &mdash; your unlock code arrives right after purchase.</p>
+                </div>
+                <div class="mod locked">
+                    <div class="mod-head"><span class="mod-num">Module 5</span><span class="mod-price">TT$350</span></div>
+                    <h3>Grow It &amp; Protect It</h3>
+                    <ul>
+                        <li>Habits That Grow Money for Life</li>
+                        <li>Scams, Hype &amp; Social-Media Money Traps</li>
+                        <li>Your Money Plan: The Next 5 Years</li>
+                    </ul>
+                    <a class="unlock-btn" href="https://wa.me/18687995473?text=Hi%20School%20of%20Financial%20Fitness%2C%20I%27d%20like%20to%20unlock%20Module%205%3A%20Grow%20It%20%26%20Protect%20It%20of%20the%20Financial%20Literacy%20for%20Teenagers%20course%20%28TT%24350%29.%20Please%20send%20me%20the%20checkout%20link." target="_blank" rel="noopener" data-whop-course="financial-literacy-for-teenagers" data-whop-item="5">Unlock Module 5 &mdash; TT$350</a>
+                    <p class="fine">Secure checkout via Whop &mdash; your unlock code arrives right after purchase.</p>
+                </div>
+        <footer>
+            <p>School of Financial Fitness, Cunupia, Trinidad &amp; Tobago &middot; WhatsApp 1 (868) 799-5473</p>
+            <p><a href="../index.html#courses">&larr; Back to all courses</a></p>
+        </footer>
+    </div>
+    <script>
+        // Registration gate: on submit, reveal Module 1 videos (if any) and route
+        // the details to the school's WhatsApp prefilled. The client-owned Google
+        // Sheet log connects here once the school shares its sheet/webhook link:
+        // set SHEET_WEBHOOK_URL below to the school's Apps Script URL.
+        var SHEET_WEBHOOK_URL = "";
+        document.getElementById('reg-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = document.getElementById('f-name').value.trim();
+            var email = document.getElementById('f-email').value.trim();
+            var wa = document.getElementById('f-wa').value.trim();
+            var goal = document.getElementById('f-goal').value;
+            var heard = document.getElementById('f-heard').value;
+            var consent = document.getElementById('f-consent').checked ? 'Yes' : 'No';
+            if (!name || !email || !wa) return;
+            var msg = 'Hi School of Financial Fitness, I just registered for FREE Module 1 of Financial Literacy for Teenagers.'
+                + ' Name: ' + name + ' | Email: ' + email + ' | WhatsApp: ' + wa
+                + ' | Goal: ' + goal + ' | Heard via: ' + heard + ' | WhatsApp follow-up consent: ' + consent;
+            if (SHEET_WEBHOOK_URL) {
+                fetch(SHEET_WEBHOOK_URL, { method: 'POST', mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: name, email: email, whatsapp: wa, course: "Financial Literacy for Teenagers", goal: goal, heard: heard, consent: consent }) });
+            }
+            document.getElementById('reg-form').style.display = 'none';
+            document.getElementById('reg-done').style.display = 'block';
+            var vids = document.getElementById('m1-videos');
+            if (vids) vids.hidden = false;
+            window.open('https://wa.me/18687995473?text=' + encodeURIComponent(msg), '_blank');
+        });
+    </script>
+        <script src="whop-links.js"></script>
+        <script src="../assets/quiz-widget.js"></script>
+        <script src="../assets/greeting.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="../assets/supabase-config.js"></script>
+        <script src="../assets/auth.js"></script>
+        <script src="../assets/auth-ui.js"></script>
+        <script src="../assets/reg-account.js"></script>
+        <script src="../assets/progress.js"></script>
+        <script src="../assets/admin.js"></script>
+</body>
+</html>

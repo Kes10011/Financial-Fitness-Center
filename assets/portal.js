@@ -126,6 +126,18 @@
                 { title: 'Banks Keep Money Safe', lessons: ['What Is a Bank, Really?', 'Your Very Own Account', 'Cards Are Keys, Not Magic'] },
                 { title: 'Growing & Sharing Money', lessons: ['Money Seeds: How Savings Grow', 'Earn by Helping', 'Sharing Is a Superpower'] }
             ]
+        },
+        {
+            slug: 'financial-literacy-for-teenagers',
+            title: 'Financial Literacy for Teenagers',
+            page: 'courses/financial-literacy-for-teenagers.html',
+            modules: [
+                { title: 'Money Basics for Teens', lessons: ['What Money Really Is (and Isn\u2019t)', 'Your First Paycheck: Allowance, Chores & Part-Time Work', 'Needs, Wants & the Pressure to Spend'] },
+                { title: 'Budgeting & Saving', lessons: ['A Budget That Fits Your Life', 'Pay Yourself First', 'Bank Accounts for Teens (with a parent)'] },
+                { title: 'Investing Basics', lessons: ['What Investing Actually Means', 'Stocks, Bonds & ETFs: The Main Pieces', 'Risk, Reward & the Power of Starting Early'] },
+                { title: 'Build Your Portfolio', lessons: ['Your First $10,000 Play Portfolio', 'Picking Your Mix', 'Tracking, Rebalancing & Staying Calm'] },
+                { title: 'Grow It & Protect It', lessons: ['Habits That Grow Money for Life', 'Scams, Hype & Social-Media Money Traps', 'Your Money Plan: The Next 5 Years'] }
+            ]
         }
     ];
 
