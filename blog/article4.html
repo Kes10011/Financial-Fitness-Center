@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Biggest Crypto Heist in History: $6 Billion Stolen From Binance | School of Financial Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-cyan: #D4AF37;
+            --accent-magenta: #ff00e5;
+            --accent-green: #D4AF37;
+            --gradient-1: linear-gradient(135deg, #00f0ff 0%, #7b2fff 100%);
+            --glow-cyan: 0 0 40px rgba(0, 240, 255, 0.3);
+            --glow-logo: 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, .logo, .section-title {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: #000;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--glow-logo);
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        .logo-icon img {
+            width: 43px;
+            height: 43px;
+            object-fit: contain;
+        }
+
+        .logo .accent {
+            color: #D4AF37;
+            text-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.7), 0 0 60px rgba(123, 47, 255, 0.4); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            background: #000;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #D4AF37;
+            font-family: 'JetBrains Mono', monospace;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-header h1 {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .article-lead {
+            font-size: 20px;
+            color: #fff;
+            line-height: 1.7;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-body {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #fff;
+            background: #000;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .article-body h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        .article-body h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 36px 0 16px;
+            color: #fff;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--accent-cyan);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #fff;
+            background: rgba(0, 240, 255, 0.05);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .article-body ul {
+            margin: 20px 0;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 12px;
+            position: relative;
+            color: #fff;
+        }
+
+        .article-body li::marker {
+            color: var(--accent-cyan);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: gap 0.3s;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .article-container {
+                padding: 120px 20px 60px;
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="bg-grid"></div>
+
+    <nav>
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">
+                <img src="../LOGO_SOFIT-removebg-preview.png" alt="School of Financial Fitness Logo">
+            </div>
+            <span>School of <span class="accent">Financial Fitness</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html#courses">Courses</a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <article class="article-container">
+        <a href="../index.html#blog" class="back-link">← Back to Blog</a>
+
+        <header class="article-header">
+            <div class="article-meta">
+                <span>📅 November 1, 2026</span>
+                <span>⏱ 5 min read</span>
+                <span>🔐 Crypto Pulse</span>
+            </div>
+            <h1>The Biggest Crypto Heist in History: $6 Billion Stolen From Binance</h1>
+            <p class="article-lead">The FBI has blamed North Korea for stealing more than $6 billion from the world's largest crypto exchange — the largest theft in the history of digital money. Here is what happened, how markets reacted, and what every person learning about money should take away from it.</p>
+        </header>
+
+        <div class="article-body">
+            <p>On or around October 29, 2026, attackers moved approximately $6.36 billion in virtual assets out of Binance-controlled wallets across 10 different blockchain networks. The breach was disclosed on October 30, and on October 31 the FBI issued a formal cyber advisory: North Korea's state-backed hacking group <strong>TraderTraitor</strong> — believed to be part of the Lazarus Group — was responsible. It is the largest crypto theft ever recorded, four times larger than the $1.5 billion Bybit theft in February 2025, which was blamed on the same group.</p>
+
+            <h2>How the Attack Worked — and Where the Money Is Going</h2>
+            <p>According to the FBI, working alongside the U.S. Secret Service and the IRS Criminal Investigation division, the attackers are converting the stolen assets predominantly into <strong>Ethereum</strong>, and the agency expects them to be laundered further through decentralized finance (DeFi) platforms and instant-swap services to hide their origin. The FBI also published a list of more than 600 cryptocurrency addresses tied to the stolen funds and asked exchanges and financial institutions worldwide to block transactions connected to them.</p>
+
+            <blockquote>"The Federal Bureau of Investigation is releasing information advising the Democratic People's Republic of Korea was responsible for the theft of more than $6 billion USD in virtual assets from cryptocurrency exchange Binance, on or about October 29, 2026." — FBI cyber advisory, October 31, 2026</blockquote>
+
+            <h2>What Binance Did About It</h2>
+            <p>Binance suspended user withdrawals immediately after the attack and set aside more than <strong>$6.34 billion of its own company funds</strong> to cover the losses. The company says it has already replaced 90% of the stolen tokens from its corporate reserves, and withdrawals began resuming in phases on Sunday, November 1. Co-CEO Richard Teng stated that "users will not bear the financial impact of this incident."</p>
+
+            <h3>The Market Fallout</h3>
+            <p>The shockwave was immediate. Bitcoin broke below the $80,000 level it had held since mid-September, falling to a six-week low near $77,300 on October 29. More than $1.6 billion in leveraged crypto bets were wiped out as prices dropped. The crypto Fear & Greed Index swung back into fear territory, and total crypto market value fell to about $2.61 trillion. The sell-off came in an already jittery week: the Federal Reserve held interest rates at 3.75%–4.00% on October 28 in a split 10–2 vote, with two members pushing for a hike, and markets now price roughly an 85% chance of a December increase.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>No platform is unhackable:</strong> If the world's largest exchange can lose $6 billion overnight, no custodial account is risk-free. Anyone holding crypto long-term should understand the difference between leaving funds on an exchange and securing them in their own wallet.</li>
+                <li><strong>An exchange's promise is not deposit insurance:</strong> Binance chose to cover losses from company funds — but that is a business decision, not a guarantee. Bank deposits and brokerage accounts carry government-backed protections (like FDIC insurance); crypto exchanges do not. Never keep more on an exchange than you can afford to lose access to.</li>
+                <li><strong>Headlines move markets; plans survive them:</strong> Billions in leveraged positions were liquidated because traders were overextended when the shock hit. Understanding leverage, position sizing, and the psychology of fear is worth more than any hot tip — especially in weeks like this one.</li>
+            </ul>
+
+            <p>For those building their money knowledge from the ground up, our <a href="../index.html#courses" style="color: var(--accent-cyan);">Cryptocurrency Fundamentals</a> and <a href="../index.html#courses" style="color: var(--accent-cyan);">Budgeting & Saving Basics</a> courses cover wallet security, risk management, and how to think clearly about money when markets get noisy.</p>
+        </div>
+
+        <div class="article-tags">
+            <span class="tag">#Binance</span>
+            <span class="tag">#CryptoSecurity</span>
+            <span class="tag">#Cybersecurity</span>
+            <span class="tag">#Bitcoin</span>
+            <span class="tag">#ExchangeSafety</span>
+        </div>
+    </article>
+
+    <footer style="margin-top: auto; padding: 40px 20px; text-align: center; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 14px; position: relative; z-index: 2;">
+        <p>© 2026 School of Financial Fitness. All rights reserved.</p>
+        <p style="margin-top: 8px;"><a href="../index.html#blog" style="color: var(--accent-cyan); text-decoration: none;">← Back to Blog</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            const canvas = document.getElementById('matrix-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const chars = '01';
+            const fontSize = 14;
+            let columns = Math.floor(canvas.width / fontSize);
+            let drops = Array(columns).fill(1);
+
+            function draw() {
+                ctx.fillStyle = 'rgba(10, 10, 15, 0.016)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.14)';
+                ctx.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(draw, 35);
+        })();
+    </script>
+</body>
+</html>
