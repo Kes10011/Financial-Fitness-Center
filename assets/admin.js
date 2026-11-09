@@ -107,6 +107,32 @@
         });
     }
 
+    /* ---------- free Module 1 in admin mode ---------- */
+
+    function revealFreeModule() {
+        var form = document.getElementById('reg-form');
+        var done = document.getElementById('reg-done');
+        var vids = document.getElementById('m1-videos');
+        if (!form || !done || !vids) return;
+        form.style.display = 'none';
+        done.style.display = 'block';
+        vids.hidden = false;
+    }
+
+    function restoreFreeModuleGate() {
+        var form = document.getElementById('reg-form');
+        var done = document.getElementById('reg-done');
+        var vids = document.getElementById('m1-videos');
+        if (!form || !done || !vids) return;
+        /* Student registered on their own: leave the lessons visible. */
+        try {
+            if (localStorage.getItem('finfit-m1-registered:' + location.pathname) === '1') return;
+        } catch (e) {}
+        form.style.display = '';
+        done.style.display = 'none';
+        vids.hidden = true;
+    }
+
     /* ---------- banner (pages without an Admin nav button) ---------- */
 
     function showBanner() {
@@ -136,6 +162,7 @@
         if (document.body.classList.contains('finfit-admin-on')) { return; }
         document.body.classList.add('finfit-admin-on');
         injectLessonVideos();
+        revealFreeModule();
         showBanner();
         syncNavButton();
     }
@@ -143,6 +170,7 @@
     function removeAdminMode() {
         document.body.classList.remove('finfit-admin-on');
         removeInjectedVideos();
+        restoreFreeModuleGate();
         hideBanner();
         syncNavButton();
     }
