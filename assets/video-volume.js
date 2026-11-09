@@ -21,7 +21,7 @@
             var v = parseFloat(localStorage.getItem(VOL_KEY));
             if (!isNaN(v) && v >= 0 && v <= 1) return v;
         } catch (e) {}
-        return 1;
+        return 0.85;
     }
 
     function savedMuted() {
