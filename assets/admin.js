@@ -82,7 +82,7 @@
             items.forEach(function (li, idx) {
                 var n = idx + 1;
                 var title = li.textContent.trim();
-                var src = '../assets/lessons/' + prefix + '-m' + modNum + 'l' + n + '.mp4';
+                var src = 'https://pub-377d1200573544069086ef32cc662554.r2.dev/' + prefix + '-m' + modNum + 'l' + n + '.mp4';
                 html += '<div class="lesson-video admin-lesson">' +
                     '<h4>Lesson ' + n + ': ' + title.replace(/&/g, '&amp;').replace(/</g, '&lt;') + '</h4>' +
                     '<video controls preload="metadata" src="' + src + '"></video>' +
