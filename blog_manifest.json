@@ -1,6 +1,18 @@
 {
   "articles": [
     {
+      "id": "article7",
+      "file": "blog/article7.html",
+      "title": "Bitcoin Slides Below $64,000 as Nvidia's CEO Resigns and a December Rate Hike Becomes a Certainty",
+      "category": "Market Watch",
+      "date": "2026-11-16",
+      "read_time": "5 min read",
+      "description": "Bitcoin fell to its lowest since August, Nvidia's CEO of 33 years resigned, and markets now price a December Fed rate hike as a near-certainty. Here is what drove the week's repricing of risk and what money learners can take from it.",
+      "thumb_class": "blog-thumb-market",
+      "thumb_icon": "<svg class=\"icon-svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"4.6\" width=\"18\" height=\"16\" rx=\"2\"/><line x1=\"3\" y1=\"9.2\" x2=\"21\" y2=\"9.2\"/><line x1=\"7.2\" y1=\"2.6\" x2=\"7.2\" y2=\"6.6\"/><line x1=\"16.8\" y1=\"2.6\" x2=\"16.8\" y2=\"6.6\"/><circle cx=\"12\" cy=\"14.6\" r=\"2.1\"/><path d=\"M12 13.4v2.4M12.7 13.8c-.2-.2-.5-.3-.8-.3-.5 0-.8.3-.8.5 0 .3.3.4.8.5.5.1.8.3.8.5 0 .3-.3.5-.8.5-.3 0-.6-.1-.8-.3\" stroke-width=\"1\"/></svg>",
+      "thumb_label": "Market Watch"
+    },
+    {
       "id": "article6",
       "file": "blog/article6.html",
       "title": "Thursday's 6% Plunge: The Wildest Week for Markets Since 2020",
