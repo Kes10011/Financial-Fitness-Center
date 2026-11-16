@@ -56,7 +56,7 @@
     function findLessonPrefix() {
         var videos = document.querySelectorAll('video[src]');
         for (var i = 0; i < videos.length; i++) {
-            var m = videos[i].getAttribute('src').match(/assets\/lessons\/(.+)-m1-l\d+\.mp4$/);
+            var m = videos[i].getAttribute('src').match(/\/([^\/]+)-m1-l\d+\.mp4$/);
             if (m) { return m[1]; }
         }
         return null;
