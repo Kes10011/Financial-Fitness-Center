@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks Enter Correction and Bitcoin Hits a Two-Year Low in the Worst Week Since 2020 | School of Financial Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --accent-cyan: #D4AF37;
+            --accent-magenta: #ff00e5;
+            --accent-green: #D4AF37;
+            --gradient-1: linear-gradient(135deg, #00f0ff 0%, #7b2fff 100%);
+            --glow-cyan: 0 0 40px rgba(0, 240, 255, 0.3);
+            --glow-logo: 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, .logo, .section-title {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            text-decoration: none;
+            color: var(--text-primary);
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.3);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: #000;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--glow-logo);
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        .logo-icon img {
+            width: 43px;
+            height: 43px;
+            object-fit: contain;
+        }
+
+        .logo .accent {
+            color: #D4AF37;
+            text-shadow: 0 0 18px rgba(212, 175, 55, 0.45);
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.7), 0 0 60px rgba(123, 47, 255, 0.4); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #000;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 24px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+            background: #000;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #D4AF37;
+            font-family: 'JetBrains Mono', monospace;
+            flex-wrap: wrap;
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .article-header h1 {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .article-lead {
+            font-size: 20px;
+            color: #fff;
+            line-height: 1.7;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .article-body {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #fff;
+            background: #000;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 240, 255, 0.2);
+        }
+
+        .article-body h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 20px;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        .article-body h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 36px 0 16px;
+            color: #fff;
+        }
+
+        .article-body p {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .article-body blockquote {
+            border-left: 3px solid var(--accent-cyan);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #fff;
+            background: rgba(0, 240, 255, 0.05);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .article-body ul {
+            margin: 20px 0;
+            padding-left: 24px;
+        }
+
+        .article-body li {
+            margin-bottom: 12px;
+            position: relative;
+            color: #fff;
+        }
+
+        .article-body li::marker {
+            color: var(--accent-cyan);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            transition: gap 0.3s;
+        }
+
+        .back-link:hover {
+            gap: 12px;
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .article-container {
+                padding: 120px 20px 60px;
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div class="bg-grid"></div>
+
+    <nav>
+        <a href="../index.html" class="logo">
+            <div class="logo-icon">
+                <img src="../LOGO_SOFIT-removebg-preview.png" alt="School of Financial Fitness Logo">
+            </div>
+            <span>School of <span class="accent">Financial Fitness</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="../index.html#courses">Courses</a></li>
+            <li><a href="../index.html#blog">Blog</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <article class="article-container">
+        <a href="../index.html#blog" class="back-link">← Back to Blog</a>
+
+        <header class="article-header">
+            <div class="article-meta">
+                <span>📅 November 23, 2026</span>
+                <span>⏱ 5 min read</span>
+                <span>📊 Market Watch</span>
+            </div>
+            <h1>Stocks Enter Correction and Bitcoin Hits a Two-Year Low in the Worst Week Since 2020</h1>
+            <p class="article-lead">Stocks entered correction territory, Bitcoin fell to a two-year low, and a glitch briefly priced Bitcoin at $17,000. The worst week since the pandemic had one thread: investors are questioning the AI boom — and the price of money itself.</p>
+        </header>
+
+        <div class="article-body">
+            <p>It was the worst week for U.S. stocks since the pandemic. On Friday, November 20, the S&amp;P 500 fell 3.7% to 6,910.39 and joined the Dow in correction territory, more than 10% below the record highs of October 6. For the week, the S&amp;P 500 lost 8.6% and the Dow 8%. The Nasdaq fell 10%, its worst week since March 2020, wiping out all of its 2026 gains.</p>
+
+            <h2>The AI Trade Unravels</h2>
+            <p>The selling centred on artificial intelligence. Investors have spent weeks asking whether the trillions being poured into AI infrastructure will ever pay off, and this week the doubt turned into a rout. Nvidia — the chipmaker at the heart of the AI boom — plunged 14% on Friday and finished the week down 23%, its worst week since the financial crisis. All 11 sectors of the S&amp;P 500 fell by more than 1% in the same week, something that had not happened since April 2025.</p>
+
+            <h2>Bitcoin's Seven-Week Slide</h2>
+            <p>Crypto fell with stocks. Bitcoin has now fallen for seven straight weeks, its second-longest weekly losing streak on record, dropping 29% from $86,500 in early October to about $61,100 by November 22. Early Saturday it touched $55,130, its lowest since September 2024. The selling wiped out $2.4 billion in leveraged crypto bets in a single day, and U.S. spot Bitcoin ETFs have now lost $3 billion in November. By Monday morning Bitcoin was back above $60,000, near $61,500.</p>
+
+            <h2>The $17,000 Bitcoin That Wasn't</h2>
+            <p>Early Saturday, Bitcoin briefly traded at C$24,250 — about $17,000 — on the Kraken exchange's Canadian dollar market, roughly 70% below the global price, while it traded near $57,650 on Kraken's U.S. dollar market. The cause was a liquidity breakdown: Kraken runs separate order books for each currency, and its Canadian dollar book lost the market makers who normally keep prices close together. Heavy selling met almost no buyers. Kraken said its systems worked correctly, found no security breach, and confirmed that all executed trades will stand. A price is only as trustworthy as the market behind it.</p>
+
+            <h2>What the Fed Has to Do With It</h2>
+            <p>Minutes from the Federal Reserve's October meeting, released November 18, showed that nearly all policymakers expect a quarter-point rate hike at the December 8–9 meeting. Higher rates make borrowing more expensive and tend to pull money away from riskier assets — exactly what this week's market action showed, with the 10-year Treasury yield near 5.07% and the 30-year mortgage rate above 7%. But the selloff itself changed the conversation: the rout cooled talk of a bigger half-point hike, a reminder that the Fed watches markets just as closely as markets watch the Fed.</p>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Corrections are normal, even after record highs:</strong> A correction means a fall of 10% or more from a recent peak. The S&amp;P 500 set records in October and entered a correction six weeks later.</li>
+                <li><strong>Everything is connected:</strong> AI stocks, crypto, and interest rates all moved together this week. When borrowing costs rise and confidence in one big story wobbles, the effects spread everywhere.</li>
+                <li><strong>A price is only as good as the market behind it:</strong> The Kraken glitch showed Bitcoin "at $17,000" while the real global price was near $57,000.</li>
+            </ul>
+
+            <p>Our <a href="../index.html#courses" style="color: var(--accent-cyan);">Investing Fundamentals</a> and <a href="../index.html#courses" style="color: var(--accent-cyan);">Budgeting &amp; Saving Basics</a> courses cover how markets, diversification, and interest rates actually work — in plain language, no jargon.</p>
+        </div>
+
+        <div class="article-tags">
+            <span class="tag">#StockMarket</span>
+            <span class="tag">#Bitcoin</span>
+            <span class="tag">#InterestRates</span>
+            <span class="tag">#Correction</span>
+            <span class="tag">#MarketWatch</span>
+        </div>
+    </article>
+
+    <footer style="margin-top: auto; padding: 40px 20px; text-align: center; border-top: 1px solid var(--border); color: var(--text-secondary); font-size: 14px; position: relative; z-index: 2;">
+        <p>© 2026 School of Financial Fitness. All rights reserved.</p>
+        <p style="margin-top: 8px;"><a href="../index.html#blog" style="color: var(--accent-cyan); text-decoration: none;">← Back to Blog</a></p>
+    </footer>
+
+    <script>
+        (function() {
+            const canvas = document.getElementById('matrix-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const chars = '01';
+            const fontSize = 14;
+            let columns = Math.floor(canvas.width / fontSize);
+            let drops = Array(columns).fill(1);
+
+            function draw() {
+                ctx.fillStyle = 'rgba(10, 10, 15, 0.016)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'rgba(212, 175, 55, 0.14)';
+                ctx.font = fontSize + 'px monospace';
+
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(draw, 35);
+        })();
+    </script>
+</body>
+</html>
